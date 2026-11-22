@@ -1,200 +1,200 @@
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:582:2: Try this: 
-  letI̵
+  omit [NumberField E] [StarRing E] in theorem ...
 
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:250:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_mono`:
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing E] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:689:4: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:262:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_add`:
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing E] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:689:4: Unused tactic linter: `simp only [← DecoSet.dia_smul_def, Pi.mulSingle_mul, mul_smul]` does nothing
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:267:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_neg`:
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing E] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:761:4: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:271:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_sub`:
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing E] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:761:4: Unused tactic linter: `(ext x; rfl)` does nothing
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:276:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_mul`:
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing E] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:838:2: Try this: 
-  letI̵
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:284:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_sum`:
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing E] in theorem ...
 
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:350:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_chArg_add`:
+  [NumberField E]
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField E] [StarRing E] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:852:2: Try this: 
-  letI̵
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:448:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_rp_spec`:
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing E] in theorem ...
 
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [19549/19612] Replayed Formalism.LocalToGlobal.Columns.ReductionColumnStandardBasis
+warning: src/Formalism/LocalToGlobal/Columns/ReductionColumnStandardBasis.lean:192:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.free_point_column_entry`:
+  [NumberField E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField E] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:854:2: Try this: 
-  haveI̵
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/Columns/ReductionColumnStandardBasis.lean:303:15: `Fin.coe_castAdd` has been deprecated: Use `Fin.val_castAdd` instead
+⚠ [19555/19612] Replayed Formalism.LocalToGlobal.Columns.KOneCharacterTrivialNearOne
+warning: src/Formalism/LocalToGlobal/Columns/KOneCharacterTrivialNearOne.lean:66:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.mem_R1_zero`:
+  [NumberField E]
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField E] [StarRing E] in theorem ...
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [19556/19612] Replayed Formalism.LocalToGlobal.Columns.ChainTwFrA
+warning: src/Formalism/LocalToGlobal/Columns/ChainTwFrA.lean:61:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.Sc.Fr.tfaD_apply`:
+  [NumberField E]
+  [StarRing E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField E] [StarRing E] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:889:6: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [19562/19612] Replayed Formalism.LocalToGlobal.GroupLattices.JointServices.Cut
+warning: src/Formalism/LocalToGlobal/GroupLattices/JointServices/Cut.lean:13:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/LocalToGlobal/GroupLattices/JointServices/Cut.lean:28:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [19568/19612] Replayed Formalism.LocalToGlobal.PtKOfReal
+warning: src/Formalism/LocalToGlobal/PtKOfReal.lean:82:101: Variable name `hpin` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:890:6: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpin
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:889:6: Unused tactic linter: `rfl` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:890:6: Unused tactic linter: `(show ‖σ₀ ((1 : X.Kˣ) : X.K)‖ = 1; simp)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:950:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:961:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:963:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1009:4: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1010:4: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1009:4: Unused tactic linter: `(delta recDGamAll; rfl)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1010:4: Unused tactic linter: `rfl` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1021:8: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1021:8: Unused tactic linter: `(unfold Ranks.N; nlinarith)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1127:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1127:6: Unused tactic linter: `field_simp` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1521:4: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1521:4: Unused tactic linter: `exact tilR_smul hSG hPr u hpi _ d` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1907:24: This simp argument is unused:
-  LinearMap.pi_apply
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [recPer, LinearMap.comp_apply, LinearMap.proj_apply, GSD.Ev.evAt_apply, GSD.Ev.atPt_emb, lowC_ev]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1907:44: This simp argument is unused:
-  LinearMap.comp_apply
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.proj_apply, GSD.Ev.evAt_apply, GSD.Ev.atPt_emb, lowC_ev]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1907:66: This simp argument is unused:
-  LinearMap.proj_apply
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.comp_apply, GSD.Ev.evAt_apply, GSD.Ev.atPt_emb, lowC_ev]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1907:88: This simp argument is unused:
-  GSD.Ev.evAt_apply
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.comp_apply, LinearMap.proj_apply, GSD.Ev.atPt_emb, lowC_ev]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1908:6: This simp argument is unused:
-  GSD.Ev.atPt_emb
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.comp_apply, LinearMap.proj_apply, GSD.Ev.evAt_apply, lowC_ev]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1908:23: This simp argument is unused:
-  lowC_ev
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.comp_apply, LinearMap.proj_apply, GSD.Ev.evAt_apply,
-    GSD.Ev.atPt_emb]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1915:4: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1915:4: Unused tactic linter: `(erw [GSD.Ev.atPt_emb]; exact lowC_ev σ₀ hσ u _)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1926:4: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1926:4: Unused tactic linter: `(unfold Ranks.N; nlinarith)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1934:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1946:63: Variable name `hT` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/PtKOfReal.lean:112:107: Variable name `hT` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
   [apply] _hT
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2085:4: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/PtKOfReal.lean:113:5: Variable name `hpin` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2086:4: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hpin
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2087:4: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [19569/19612] Replayed Formalism.LocalToGlobal.Divisibility.DivisibilityProofs.NumbersP
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityProofs/NumbersP.lean:84:0: automatically included section variable(s) unused in theorem `Formalism.L2.DIV.cycSum_rec`:
+  [NeZero d]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero d] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2085:4: Unused tactic linter: `exact recDGamAll_prime_le (Λ := Λ) hX G (twMink_holds hX G) hp h` does nothing
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [19579/19612] Replayed Formalism.LocalToGlobal.Divisibility.EigenvalueSumLeClosedOf
+warning: src/Formalism/LocalToGlobal/Divisibility/EigenvalueSumLeClosedOf.lean:1631:77: Variable name `he` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2086:4: Unused tactic linter: `exact
-  prime_le_of_dvd_minkM hp (h.trans (recDGamAll_dvd_minkM hX G (twMink_holds hX G)))` does nothing
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _he
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2087:4: Unused tactic linter: `(rw [recDGamAll_eq hX G] at h;
-  exact prime_le_of_dvd_minkM hp (h.trans (dGamAut_dvd_minkM hX)))` does nothing
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Divisibility/EigenvalueSumLeClosedOf.lean:1865:0: automatically included section variable(s) unused in theorem `Formalism.L2.DIV.Arith4S.logG_rec`:
+  [Group G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Group G] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [19581/19612] Replayed Formalism.LocalToGlobal.Divisibility.DivisibilityConstruction.RBDGam
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityConstruction/RBDGam.lean:62:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [19584/19612] Replayed Formalism.LocalToGlobal.IndefiniteReal.PrincipalLevelFrame
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PrincipalLevelFrame.lean:126:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PrincipalLevelFrame.lean:383:15: `MultilinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PrincipalLevelFrame.lean:386:15: `MultilinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PrincipalLevelFrame.lean:399:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [19586/19612] Replayed Formalism.LocalToGlobal.IndefiniteReal.PeterssonHilbertSpace
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:42:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:81:13: `MultilinearMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:90:8: `MultilinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:121:15: `MultilinearMap.zero_apply` has been deprecated: Use `_root_.zero_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.zero_apply` to `_root_.zero_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:125:10: `MultilinearMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:127:17: `MultilinearMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:130:10: `MultilinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:132:17: `MultilinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:179:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [19588/19612] Replayed Formalism.LocalToGlobal.Columns.MtRowRep
+warning: src/Formalism/LocalToGlobal/Columns/MtRowRep.lean:16:16: Variable name `π` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _π
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [19589/19612] Replayed Formalism.LocalToGlobal.IndefiniteReal.ConjSubConjSub
+warning: src/Formalism/LocalToGlobal/IndefiniteReal/ConjSubConjSub.lean:40:12: This simp argument is unused:
+  mul_comm
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
