@@ -1,0 +1,72 @@
+# Experiment for issue #9 (not part of the verification). Restores step 2 checkpoint shards from the
+# public Hugging Face dataset at the live run's absolute path, checks whether Lake accepts them, and
+# rebuilds a small sample to compare bytes with the VM's manifests. No secrets are used.
+name: exp-restore-test
+on:
+  push:
+    branches: [exp/gh-runners-restore-test]
+    paths: [.github/workflows/exp-restore-test.yml, scripts/exp-gh-restore-test.sh, scripts/exp-pick-sample.py]
+permissions:
+  contents: read
+concurrency:
+  group: exp-restore-test
+  cancel-in-progress: false
+env:
+  LIVE_COMMIT: f073285e399c5587c6a6799c0da56451b30c1836   # /home/user/rh-verify/state/step2.cloned on the VM
+  EXP_SHARDS: "0001 0002"
+  EXP_SAMPLE_N: "200"
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Experiment scripts (this branch)
+        uses: actions/checkout@v4
+        with: {path: exp, persist-credentials: false, sparse-checkout: scripts}
+      - name: Checkpoint INDEX (trust anchor, run/step2-2026-11-22)
+        uses: actions/checkout@v4
+        with: {path: index, ref: run/step2-2026-11-22, persist-credentials: false, sparse-checkout: verification/checkpoints}
+      - name: Build clone at the live run's commit
+        uses: actions/checkout@v4
+        with: {path: build, ref: '${{ env.LIVE_COMMIT }}', persist-credentials: false, fetch-depth: 1}
+      - name: Free disk, move clone to the live absolute path, start resource sampler
+        run: |
+          sudo rm -rf /usr/share/dotnet /opt/hostedtoolcache /usr/local/lib/android /usr/local/.ghcup /usr/share/swift
+          sudo mkdir -p /home/user/rh-verify && sudo chown "$(id -u):$(id -g)" /home/user/rh-verify
+          mv "$GITHUB_WORKSPACE/build" /home/user/rh-verify/build
+          test "$(git -C /home/user/rh-verify/build rev-parse HEAD)" = "$LIVE_COMMIT"
+          mkdir -p exp-out
+          cp index/verification/checkpoints/step2/INDEX.tsv exp-out/INDEX.tsv
+          echo "INDEX from run/step2-2026-11-22 at $(git -C index rev-parse HEAD)" | tee exp-out/summary.txt
+          echo "runner: $(nproc) vCPU, $(free -g | awk '/Mem/ {print $2}') GB RAM, $(df -BG --output=avail / | tail -1) free on /" | tee -a exp-out/summary.txt
+          nohup bash -c 'while sleep 20; do printf "%s\t%s\t%s\n" "$(date -u +%H:%M:%S)" "$(free -m | awk "/Mem/ {print \$3}")" "$(df -BM --output=avail / | tail -1 | tr -dc 0-9)"; done' > exp-out/resources.tsv 2>&1 &
+      - name: Toolchain (pinned sha256) and Mathlib (official cache)
+        run: bash exp/scripts/exp-gh-restore-test.sh setup
+        env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+      - name: Restore and verify shards
+        run: bash exp/scripts/exp-gh-restore-test.sh restore
+        env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+      - name: Does Lake accept the restored tree?
+        run: bash exp/scripts/exp-gh-restore-test.sh uptodate
+        env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+      - name: Determinism sample (rebuild shallow leaves, compare bytes)
+        run: bash exp/scripts/exp-gh-restore-test.sh determinism
+        env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+      - name: Summary
+        if: always()
+        run: |
+          r=exp-out/resources.tsv
+          [ -s $r ] && echo "peak used RAM $(cut -f2 $r | sort -n | tail -1) MB, min free disk on / $(cut -f3 $r | sort -n | head -1) MB" | tee -a exp-out/summary.txt
+          cat exp-out/summary.txt
+      - name: Upload logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: exp-restore-test-logs
+          retention-days: 14
+          path: |
+            exp-out/*.txt
+            exp-out/*.log
+            exp-out/*.tsv
+            exp-out/*.time
+            !exp-out/restored-manifest.tsv
