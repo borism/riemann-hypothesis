@@ -6,9 +6,6 @@
 #                prerelease pool-<wave>; verdict + stats are committed to the pool/verdicts branch
 name: exp-pool-wave
 on:
-  push:
-    branches: [exp/gh-runners-restore-test]
-    paths: [.github/workflows/exp-pool-wave.yml]
   workflow_dispatch:
     inputs:
       wave: {description: 'wave name (unique)', required: true}
@@ -101,10 +98,17 @@ jobs:
           s=exp-out/plan/slice-${{ matrix.job }}.txt
           [ -s "$s" ] || { echo "empty slice"; exit 0; }
           ! comm -12 <(sort "$s") exp-out/restored-modules.txt | grep -q . || { echo "slice contains available modules"; exit 1; }
-          EXP_BUILD_TIMEOUT=75m bash exp/scripts/exp-pool.sh build "$s" slice
+          EXP_BUILD_TIMEOUT=72m bash exp/scripts/exp-pool.sh build "$s" slice || echo "build did not finish; packing the modules that did" | tee -a exp-out/summary.txt
           extra=$(grep -oE '\] Built [^ ]+' exp-out/build-slice.log | awk '{print $3}' | sort | comm -23 - <(sort "$s") | wc -l)
           echo "modules built outside the slice: $extra" | tee -a exp-out/summary.txt
-          bash exp/scripts/exp-pool.sh pack "$s" "$WAVE-job-${{ matrix.job }}"
+          # a module counts only if all 7 outputs exist; its imports finished before it, so a partial set is still usable
+          b=/home/user/rh-verify/build/.lake/build
+          while read -r m; do p="${m//.//}"; ok=1
+            for f in lib/lean/$p.olean lib/lean/$p.olean.hash lib/lean/$p.ilean lib/lean/$p.ilean.hash lib/lean/$p.trace ir/$p.c ir/$p.c.hash; do [ -f "$b/$f" ] || ok=0; done
+            if [ $ok = 1 ]; then echo "$m"; fi; done < "$s" > exp-out/done.txt
+          echo "slice ${{ matrix.job }}: $(wc -l < exp-out/done.txt) of $(wc -l < "$s") modules complete" | tee -a exp-out/summary.txt
+          [ -s exp-out/done.txt ] || exit 1
+          bash exp/scripts/exp-pool.sh pack exp-out/done.txt "$WAVE-job-${{ matrix.job }}"
       - name: Summary
         if: always()
         run: bash exp/scripts/exp-pool.sh resources || true; cat exp-out/summary.txt
