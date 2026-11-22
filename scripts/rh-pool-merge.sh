@@ -59,4 +59,4 @@ while IFS=$'\t' read -r wave job files tsha msha spotm spots verdict; do
   rm -rf "$u"
 done < "$IDX"
 echo "total: $total files in accepted batches, $skipped already present; $([ "$APPLY" = 1 ] && echo "merged $merged" || echo "dry run, nothing written")"
-[ "$APPLY" = 1 ] && echo "next: restart step 2 (scripts/run-verification.sh step2); Lake re-checks every trace and rebuilds anything that does not match"
+if [ "$APPLY" = 1 ]; then echo "next: restart step 2 (scripts/run-verification.sh step2); Lake re-checks every trace and rebuilds anything that does not match"; fi
