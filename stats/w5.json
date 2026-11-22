@@ -1,0 +1,82 @@
+{
+ "wave": "w5",
+ "run_id": "45078292251",
+ "runner_minutes_excl_publish": 211.3,
+ "job_minutes": {
+  "plan": 1.6,
+  "build (3)": 12.4,
+  "build (2)": 9.8,
+  "build (7)": 9.0,
+  "build (1)": 11.3,
+  "build (0)": 10.0,
+  "build (11)": 9.8,
+  "build (5)": 13.0,
+  "build (4)": 7.3,
+  "build (8)": 17.8,
+  "build (10)": 9.2,
+  "build (13)": 13.4,
+  "build (12)": 15.6,
+  "build (6)": 9.8,
+  "build (14)": 10.9,
+  "build (9)": 11.8,
+  "build (15)": 10.0,
+  "spot (3)": 6.9,
+  "spot (0)": 5.8,
+  "spot (2)": 6.7,
+  "spot (1)": 9.2
+ },
+ "modules_planned": 1721,
+ "modules_accepted": 1721,
+ "jobs_accepted": 16,
+ "jobs_rejected_or_failed": 0,
+ "plan": {
+  "dfs_pos_index_max": 14022,
+  "index_lag_min": 10,
+  "vm_pos_est": 15239,
+  "region_start": 73847,
+  "horizon_h": 8.0,
+  "rate_per_min": 122.1,
+  "jobs": 16,
+  "cap": 700,
+  "spot_jobs": 4,
+  "seed": 20261122,
+  "picked": 1721,
+  "slice_sizes": [
+   97,
+   96,
+   95,
+   203,
+   98,
+   95,
+   95,
+   95,
+   156,
+   96,
+   109,
+   101,
+   96,
+   96,
+   94,
+   99
+  ],
+  "spot": 88,
+  "dfs_span": [
+   73949,
+   163717
+  ],
+  "depths": [
+   2,
+   84
+  ],
+  "planned_utc": "2026-11-22T22:34Z",
+  "vm_hours_ahead": 8.0,
+  "merge_by_utc": "2026-11-23T06:34Z",
+  "depends_on_waves": {
+   "w3": 1723,
+   "w2": 1762,
+   "w4": 2142,
+   "w1": 942
+  },
+  "closure_unavailable": 0
+ }
+}
