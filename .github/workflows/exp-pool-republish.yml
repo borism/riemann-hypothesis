@@ -5,6 +5,9 @@
 # It runs no Lean code and starts no further wave.
 name: exp-pool-republish
 on:
+  push:   # only so GitHub registers the workflow on this branch; the job below skips push runs
+    branches: [exp/gh-runners-restore-test]
+    paths: [.github/workflows/exp-pool-republish.yml]
   workflow_dispatch:
     inputs:
       wave: {description: 'wave name, for example w2', required: true}
@@ -22,6 +25,7 @@ env:
   SRC_ATTEMPT: ${{ inputs.source_attempt }}
 jobs:
   publish:
+    if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions: {contents: write, actions: read}
