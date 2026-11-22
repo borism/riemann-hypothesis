@@ -1,0 +1,1 @@
+[2026-11-22T09:51:53Z] step2: start (build clone, offline bubblewrap sandbox, 4 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
