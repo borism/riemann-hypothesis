@@ -1,0 +1,10 @@
+[2026-11-22T04:41:10Z] tools: start
+[2026-11-22T04:41:19Z] tools: done
+[2026-11-22T04:41:19Z] step1: start (clean clone, Lean 4.33.1)
+[2026-11-22T04:44:01Z] step1: challenge.export sha256 bd484ac9886a96f26b1d9a7a59ebd45b7a70d102c015d4f31f9302bbdd6ab2b9 (MATCHES the sha256 in the README), 350862311 bytes
+[2026-11-22T04:44:13Z] step2: start (build clone, offline bubblewrap sandbox, cap 13 GB RAM, 4 CPUs, stop below 3 GB free disk)
+[2026-11-22T05:31:05Z] step2: rc=124; 933 .olean files in the build tree; 8.4G in .lake; 28 GB free
+[2026-11-22T05:31:05Z] step2: stopped by timeout/TERM (rc=124); resume by re-running
+[2026-11-22T05:32:22Z] step2: start (build clone, offline bubblewrap sandbox, 4 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-22T05:35:23Z] step2: rc=124; 960 .olean files in the build tree; 8.4G in .lake; 28 GB free
+[2026-11-22T05:35:23Z] step2: stopped by timeout/TERM (rc=124); resume by re-running

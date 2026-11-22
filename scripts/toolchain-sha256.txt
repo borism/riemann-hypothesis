@@ -1,0 +1,13 @@
+# sha256 of the Lean release tarballs that scripts/run-verification.sh downloads from
+# https://github.com/leanprover/lean4/releases/download/vX/lean-X-linux.tar.zst
+#
+# PROVENANCE, stated plainly: these two values were computed on the first download made from
+# a Claude cloud session on 2026-11-22. They were NOT compared with the digests GitHub shows
+# for the release assets, because this session could reach neither api.github.com nor the
+# release pages for leanprover/lean4 (only the asset download itself). So they pin "the same
+# bytes as that first download", which catches a changed or corrupted download, but they are
+# not independent evidence that those bytes are the official release. Before relying on a
+# run, compare them with the "sha256:" digest on each asset at
+# https://github.com/leanprover/lean4/releases/tag/v4.33.1 and .../v4.36.0 and edit this file.
+890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  lean-4.33.1-linux.tar.zst
+2b7ab1ed8b92d2e6abfaf41344823b510064dbc9c0260cac73eb496ab2dea6eb  lean-4.36.0-linux.tar.zst
