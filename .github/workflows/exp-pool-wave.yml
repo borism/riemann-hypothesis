@@ -27,7 +27,7 @@ env:
   WAVE_S: ${{ inputs.spot_jobs || '1' }}
   WAVE_SEED: ${{ inputs.seed || '20261122' }}
   WAVE_HORIZON: ${{ inputs.horizon_h || '8' }}
-  VM_RATE: "20"
+  VM_RATE: "25"   # measured 22-25 modules/min on the VM (progress.tsv, 2026-11-22)
 jobs:
   plan:
     runs-on: ubuntu-latest
