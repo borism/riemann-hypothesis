@@ -165,6 +165,13 @@ def region(dag, avail, index_tsv, j, cap, s, seed, horizon_h, rate, out):
             'picked': len(job), 'slice_sizes': load, 'spot': len(spot),
             'dfs_span': [min(pos[m] for m in job), max(pos[m] for m in job)] if job else None,
             'depths': [min(dag[m][0] for m in job), max(dag[m][0] for m in job)] if job else None}
+    if job:
+        ahead = min(pos[m] for m in job) - p_vm
+        now = datetime.datetime.now(datetime.timezone.utc)
+        plan['planned_utc'] = now.strftime('%Y-%m-%dT%H:%MZ')
+        plan['vm_hours_ahead'] = round(ahead / rate / 60, 1)
+        # the VM reaches this wave's first module (in its DFS order) at about this time; merge before it
+        plan['merge_by_utc'] = (now + datetime.timedelta(minutes=ahead / rate)).strftime('%Y-%m-%dT%H:%MZ')
     json.dump(plan, open(os.path.join(out, 'plan.json'), 'w'), indent=1)
     print(json.dumps(plan))
 

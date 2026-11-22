@@ -14,6 +14,8 @@ on:
       spot_jobs: {description: 'spot-check jobs S', default: '1'}
       seed: {description: 'spot sample seed', default: '20261122'}
       horizon_h: {description: 'hours of VM work to stay ahead', default: '8'}
+      chain_left: {description: 'waves left in this chain, this one included (1 = do not dispatch another)', default: '1'}
+      fails: {description: 'consecutive failed waves before this one', default: '0'}
 permissions:
   contents: read
 concurrency: {group: exp-pool-wave, cancel-in-progress: false}
@@ -27,25 +29,42 @@ env:
   WAVE_S: ${{ inputs.spot_jobs || '1' }}
   WAVE_SEED: ${{ inputs.seed || '20261122' }}
   WAVE_HORIZON: ${{ inputs.horizon_h || '8' }}
-  VM_RATE: "25"   # measured 22-25 modules/min on the VM (progress.tsv, 2026-11-22)
+  CHAIN_LEFT: ${{ inputs.chain_left || '1' }}
+  FAILS: ${{ inputs.fails || '0' }}
+  VM_RATE_DEFAULT: "25"   # used only if progress.tsv has no rate; measured 22-25 modules/min on 2026-11-22
 jobs:
   plan:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
     outputs:
+      go: ${{ steps.g.outputs.go == 'true' && steps.p.outputs.ready == 'true' }}
+      reason: ${{ steps.g.outputs.reason || steps.p.outputs.reason }}
       build: ${{ steps.p.outputs.build }}
       spot: ${{ steps.p.outputs.spot }}
     steps:
       - uses: actions/checkout@v4
         with: {path: exp, persist-credentials: false, sparse-checkout: scripts}
       - uses: actions/checkout@v4
-        with: {path: index, ref: run/step2-2026-11-22, persist-credentials: false, sparse-checkout: verification/checkpoints}
+        with: {path: index, ref: run/step2-2026-11-22, persist-credentials: false, sparse-checkout: "verification/checkpoints\nverification/runs"}
       - uses: actions/checkout@v4
         with: {path: verdicts, ref: pool/verdicts, persist-credentials: false}
+      - id: g
+        name: Guardrails (kill switch, job caps) and the VM's measured rate
+        run: |
+          set -euo pipefail
+          if [ -e verdicts/STOP ]; then echo "go=false" >> "$GITHUB_OUTPUT"; echo "reason=kill switch: STOP on pool/verdicts" >> "$GITHUB_OUTPUT"; echo "KILL SWITCH SET"; exit 0; fi
+          [ "$WAVE_J" -le 16 ] && [ "$WAVE_S" -le 4 ] && [ "$WAVE_J" -ge 1 ] && [ "$WAVE_S" -ge 1 ] || { echo "job caps: J<=16, S<=4"; exit 1; }
+          pr=index/verification/runs/20261122-step2-live/progress.tsv
+          rate=$(tail -n 3 "$pr" 2>/dev/null | awk -F'\t' '$4 ~ /^[0-9.]+$/ {s+=$4; n++} END {if (n) printf "%.1f", s/n}')
+          echo "VM_RATE=${rate:-$VM_RATE_DEFAULT}" >> "$GITHUB_ENV"
+          echo "VM rate for planning: ${rate:-$VM_RATE_DEFAULT} modules/min (mean of the last 3 progress.tsv rows)"
+          echo "go=true" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
+        if: steps.g.outputs.go == 'true'
         with: {path: build, ref: '${{ env.LIVE_COMMIT }}', persist-credentials: false, fetch-depth: 1, sparse-checkout: src}
       - id: p
+        if: steps.g.outputs.go == 'true'
         name: Available set (INDEX manifests + accepted earlier batches, all hash-checked), DAG, plan
         run: |
           set -euo pipefail
@@ -65,14 +84,17 @@ jobs:
           python3 -I exp/scripts/exp-pool-plan.py region exp-out/dag.tsv exp-out/plan/available.txt exp-out/plan/INDEX.tsv \
             "$WAVE_J" "$WAVE_CAP" "$WAVE_S" "$WAVE_SEED" "$WAVE_HORIZON" "$VM_RATE" exp-out/plan | tee exp-out/plan/summary.txt
           picked=$(python3 -c "import json;print(json.load(open('exp-out/plan/plan.json'))['picked'])")
-          [ "$picked" -gt 0 ] || { echo "NO READY MODULES"; exit 1; }
+          if [ "$picked" -eq 0 ]; then echo "NO READY MODULES"; echo "ready=false" >> "$GITHUB_OUTPUT"; echo "reason=no ready modules" >> "$GITHUB_OUTPUT"; exit 0; fi
+          echo "ready=true" >> "$GITHUB_OUTPUT"
           echo "build=$(python3 -c "print(list(range($WAVE_J)))")" >> "$GITHUB_OUTPUT"
           echo "spot=$(python3 -c "print(list(range($WAVE_S)))")" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
+        if: steps.p.outputs.ready == 'true'
         with: {name: '${{ env.WAVE }}-plan', path: exp-out/plan, retention-days: 30}
 
   build:
     needs: plan
+    if: needs.plan.outputs.go == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 90
     strategy: {fail-fast: false, max-parallel: 16, matrix: {job: '${{ fromJSON(needs.plan.outputs.build) }}'}}
@@ -120,7 +142,7 @@ jobs:
 
   spot:
     needs: [plan, build]
-    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.go == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 75
     strategy: {fail-fast: false, matrix: {s: '${{ fromJSON(needs.plan.outputs.spot) }}'}}
@@ -174,7 +196,7 @@ jobs:
 
   publish:
     needs: [plan, build, spot]
-    if: ${{ !cancelled() && needs.plan.result == 'success' }}
+    if: ${{ !cancelled() && needs.plan.result == 'success' && needs.plan.outputs.go == 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions: {contents: write, actions: read}
@@ -247,3 +269,40 @@ jobs:
           git add verdicts stats
           git -c user.name=pool-publish -c user.email= commit -q -m "pool: verdict and stats for wave $WAVE (run $GITHUB_RUN_ID)"
           git push -q origin HEAD:pool/verdicts
+          if grep -q $'\tREJECTED$' ../verdict.tsv; then echo "::error::spot-check mismatch or transport failure in wave $WAVE; the chain stops"; exit 1; fi
+
+  # Decides whether to start the next wave. Runs no Lean code. Stops the chain on: the kill switch, no ready
+  # modules, a spot-check mismatch (REJECTED), the wave cap (chain_left), or a second failed wave in a row.
+  chain:
+    needs: [plan, publish]
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions: {contents: read, actions: write}
+    steps:
+      - uses: actions/checkout@v4
+        with: {path: verdicts, ref: pool/verdicts, persist-credentials: false}
+      - name: Dispatch the next wave or stop
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PLAN: ${{ needs.plan.result }}
+          GO: ${{ needs.plan.outputs.go }}
+          REASON: ${{ needs.plan.outputs.reason }}
+          PUBLISH: ${{ needs.publish.result }}
+        run: |
+          set -euo pipefail
+          stop() { echo "CHAIN STOPPED after wave $WAVE: $*"; echo "::notice::pool chain stopped after $WAVE: $*"; exit 0; }
+          [ ! -e verdicts/STOP ] || stop "kill switch (STOP on pool/verdicts)"
+          [ "$PLAN" != success ] || [ "$GO" = true ] || stop "${REASON:-plan said stop}"
+          v="verdicts/verdicts/$WAVE.tsv"
+          if [ -f "$v" ] && grep -q $'\tREJECTED$' "$v"; then stop "spot-check mismatch in $WAVE (see $v)"; fi
+          failed=0
+          if [ "$PLAN" != success ] || [ "$PUBLISH" != success ] || [ ! -f "$v" ] || grep -q $'\tFAILED$' "$v"; then failed=1; fi
+          fails=$(( failed ? FAILS + 1 : 0 ))
+          [ "$fails" -lt 2 ] || stop "two failed waves in a row (this one: plan=$PLAN publish=$PUBLISH)"
+          [ "$CHAIN_LEFT" -gt 1 ] || stop "wave cap reached (chain_left=1); dispatch a new chain to continue"
+          n="${WAVE##*[!0-9]}"; next="${WAVE%"$n"}$((n+1))"
+          echo "dispatching $next (chain_left $((CHAIN_LEFT-1)), fails $fails)"
+          gh workflow run exp-pool-wave.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME" \
+            -f wave="$next" -f jobs="$WAVE_J" -f cap="$WAVE_CAP" -f spot_jobs="$WAVE_S" -f seed="$WAVE_SEED" \
+            -f horizon_h="$WAVE_HORIZON" -f chain_left="$((CHAIN_LEFT-1))" -f fails="$fails"

@@ -107,15 +107,21 @@ bwrap --unshare-all --die-with-parent --new-session --cap-drop ALL --clearenv \
 #  optional check; the restart check below shows the same thing.
 ```
 
-## 5. Keep pool files out of the VM's checkpoint shards (recommended)
-Skip this step and the next checkpoint push will upload the merged files again as part of a "VM" shard: duplicate storage, and INDEX would mix runner-built files into the VM's record. To keep INDEX = VM-built only, mark them as already uploaded (the pool's copy lives in the `pool-<wave>` prerelease, and its record in `pool/verdicts`):
+## 5. Keep pool files out of the VM's checkpoint shards (decided: yes)
+The HF dataset stays VM-built only; pool files stay in the `pool-<wave>` prereleases (record: `pool/verdicts`).
+`rh-checkpoint.sh push` uploads every file under `.lake/build` that is not in `state/ckpt/uploaded.list`
+(same `./lib/lean/…` / `./ir/…` path format as the merge list), so mark the merged files as uploaded, while the
+loop is still stopped:
 
 ```bash
-cp -a /home/user/rh-verify/state/ckpt/uploaded.list /home/user/rh-verify/state/ckpt/uploaded.list.before-$WAVE
-cat "$LIST" >> /home/user/rh-verify/state/ckpt/uploaded.list
+U=/home/user/rh-verify/state/ckpt/uploaded.list
+cp -a "$U" "$U.before-$WAVE"
+cat "$LIST" >> "$U"
+grep -c . "$LIST"; LC_ALL=C sort "$LIST" | LC_ALL=C comm -23 - <(LC_ALL=C sort -u "$U") | wc -l   # second number must be 0
 ```
 
-The cost: a plain `rh-checkpoint.sh pull` on a new machine would no longer restore these modules. Lake would rebuild them, which is safe but slow. The pool planner restores INDEX shards plus releases, so it is not affected.
+Effect: a plain `rh-checkpoint.sh pull` on a new machine does not restore these modules (Lake would rebuild them,
+safe but slow); the pool planner restores INDEX shards plus the releases, so it is not affected.
 
 ## 6. Restart
 The same command as the original start, appending to the same log:
