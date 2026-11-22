@@ -1,19 +1,41 @@
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/MsetOfClosed.lean:57:15: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/MsetOfClosed.lean:57:33: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
-✔ [17593/17625] Built Formalism.SharpRestriction.CuspSpanNormBounds.KFinOfLowUnitH (6.7s)
-✔ [17594/17625] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.HzOfInWb (6.3s)
-⚠ [17595/17632] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.MomSchurG (10s)
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/MomSchurG.lean:92:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-✔ [17596/17632] Built Formalism.SharpRestriction.CuspSpanNormBounds.FrobeniusCoefficientMemLp.SigmaFiniteAmplitudes.NormPsiOne (8.2s)
-✔ [17597/17632] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.LocFactorCR (8.9s)
-⚠ [17598/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CompactCellConvergence.PairMeasBad (7.2s)
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:19:2: Try this: 
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:582:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:689:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:689:4: Unused tactic linter: `simp only [← DecoSet.dia_smul_def, Pi.mulSingle_mul, mul_smul]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:761:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:761:4: Unused tactic linter: `(ext x; rfl)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:838:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:852:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:854:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -21,7 +43,35 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:20:2: Try this: 
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:889:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:890:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:889:6: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:890:6: Unused tactic linter: `(show ‖σ₀ ((1 : X.Kˣ) : X.K)‖ = 1; simp)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:950:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:961:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:963:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -29,172 +79,122 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:21:2: Try this: 
-  haveI̵
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1009:4: this tactic is never executed
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1010:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1009:4: Unused tactic linter: `(delta recDGamAll; rfl)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1010:4: Unused tactic linter: `rfl` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1021:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1021:8: Unused tactic linter: `(unfold Ranks.N; nlinarith)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1127:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1127:6: Unused tactic linter: `field_simp` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1521:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1521:4: Unused tactic linter: `exact tilR_smul hSG hPr u hpi _ d` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1907:24: This simp argument is unused:
+  LinearMap.pi_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [recPer, LinearMap.comp_apply, LinearMap.proj_apply, GSD.Ev.evAt_apply, GSD.Ev.atPt_emb, lowC_ev]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1907:44: This simp argument is unused:
+  LinearMap.comp_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.proj_apply, GSD.Ev.evAt_apply, GSD.Ev.atPt_emb, lowC_ev]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1907:66: This simp argument is unused:
+  LinearMap.proj_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.comp_apply, GSD.Ev.evAt_apply, GSD.Ev.atPt_emb, lowC_ev]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1907:88: This simp argument is unused:
+  GSD.Ev.evAt_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.comp_apply, LinearMap.proj_apply, GSD.Ev.atPt_emb, lowC_ev]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1908:6: This simp argument is unused:
+  GSD.Ev.atPt_emb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.comp_apply, LinearMap.proj_apply, GSD.Ev.evAt_apply, lowC_ev]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1908:23: This simp argument is unused:
+  lowC_ev
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [recPer, LinearMap.pi_apply, LinearMap.comp_apply, LinearMap.proj_apply, GSD.Ev.evAt_apply,
+    GSD.Ev.atPt_emb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1915:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1915:4: Unused tactic linter: `(erw [GSD.Ev.atPt_emb]; exact lowC_ev σ₀ hσ u _)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1926:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1926:4: Unused tactic linter: `(unfold Ranks.N; nlinarith)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1934:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:35:58: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:37:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:60:38: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-⚠ [17599/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.PeriodG (13s)
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/PeriodG.lean:70:0: automatically included section variable(s) unused in theorem `Formalism.L2.S.Pv.PeriodG.beInt_contOn`:
-  [CompleteSpace H]
-  [FiniteDimensional ℂ Vp]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [CompleteSpace H] [FiniteDimensional ℂ Vp] in theorem ...
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:1946:63: Variable name `hT` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [17600/17633] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ChainRuleSecondOrder.HasDerivAtDOf (14s)
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:20:38: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2085:4: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:20:38: Unused tactic linter: `norm_num` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:42:15: This simp argument is unused:
-  Fin.val_mk
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [sgI_sgI, sgI_eq_iff, eq_self_iff_true, if_true]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:42:48: This simp argument is unused:
-  eq_self_iff_true
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [Fin.val_mk, sgI_sgI, sgI_eq_iff, if_true]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:45:17: This simp argument is unused:
-  eq_self_iff_true
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [if_true]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✔ [17601/17633] Built Formalism.SharpRestriction.CuspSpanNormBounds.FrobeniusCoefficientMemLp.SigmaFiniteAmplitudes.MeasurableMulInvInv (13s)
-✔ [17602/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.MomTie (21s)
-✔ [17603/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CompactCellConvergence.OrbitIdentity (6.3s)
-⚠ [17604/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.LocalL2AllOfDictionary (9.9s)
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:89:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:110:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:114:6: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:154:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:110:15: This simp argument is unused:
-  Set.mem_setOf_eq
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [not_not] at hy
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:154:17: This simp argument is unused:
-  Set.mem_setOf_eq
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [not_not] at hs
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:248:120: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-✔ [17605/17633] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.DifferentialAction.DifferentialActionLemma.DsigWSmul (5.5s)
-✔ [17606/17636] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ChainRuleSecondOrder.SmoothClassInFiniteOrder (10s)
-✔ [17607/17636] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CompactCellConvergence.FlagStabClosed (8.8s)
-⚠ [17608/17636] Built Formalism.SharpRestriction.CuspSpanNormBounds.FrobeniusCoefficientMemLp.SigmaFiniteAmplitudes.NormPiLeOne (12s)
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/FrobeniusCoefficientMemLp/SigmaFiniteAmplitudes/NormPiLeOne.lean:64:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.S.Pv.AmpDDPf.aVec_eq`:
-  [CompleteSpace H]
-  [FiniteDimensional ℂ Wp]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [CompleteSpace H] [FiniteDimensional ℂ Wp] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/FrobeniusCoefficientMemLp/SigmaFiniteAmplitudes/NormPiLeOne.lean:70:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.S.Pv.AmpDDPf.norm_pi_le_one`:
-  [FiniteDimensional ℂ Wp]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [FiniteDimensional ℂ Wp] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/FrobeniusCoefficientMemLp/SigmaFiniteAmplitudes/NormPiLeOne.lean:77:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.S.Pv.AmpDDPf.aesm_beInt`:
-  [CompleteSpace H]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [CompleteSpace H] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [17609/17636] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.AmpNZTie (17s)
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:37:4: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2086:4: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:38:4: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2087:4: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:37:4: Unused tactic linter: `field_simp` does nothing
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2085:4: Unused tactic linter: `exact recDGamAll_prime_le (Λ := Λ) hX G (twMink_holds hX G) hp h` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:38:4: Unused tactic linter: `(field_simp; ring)` does nothing
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2086:4: Unused tactic linter: `exact
+  prime_le_of_dvd_minkM hp (h.trans (recDGamAll_dvd_minkM hX G (twMink_holds hX G)))` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:240:56: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:342:56: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:378:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:379:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:378:6: Unused tactic linter: `rw [← integral_complex_ofReal]` does nothing
+warning: src/Formalism/LocalToGlobal/Columns/Record.lean:2087:4: Unused tactic linter: `(rw [recDGamAll_eq hX G] at h;
+  exact prime_le_of_dvd_minkM hp (h.trans (dGamAut_dvd_minkM hX)))` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:379:6: Unused tactic linter: `rw [integral_ofReal (𝕜 := ℂ)]` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:492:35: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:489:39: This simp argument is unused:
-  Matrix.mul_smul
-
-Hint: Omit it from the simp argument list.
-  [apply] simp [Matrix.smul_mul]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:489:56: This simp argument is unused:
-  Matrix.smul_mul
-
-Hint: Omit it from the simp argument list.
-  [apply] simp [Matrix.mul_smul]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:470:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:470:6: Unused tactic linter: `(convert h1 using 3 <;> ring)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [17610/17639] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CoefDecayA (6.9s)
-✔ [17611/17639] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.LocFactorAll (8.3s)
-✔ [17612/17639] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.JacConst (5.3s)
-✔ [17613/17640] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CompactCellConvergence.ClosedExistsOfCompact (5.7s)
