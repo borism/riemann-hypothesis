@@ -20,6 +20,9 @@ EXPORTER_URL="https://github.com/leanprover/lean4export.git"
 EXPORTER_TAG="v4.33.0"
 EXPORTER_COMMIT="15f6055e299ad5b89345e533cc2192f4cc00f659"
 EXPECTED_CHALLENGE_SHA="bd484ac9886a96f26b1d9a7a59ebd45b7a70d102c015d4f31f9302bbdd6ab2b9"  # README
+# sha256 of the release tarballs, pinned in scripts/toolchain-sha256.txt (see its header
+# for how they were obtained and what that does and does not establish).
+TOOLCHAIN_PINS="$REPO/scripts/toolchain-sha256.txt"
 LEAN_RELEASE_BASE="https://github.com/leanprover/lean4/releases/download"
 MATHLIB_CACHE_GET_URL="${MATHLIB_CACHE_GET_URL:-https://cache.mathlib.org/mathlib4}"
 
@@ -78,12 +81,15 @@ EOF
 
 # ---------------------------------------------------------------------- helpers
 ts()  { date -u +%Y-%m-%dT%H:%M:%SZ; }
-log() { mkdir -p "$LOGS"; printf '[%s] %s\n' "$(ts)" "$*" | tee -a "$LOGS/run.log" >&2; }
+log() {
+  if [ "$DRY_RUN" = 1 ]; then printf '[%s] %s\n' "$(ts)" "$*" >&2; return 0; fi
+  mkdir -p "$LOGS"; printf '[%s] %s\n' "$(ts)" "$*" | tee -a "$LOGS/run.log" >&2
+}
 die() { log "ERROR: $*"; exit 70; }
-run() { if [ "$DRY_RUN" = 1 ]; then printf 'DRY-RUN: %q ' "$@" >&2; echo >&2; else "$@"; fi; }
+run() { if [ "$DRY_RUN" = 1 ]; then { printf 'DRY-RUN:'; printf ' %q' "$@"; echo; } >&2; else "$@"; fi; }
 done_p()  { [ -f "$STATE/$1.done" ]; }
 mark_done() { local n="$1"; shift; mkdir -p "$STATE"; { echo "finished: $(ts)"; printf '%s\n' "$@"; } > "$STATE/$n.done"; }
-free_gb() { df -BG --output=avail "$WORK" | tail -1 | tr -dc 0-9; }
+free_gb() { local d="$WORK"; while [ ! -d "$d" ]; do d="$(dirname "$d")"; done; df -BG --output=avail "$d" | tail -1 | tr -dc 0-9; }
 mem_total_gb() { awk '/MemTotal/ {printf "%d", $2/1048576}' /proc/meminfo; }
 mem_cap_gb() { if [ -n "$MEM_GB" ]; then echo "$MEM_GB"; else echo $(( $(mem_total_gb) - 2 )); fi; }
 sha() { sha256sum "$1" | cut -d' ' -f1; }
@@ -93,22 +99,21 @@ pin_env() {   # variables the README sets, with a deliberately small environment
 }
 
 # --------------------------------------------------------------------- preflight
-preflight() {
-  local free mem cores bw ok=1
-  mkdir -p "$WORK"
+preflight() {   # preflight [STEP] : with STEP, only that step's verdict decides the exit status
+  local only="${1:-}" free mem cores bw ok=1 v
   free=$(free_gb); mem=$(mem_total_gb); cores=$(nproc)
   command -v bwrap >/dev/null && bw=yes || bw=no
-  echo "Machine: ${cores} cores, ${mem} GB RAM, swap $(awk '/SwapTotal/ {printf "%d", $2/1048576}' /proc/meminfo) GB, ${free} GB free in $WORK, bwrap: $bw"
-  printf '%-7s %-34s %s\n' STEP NEEDS VERDICT
-  fit() { # name needs verdict
-    printf '%-7s %-34s %s\n' "$1" "$2" "$3"; }
-  fit step1 "~9 GB disk, <4 GB RAM" "fits"
-  if [ "$free" -ge "$NEED_DISK_STEP2_GB" ]; then fit step2 "~${NEED_DISK_STEP2_GB}+ GB disk; hours on 40+ cores" "disk ok (time: see RUN-ON-CLOUD.md)"
-  else fit step2 "~${NEED_DISK_STEP2_GB}+ GB disk; hours on 40+ cores" "DOES NOT FIT: ${free} GB free"; ok=0; fi
-  if [ "$free" -ge "$NEED_DISK_STEP3_GB" ] && [ "$mem" -ge "$NEED_MEM_STEP3_GB" ]; then fit step3 "${NEED_DISK_STEP3_GB} GB disk, ${NEED_MEM_STEP3_GB} GB RAM" "fits"
-  else fit step3 "${NEED_DISK_STEP3_GB} GB disk, ${NEED_MEM_STEP3_GB} GB RAM" "DOES NOT FIT: ${free} GB free, ${mem} GB RAM"; ok=0; fi
-  if [ "$mem" -ge "$NEED_MEM_STEP4_GB" ]; then fit step4 "~${NEED_MEM_STEP4_GB} GB RAM per kernel" "fits"
-  else fit step4 "~${NEED_MEM_STEP4_GB} GB RAM per kernel" "DOES NOT FIT: ${mem} GB RAM"; ok=0; fi
+  echo "Machine: ${cores} cores, ${mem} GB RAM, swap $(awk '/SwapTotal/ {printf "%d", $2/1048576}' /proc/meminfo) GB, ${free} GB free near $WORK, bwrap: $bw"
+  printf '%-7s %-40s %s\n' STEP NEEDS VERDICT
+  chk() { # step needs verdict(0=fits) text
+    printf '%-7s %-40s %s\n' "$1" "$2" "$4"; [ "$3" = 0 ] || { [ -n "$only" ] && [ "$only" != "$1" ] || ok=0; }; }
+  chk step1 "~9 GB disk, <4 GB RAM" 0 fits
+  if [ "$free" -ge "$NEED_DISK_STEP2_GB" ]; then chk step2 "~${NEED_DISK_STEP2_GB}+ GB disk; hours on 40+ cores" 0 "disk ok (time: see verification/RUN-ON-CLOUD.md)"
+  else chk step2 "~${NEED_DISK_STEP2_GB}+ GB disk; hours on 40+ cores" 1 "DOES NOT FIT: ${free} GB free"; fi
+  if [ "$free" -ge "$NEED_DISK_STEP3_GB" ] && [ "$mem" -ge "$NEED_MEM_STEP3_GB" ]; then chk step3 "${NEED_DISK_STEP3_GB} GB disk, ${NEED_MEM_STEP3_GB} GB RAM" 0 fits
+  else chk step3 "${NEED_DISK_STEP3_GB} GB disk, ${NEED_MEM_STEP3_GB} GB RAM" 1 "DOES NOT FIT: ${free} GB free, ${mem} GB RAM"; fi
+  if [ "$mem" -ge "$NEED_MEM_STEP4_GB" ]; then chk step4 "~${NEED_MEM_STEP4_GB} GB RAM per kernel" 0 fits
+  else chk step4 "~${NEED_MEM_STEP4_GB} GB RAM per kernel" 1 "DOES NOT FIT: ${mem} GB RAM"; fi
   echo "(Needs are the notes' figures for the original 175,187-module build, not measurements.)"
   [ "$bw" = yes ] || { echo "bubblewrap missing: apt-get install -y bubblewrap"; ok=0; }
   [ "$ok" = 1 ]
@@ -123,8 +128,14 @@ cmd_tools() {
   run mkdir -p "$DL" "$TOOLS" "$RES"
   for v in "$LEAN_BUILD_VER" "$LEAN_JUDGE_VER"; do
     local t="$DL/lean-$v-linux.tar.zst"
+    [ -s "$t" ] || [ -x "$TOOLS/v$v/bin/lean" ] || run curl -fsSL --retry 4 --retry-delay 5 -o "$t" "$LEAN_RELEASE_BASE/v$v/lean-$v-linux.tar.zst"
+    if [ -s "$t" ] && [ "$DRY_RUN" != 1 ]; then
+      local want got; want="$(awk -v n="lean-$v-linux.tar.zst" '$2==n {print $1}' "$TOOLCHAIN_PINS")"
+      [ -n "$want" ] || die "no pinned sha256 for lean-$v-linux.tar.zst in $TOOLCHAIN_PINS"
+      got="$(sha "$t")"
+      [ "$got" = "$want" ] || { rm -rf "$TOOLS/v$v"; die "sha256 mismatch for $t: got $got, pinned $want"; }
+    fi
     if [ ! -x "$TOOLS/v$v/bin/lean" ]; then
-      [ -s "$t" ] || run curl -fsSL --retry 4 --retry-delay 5 -o "$t" "$LEAN_RELEASE_BASE/v$v/lean-$v-linux.tar.zst"
       run mkdir -p "$TOOLS/v$v"
       run tar --zstd -xf "$t" -C "$TOOLS/v$v" --strip-components=1
     fi
@@ -193,9 +204,15 @@ cg_enter() {  # cg_enter NAME : move the calling shell into a capped cgroup
   local cg="/sys/fs/cgroup/memory/rhverify-$1" cap=$(( $(mem_cap_gb) * 1073741824 ))
   if [ -w /sys/fs/cgroup/memory ] && mkdir -p "$cg" 2>/dev/null; then
     echo "$cap" > "$cg/memory.limit_in_bytes" 2>/dev/null && echo $BASHPID > "$cg/cgroup.procs" 2>/dev/null \
-      && { echo "cgroup memory cap $(mem_cap_gb) GB" >&2; return 0; }
+      && return 0
   fi
   echo "no cgroup memory cap available; relying on the MemAvailable watchdog" >&2
+}
+
+cgroup_mem_ok() { [ -w /sys/fs/cgroup/memory ] && [ -w /sys/fs/cgroup/memory/cgroup.procs ]; }
+guard_desc() {   # what actually limits memory for a sandboxed step
+  if cgroup_mem_ok; then echo "memory: cgroup v1 cap $(mem_cap_gb) GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog"
+  else echo "memory: NO cgroup cap available; ONLY a 60 s MemAvailable<512 MB watchdog guards this machine (a fast allocation can still trigger the kernel OOM killer)"; fi
 }
 
 # bubblewrap with no network, no capabilities, cleared environment (so the proxy
@@ -246,7 +263,7 @@ cmd_step2() {
   done_p step2 && { log "step2: already done"; return 0; }
   done_p step1 || die "step2 requires step1 (challenge must be exported before any submission code is compiled)"
   preflight_gate step2
-  log "step2: start (build clone, offline bubblewrap sandbox, cap $(mem_cap_gb) GB RAM, $CPUS CPUs, stop below ${MIN_FREE_GB} GB free disk)"
+  log "step2: start (build clone, offline bubblewrap sandbox, $CPUS CPUs, stop below ${MIN_FREE_GB} GB free disk; $(guard_desc))"
   [ "$DRY_RUN" = 1 ] && { log "DRY-RUN: would clone, mathlib/cache get, then bwrap lake build Main"; return 0; }
   pin_env; export PATH="$TC_BUILD/bin:$PATH"
   if [ ! -f "$STATE/step2.cloned" ]; then
@@ -257,6 +274,7 @@ cmd_step2() {
   # Lake keeps a .setup.json per module listing its whole import closure (~6 MB each,
   # ~1 TB over 175k modules). It is not needed once the module is built; delete as the notes advise.
   local inner='
+    mkdir -p "$HOME"
     ( while sleep 120; do
         find .lake/build/ir -name "*.setup.json" -print0 2>/dev/null | while IFS= read -r -d "" f; do
           t=".lake/build/lib/lean/${f#.lake/build/ir/}"
@@ -297,14 +315,14 @@ cmd_step3() {
   done_p step3 && { log "step3: already done"; return 0; }
   done_p step2 || die "step3 requires step2 (a completed build of Main)"
   preflight_gate step3
-  log "step3: start (export inside offline sandbox; build tree read-only; cap $(mem_cap_gb) GB RAM)"
+  log "step3: start (export inside offline sandbox; build tree read-only; $(guard_desc))"
   [ "$DRY_RUN" = 1 ] && { log "DRY-RUN: would bwrap lake env lean4export Main"; return 0; }
   pin_env; mkdir -p "$OUTDIR"; rm -f "$OUTDIR/solution.export" "$STATE/step3.stopped"
   # lean4export is rebuilt after the build (the notes' rule): the copy from `tools` was never
   # visible to the build sandbox, which could only write to $BUILD.
   local targets; targets="$(cat "$CLEAN/export-targets.txt")"   # from the clean clone
   SBX_CHDIR="$BUILD" sandbox_cmd "$BUILD" "$EXPORTER" -- "$OUTDIR" -- "$TC_BUILD" "TARGETS=$targets" "EXPORTER_BIN=$EXPORTER/.lake/build/bin" -- \
-    bash -c 'PATH="$EXPORTER_BIN:$PATH"; lake env lean4export Main -- $TARGETS > '"$OUTDIR"'/solution.export'
+    bash -c 'mkdir -p "$HOME"; PATH="$EXPORTER_BIN:$PATH"; lake env lean4export Main -- $TARGETS > '"$OUTDIR"'/solution.export'
   set +e
   (
     cg_enter step3
@@ -327,9 +345,10 @@ cmd_step3() {
 # ------------------------------------------------------------------------- step4
 cmd_step4() {
   done_p step4 && { log "step4: already done"; return 0; }
+  rm -f "$STATE/step4.failed"
   done_p step1 && done_p step3 || die "step4 requires step1 and step3 (challenge.export and solution.export)"
   preflight_gate step4
-  log "step4: start (Lean $LEAN_JUDGE_VER lake comparator, from an empty directory)"
+  log "step4: start (Lean $LEAN_JUDGE_VER lake comparator, from an empty directory; $(guard_desc))"
   [ "$DRY_RUN" = 1 ] && { log "DRY-RUN: would run lake comparator"; return 0; }
   rm -rf "$JUDGE_DIR"; mkdir -p "$JUDGE_DIR"
   # The judge's config and the challenge come from the clean clone, not from the build clone.
@@ -344,16 +363,20 @@ cmd_step4() {
   echo "$rc" > "$RES/comparator.exit"
   log "step4: lake comparator exit code $rc"
   tail -n 5 "$RES/comparator.log" | sed 's/^/    /' >&2
-  mark_done step4 "comparator exit: $rc"
+  if [ "$rc" = 0 ]; then mark_done step4 "comparator exit: 0"; rm -f "$STATE/step4.failed"
+  else
+    { echo "finished: $(ts)"; echo "comparator exit: $rc (REJECTED or FAILED; see results/comparator.log)"; } > "$STATE/step4.failed"
+    log "step4: Comparator did NOT accept (exit $rc). This is a failed or rejected run, not a pass."
+  fi
   return "$rc"
 }
 
 # ----------------------------------------------------------------------- gating
 preflight_gate() {
   [ "$ATTEMPT_ANYWAY" = 1 ] && return 0
-  local out; if out=$(preflight 2>&1); then return 0; fi
+  local out; if out=$(preflight "$1" 2>&1); then return 0; fi
   echo "$out" >&2
-  log "$1: this machine does not meet the estimated needs (above). Refusing to start; use --attempt-anyway to measure where it stops."
+  log "$1: this machine does not meet that step's estimated needs (above). Refusing to start; use --attempt-anyway to measure where it stops."
   exit 75
 }
 
@@ -367,7 +390,9 @@ cmd_report() {
     echo "Machine: $(nproc) cores, $(mem_total_gb) GB RAM, $(free_gb) GB free disk."
     echo; echo "## Steps (a step without a checkpoint did NOT complete)"
     for s in tools step1 step2 step3 step4; do
-      if done_p $s; then echo "- $s: DONE  ($(tr '\n' ' ' < "$STATE/$s.done"))"; else echo "- $s: NOT COMPLETED"; fi
+      if done_p $s; then echo "- $s: DONE  ($(tr '\n' ' ' < "$STATE/$s.done"))"
+      elif [ -f "$STATE/$s.failed" ]; then echo "- $s: REJECTED/FAILED  ($(tr '\n' ' ' < "$STATE/$s.failed"))"
+      else echo "- $s: NOT COMPLETED"; fi
     done
     [ -f "$STATE/step2.stopped" ] && echo "- step2 last stopped by: $(cat "$STATE/step2.stopped")"
     echo; echo "## Hashes"
@@ -404,7 +429,9 @@ cmd_checkpoint() {
 
 cmd_status() {
   for s in tools step1 step2 step3 step4; do
-    if done_p $s; then echo "$s: DONE ($(sed -n 1p "$STATE/$s.done"))"; else echo "$s: not completed"; fi
+    if done_p $s; then echo "$s: DONE ($(sed -n 1p "$STATE/$s.done"))"
+    elif [ -f "$STATE/$s.failed" ]; then echo "$s: REJECTED/FAILED ($(sed -n 2p "$STATE/$s.failed"))"
+    else echo "$s: not completed"; fi
   done
   [ -f "$STATE/step2.stopped" ] && echo "step2 stopped by: $(cat "$STATE/step2.stopped")"
   echo "free disk: $(free_gb) GB"
@@ -446,7 +473,7 @@ case "$CMD" in
   status) cmd_status ;;
   report) cmd_report ;;
   checkpoint) cmd_checkpoint ;;
-  reset) [ -n "$ARG" ] || { usage >&2; exit 2; }; rm -f "$STATE/$ARG.done" "$STATE/$ARG.stopped"; echo "reset $ARG" ;;
+  reset) [ -n "$ARG" ] || { usage >&2; exit 2; }; rm -f "$STATE/$ARG.done" "$STATE/$ARG.stopped" "$STATE/$ARG.failed"; echo "reset $ARG" ;;
   "") usage >&2; exit 2 ;;
   *) echo "unknown command $CMD" >&2; usage >&2; exit 2 ;;
 esac
