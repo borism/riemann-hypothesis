@@ -10,6 +10,15 @@ usage:
       For the deep-module test: OUT_DIR/redo.txt = the 5 deepest available modules plus the 3 with the
       largest import closure (to delete and rebuild, byte-comparable with the VM); OUT_DIR/deep.txt =
       up to 2 modules of depth >= 80 whose closure has the fewest unbuilt modules (union <= 900).
+  exp-pool-plan.py region DAG_TSV AVAILABLE_TXT INDEX_TSV J CAP S SEED HORIZON_H RATE OUT_DIR
+      The pool planner used for real waves. The VM builds in DFS post-order from Main (checked against
+      its log: 6,218 modules built, all within the first 6,252 positions of that order). Its position is
+      estimated from INDEX (highest DFS position of a checkpointed module + RATE/min since the last
+      shard), and the pool only takes modules at least HORIZON_H hours of VM work beyond it, so the VM
+      cannot reach them before the next merge. Modules are taken in DFS order and assigned greedily so
+      that every job's set is closed (each unbuilt import of a module is in the same job): no module is
+      built twice. CAP modules per job, J jobs; S spot-check lists (about 5%, at least one per job,
+      always the deepest module of each job).
 DAG_TSV comes from exp-dag.py: module, depth, project imports.
 """
 import hashlib, json, os, random, sys
@@ -87,10 +96,85 @@ def deep(dag, avail, out):
         print(f"deep {m} depth={dag[m][0]} closure={len(c)} unbuilt_in_closure={len(c - avail)}")
     print(f"deep targets: {len(chosen)}, unbuilt modules to build first: {len(union)}; candidates with <=900 unbuilt: {len(cand)}")
 
+def dfs_order(dag):
+    order, seen, st = [], set(), [('Main', 0)]
+    while st:
+        n, k = st.pop()
+        if k == 0:
+            if n in seen:
+                continue
+            seen.add(n)
+        ims = dag[n][1]
+        if k < len(ims):
+            st.append((n, k + 1))
+            if ims[k] not in seen:
+                st.append((ims[k], 0))
+        else:
+            order.append(n)
+    return order
+
+def region(dag, avail, index_tsv, j, cap, s, seed, horizon_h, rate, out):
+    import datetime
+    order = dfs_order(dag); pos = {m: i for i, m in enumerate(order)}
+    rows = [l.rstrip('\n').split('\t') for l in open(index_tsv)][1:]
+    last = datetime.datetime.strptime(rows[-1][1], '%Y%m%dT%H%M%SZ').replace(tzinfo=datetime.timezone.utc)
+    lag_min = (datetime.datetime.now(datetime.timezone.utc) - last).total_seconds() / 60
+    idx_mods = set(x.strip() for x in open(os.path.join(out, 'index-modules.txt')))
+    p_idx = max(pos[m] for m in idx_mods if m in pos)
+    p_vm = int(p_idx + rate * lag_min)
+    p0 = int(p_vm + rate * 60 * horizon_h)
+    job, load = {}, [0] * j
+    for m in order[p0:]:
+        if m in avail:
+            continue
+        js, bad = set(), False
+        for i in dag[m][1]:
+            if i in avail:
+                continue
+            if i not in job:
+                bad = True; break
+            js.add(job[i])
+        if bad or len(js) > 1:
+            continue
+        k = js.pop() if js else min(range(j), key=lambda x: load[x])
+        if load[k] >= cap:
+            continue
+        job[m] = k; load[k] += 1
+        if sum(load) >= j * cap:
+            break
+    slices = [[] for _ in range(j)]
+    for m, k in job.items():
+        slices[k].append(m)
+    rng = random.Random(seed)
+    spot = []
+    for sl in slices:
+        if not sl:
+            continue
+        deep = max(sl, key=lambda m: (dag[m][0], h(m)))
+        rest = sorted(set(sl) - {deep})
+        spot += [deep] + rng.sample(rest, max(0, min(len(rest), round(0.05 * len(sl)) - 1)))
+    os.makedirs(out, exist_ok=True)
+    for i, sl in enumerate(slices):
+        open(os.path.join(out, f'slice-{i}.txt'), 'w').write(''.join(x + '\n' for x in sorted(sl)))
+    spot.sort(key=h)
+    for i in range(s):
+        open(os.path.join(out, f'spot-{i}.txt'), 'w').write(''.join(x + '\n' for x in sorted(spot[i::s])))
+    open(os.path.join(out, 'spot.txt'), 'w').write(''.join(x + '\n' for x in sorted(spot)))
+    plan = {'dfs_pos_index_max': p_idx, 'index_lag_min': round(lag_min), 'vm_pos_est': p_vm, 'region_start': p0,
+            'horizon_h': horizon_h, 'rate_per_min': rate, 'jobs': j, 'cap': cap, 'spot_jobs': s, 'seed': seed,
+            'picked': len(job), 'slice_sizes': load, 'spot': len(spot),
+            'dfs_span': [min(pos[m] for m in job), max(pos[m] for m in job)] if job else None,
+            'depths': [min(dag[m][0] for m in job), max(dag[m][0] for m in job)] if job else None}
+    json.dump(plan, open(os.path.join(out, 'plan.json'), 'w'), indent=1)
+    print(json.dumps(plan))
+
 if __name__ == '__main__':
     mode = sys.argv[1]
     dag, avail = load(sys.argv[2], sys.argv[3])
     if mode == 'wave':
         wave(dag, avail, int(sys.argv[4]), int(sys.argv[5]), int(sys.argv[6]), sys.argv[7])
+    elif mode == 'region':
+        a = sys.argv
+        region(dag, avail, a[4], int(a[5]), int(a[6]), int(a[7]), int(a[8]), float(a[9]), float(a[10]), a[11])
     elif mode == 'deep':
         deep(dag, avail, sys.argv[4])

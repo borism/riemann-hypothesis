@@ -10,6 +10,9 @@
 #   exp-pool.sh redo LIST          delete outputs of LIST (they must be restored), rebuild, compare with VM
 #   exp-pool.sh importall          one `lean` process importing Mathlib + every restored module (RAM probe)
 #   exp-pool.sh resources          summarise the sampler
+#   exp-pool.sh prev VERDICT_DIR   accepted batches of earlier waves (verdicts from git, manifests from the
+#                                  pool-<wave> prereleases, sha256-checked) -> $OUT/prev-batches.tsv, prev-modules.txt
+#   exp-pool.sh restore-prev TSV   download, verify and unpack the batches listed by `prev`
 set -euo pipefail
 WORK=/home/user/rh-verify; BUILD="$WORK/build"; TC="$WORK/toolchains/v4.33.1"
 OUT="${EXP_OUT:?}"; HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -107,7 +110,40 @@ cmd_importall() {
   say "importall: one lean process importing Mathlib + $(wc -l < "$OUT/restored-modules.txt") project modules ($olean_mb MB of project .olean): rc=$rc, max RSS $(( $(awk -F': ' '/Maximum resident/ {print $2}' "$OUT/importall.log") / 1024 )) MB, wall $(awk -F': ' '/Elapsed/ {print $2}' "$OUT/importall.log")"
 }
 
+REL="https://github.com/${GITHUB_REPOSITORY:-borism/riemann-hypothesis}/releases/download"
+cmd_prev() {  # prev VERDICT_DIR
+  local vd="$1"; : > "$OUT/prev-batches.tsv"; : > "$OUT/prev-modules.txt"
+  [ -d "$vd" ] || { echo "no verdict dir"; return 0; }
+  local f
+  for f in "$vd"/*.tsv; do
+    [ -e "$f" ] || continue
+    awk -F'\t' '$1!="wave" && $8=="accepted"' "$f" | while IFS=$'\t' read -r wave job files tsha msha sm ss v; do
+      local m="$OUT/prev-$wave-$job-manifest.tsv"
+      curl -fsSL --retry 4 -o "$m" "$REL/pool-$wave/$wave-job-$job-manifest.tsv" || { echo "prev: cannot fetch manifest of $wave job $job"; exit 1; }
+      [ "$(sha256sum "$m" | cut -d' ' -f1)" = "$msha" ] || { echo "prev: manifest of $wave job $job differs from the git verdict"; exit 1; }
+      printf '%s\t%s\t%s\t%s\n' "$wave" "$job" "$tsha" "$m" >> "$OUT/prev-batches.tsv"
+      grep -P '\.olean\t' "$m" | cut -f1 | sed 's|^\./lib/lean/||; s|\.olean$||; s|/|.|g' >> "$OUT/prev-modules.txt"
+    done
+  done
+  LC_ALL=C sort -u -o "$OUT/prev-modules.txt" "$OUT/prev-modules.txt"
+  say "prev: $(wc -l < "$OUT/prev-batches.tsv") accepted batches from earlier waves, $(wc -l < "$OUT/prev-modules.txt") modules"
+}
+cmd_restore_prev() {  # restore-prev TSV (from `prev`, copied into the plan artifact)
+  local t0=$SECONDS n=0
+  while IFS=$'\t' read -r wave job tsha m; do
+    local tar="$WORK/dl/$wave-job-$job.tar.zst" man; man="$(dirname "$1")/$(basename "$m")"
+    curl -fsSL --retry 4 -o "$tar" "$REL/pool-$wave/$wave-job-$job.tar.zst"
+    [ "$(sha256sum "$tar" | cut -d' ' -f1)" = "$tsha" ] || { say "restore-prev: $wave job $job tar differs from the git verdict (refusing)"; exit 1; }
+    zstd -dc "$tar" | tar -C "$BUILD/.lake/build" -xf -
+    ( cd "$BUILD/.lake/build" && awk -F'\t' '{print $3 "  " $1}' "$man" | sha256sum -c --quiet - ) || { say "restore-prev: $wave job $job unpacked files differ"; exit 1; }
+    cat "$man" >> "$OUT/restored-manifest.tsv"; rm -f "$tar"; n=$((n+1))
+  done < "$1"
+  grep -P '\.olean\t' "$OUT/restored-manifest.tsv" | cut -f1 | sed 's|^\./lib/lean/||; s|\.olean$||; s|/|.|g' | LC_ALL=C sort -u > "$OUT/restored-modules.txt"
+  say "restore-prev: $n batches in $((SECONDS-t0)) s; now $(wc -l < "$OUT/restored-modules.txt") modules available; disk $(df -BG --output=avail / | tail -1) free"
+}
+
 case "${1:-}" in
+  prev) cmd_prev "$2" ;; restore-prev) cmd_restore_prev "$2" ;;
   sampler) cmd_sampler ;; resources) cmd_resources ;; dag) cmd_dag ;;
   build) cmd_build "$2" "$3" ;; pack) cmd_pack "$2" "$3" ;; compare) shift; cmd_compare "$@" ;;
   redo) cmd_redo "$2" ;; importall) cmd_importall ;;

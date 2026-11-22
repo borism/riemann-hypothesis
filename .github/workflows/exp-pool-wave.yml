@@ -1,11 +1,22 @@
-# Experiment for issue #9 (task C): one small wave of the runner pool, end to end. No secrets.
-#   plan  -> J build jobs (each restores all INDEX shards, builds its slice, uploads tar+manifest)
-#         -> spot-check job (separate runner: verifies transport, rebuilds a seeded ~5% sample, compares)
+# Experiment for issue #9: one wave of the runner pool, end to end. No secrets.
+#   plan      -> picks modules the VM will not reach before the next merge (DFS-order region), closed per job
+#   build x J -> each restores INDEX shards + accepted earlier batches, builds its slice, uploads tar+manifest
+#   spot  x S -> separate runners: unpack the wave's batches, rebuild a seeded ~5% sample, compare 7 file types
+#   publish   -> (no Lean code; the only job with write access) per-job verdict; accepted batches go to the
+#                prerelease pool-<wave>; verdict + stats are committed to the pool/verdicts branch
 name: exp-pool-wave
 on:
   push:
     branches: [exp/gh-runners-restore-test]
     paths: [.github/workflows/exp-pool-wave.yml]
+  workflow_dispatch:
+    inputs:
+      wave: {description: 'wave name (unique)', required: true}
+      jobs: {description: 'build jobs J', default: '3'}
+      cap: {description: 'modules per build job', default: '20'}
+      spot_jobs: {description: 'spot-check jobs S', default: '1'}
+      seed: {description: 'spot sample seed', default: '20261122'}
+      horizon_h: {description: 'hours of VM work to stay ahead', default: '8'}
 permissions:
   contents: read
 concurrency: {group: exp-pool-wave, cancel-in-progress: false}
@@ -13,38 +24,53 @@ env:
   LC_ALL: C
   LIVE_COMMIT: f073285e399c5587c6a6799c0da56451b30c1836
   EXP_SHARDS: all
-  WAVE: pilot1
-  WAVE_N: "60"
-  WAVE_J: "3"
-  WAVE_SEED: "20261122"
+  WAVE: ${{ inputs.wave || 'pilot2' }}
+  WAVE_J: ${{ inputs.jobs || '3' }}
+  WAVE_CAP: ${{ inputs.cap || '20' }}
+  WAVE_S: ${{ inputs.spot_jobs || '1' }}
+  WAVE_SEED: ${{ inputs.seed || '20261122' }}
+  WAVE_HORIZON: ${{ inputs.horizon_h || '8' }}
+  VM_RATE: "20"
 jobs:
   plan:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
-    outputs: {matrix: '${{ steps.p.outputs.matrix }}'}
+    outputs:
+      build: ${{ steps.p.outputs.build }}
+      spot: ${{ steps.p.outputs.spot }}
     steps:
       - uses: actions/checkout@v4
         with: {path: exp, persist-credentials: false, sparse-checkout: scripts}
       - uses: actions/checkout@v4
         with: {path: index, ref: run/step2-2026-11-22, persist-credentials: false, sparse-checkout: verification/checkpoints}
       - uses: actions/checkout@v4
+        with: {path: verdicts, ref: pool/verdicts, persist-credentials: false}
+      - uses: actions/checkout@v4
         with: {path: build, ref: '${{ env.LIVE_COMMIT }}', persist-credentials: false, fetch-depth: 1, sparse-checkout: src}
       - id: p
-        name: Available set from the verified manifests, DAG, slices
+        name: Available set (INDEX manifests + accepted earlier batches, all hash-checked), DAG, plan
         run: |
           set -euo pipefail
+          test ! -e "verdicts/verdicts/$WAVE.tsv" || { echo "wave $WAVE already has a verdict"; exit 1; }
           mkdir -p exp-out/plan && cp index/verification/checkpoints/step2/INDEX.tsv exp-out/plan/INDEX.tsv
-          echo "INDEX commit $(git -C index rev-parse HEAD)" | tee exp-out/plan/index-commit.txt
+          echo "INDEX $(git -C index rev-parse HEAD), verdicts $(git -C verdicts rev-parse HEAD)" | tee exp-out/plan/commits.txt
           tail -n +2 exp-out/plan/INDEX.tsv | while IFS=$'\t' read -r id utc f r ssha msha bp dp; do
             curl -fsSL --retry 4 -o m.tsv "https://huggingface.co/datasets/bmaryshev/riemann-hypothesis-build-checkpoints/resolve/main/step2/step2-manifest-$id.tsv"
             [ "$(sha256sum m.tsv | cut -d' ' -f1)" = "$msha" ] || { echo "manifest $id differs from INDEX"; exit 1; }
             grep -P '\.olean\t' m.tsv | cut -f1 | sed 's|^\./lib/lean/||; s|\.olean$||; s|/|.|g'
-          done | LC_ALL=C sort -u > exp-out/plan/available.txt
+          done | sort -u > exp-out/plan/index-modules.txt
+          bash exp/scripts/exp-pool.sh prev verdicts/verdicts
+          cp exp-out/prev-batches.tsv exp-out/plan/
+          for f in exp-out/prev-*-manifest.tsv; do [ -e "$f" ] && cp "$f" exp-out/plan/; done
+          sort -u exp-out/plan/index-modules.txt exp-out/prev-modules.txt > exp-out/plan/available.txt
           python3 -I exp/scripts/exp-dag.py build/src exp-out/dag.tsv
-          python3 -I exp/scripts/exp-pool-plan.py wave exp-out/dag.tsv exp-out/plan/available.txt "$WAVE_N" "$WAVE_J" "$WAVE_SEED" exp-out/plan | tee exp-out/plan/summary.txt
-          echo "matrix=$(python3 -c "import json;print(json.dumps(list(range($WAVE_J))))")" >> "$GITHUB_OUTPUT"
-          echo "spot: $(tr '\n' ' ' < exp-out/plan/spot.txt)"
+          python3 -I exp/scripts/exp-pool-plan.py region exp-out/dag.tsv exp-out/plan/available.txt exp-out/plan/INDEX.tsv \
+            "$WAVE_J" "$WAVE_CAP" "$WAVE_S" "$WAVE_SEED" "$WAVE_HORIZON" "$VM_RATE" exp-out/plan | tee exp-out/plan/summary.txt
+          picked=$(python3 -c "import json;print(json.load(open('exp-out/plan/plan.json'))['picked'])")
+          [ "$picked" -gt 0 ] || { echo "NO READY MODULES"; exit 1; }
+          echo "build=$(python3 -c "print(list(range($WAVE_J)))")" >> "$GITHUB_OUTPUT"
+          echo "spot=$(python3 -c "print(list(range($WAVE_S)))")" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v4
         with: {name: '${{ env.WAVE }}-plan', path: exp-out/plan, retention-days: 30}
 
@@ -52,7 +78,7 @@ jobs:
     needs: plan
     runs-on: ubuntu-latest
     timeout-minutes: 90
-    strategy: {fail-fast: false, max-parallel: 3, matrix: {job: '${{ fromJSON(needs.plan.outputs.matrix) }}'}}
+    strategy: {fail-fast: false, max-parallel: 16, matrix: {job: '${{ fromJSON(needs.plan.outputs.build) }}'}}
     env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
     steps:
       - uses: actions/checkout@v4
@@ -64,17 +90,18 @@ jobs:
       - name: Live absolute path
         run: |
           sudo mkdir -p /home/user/rh-verify && sudo chown "$(id -u):$(id -g)" /home/user/rh-verify
-          mv build /home/user/rh-verify/build
-          cp exp-out/plan/INDEX.tsv exp-out/INDEX.tsv   # the same INDEX the plan used
+          mv build /home/user/rh-verify/build && mkdir -p /home/user/rh-verify/dl
+          cp exp-out/plan/INDEX.tsv exp-out/INDEX.tsv
           bash exp/scripts/exp-pool.sh sampler
       - run: bash exp/scripts/exp-gh-restore-test.sh setup
       - run: bash exp/scripts/exp-gh-restore-test.sh restore
+      - run: bash exp/scripts/exp-pool.sh restore-prev exp-out/plan/prev-batches.tsv
       - name: Build slice ${{ matrix.job }}
         run: |
           s=exp-out/plan/slice-${{ matrix.job }}.txt
-          comm -12 <(sort "$s") exp-out/restored-modules.txt | grep . && { echo "slice contains restored modules"; exit 1; } || true
-          EXP_BUILD_TIMEOUT=70m bash exp/scripts/exp-pool.sh build "$s" slice
-          # nothing outside the slice may have been built
+          [ -s "$s" ] || { echo "empty slice"; exit 0; }
+          ! comm -12 <(sort "$s") exp-out/restored-modules.txt | grep -q . || { echo "slice contains available modules"; exit 1; }
+          EXP_BUILD_TIMEOUT=75m bash exp/scripts/exp-pool.sh build "$s" slice
           extra=$(grep -oE '\] Built [^ ]+' exp-out/build-slice.log | awk '{print $3}' | sort | comm -23 - <(sort "$s") | wc -l)
           echo "modules built outside the slice: $extra" | tee -a exp-out/summary.txt
           bash exp/scripts/exp-pool.sh pack "$s" "$WAVE-job-${{ matrix.job }}"
@@ -82,15 +109,17 @@ jobs:
         if: always()
         run: bash exp/scripts/exp-pool.sh resources || true; cat exp-out/summary.txt
       - uses: actions/upload-artifact@v4
-        with: {name: '${{ env.WAVE }}-job-${{ matrix.job }}', path: exp-out/pack, retention-days: 30}
+        with: {name: '${{ env.WAVE }}-batch-${{ matrix.job }}', path: exp-out/pack, retention-days: 30}
       - uses: actions/upload-artifact@v4
         if: always()
-        with: {name: '${{ env.WAVE }}-job-${{ matrix.job }}-logs', path: "exp-out/*.txt\nexp-out/*.log\nexp-out/times-*.tsv\nexp-out/sampler.tsv", retention-days: 14}
+        with: {name: '${{ env.WAVE }}-logs-${{ matrix.job }}', path: "exp-out/summary.txt\nexp-out/times-*.tsv\nexp-out/sampler.tsv", retention-days: 14}
 
-  spotcheck:
+  spot:
     needs: [plan, build]
+    if: always() && needs.plan.result == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 75
+    strategy: {fail-fast: false, matrix: {s: '${{ fromJSON(needs.plan.outputs.spot) }}'}}
     env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
     steps:
       - uses: actions/checkout@v4
@@ -100,43 +129,117 @@ jobs:
       - uses: actions/download-artifact@v4
         with: {name: '${{ env.WAVE }}-plan', path: exp-out/plan}
       - uses: actions/download-artifact@v4
-        with: {pattern: '${{ env.WAVE }}-job-?', path: exp-out/in, merge-multiple: true}
+        with: {pattern: '${{ env.WAVE }}-batch-*', path: exp-out/in, merge-multiple: true}
       - name: Live absolute path
         run: |
           sudo mkdir -p /home/user/rh-verify && sudo chown "$(id -u):$(id -g)" /home/user/rh-verify
-          mv build /home/user/rh-verify/build
+          mv build /home/user/rh-verify/build && mkdir -p /home/user/rh-verify/dl
           cp exp-out/plan/INDEX.tsv exp-out/INDEX.tsv
           bash exp/scripts/exp-pool.sh sampler
-      - name: Transport check (tar and manifest hashes, unpacked files vs manifest) in a scratch dir
+      - run: bash exp/scripts/exp-gh-restore-test.sh setup
+      - run: bash exp/scripts/exp-gh-restore-test.sh restore
+      - run: bash exp/scripts/exp-pool.sh restore-prev exp-out/plan/prev-batches.tsv
+      - name: Unpack this wave's batches (transport-checked), delete the sample's outputs, rebuild, compare
         run: |
           set -euo pipefail
           for h in exp-out/in/*.hashes; do
+            [ -e "$h" ] || continue
             IFS=$'\t' read -r name files tsha msha < "$h"
             [ "$(sha256sum "exp-out/in/$name.tar.zst" | cut -d' ' -f1)" = "$tsha" ] || { echo "$name: tar hash differs"; exit 1; }
             [ "$(sha256sum "exp-out/in/$name-manifest.tsv" | cut -d' ' -f1)" = "$msha" ] || { echo "$name: manifest hash differs"; exit 1; }
-            d=$(mktemp -d); zstd -dc "exp-out/in/$name.tar.zst" | tar -C "$d" -xf -
-            [ "$(find "$d" -type f | wc -l)" = "$files" ] || { echo "$name: file count differs"; exit 1; }
-            ( cd "$d" && awk -F'\t' '{print $3 "  " $1}' "$GITHUB_WORKSPACE/exp-out/in/$name-manifest.tsv" | sha256sum -c --quiet - )
-            echo "$name: transport OK ($files files)" | tee -a exp-out/summary.txt; rm -rf "$d"
+            zstd -dc "exp-out/in/$name.tar.zst" | tar -C /home/user/rh-verify/build/.lake/build -xf -
+            ( cd /home/user/rh-verify/build/.lake/build && awk -F'\t' '{print $3 "  " $1}' "$GITHUB_WORKSPACE/exp-out/in/$name-manifest.tsv" | sha256sum -c --quiet - )
+            echo "$name: transport OK ($files files)" | tee -a exp-out/summary.txt
           done
-      - run: bash exp/scripts/exp-gh-restore-test.sh setup
-      - run: bash exp/scripts/exp-gh-restore-test.sh restore
-      - name: Independent rebuild of the spot sample, compare with the build jobs' manifests, verdict per job
-        run: |
-          set -uo pipefail
-          bash exp/scripts/exp-pool.sh build exp-out/plan/spot.txt spot || true
-          bash exp/scripts/exp-pool.sh compare exp-out/plan/spot.txt exp-out/in/*-manifest.tsv; rc=$?
-          printf 'wave\tjob\tfiles\ttar_sha256\tmanifest_sha256\tspot_modules\tspot_same_files\tverdict\n' > exp-out/verdict.tsv
-          for h in exp-out/in/*.hashes; do
-            IFS=$'\t' read -r name files tsha msha < "$h"; j="${name##*-job-}"
-            # per job: spot modules in its slice, and how many of their files matched / differed
-            read -r mods same bad < <(awk -F'\t' 'FNR==NR {sl[$1]=1; next} FILENAME ~ /spot/ {if ($1 in sl) {sp[$1]=1; n++}; next} ($1 in sp) {if ($5=="same") s++; else b++} END {print n+0, s+0, b+0}' exp-out/plan/slice-$j.txt exp-out/plan/spot.txt exp-out/compare.tsv)
-            v=accepted; { [ "$mods" -ge 1 ] && [ "$bad" = 0 ] && [ "$same" = $((mods*7)) ]; } || v=REJECTED
-            printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$WAVE" "$j" "$files" "$tsha" "$msha" "$mods" "$same" "$v" >> exp-out/verdict.tsv
-          done
-          echo "VERDICT (commit this to git as the wave index):"; cat exp-out/verdict.tsv
+          sp=exp-out/plan/spot-${{ matrix.s }}.txt
+          # only sample modules whose batch arrived (a failed build job has no batch)
+          cat exp-out/in/*-manifest.tsv 2>/dev/null | grep -P '\.olean\t' | cut -f1 | sed 's|^\./lib/lean/||; s|\.olean$||; s|/|.|g' | sort -u > got.txt || true
+          comm -12 <(sort "$sp") got.txt > sample.txt || true
+          echo "spot ${{ matrix.s }}: $(wc -l < sample.txt) of $(wc -l < "$sp") sample modules have a batch" | tee -a exp-out/summary.txt
+          : > exp-out/compare.tsv
+          if [ -s sample.txt ]; then
+            while read -r m; do p="${m//.//}"; for e in olean olean.hash ilean ilean.hash trace; do rm -f "/home/user/rh-verify/build/.lake/build/lib/lean/$p.$e"; done; rm -f "/home/user/rh-verify/build/.lake/build/ir/$p.c" "/home/user/rh-verify/build/.lake/build/ir/$p.c.hash"; done < sample.txt
+            EXP_BUILD_TIMEOUT=60m bash exp/scripts/exp-pool.sh build sample.txt spot || true
+            bash exp/scripts/exp-pool.sh compare sample.txt exp-out/in/*-manifest.tsv || true
+          fi
           bash exp/scripts/exp-pool.sh resources || true
-          cat exp-out/summary.txt
+          cp exp-out/compare.tsv "exp-out/compare-${{ matrix.s }}.tsv"
       - uses: actions/upload-artifact@v4
         if: always()
-        with: {name: '${{ env.WAVE }}-verdict', path: "exp-out/verdict.tsv\nexp-out/compare.tsv\nexp-out/summary.txt\nexp-out/*.log\nexp-out/sampler.tsv", retention-days: 30}
+        with: {name: '${{ env.WAVE }}-spot-${{ matrix.s }}', path: "exp-out/compare-*.tsv\nexp-out/summary.txt\nexp-out/sampler.tsv", retention-days: 30}
+
+  publish:
+    needs: [plan, build, spot]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions: {contents: write, actions: read}
+    steps:
+      - uses: actions/checkout@v4
+        with: {path: verdicts, ref: pool/verdicts}
+      - uses: actions/download-artifact@v4
+        with: {name: '${{ env.WAVE }}-plan', path: plan}
+      - uses: actions/download-artifact@v4
+        with: {pattern: '${{ env.WAVE }}-batch-*', path: in, merge-multiple: true}
+      - uses: actions/download-artifact@v4
+        with: {pattern: '${{ env.WAVE }}-spot-*', path: spot}
+      - name: Verdict per job (transport + every sampled module identical in all 7 file types)
+        run: |
+          set -euo pipefail
+          cat spot/*/compare-*.tsv > compare.tsv 2>/dev/null || : > compare.tsv
+          printf 'wave\tjob\tfiles\ttar_sha256\tmanifest_sha256\tspot_modules\tspot_same_files\tverdict\n' > verdict.tsv
+          for j in $(seq 0 $((WAVE_J-1))); do
+            name="$WAVE-job-$j"; sl="plan/slice-$j.txt"
+            if [ ! -f "in/$name.hashes" ]; then
+              if [ -s "$sl" ]; then printf '%s\t%s\t0\t-\t-\t0\t0\tFAILED\n' "$WAVE" "$j" >> verdict.tsv; fi
+              continue
+            fi
+            IFS=$'\t' read -r n files tsha msha < "in/$name.hashes"
+            ok=1
+            [ "$(sha256sum "in/$name.tar.zst" | cut -d' ' -f1)" = "$tsha" ] || ok=0
+            [ "$(sha256sum "in/$name-manifest.tsv" | cut -d' ' -f1)" = "$msha" ] || ok=0
+            [ "$(wc -l < "in/$name-manifest.tsv")" = "$files" ] || ok=0
+            read -r mods same bad < <(awk -F'\t' 'FNR==NR {sl[$1]=1; next} FILENAME ~ /spot\.txt$/ {if ($1 in sl) {sp[$1]=1; n++}; next} ($1 in sp) {if ($5=="same") s++; else b++} END {print n+0, s+0, b+0}' "$sl" plan/spot.txt compare.tsv)
+            v=accepted
+            { [ "$ok" = 1 ] && [ "$mods" -ge 1 ] && [ "$bad" = 0 ] && [ "$same" = $((mods*7)) ]; } || v=REJECTED
+            printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$WAVE" "$j" "$files" "$tsha" "$msha" "$mods" "$same" "$v" >> verdict.tsv
+          done
+          cat verdict.tsv
+      - name: Prerelease pool-${{ env.WAVE }} with the accepted batches only
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: |
+          set -euo pipefail
+          files=(verdict.tsv plan/plan.json)
+          while IFS=$'\t' read -r w j f t m sm ss v; do
+            if [ "$v" = accepted ]; then files+=("in/$WAVE-job-$j.tar.zst" "in/$WAVE-job-$j-manifest.tsv"); fi
+          done < <(tail -n +2 verdict.tsv)
+          { echo "Experiment for issue #9 (runner pool). Wave $WAVE, run $GITHUB_RUN_ID."
+            echo "Accepted batches only. Verify every file against verdicts/$WAVE.tsv on branch pool/verdicts before use."; } > notes.md
+          gh release create "pool-$WAVE" --repo "$GITHUB_REPOSITORY" --prerelease --target "$GITHUB_SHA" \
+            --title "pool $WAVE (experiment, issue #9)" --notes-file notes.md "${files[@]}"
+      - name: Record verdict and stats on pool/verdicts
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/jobs?per_page=100" > jobs.json
+          python3 - > stats.json <<'PY'
+          import json, os, datetime
+          jobs = json.load(open('jobs.json'))['jobs']
+          p = lambda s: datetime.datetime.fromisoformat(s.replace('Z', '+00:00'))
+          done = [j for j in jobs if j.get('completed_at') and j.get('started_at')]
+          mins = {j['name']: round((p(j['completed_at']) - p(j['started_at'])).total_seconds() / 60, 1) for j in done}
+          plan = json.load(open('plan/plan.json'))
+          rows = [l.rstrip('\n').split('\t') for l in open('verdict.tsv')][1:]
+          acc = [r for r in rows if r[7] == 'accepted']
+          print(json.dumps({'wave': os.environ['WAVE'], 'run_id': os.environ['GITHUB_RUN_ID'],
+            'runner_minutes_excl_publish': round(sum(mins.values()), 1), 'job_minutes': mins,
+            'modules_planned': plan['picked'], 'modules_accepted': sum(int(r[2]) for r in acc) // 7,
+            'jobs_accepted': len(acc), 'jobs_rejected_or_failed': len(rows) - len(acc), 'plan': plan}, indent=1))
+          PY
+          cat stats.json
+          mkdir -p verdicts/verdicts verdicts/stats
+          cp verdict.tsv "verdicts/verdicts/$WAVE.tsv"; cp stats.json "verdicts/stats/$WAVE.json"
+          cd verdicts
+          git add verdicts stats
+          git -c user.name=pool-publish -c user.email= commit -q -m "pool: verdict and stats for wave $WAVE (run $GITHUB_RUN_ID)"
+          git push -q origin HEAD:pool/verdicts
