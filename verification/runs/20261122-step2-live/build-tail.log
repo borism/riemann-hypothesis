@@ -1,200 +1,200 @@
+warning: src/Formalism/SharpRestriction/GrowthBounds/WittIdentPI.lean:8:47: Variable name `j` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _j
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/WittIdentPI.lean:8:49: Variable name `w` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _w
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [14615/14642] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.ThresholdsMonoNormalized (5.8s)
+✔ [14616/14648] Built Formalism.PolynomialDimension.DigitClassCount (5.5s)
+✔ [14617/14648] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.DensityNumericalFacts (10s)
+✔ [14618/14650] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.DirectionsOfPositivePart (5.5s)
+✔ [14619/14650] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.LocalHypothesisOfGlobal (10s)
+✔ [14620/14650] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.PositiveOfDimensionChange (5.5s)
+✔ [14621/14657] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.FactorizationBoundMonoLattices (8.5s)
+✔ [14622/14657] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.RestrictedBoundsWeakenFromSevenToSix (5.8s)
+⚠ [14623/14662] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.IsUnitDetOfOneAdd (6.7s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/IsUnitDetOfOneAdd.lean:55:75: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/IsUnitDetOfOneAdd.lean:56:6: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+✔ [14624/14663] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.NumBase (16s)
+⚠ [14625/14664] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.ColumnSpanNumericalFacts (16s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:28:15: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.mem_piFinset, Finset.mem_Icc] at haa ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:33:15: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.mem_piFinset, Finset.mem_Icc] at hA ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:38:15: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.mem_piFinset, Finset.mem_Icc] at haa
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:48:15: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.mem_piFinset, Finset.mem_Icc] at haa
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:163:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:165:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:163:6: Unused tactic linter: `(rw [← Finset.card_union_of_disjoint (Finset.disjoint_filter_filter_neg _ _ _),
+    Finset.filter_union_filter_neg_eq])` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [13265/13285] Built Formalism.PeriodIntegrals.ExplicitFormulaCounts.WeylForK (6.8s)
-✔ [13266/13287] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.IntegrableInvCube (9.7s)
-✔ [13267/13287] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkDiag (9.3s)
-✔ [13268/13288] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkAesmTsum (5.4s)
-✔ [13269/13289] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelConditionsIffWithoutRegularRep (7.3s)
-✔ [13270/13289] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.HighestWeights.WeylBridge (6.4s)
-⚠ [13271/13289] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.ImageProdLoc (7.6s)
-warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/ImageProdLoc.lean:47:0: automatically included section variable(s) unused in theorem `Formalism.FourierDecayAlt.P.PBC.image_prod_loc`:
-  [NumberField E]
-  [IsCMField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] [IsCMField E] in theorem ...
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:165:6: Unused tactic linter: `(rw [← Finset.card_disjoint_union (Finset.disjoint_filter_filter_neg _ _ _),
+    Finset.filter_union_filter_neg_eq])` does nothing
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [13272/13290] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkpCoefCont (6.6s)
-✔ [13273/13290] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelDiagonalOfL2UnfoldIdempotent (8.9s)
-⚠ [13274/13290] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkbLeOneAddSq (8.6s)
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkbLeOneAddSq.lean:38:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.LeviCoordinates.rrkb_lint`:
-  [MeasurableInv G]
-  [SigmaFinite μ]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [MeasurableInv G] [SigmaFinite μ] in theorem ...
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:196:15: This simp argument is unused:
+  Finset.mem_coe
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkbLeOneAddSq.lean:63:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkbLeOneAddSq.lean:64:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.mem_piFinset, Finset.mem_Icc] at hA ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:201:15: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.mem_piFinset, Finset.mem_Icc] at hA ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:210:15: This simp argument is unused:
+  Finset.mem_coe
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fintype.mem_piFinset, Finset.mem_Icc] at hA
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/ColumnSpanNumericalFacts.lean:218:27: Variable name `hKp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hKp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [14626/14664] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.RestrictedBoundsWeakenFromEightToSeven (5.2s)
+⚠ [14627/14664] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.RhoLowerBoundOfEdgeCount (10s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/RhoLowerBoundOfEdgeCount.lean:171:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [14628/14664] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.MidMeanOf (6.0s)
+✔ [14629/14664] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.RestrictedBoundsWeakenFromNineToEight (7.3s)
+⚠ [14630/14668] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.RhoUpperBoundOfEdgeCount (16s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/RhoUpperBoundOfEdgeCount.lean:52:53: `ENat.coe_toNat` has been deprecated: Use `ENat.natCast_toNat` instead
+⚠ [14631/14668] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.FinrankTensor (10s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:17:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:17:6: Unused tactic linter: `exact Nat.succ_mul_choose_eq (A + m) m` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:37:15: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:97:34: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:98:49: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:103:47: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:116:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
 If you'd rather continue using `push_neg` in your project, you can implement it as follows:
 ```
 open Lean.Parser.Tactic in
 macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
   `(tactic| push $cfg:optConfig Not $[$loc]?)
 ```
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkbLeOneAddSq.lean:49:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.LeviCoordinates.rrkb_r_fix`:
-  [MeasurableInv G]
-  [SigmaFinite μ]
-  [μ.IsMulRightInvariant]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [MeasurableInv G] [SigmaFinite μ] [μ.IsMulRightInvariant] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [13275/13290] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkaMeasKabRight (9.1s)
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkaMeasKabRight.lean:53:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.LeviCoordinates.rrka_meas_Kab_right`:
-  [MeasurableInv G]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [MeasurableInv G] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [13276/13293] Built Formalism.SharpRestriction.CuspSpanNormBounds.BridgeWeylDS (7.0s)
-✔ [13277/13293] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.CovolumeIndependentOfFundamentalDomain (15s)
-✔ [13278/13294] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelDiagonalOfAbsoluteConvergence (9.7s)
-⚠ [13279/13297] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.GermStep (13s)
-warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/GermStep.lean:20:5: Variable name `hP'0` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hP'0
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [13280/13298] Built Formalism.FlagUnipotentLattices.CuspidalityThreshold (8.9s)
-✔ [13281/13299] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.ArchimedeanRestrictionStronglyContinuous (8.0s)
-✔ [13282/13299] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.ProjectionCountCuspOfTrivialIdempotent (16s)
-✔ [13283/13300] Built Formalism.FlagUnipotentLattices.FlagUnipotentLattice (10s)
-✔ [13284/13302] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelDiagonalOfDecayThreshold (18s)
-⚠ [13285/13303] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.PBCFinal (17s)
-warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:107:94: Variable name `hU` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hU
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:111:5: Variable name `hthr` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hthr
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:144:97: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:144:158: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:144:97: Unused tactic linter: `exact Rat.cast_nonneg.2 (FractionalIdeal.absNorm_nonneg _)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:144:158: Unused tactic linter: `positivity` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [13286/13304] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RegularRepAlgebraicMeasurableContinuous (10s)
-✔ [13287/13317] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.UnitaryRepUnimodularOfFiniteVolume (10s)
-✔ [13288/13322] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelDiagonalOfTriangleInequality (19s)
-✔ [13289/13324] Built Formalism.FlagUnipotentLattices.MinkowskiFactorialBounds.OperatorHilbertSchmidtNorm (24s)
-✔ [13290/13324] Built Formalism.FlagUnipotentLattices.MinkowskiFactorialBounds.FlagKernelVanishing (6.9s)
-⚠ [13291/13325] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.PjStarProj (10s)
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/PjStarProj.lean:109:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.LeviCoordinates.pj_comm`:
-  [MeasurableSpace G1]
-  [SFinite μ2]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [MeasurableSpace G1] [SFinite μ2] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [13292/13326] Built Formalism.HermitianCurvature.HeisenbergConjugationMeasurePreserving (27s)
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:444:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:447:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:450:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:456:51: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:459:51: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:457:58: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:457:58: Unused tactic linter: `ring` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:510:31: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:511:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
-
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:510:31: Unused tactic linter: `simp only [h]` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:534:12: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:555:12: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:576:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:576:6: Unused tactic linter: `simp [Complex.norm_exp_ofReal_mul_I]` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:581:30: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:583:30: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:581:30: Unused tactic linter: `ring` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:583:30: Unused tactic linter: `ring` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:616:15: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:629:15: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:631:72: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:617:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
-
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:618:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
-
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:631:49: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
-
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:616:15: Unused tactic linter: `first
-| exact hE
-| positivity` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:629:15: Unused tactic linter: `first
-| exact hdiv
-| positivity` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:631:72: Unused tactic linter: `omega` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:674:19: This simp argument is unused:
-  Bool.false_eq_true
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:105:27: This simp argument is unused:
+  zero_sub
 
 Hint: Omit it from the simp argument list.
-  [apply] simp only [↓reduceIte] at hl ⊢
+  [apply] simp only [sub_zero, neg_neg, sub_neg_eq_add, zero_add]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:669:19: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:105:37: This simp argument is unused:
+  neg_neg
 
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:820:23: this tactic is never executed
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sub_zero, zero_sub, sub_neg_eq_add, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:139:47: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:152:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:155:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:813:17: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
-
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:820:23: Unused tactic linter: `ring` does nothing
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FinrankTensor.lean:155:6: Unused tactic linter: `exact
+  IsLocalization.atUnits Kf (nonZeroDivisors Kf)
+    (fun x hx => (IsUnit.mem_submonoid_iff _).mpr (Ne.isUnit (nonZeroDivisors.ne_zero hx)))` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [13293/13326] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.PjDensUpper (9.8s)
-✔ [13294/13327] Built Formalism.FlagUnipotentLattices.CuspThresholdBound (5.1s)
-✔ [13295/13328] Built Formalism.FlagUnipotentLattices.FlagUnipotentLatticeOfRel (5.3s)
-✔ [13296/13328] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.CechHodgeFiltration (6.6s)
-✔ [13297/13328] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.SecondDerivativeHolds (6.1s)
-✔ [13298/13329] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.PjFdegAllPos (10s)
-✔ [13299/13330] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.CNDefs (6.6s)
+✔ [14632/14668] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.ThresholdFinalFacts (27s)
+⚠ [14633/14670] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.FourDepthLtConductorOfBounds (30s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/FourDepthLtConductorOfBounds.lean:10:5: Variable name `hns0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hns0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [14634/14670] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.IntegralityFromMetricOfOrthogonalityWindow (7.2s)
+⚠ [14635/14671] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.MemColSpanIff (10s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/MemColSpanIff.lean:71:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/MemColSpanIff.lean:122:17: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [14636/14671] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.FinrankLetter (8.6s)
+✔ [14637/14676] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.SymmetryFinitenessWindowLevelDimOnAdmissible (9.3s)
+⚠ [14638/14676] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.MapMDetUnit (11s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/MapMDetUnit.lean:67:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [14639/14676] Built Formalism.SharpRestriction.GrowthBounds.ColumnSpanDensity.TwoHundredLeRadius (19s)
+warning: src/Formalism/SharpRestriction/GrowthBounds/ColumnSpanDensity/TwoHundredLeRadius.lean:76:62: Variable name `hY` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hY
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [14640/14676] Built Formalism.SharpRestriction.GrowthBounds.MonomialFactorials.ClosedOfCoefficientFunction (6.3s)
