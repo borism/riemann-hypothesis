@@ -1,200 +1,200 @@
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-warning: src/Formalism/SharpRestriction/GlobalSchurBounds/GlobalRankLatticeProofs/LogWeightMinusLogBBound.lean:185:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [12059/12073] Built Formalism.SharpRestriction.AdmissibleParameterJoins.SfromGLx (6.9s)
-✔ [12060/12078] Built Formalism.SharpRestriction.GlobalSchurBounds.GlobalRankLatticeProofs.FamilyPartFiveExplicitHolds (7.4s)
-⚠ [12061/12079] Built Formalism.LocalToGlobal.Columns.SliceIntegralDeltaNeBot (24s)
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:315:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.T2.piKronOn_empty`:
-  [(i : ι) → Fintype (α i)]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [(i : ι) → Fintype (α i)] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:319:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.T2.piKronOn_univ`:
-  [(i : ι) → Fintype (α i)]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [(i : ι) → Fintype (α i)] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:446:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.T2.card_ne_one`:
-  [Fintype ι]
-  [DecidableEq ι]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Fintype ι] [DecidableEq ι] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:450:25: This simp argument is unused:
-  card_ne_one
-
-Hint: Omit it from the simp argument list.
-  [apply] simp [Fintype.card_pi]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:452:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.T2.det_szGram1`:
-  [Fintype ι]
-  [DecidableEq ι]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Fintype ι] [DecidableEq ι] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:467:20: This simp argument is unused:
-  card_ne_one
-
-Hint: Omit it from the simp argument list.
-  [apply] simp [dotProduct, Nat.cast_sub hpos]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:461:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:463:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:461:6: Unused tactic linter: `(
-  rw [Matrix.vecMulVec_eq Unit]
-  exact Matrix.det_one_add_replicateCol_mul_replicateRow _ _)` does nothing
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:27:4: Unused tactic linter: `exact Complex.abs_re_le_abs _` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:463:6: Unused tactic linter: `(
-  simp only [Matrix.vecMulVec_eq (ι := Unit)]
-  exact Matrix.det_one_add_replicateCol_mul_replicateRow (ι := Unit) _ _)` does nothing
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:29:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.vonMangoldtCharIm_bound`:
+  [NeZero q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:37:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:37:4: Unused tactic linter: `exact Complex.abs_im_le_abs _` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:491:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:481:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.T2.szVec_pt`:
-  [DecidableEq ι]
-  [(i : ι) → Fintype (G i)]
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:39:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.vonMangoldtCharRe_zero`:
+  [NeZero q]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [DecidableEq ι] [(i : ι) → Fintype (G i)] in theorem ...
+  omit [NeZero q] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:527:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.T2.kron_szVec_pt`:
-  [CharZero K]
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:41:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.vonMangoldtCharIm_zero`:
+  [NeZero q]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [CharZero K] in theorem ...
+  omit [NeZero q] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:538:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.T2.kron_szVec_mem`:
-  [CharZero K]
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:43:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.chebyshev_character_re_im`:
+  [NeZero q]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [CharZero K] in theorem ...
+  omit [NeZero q] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:653:61: Variable name `d` is not explicitly referenced.
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:52:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.chebyshev_character_eq_zero_of_le_one`:
+  [NeZero q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NeZero q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:81:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:81:4: Unused tactic linter: `exact Summable.of_norm_bounded _ hΛ.norm hb` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [12173/12183] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.RectShiftChi (9.9s)
+✔ [12174/12188] Built Formalism.LandauZeroFreeBounds.NoZeroComplex (6.3s)
+⚠ [12175/12190] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LogTwoLeLogAnalyticConductor (7.0s)
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/LogTwoLeLogAnalyticConductor.lean:53:98: Variable name `hX` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _d
+  [apply] _hX
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Columns/SliceIntegralDeltaNeBot.lean:681:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.T2.nonempty_SzIdx`:
+⚠ [12176/12190] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SiegelProductCharacterInequality (13s)
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelProductCharacterInequality.lean:74:93: Variable name `h1σ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h1σ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelProductCharacterInequality.lean:97:66: Variable name `hL₁` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL₁
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [12177/12190] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.PerronHorizontalSegmentBound (12s)
+✔ [12178/12192] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.BqKeyOf (26s)
+✔ [12179/12193] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LandauLemmaLfunctionZeros (9.6s)
+✔ [12180/12193] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LogDerivSubExceptionalZeros (15s)
+✔ [12181/12193] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SumVonMangoldtNotCoprimeLe (7.0s)
+⚠ [12182/12194] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SiegelOf (7.2s)
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelOf.lean:39:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [12183/12197] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.ExistsContourAvoidingRealZero (7.4s)
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/ExistsContourAvoidingRealZero.lean:25:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [12184/12197] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.AbsZeroTermSecondDifferenceLe (12s)
+✔ [12185/12197] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.ExcBoundOf (8.4s)
+✔ [12186/12198] Built Formalism.LandauZeroFreeBounds.FinalSiegel (5.0s)
+⚠ [12187/12198] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LeOfSecondDifferenceBound (15s)
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/LeOfSecondDifferenceBound.lean:11:5: Variable name `hey0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hey0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/LeOfSecondDifferenceBound.lean:11:21: Variable name `heY0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _heY0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [12188/12199] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SiegelWalfiszAPOf (8.2s)
+✔ [12189/12200] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LogDerivRegionChiOf (18s)
+⚠ [12190/12200] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SiegelWalfiszOf (14s)
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:24:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:24:8: Unused tactic linter: `exact (div_le_div_iff_of_pos_right hL).mpr h` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:66:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:162:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:155:44: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:218:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [12191/12201] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.PBrDiv (14s)
+warning: src/Formalism/SizeWindowBrackets/ChainSlopeWindows/PBrDiv.lean:632:4: Unused tactic linter: `repeat' apply And.intro` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [12192/12208] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.PsiChiBoundOf (15s)
+✔ [12193/12208] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.PSmall (10s)
+⚠ [12194/12210] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.ExistsOrthonormalFrameComplement (22s)
+warning: src/Formalism/SizeWindowBrackets/ChainSlopeWindows/ExistsOrthonormalFrameComplement.lean:41:0: automatically included section variable(s) unused in theorem `Formalism.LFunctionChainParameters.HilbertSchmidtUnitaryInvariance.norm_phase`:
   [Fintype ι]
-  [DecidableEq ι]
-  [(i : ι) → DecidableEq (G i)]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Fintype ι] [DecidableEq ι] [(i : ι) → DecidableEq (G i)] in theorem ...
+  omit [Fintype ι] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [12062/12079] Built Formalism.SharpRestriction.CuspSpanNormBounds.DiscreteSeriesWeylDimension (9.3s)
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/DiscreteSeriesWeylDimension.lean:100:4: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/DiscreteSeriesWeylDimension.lean:99:17: Unused tactic linter: `done` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/DiscreteSeriesWeylDimension.lean:100:4: Unused tactic linter: `(field_simp; ring)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/DiscreteSeriesWeylDimension.lean:183:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/DiscreteSeriesWeylDimension.lean:197:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/DiscreteSeriesWeylDimension.lean:277:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.DiscreteSeriesWeylDimension.pow_congr_one`:
-  [IsDomain R]
+warning: src/Formalism/SizeWindowBrackets/ChainSlopeWindows/ExistsOrthonormalFrameComplement.lean:49:0: automatically included section variable(s) unused in theorem `Formalism.LFunctionChainParameters.HilbertSchmidtUnitaryInvariance.phase_self`:
+  [Fintype ι]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [IsDomain R] in theorem ...
+  omit [Fintype ι] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [12063/12079] Built Formalism.FormalDegreeBessel.HolDimLowK (4.0s)
-⚠ [12064/12079] Built Formalism.LocalToGlobal.Columns.SummandSlopeAtDecoratedLattice (17s)
-warning: src/Formalism/LocalToGlobal/Columns/SummandSlopeAtDecoratedLattice.lean:88:14: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/SummandSlopeAtDecoratedLattice.lean:88:14: Unused tactic linter: `exact Fin.ext (by simp)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/SummandSlopeAtDecoratedLattice.lean:94:14: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/Columns/SummandSlopeAtDecoratedLattice.lean:94:14: Unused tactic linter: `exact Fin.ext rfl` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [12065/12079] Built Formalism.SharpRestriction.GlobalSchurBounds.GlobalRankLatticeProofs.UnitTraceSumBounds.IntegralityOfCommutation (6.1s)
-✔ [12066/12079] Built Formalism.LocalToGlobal.GlobalTheory.FamRec (7.8s)
-✔ [12067/12086] Built Formalism.SizeWindowBrackets.TranslateWordBoundHypotheses (7.7s)
-✔ [12068/12086] Built Formalism.FormalDegreeBessel.FormalDegreeRatio.HolomorphicLowKDimensionHolds (5.6s)
-✔ [12069/12087] Built Formalism.StatementFL (6.2s)
-⚠ [12070/12090] Built Formalism.LocalToGlobal.Columns.BrzColLatOneLattice (8.5s)
-warning: src/Formalism/LocalToGlobal/Columns/BrzColLatOneLattice.lean:31:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.gramOf_formAt`:
-  [NumberField K]
+warning: src/Formalism/SizeWindowBrackets/ChainSlopeWindows/ExistsOrthonormalFrameComplement.lean:56:0: automatically included section variable(s) unused in theorem `Formalism.LFunctionChainParameters.HilbertSchmidtUnitaryInvariance.sqrt_gaTw`:
+  [Fintype ι]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField K] in theorem ...
+  omit [Fintype ι] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/BrzColLatOneLattice.lean:102:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.stdPair_pos`:
-  [NumberField K]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField K] in theorem ...
+✔ [12195/12211] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.DisplayedInequalitySharpHalf (14s)
+✔ [12196/12211] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.ChiEightNoRealZeroHypothesis (9.3s)
+✔ [12197/12213] Built Formalism.LocalToGlobal.ClassSLinks (8.5s)
+✔ [12198/12218] Built Formalism.LocalToGlobal.ClassSR (7.7s)
+✔ [12199/12218] Built Formalism.LocalToGlobal.RatioJoints.IsRatioAt (6.7s)
+✔ [12200/12218] Built Formalism.LocalToGlobal.HilbertRowConditions.RowPinMin (8.1s)
+✔ [12201/12218] Built Formalism.LocalToGlobal.UnitaryNorms.DefsDatum (7.9s)
+✔ [12202/12218] Built Formalism.LocalToGlobal.BesselHermitianTheta.TiedWeilEq (7.7s)
+✔ [12203/12221] Built Formalism.LocalToGlobal.RatioJoints.CharacterProductEqOne (8.5s)
+✔ [12204/12223] Built Formalism.LocalToGlobal.UnitaryNorms.DatumS (8.0s)
+⚠ [12205/12223] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.ChebyshevCharacterExplicitGeneral (64s)
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/ChebyshevCharacterExplicitGeneral.lean:90:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/ChebyshevCharacterExplicitGeneral.lean:175:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [12206/12224] Built Formalism.LocalToGlobal.SiegelLatticeTheory.SiegelMassRatios.IdCell (6.1s)
+⚠ [12207/12224] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.TermDef (8.9s)
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/TermDef.lean:64:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [12208/12225] Built Formalism.LocalToGlobal.ClassRec (6.5s)
+✔ [12209/12225] Built Formalism.LocalToGlobal.SiegelLatticeTheory.SiegelMassRatios.LemmaN (8.2s)
+✔ [12210/12226] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GGMirabolicBase (6.1s)
+⚠ [12211/12226] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.FourParts (11s)
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/FourParts.lean:179:4: The namespace `FourParts` is duplicated in the declaration `Formalism.L2.SG.FourParts.FourParts`.
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/BrzColLatOneLattice.lean:108:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.stdNabL_eq`:
-  [StarRing K]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing K] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/BrzColLatOneLattice.lean:118:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.stdDelL_eq`:
-  [StarRing K]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing K] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/BrzColLatOneLattice.lean:154:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.stdDelL_le`:
-  [StarRing K]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing K] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [12071/12091] Built Formalism.ZeroFreeRegion.Statement (6.2s)
-✔ [12072/12092] Built Formalism.FormalDegreeBessel.FdegFactorial (8.7s)
-✔ [12073/12092] Built Formalism.LFunctionBounds.Statement (9.6s)
-⚠ [12074/12092] Built Formalism.LocalToGlobal.Columns.BrzoPairAtZeroRight (14s)
-warning: src/Formalism/LocalToGlobal/Columns/BrzoPairAtZeroRight.lean:37:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.brzo_orth_sup`:
-  [DecidableEq γ]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [DecidableEq γ] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [12075/12096] Built Formalism.ZeroFreeRegion.SmallHeightLogDeriv (7.4s)
-✔ [12076/12096] Built Formalism.SharpRestriction.GlobalSchurBounds.LinkMin (22s)
-✔ [12077/12096] Built Formalism.LandauZeroFreeBounds.NoZeroComplexOf (6.7s)
-✔ [12078/12096] Built Formalism.LFunctionBounds.PositivityBound (6.2s)
-✔ [12079/12097] Built Formalism.SizeWindowBrackets.GrowthBracketBoundOfSizeWindows (7.6s)
-✔ [12080/12097] Built Formalism.SizeWindowBrackets.MatrixFamilyBoundsOfCardEqCeil (9.7s)
-✔ [12081/12097] Built Formalism.SizeWindowBrackets.SSmall (8.8s)
-✔ [12082/12098] Built Formalism.LocalToGlobal.HermitianForms.TiedBr (8.4s)
-✔ [12083/12098] Built Formalism.JacobiWeightFamilies.LFunctionOnePositive (7.7s)
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
