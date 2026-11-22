@@ -1,200 +1,200 @@
-    map_neg, hqd, Matrix.transpose_apply]
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/MsetOfClosed.lean:57:15: `Set.setOf_forall` has been deprecated: Use `Set.ofPred_forall` instead
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/MsetOfClosed.lean:57:33: `Set.setOf_and` has been deprecated: Use `Set.ofPred_and` instead
+✔ [17593/17625] Built Formalism.SharpRestriction.CuspSpanNormBounds.KFinOfLowUnitH (6.7s)
+✔ [17594/17625] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.HzOfInWb (6.3s)
+⚠ [17595/17632] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.MomSchurG (10s)
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/MomSchurG.lean:92:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+✔ [17596/17632] Built Formalism.SharpRestriction.CuspSpanNormBounds.FrobeniusCoefficientMemLp.SigmaFiniteAmplitudes.NormPsiOne (8.2s)
+✔ [17597/17632] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.LocFactorCR (8.9s)
+⚠ [17598/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CompactCellConvergence.PairMeasBad (7.2s)
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:19:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:20:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:21:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:35:58: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:37:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/CompactCellConvergence/PairMeasBad.lean:60:38: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [17599/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.PeriodG (13s)
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/PeriodG.lean:70:0: automatically included section variable(s) unused in theorem `Formalism.L2.S.Pv.PeriodG.beInt_contOn`:
+  [CompleteSpace H]
+  [FiniteDimensional ℂ Vp]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace H] [FiniteDimensional ℂ Vp] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [17600/17633] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ChainRuleSecondOrder.HasDerivAtDOf (14s)
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:20:38: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:20:38: Unused tactic linter: `norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:42:15: This simp argument is unused:
+  Fin.val_mk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sgI_sgI, sgI_eq_iff, eq_self_iff_true, if_true]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:767:67: Variable name `hM` is not explicitly referenced.
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:42:48: This simp argument is unused:
+  eq_self_iff_true
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hM
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Fin.val_mk, sgI_sgI, sgI_eq_iff, if_true]
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:768:5: Variable name `hge` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ChainRuleSecondOrder/HasDerivAtDOf.lean:45:17: This simp argument is unused:
+  eq_self_iff_true
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hge
+Hint: Omit it from the simp argument list.
+  [apply] simp only [if_true]
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:768:24: Variable name `hgq` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [17601/17633] Built Formalism.SharpRestriction.CuspSpanNormBounds.FrobeniusCoefficientMemLp.SigmaFiniteAmplitudes.MeasurableMulInvInv (13s)
+✔ [17602/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.MomTie (21s)
+✔ [17603/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CompactCellConvergence.OrbitIdentity (6.3s)
+⚠ [17604/17633] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.LocalL2AllOfDictionary (9.9s)
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:89:2: Try this: 
+  haveI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hgq
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:810:89: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:110:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:114:6: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:810:89: Unused tactic linter: `(exfalso; rename_i h1 h2; exact h1 h2.2)` does nothing
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:822:67: Variable name `hM` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:154:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:110:15: This simp argument is unused:
+  Set.mem_setOf_eq
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hM
+Hint: Omit it from the simp argument list.
+  [apply] simp only [not_not] at hy
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:823:5: Variable name `hge` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:154:17: This simp argument is unused:
+  Set.mem_setOf_eq
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hge
+Hint: Omit it from the simp argument list.
+  [apply] simp only [not_not] at hs
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:823:24: Variable name `hgq` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/LocalL2AllOfDictionary.lean:248:120: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+✔ [17605/17633] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.DifferentialAction.DifferentialActionLemma.DsigWSmul (5.5s)
+✔ [17606/17636] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ChainRuleSecondOrder.SmoothClassInFiniteOrder (10s)
+✔ [17607/17636] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CompactCellConvergence.FlagStabClosed (8.8s)
+⚠ [17608/17636] Built Formalism.SharpRestriction.CuspSpanNormBounds.FrobeniusCoefficientMemLp.SigmaFiniteAmplitudes.NormPiLeOne (12s)
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/FrobeniusCoefficientMemLp/SigmaFiniteAmplitudes/NormPiLeOne.lean:64:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.S.Pv.AmpDDPf.aVec_eq`:
+  [CompleteSpace H]
+  [FiniteDimensional ℂ Wp]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace H] [FiniteDimensional ℂ Wp] in theorem ...
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hgq
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/FrobeniusCoefficientMemLp/SigmaFiniteAmplitudes/NormPiLeOne.lean:70:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.S.Pv.AmpDDPf.norm_pi_le_one`:
+  [FiniteDimensional ℂ Wp]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [FiniteDimensional ℂ Wp] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:867:89: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/FrobeniusCoefficientMemLp/SigmaFiniteAmplitudes/NormPiLeOne.lean:77:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.S.Pv.AmpDDPf.aesm_beInt`:
+  [CompleteSpace H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompleteSpace H] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:867:89: Unused tactic linter: `(exfalso; rename_i h1 h2; exact h1 h2.2)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:988:57: `Fin.coe_castLE` has been deprecated: Use `Fin.val_castLE` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:990:57: `Fin.coe_castLE` has been deprecated: Use `Fin.val_castLE` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:994:71: `Fin.coe_castLE` has been deprecated: Use `Fin.val_castLE` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:998:71: `Fin.coe_castLE` has been deprecated: Use `Fin.val_castLE` instead
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/LocalSplitTypeMixedSecond.lean:1001:6: `Matrix.det_of_lowerTriangular` has been deprecated: Use `Matrix.det_of_isLowerTriangular` instead
-✔ [16041/16053] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.ActMassC (9.5s)
-⚠ [16042/16053] Built Lemmata.GeneralBFactThirdExtra.Imports (10s)
-warning: src/Lemmata/GeneralBFactThirdExtra/Imports.lean:7:16: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Lemmata/GeneralBFactThirdExtra/Imports.lean:7:37: Variable name `inst_1` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst_1
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Lemmata/GeneralBFactThirdExtra/Imports.lean:7:66: Variable name `inst_2` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst_2
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [16043/16057] Built Formalism.SharpRestriction.CuspSpanNormBounds.CayleyDegreeNondegeneracy.DeterminantNaturalAnisotropic (8.7s)
-⚠ [16044/16057] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.LatticeAutomorphismFiniteness.MulVecMapInjective (12s)
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:124: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:196: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [17609/17636] Built Formalism.LocalToGlobal.SiegelLatticeTheory.TraceIntegralEstimates.AmpNZTie (17s)
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:37:4: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:261: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:38:4: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:334: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:37:4: Unused tactic linter: `field_simp` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:38:4: Unused tactic linter: `(field_simp; ring)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:240:56: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:342:56: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:378:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:424: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:379:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:505: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:378:6: Unused tactic linter: `rw [← integral_complex_ofReal]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:379:6: Unused tactic linter: `rw [integral_ofReal (𝕜 := ℂ)]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:492:35: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:489:39: This simp argument is unused:
+  Matrix.mul_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.smul_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:489:56: This simp argument is unused:
+  Matrix.smul_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mul_smul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:470:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:583: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:659: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:733: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:803: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:869: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:931: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:989: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:1045: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:1099: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:106: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
-
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:124: Unused tactic linter: `(intros; apply Bl.general_b_fact_upper_alt_form.goal1 <;> assumption)` does nothing
+warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/TraceIntegralEstimates/AmpNZTie.lean:470:6: Unused tactic linter: `(convert h1 using 3 <;> ring)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:196: Unused tactic linter: `(apply @Bl.general_b_fact_upper_alt_form.goal1 <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:261: Unused tactic linter: `(intros; apply @Bl.general_b_fact_upper_alt_form.goal1 <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:334: Unused tactic linter: `(apply @Bl.general_b_fact_upper_alt_form.goal1 <;>
-    first
-    | assumption
-    | infer_instance)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:424: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n k ‹_› ‹_› ‹_› ‹_› f A hA` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:505: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n k ‹_› ‹_› ‹_› ‹_› f A` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:583: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n k ‹_› ‹_› ‹_› ‹_› f` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:659: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n k ‹_› ‹_› ‹_› ‹_›` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:733: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n k ‹_› ‹_› ‹_›` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:803: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n k ‹_› ‹_›` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:869: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n k ‹_›` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:931: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n k` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:989: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_› n` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:1045: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K ‹_›` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/LatticeAutomorphismFiniteness/MulVecMapInjective.lean:54:1099: Unused tactic linter: `exact @Bl.general_b_fact_upper_alt_form.goal1 K` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [16045/16060] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.NormExpSatHolds (10s)
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/NormExpSatHolds.lean:27:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/NormExpSatHolds.lean:32:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/NormExpSatHolds.lean:33:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/NormExpSatHolds.lean:27:6: Unused tactic linter: `(intro D X; exact chi_n_bilinear X)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/NormExpSatHolds.lean:32:6: Unused tactic linter: `exact Formalism.L2.SG.Pf.generic_isomorphism_holds _` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/NormExpSatHolds.lean:33:6: Unused tactic linter: `exact Formalism.L2.SG.Pf.generic_isomorphism_holds _ _ _` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/NormExpSatHolds.lean:41:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/GaugeLatticeShifts/NormExpSatHolds.lean:41:6: Unused tactic linter: `(intro D X; exact chi_n_bilinear X)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [16046/16066] Built Formalism.SharpRestriction.CuspSpanNormBounds.CayleyDegreeNondegeneracy.PrimitiveMeanOverWords (11s)
+✔ [17610/17639] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CoefDecayA (6.9s)
+✔ [17611/17639] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.LocFactorAll (8.3s)
+✔ [17612/17639] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GaugeLatticeShifts.JacConst (5.3s)
+✔ [17613/17640] Built Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.CompactCellConvergence.ClosedExistsOfCompact (5.7s)
