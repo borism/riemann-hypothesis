@@ -1,36 +1,5 @@
-  [IsTopologicalGroup G]
-  [CompactSpace G]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Group G] [IsTopologicalGroup G] [CompactSpace G] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [22665/22679] Built Formalism.SharpRestriction.Divisibility.SlopeExcess.HeightBoundOfComponentBounds (7.8s)
-✔ [22666/22679] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.IntegralSpanAlgebra.Burnside (9.8s)
-✔ [22667/22679] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnitaryConjugation.ConjTransposeOf (4.9s)
-✔ [22668/22679] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnitaryConjugation.ExistsUnitReal (6.4s)
-✔ [22669/22679] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnitaryConjugation.Transfer (5.7s)
-✔ [22670/22681] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.GelfandPairConvolution.ConvComm (5.5s)
-✔ [22671/22681] Built Formalism.SharpRestriction.Divisibility.HookProducts.HhOfInputs (6.4s)
-✔ [22672/22684] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnitaryConjugation.SubmatrixMemUnitaryGroup (6.0s)
-✔ [22673/22684] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.GelfConv (4.8s)
-✔ [22674/22684] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.IntegralSpanAlgebra.IntegralSpan (6.2s)
-✔ [22675/22684] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.SchurStep (5.3s)
-✔ [22676/22687] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.UConjT (4.0s)
-✔ [22677/22687] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.GelfSpan (16s)
-⚠ [22678/22687] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.SchurIrreducible (17s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/SchurIrreducible.lean:4:18: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/SchurIrreducible.lean:11:18: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/SchurIrreducible.lean:24:2: Try this: 
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:49:4: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -38,163 +7,194 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [22679/22687] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.CommMultOf (85s)
-✔ [22680/22687] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.InjStep (85s)
-✔ [22681/22688] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.LinkedMeasures.SlopeId (153s)
-✔ [22682/22691] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.NoColumnCase.LvlWire (153s)
-✔ [22683/22691] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.SchurStepAlt (61s)
-⚠ [22684/22691] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.IntegrableEntry (61s)
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/CommutingMultiplicity/IntegrableEntry.lean:19:0: automatically included section variable(s) unused in theorem `PI.UnitaryGroupMassFormula.CommMult.integrable_entry`:
-  [Group H]
-  [IsTopologicalGroup H]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Group H] [IsTopologicalGroup H] in theorem ...
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:77:2: Try this: 
+  letI̵
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/CommutingMultiplicity/IntegrableEntry.lean:40:0: automatically included section variable(s) unused in theorem `PI.UnitaryGroupMassFormula.CommMult.mInt_const`:
-  [Group H]
-  [TopologicalSpace H]
-  [IsTopologicalGroup H]
-  [CompactSpace H]
-  [BorelSpace H]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Group H] [TopologicalSpace H] [IsTopologicalGroup H] [CompactSpace H] [BorelSpace H] in theorem ...
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/CommutingMultiplicity/IntegrableEntry.lean:45:0: automatically included section variable(s) unused in theorem `PI.UnitaryGroupMassFormula.CommMult.mInt_left`:
-  [CompactSpace H]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [CompactSpace H] in theorem ...
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:78:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [22685/22695] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffBase (24s)
-✔ [22686/22699] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.CommMult (9.6s)
-✔ [22687/22706] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.ExcOne (25s)
-✔ [22688/22706] Built Formalism.PeriodIntegrals.ExplicitFormulaCounts.UMultOne (5.9s)
-✔ [22689/22708] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffAbel (8.2s)
-✔ [22690/22708] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffSmooth (8.6s)
-✔ [22691/22708] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.PsiAPLeCount (5.5s)
-✔ [22692/22709] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffConsts (27s)
-✔ [22693/22709] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffPsi (14s)
-✔ [22694/22714] Built Formalism.SharpRestriction.Divisibility.GoodPartEigenspaceKernelSplitting (16s)
-✔ [22695/22714] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.SharpFunctions.MidExp (6.8s)
-⚠ [22696/22714] Built Formalism.SharpRestriction.Divisibility.HookProducts.NormAtEqSqrtMajAt (18s)
-warning: src/Formalism/SharpRestriction/Divisibility/HookProducts/NormAtEqSqrtMajAt.lean:45:17: This simp argument is unused:
-  Subtype.dist_eq
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Hint: Omit it from the simp argument list.
-  [apply] simp only [ZeroMemClass.coe_zero, dist_zero_right] at hy' ⊢
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:79:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Formalism/SharpRestriction/Divisibility/HookProducts/NormAtEqSqrtMajAt.lean:45:34: This simp argument is unused:
-  ZeroMemClass.coe_zero
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Hint: Omit it from the simp argument list.
-  [apply] simp only [Subtype.dist_eq, dist_zero_right] at hy' ⊢
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:80:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✔ [22697/22720] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.LfunctionOneLowerBound (28s)
-✔ [22698/22725] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.RationalColumns.Descent (38s)
-✔ [22699/22725] Built Formalism.SharpRestriction.Divisibility.HookProducts.LambdaZeroLeFourB (54s)
-✔ [22700/22725] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffExc (37s)
-⚠ [22701/22725] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.AdmissibleClasses.LinkGCl (75s)
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/AdmissibleClasses/LinkGCl.lean:30:2: Unused tactic linter: `beta_reduce` does nothing
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:81:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:83:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:84:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivSuppAC.lean:86:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [24032/24042] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.StatementsDivSupport (4.5s)
+✔ [24033/24044] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.StatementsDivPushForward (6.7s)
+✔ [24034/24045] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PPFContractedDim (10s)
+✔ [24035/24045] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PIntNumBaseChange (11s)
+✔ [24036/24045] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PIntNumUnique (5.7s)
+⚠ [24037/24047] Built ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArithmeticIntersection.MultihomogeneousIdeals.CycDim (13s)
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArithmeticIntersection/MultihomogeneousIdeals/CycDim.lean:121:102: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArithmeticIntersection/MultihomogeneousIdeals/CycDim.lean:121:84: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArithmeticIntersection/MultihomogeneousIdeals/CycDim.lean:121:102: Unused tactic linter: `(intros; apply Bl.general_b_fact_bis.goal1 <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [22702/22727] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffFinal (93s)
-✔ [22703/22727] Built Formalism.SharpRestriction.Divisibility.HookProducts.SharpFunctionalBoundFamily (96s)
-✔ [22704/22727] Built Formalism.LocalToGlobal.Divisibility.SumLeEtaSumNum (98s)
-⚠ [22705/22728] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.RationalColumns.ColFacts (104s)
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/RationalColumns/ColFacts.lean:47:0: automatically included section variable(s) unused in theorem `Formalism.L2.DIV.RatFullPt.range_op_eq_span`:
-  [NumberField K]
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArithmeticIntersection/MultihomogeneousIdeals/CycDim.lean:196:98: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArithmeticIntersection/MultihomogeneousIdeals/CycDim.lean:196:98: Unused tactic linter: `(intros; apply Bl.FirstBlockLemmaB.goal1 <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArithmeticIntersection/MultihomogeneousIdeals/CycDim.lean:198:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.ChartRestriction.G.AI.I1.mk_chartIdeal_X_self`:
+  [Fintype K]
+  [(k : K) → Fintype (ι k)]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField K] in theorem ...
+  omit [Fintype K] [(k : K) → Fintype (ι k)] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [22706/22728] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.LogEightBound.ProgTwo (50s)
-✔ [22707/22728] Built Development.AutomorphicArithmetic.CoprimeRanks.SecondSetNoRelation (51s)
-✔ [22708/22731] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.SharpFunctions.PointB (52s)
-✔ [22709/22731] Built Formalism.LocalToGlobal.InpAtOf (47s)
-✔ [22710/22731] Built Development.AutomorphicArithmetic.CharacterBoxes.Imports (77s)
-✔ [22711/22731] Built Development.AutomorphicArithmetic.ShortNorms.ShortNorm (80s)
-✔ [22712/22731] Built Formalism.SharpRestriction.AdmissibleParameterJoins.FamilyAuxiliaryPrimeSize (136s)
-✔ [22713/22732] Built Development.AbelianVarietyTheory.Definitions.GlobalTwisting.ZerosDisc (175s)
-✔ [22714/22732] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.RationalColumns.BuRationalOf (280s)
-⚠ [22715/22732] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.SharpFunctions.FunTop (336s)
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:65: Variable name `hx` is not explicitly referenced.
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/ArithmeticIntersection/MultihomogeneousIdeals/CycDim.lean:214:2: Try this: 
+  letI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hx
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:82: Variable name `h` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _h
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:106: Variable name `i` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _i
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:120: Variable name `C` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _C
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:122: Variable name `CH` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _CH
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:38:66: Variable name `hx` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hx
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:38:83: Variable name `h` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _h
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:38:107: Variable name `i` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _i
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [22716/22732] Built Formalism.LocalToGlobal.Wire4F (277s)
-warning: src/Formalism/LocalToGlobal/Wire4F.lean:17:66: Variable name `hx` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hx
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Wire4F.lean:17:83: Variable name `h` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _h
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Wire4F.lean:17:107: Variable name `i` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _i
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [22717/22732] Built Formalism.SharpRestriction.Divisibility.AdmissibleRank.FreeFamilyOfLeavesAndAdmissible (182s)
-⚠ [22718/22732] Built Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.PrimesAPIntervalOfPrimesRel (165s)
-warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/PrimesAPIntervalOfPrimesRel.lean:21:4: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [24038/24047] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.StatementsAddBlock (4.8s)
+✔ [24039/24047] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PPFDegree (8.5s)
+✔ [24040/24047] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PDivPrincipalDegree (6.2s)
+⚠ [24041/24050] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PPFContracted (7.9s)
+warning: src/GroundTheory/HeightsAndTheta/Heights/FieldsOfNumbers/PPFContracted.lean:28:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FieldNumbers.PFContracted.isHomogeneous_iff`:
+  [DecidableEq K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/FieldsOfNumbers/PPFContracted.lean:162:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FieldNumbers.PFContracted.relDim_eq_int`:
+  [DecidableEq K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/FieldsOfNumbers/PPFContracted.lean:195:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FieldNumbers.PFContracted.contractPrime_isRelevant`:
+  [DecidableEq K]
+  [DecidableEq K']
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq K] [DecidableEq K'] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/FieldsOfNumbers/PPFContracted.lean:221:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FieldNumbers.PFContracted.pullNat_apply`:
+  [Fintype K']
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K'] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/FieldsOfNumbers/PPFContracted.lean:252:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FieldNumbers.PFContracted.rename_monoSmall`:
+  [DecidableEq K]
+  [Fintype K']
+  [DecidableEq K']
+  [(k : K') → Fintype (ι' k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq K] [Fintype K'] [DecidableEq K'] [(k : K') → Fintype (ι' k)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [24042/24050] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.StatementsRename (5.8s)
+✔ [24043/24051] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PPNProduct (5.7s)
+✔ [24044/24051] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PDivCycleSupport (6.7s)
+✔ [24045/24051] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.IntNumRelabel (8.5s)
+✔ [24046/24052] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PHilbAddBlock (10s)
+✔ [24047/24053] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PRenameIntNum (6.8s)
+✔ [24048/24059] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PRenameMultiHomog (6.7s)
+✔ [24049/24062] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PRenameMultiProjPrime (6.5s)
+✔ [24050/24062] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PRenameHilbFn (6.4s)
+✔ [24051/24062] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.StatementsLocalizedQuotientLength (5.9s)
+✔ [24052/24067] Built GroundTheory.HeightsAndTheta.Heights.HilbertSamuel.StatementsBlockImage (5.9s)
+✔ [24053/24067] Built GroundTheory.HeightsAndTheta.Heights.HilbertSamuel.StatementsNonvanishingDense (5.6s)
+✔ [24054/24067] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PfContractedHypothesesExample (11s)
+✔ [24055/24067] Built GroundTheory.HeightsAndTheta.Heights.HilbertSamuel.StatementsAnResNullForm (5.8s)
+✔ [24056/24067] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PLocalizedQuotientLength (8.1s)
+⚠ [24057/24070] Built ReciprocityTheory.AnalyticForms.PotentialTheory.AnalyticSubsetChartLocal (7.1s)
+warning: src/ReciprocityTheory/AnalyticForms/PotentialTheory/AnalyticSubsetChartLocal.lean:29:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: src/ReciprocityTheory/AnalyticForms/PotentialTheory/AnalyticSubsetChartLocal.lean:66:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/PotentialTheory/AnalyticSubsetChartLocal.lean:66:4: Unused tactic linter: `simp only [integralWith]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [24058/24070] Built ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterRedA (8.0s)
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterRedA.lean:22:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.ChartRestriction.G.Geo.logNorm_inv_one`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterRedA.lean:43:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.ChartRestriction.G.Geo.h_eq_of_sameOrbit`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [24059/24083] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.HomFracDegZeroEqFunField (5.5s)
+⚠ [24060/24086] Built GroundTheory.HeightsAndTheta.Heights.HilbertSamuel.BergmanProjectiveVolume (5.8s)
+warning: src/GroundTheory/HeightsAndTheta/Heights/HilbertSamuel/BergmanProjectiveVolume.lean:53:33: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [24061/24086] Built ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterRedB (6.5s)
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterRedB.lean:12:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.ChartRestriction.G.Geo.continuousOn_lift`:
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [24062/24086] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.AddBlockVarEquivFst (9.4s)
