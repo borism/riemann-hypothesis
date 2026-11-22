@@ -4,7 +4,8 @@
 # Stops when step2.done exists (after one last push).
 # Run detached:  RH_CKPT_EVERY_MIN=60 setsid nohup scripts/rh-checkpoint-loop.sh > /home/user/rh-logs/ckpt-loop.log 2>&1 < /dev/null &
 #
-# Pushed to the branch, next to the INDEX (verification/runs/<RUN>/):
+# Committed in the checkout $WT (default /home/user/wt-run, branch run/step2-2026-11-22) and pushed to that
+# branch, next to the INDEX (verification/runs/<RUN>/):
 #   progress.tsv        one line per loop pass: time, modules built, rate, free disk, memory, zram, shards
 #   monitor-step2.tsv   the driver's 1-minute resource samples (append-only; old header, see the audit)
 #   build-tail.log      the last 200 lines of the lake build log (rewritten each pass)
@@ -12,14 +13,15 @@
 # The full build log is not pushed: it grows to many MB and git would keep a copy of every version.
 set -u
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+WT="${RH_CKPT_WT:-/home/user/wt-run}"   # a checkout of the tracking branch: the index and progress files live and are committed there
 WORK="${RH_WORK:-/home/user/rh-verify}"
 EVERY="${RH_CKPT_EVERY_MIN:-60}"
-BRANCH="${RH_CKPT_BRANCH:-ccr-bdb3a003-2b6l4u}"
+BRANCH="${RH_CKPT_BRANCH:-run/step2-2026-11-22}"
 RUN="${RH_CKPT_RUN:-20261122-step2-live}"
 DRIVER_LOG="${RH_DRIVER_LOG:-/home/user/rh-logs/step2-driver.log}"
 IDX=verification/checkpoints/step2/INDEX.tsv
 RUNDIR="verification/runs/$RUN"
-PROG="$REPO/$RUNDIR/progress.tsv"
+PROG="$WT/$RUNDIR/progress.tsv"
 
 progress_line() {
   local now mods prev_mods prev_t rate free mem zr shards
@@ -33,15 +35,15 @@ progress_line() {
   free=$(df -BG --output=avail / | tail -1 | tr -dc 0-9)
   mem=$(awk '/MemAvailable/ {print int($2/1024)}' /proc/meminfo)
   zr=$(awk '/SwapTotal/ {t=$2} /SwapFree/ {f=$2} END {print int((t-f)/1024)}' /proc/meminfo)
-  shards=$(tail -n +2 "$REPO/$IDX" 2>/dev/null | wc -l)
+  shards=$(tail -n +2 "$WT/$IDX" 2>/dev/null | wc -l)
   mkdir -p "$(dirname "$PROG")"
   [ -s "$PROG" ] || printf 'utc\tepoch\toleans\tmodules_per_min\tfree_disk_gb\tmem_avail_mb\tswap_used_mb\tshards\n' > "$PROG"
   printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$(date -u +%FT%TZ)" "$now" "$mods" "$rate" "$free" "$mem" "$zr" "$shards" >> "$PROG"
 }
 
 one() {
-  bash "$REPO/scripts/rh-checkpoint.sh" push 2>&1 | grep -v -E 'it/s|MB/s|%\|' | tail -5
-  cd "$REPO" || return
+  RH_CKPT_INDEX="$WT/$IDX" bash "$REPO/scripts/rh-checkpoint.sh" push 2>&1 | grep -v -E 'it/s|MB/s|%\|' | tail -5
+  cd "$WT" || return
   progress_line
   [ -f "$WORK/logs/monitor-step2.tsv" ] && cp "$WORK/logs/monitor-step2.tsv" "$RUNDIR/monitor-step2.tsv"
   [ -f "$WORK/logs/step2-build.log" ] && tail -n 200 "$WORK/logs/step2-build.log" | cut -c1-300 > "$RUNDIR/build-tail.log"
