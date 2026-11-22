@@ -1,0 +1,53 @@
+# Experiment for issue #9: exercise scripts/rh-pool-merge.sh on a runner (never on the VM) with the
+# pilot1 wave's artifacts and its verdict committed in git, then check that Lake accepts the merged tree.
+# Also checks that a tampered batch is refused. Uses only the automatic token to read artifacts.
+name: exp-merge-test
+on:
+  push:
+    branches: [exp/gh-runners-restore-test]
+    paths: [.github/workflows/exp-merge-test.yml]
+permissions:
+  contents: read
+  actions: read
+env:
+  LC_ALL: C
+  LIVE_COMMIT: f073285e399c5587c6a6799c0da56451b30c1836
+  EXP_SHARDS: all
+  PILOT_RUN: "45031028289"
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+    steps:
+      - uses: actions/checkout@v4
+        with: {path: exp, persist-credentials: false, sparse-checkout: "scripts\nverification/pool"}
+      - uses: actions/checkout@v4
+        with: {path: build, ref: '${{ env.LIVE_COMMIT }}', persist-credentials: false, fetch-depth: 1}
+      - uses: actions/download-artifact@v4
+        with: {name: pilot1-plan, path: exp-out/plan, run-id: '${{ env.PILOT_RUN }}', github-token: '${{ github.token }}'}
+      - uses: actions/download-artifact@v4
+        with: {pattern: 'pilot1-job-?', path: batches, merge-multiple: true, run-id: '${{ env.PILOT_RUN }}', github-token: '${{ github.token }}'}
+      - name: Live absolute path, same INDEX as the pilot
+        run: |
+          sudo mkdir -p /home/user/rh-verify && sudo chown "$(id -u):$(id -g)" /home/user/rh-verify
+          mv build /home/user/rh-verify/build && cp exp-out/plan/INDEX.tsv exp-out/INDEX.tsv && ls -la batches
+      - run: bash exp/scripts/exp-gh-restore-test.sh setup
+      - run: bash exp/scripts/exp-gh-restore-test.sh restore
+      - name: Negative test, a tampered batch must be refused
+        run: |
+          mkdir -p bad && cp batches/* bad/
+          printf 'x' | dd of=bad/pilot1-job-1.tar.zst bs=1 seek=1000 conv=notrunc status=none
+          if bash exp/scripts/rh-pool-merge.sh exp/verification/pool/pilot1-verdict.tsv bad > bad.log 2>&1; then echo "FAIL: tampered batch accepted"; cat bad.log; exit 1; fi
+          echo "tampered batch refused: $(tail -1 bad.log)" | tee -a exp-out/summary.txt
+      - name: Dry run, then apply
+        run: |
+          bash exp/scripts/rh-pool-merge.sh exp/verification/pool/pilot1-verdict.tsv batches | tee -a exp-out/summary.txt
+          find /home/user/rh-verify/build/.lake/build -newer exp-out/restore.stamp -type f | wc -l | sed 's/^/files written by the dry run: /' | tee -a exp-out/summary.txt
+          bash exp/scripts/rh-pool-merge.sh exp/verification/pool/pilot1-verdict.tsv batches --apply | tee -a exp-out/summary.txt
+      - name: Does Lake accept the merged tree?
+        run: |
+          cat exp-out/plan/slice-*.txt exp-out/restored-modules.txt | sed 's/^/+/' > tg.txt
+          ( cd /home/user/rh-verify/build && mapfile -t tg < "$GITHUB_WORKSPACE/tg.txt" && env -i HOME=/tmp/h PATH="/home/user/rh-verify/toolchains/v4.33.1/bin:/usr/bin:/bin" LAKE_ARTIFACT_CACHE=false lake build --no-build "${tg[@]}" ) > nobuild.log 2>&1; rc=$?
+          echo "lake build --no-build over $(wc -l < tg.txt) modules (restored + merged pilot): rc=$rc; $(tail -1 nobuild.log)" | tee -a exp-out/summary.txt
+          cat exp-out/summary.txt
