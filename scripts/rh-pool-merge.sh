@@ -19,7 +19,13 @@ IDX="$(realpath "${1:?wave index}")"; DIR="$(realpath "${2:?batch dir}")"; APPLY
 WORK="${RH_WORK:-/home/user/rh-verify}"; DEST="$WORK/build/.lake/build"
 die() { echo "rh-pool-merge: $*" >&2; exit 1; }
 [ -d "$DEST" ] || die "no live tree at $DEST"
-if [ "$APPLY" = 1 ] && pgrep -f 'lake build Main' >/dev/null; then die "lake build Main is running; stop it first (merging under a running build is not allowed)"; fi
+# RH_POOL_SCRATCH=1 skips the two process checks, for rehearsals on a scratch tree only (refused for the live tree)
+if [ "${RH_POOL_SCRATCH:-0}" = 1 ]; then [ "$(realpath -m "$WORK")" != /home/user/rh-verify ] || die "RH_POOL_SCRATCH is not allowed on the live tree"; fi
+if [ "$APPLY" = 1 ] && [ "${RH_POOL_SCRATCH:-0}" != 1 ] && pgrep -f 'lake build Main' >/dev/null; then die "lake build Main is running; stop it first (merging under a running build is not allowed)"; fi
+if [ "$APPLY" = 1 ] && [ "${RH_POOL_SCRATCH:-0}" != 1 ] && pgrep -f 'rh-checkpoint-loop.sh' >/dev/null; then die "the checkpoint loop is running; stop it first (it could upload a half-merged tree)"; fi
+# every file this run creates is listed here, for rollback (xargs rm) and for the post-merge checks
+LIST="${RH_POOL_MERGED_LIST:-${RH_POOL_LOGDIR:-/home/user/rh-logs}/pool-merged-$(date -u +%Y%m%dT%H%M%SZ).list}"
+if [ "$APPLY" = 1 ]; then mkdir -p "$(dirname "$LIST")"; : > "$LIST"; fi
 SCR="$(mktemp -d "${TMPDIR:-/tmp}/rh-pool-merge.XXXXXX")"; trap 'rm -rf "$SCR"' EXIT
 total=0; merged=0; skipped=0
 while IFS=$'\t' read -r wave job files tsha msha spotm spots verdict; do
@@ -31,26 +37,27 @@ while IFS=$'\t' read -r wave job files tsha msha spotm spots verdict; do
   [ "$(sha256sum "$tar" | cut -d' ' -f1)" = "$tsha" ] || die "$name: tar sha256 differs from the index (refusing)"
   [ "$(sha256sum "$man" | cut -d' ' -f1)" = "$msha" ] || die "$name: manifest sha256 differs from the index (refusing)"
   [ "$(wc -l < "$man")" = "$files" ] || die "$name: manifest has $(wc -l < "$man") lines, index says $files"
-  awk -F'\t' 'NF!=3 || $1 !~ /^\.\/(lib\/lean|ir)\/[A-Za-z0-9_.\/]+\.(olean|olean\.hash|ilean|ilean\.hash|trace|c|c\.hash)$/ || $1 ~ /\.\./ || $3 !~ /^[0-9a-f]{64}$/ {print "bad line: " $0; bad=1} END {exit bad}' "$man" || die "$name: manifest has unexpected entries"
+  awk -F'\t' 'NF!=3 || $1 !~ /^\.\/(lib\/lean|ir)\/[^\t]+\.(olean|olean\.hash|ilean|ilean\.hash|trace|c|c\.hash)$/ || $1 ~ /(^|\/)\.\.(\/|$)/ || $1 ~ /\/\// || $1 ~ /[[:cntrl:]]/ || $3 !~ /^[0-9a-f]{64}$/ {print "bad line: " $0; bad=1} END {exit bad}' "$man" || die "$name: manifest has unexpected entries"
   # the tar must list exactly the manifest's paths, all regular files
-  zstd -dc "$tar" | tar -tvf - | awk '$1 !~ /^-/ {print "non-regular: " $0; bad=1} END {exit bad}' || die "$name: tar has non-regular entries"
-  diff <(zstd -dc "$tar" | tar -tf - | sed 's|^\./||; s|^|./|' | LC_ALL=C sort) <(cut -f1 "$man" | LC_ALL=C sort) >/dev/null || die "$name: tar contents differ from manifest"
+  zstd -dc "$tar" | tar --quoting-style=literal -tvf - | awk '$1 !~ /^-/ {print "non-regular: " $0; bad=1} END {exit bad}' || die "$name: tar has non-regular entries"
+  diff <(zstd -dc "$tar" | tar --quoting-style=literal -tf - | sed 's|^\./||; s|^|./|' | LC_ALL=C sort) <(cut -f1 "$man" | LC_ALL=C sort) >/dev/null || die "$name: tar contents differ from manifest"
   u="$SCR/$name"; mkdir -p "$u"; zstd -dc "$tar" | tar -C "$u" --no-same-owner -xf -
   ( cd "$u" && awk -F'\t' '{print $3 "  " $1}' "$man" | sha256sum -c --quiet - ) || die "$name: unpacked files differ from manifest"
-  n_new=0; n_same=0
+  # split into new files and files already in the tree; the latter must be identical (one sha256sum call)
+  : > "$SCR/new"; : > "$SCR/old"
   while IFS=$'\t' read -r p size h; do
-    if [ -e "$DEST/$p" ]; then
-      [ "$(sha256sum "$DEST/$p" | cut -d' ' -f1)" = "$h" ] || die "$name: $p exists in the live tree with different content (refusing the batch)"
-      n_same=$((n_same+1))
-    else n_new=$((n_new+1)); fi
+    if [ -e "$DEST/$p" ]; then printf '%s  %s\n' "$h" "$p" >> "$SCR/old"; else printf '%s\n' "$p" >> "$SCR/new"; fi
   done < "$man"
+  if [ -s "$SCR/old" ]; then ( cd "$DEST" && sha256sum -c --quiet "$SCR/old" ) || die "$name: a file already in the live tree has different content (refusing the batch)"; fi
+  n_new=$(wc -l < "$SCR/new"); n_same=$(wc -l < "$SCR/old")
   total=$((total+files)); skipped=$((skipped+n_same))
   echo "  verified: $files files, $n_new new, $n_same already present and identical"
   if [ "$APPLY" = 1 ]; then
-    while IFS=$'\t' read -r p size h; do
-      [ -e "$DEST/$p" ] && continue
-      mkdir -p "$(dirname "$DEST/$p")"; cp -p "$u/$p" "$DEST/$p.rh-merge" && mv "$DEST/$p.rh-merge" "$DEST/$p"
-    done < "$man"
+    if [ -s "$SCR/new" ]; then
+      # the build is stopped, so plain copies are enough; cp --parents keeps the relative paths
+      ( cd "$u" && xargs -d '\n' -a "$SCR/new" cp -p --parents -t "$DEST" ) || die "$name: copy failed (see $LIST for what was copied before)"
+      cat "$SCR/new" >> "$LIST"
+    fi
     ( cd "$DEST" && awk -F'\t' '{print $3 "  " $1}' "$man" | sha256sum -c --quiet - ) || die "$name: live tree check after merge failed"
     merged=$((merged+n_new)); echo "  merged $n_new files"
   else
@@ -59,4 +66,4 @@ while IFS=$'\t' read -r wave job files tsha msha spotm spots verdict; do
   rm -rf "$u"
 done < "$IDX"
 echo "total: $total files in accepted batches, $skipped already present; $([ "$APPLY" = 1 ] && echo "merged $merged" || echo "dry run, nothing written")"
-if [ "$APPLY" = 1 ]; then echo "next: restart step 2 (scripts/run-verification.sh step2); Lake re-checks every trace and rebuilds anything that does not match"; fi
+if [ "$APPLY" = 1 ]; then echo "merged files listed in $LIST ($(wc -l < "$LIST") lines)"; echo "next: restart step 2 (scripts/run-verification.sh step2); Lake re-checks every trace and rebuilds anything that does not match"; fi
