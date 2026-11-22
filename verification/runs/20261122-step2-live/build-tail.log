@@ -1,200 +1,200 @@
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:27:4: Unused tactic linter: `exact Complex.abs_re_le_abs _` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:29:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.vonMangoldtCharIm_bound`:
-  [NeZero q]
+✔ [13265/13285] Built Formalism.PeriodIntegrals.ExplicitFormulaCounts.WeylForK (6.8s)
+✔ [13266/13287] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.IntegrableInvCube (9.7s)
+✔ [13267/13287] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkDiag (9.3s)
+✔ [13268/13288] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkAesmTsum (5.4s)
+✔ [13269/13289] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelConditionsIffWithoutRegularRep (7.3s)
+✔ [13270/13289] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.HighestWeights.WeylBridge (6.4s)
+⚠ [13271/13289] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.ImageProdLoc (7.6s)
+warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/ImageProdLoc.lean:47:0: automatically included section variable(s) unused in theorem `Formalism.FourierDecayAlt.P.PBC.image_prod_loc`:
+  [NumberField E]
+  [IsCMField E]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NeZero q] in theorem ...
+  omit [NumberField E] [IsCMField E] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:37:4: this tactic is never executed
+✔ [13272/13290] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkpCoefCont (6.6s)
+✔ [13273/13290] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelDiagonalOfL2UnfoldIdempotent (8.9s)
+⚠ [13274/13290] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkbLeOneAddSq (8.6s)
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkbLeOneAddSq.lean:38:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.LeviCoordinates.rrkb_lint`:
+  [MeasurableInv G]
+  [SigmaFinite μ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableInv G] [SigmaFinite μ] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkbLeOneAddSq.lean:63:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkbLeOneAddSq.lean:64:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkbLeOneAddSq.lean:49:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.LeviCoordinates.rrkb_r_fix`:
+  [MeasurableInv G]
+  [SigmaFinite μ]
+  [μ.IsMulRightInvariant]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableInv G] [SigmaFinite μ] [μ.IsMulRightInvariant] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [13275/13290] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RrkaMeasKabRight (9.1s)
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/RrkaMeasKabRight.lean:53:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.LeviCoordinates.rrka_meas_Kab_right`:
+  [MeasurableInv G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableInv G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [13276/13293] Built Formalism.SharpRestriction.CuspSpanNormBounds.BridgeWeylDS (7.0s)
+✔ [13277/13293] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.CovolumeIndependentOfFundamentalDomain (15s)
+✔ [13278/13294] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelDiagonalOfAbsoluteConvergence (9.7s)
+⚠ [13279/13297] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.GermStep (13s)
+warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/GermStep.lean:20:5: Variable name `hP'0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hP'0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [13280/13298] Built Formalism.FlagUnipotentLattices.CuspidalityThreshold (8.9s)
+✔ [13281/13299] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.ArchimedeanRestrictionStronglyContinuous (8.0s)
+✔ [13282/13299] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.ProjectionCountCuspOfTrivialIdempotent (16s)
+✔ [13283/13300] Built Formalism.FlagUnipotentLattices.FlagUnipotentLattice (10s)
+✔ [13284/13302] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelDiagonalOfDecayThreshold (18s)
+⚠ [13285/13303] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.PBCFinal (17s)
+warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:107:94: Variable name `hU` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hU
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:111:5: Variable name `hthr` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hthr
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:144:97: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:37:4: Unused tactic linter: `exact Complex.abs_im_le_abs _` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:39:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.vonMangoldtCharRe_zero`:
-  [NeZero q]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NeZero q] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:41:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.vonMangoldtCharIm_zero`:
-  [NeZero q]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NeZero q] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:43:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.chebyshev_character_re_im`:
-  [NeZero q]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NeZero q] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:52:0: automatically included section variable(s) unused in theorem `Formalism.ZeroFreeDirichlet.chebyshev_character_eq_zero_of_le_one`:
-  [NeZero q]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NeZero q] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:81:4: this tactic is never executed
+warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:144:158: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/PerronChi.lean:81:4: Unused tactic linter: `exact Summable.of_norm_bounded _ hΛ.norm hb` does nothing
+warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:144:97: Unused tactic linter: `exact Rat.cast_nonneg.2 (FractionalIdeal.absNorm_nonneg _)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [12173/12183] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.RectShiftChi (9.9s)
-✔ [12174/12188] Built Formalism.LandauZeroFreeBounds.NoZeroComplex (6.3s)
-⚠ [12175/12190] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LogTwoLeLogAnalyticConductor (7.0s)
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/LogTwoLeLogAnalyticConductor.lean:53:98: Variable name `hX` is not explicitly referenced.
+warning: src/Formalism/HermitianCurvature/HermitianCurvatureProofs/PBCFinal.lean:144:158: Unused tactic linter: `positivity` does nothing
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hX
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [13286/13304] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.RegularRepAlgebraicMeasurableContinuous (10s)
+✔ [13287/13317] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.UnitaryRepUnimodularOfFiniteVolume (10s)
+✔ [13288/13322] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.KernelDiagonalOfTriangleInequality (19s)
+✔ [13289/13324] Built Formalism.FlagUnipotentLattices.MinkowskiFactorialBounds.OperatorHilbertSchmidtNorm (24s)
+✔ [13290/13324] Built Formalism.FlagUnipotentLattices.MinkowskiFactorialBounds.FlagKernelVanishing (6.9s)
+⚠ [13291/13325] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.PjStarProj (10s)
+warning: src/Formalism/SharpRestriction/CuspSpanNormBounds/UnimodularSchurMeasures/PjStarProj.lean:109:0: automatically included section variable(s) unused in theorem `Formalism.MainNotions.LeviCoordinates.pj_comm`:
+  [MeasurableSpace G1]
+  [SFinite μ2]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [MeasurableSpace G1] [SFinite μ2] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [12176/12190] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SiegelProductCharacterInequality (13s)
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelProductCharacterInequality.lean:74:93: Variable name `h1σ` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _h1σ
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelProductCharacterInequality.lean:97:66: Variable name `hL₁` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hL₁
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [12177/12190] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.PerronHorizontalSegmentBound (12s)
-✔ [12178/12192] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.BqKeyOf (26s)
-✔ [12179/12193] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LandauLemmaLfunctionZeros (9.6s)
-✔ [12180/12193] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LogDerivSubExceptionalZeros (15s)
-✔ [12181/12193] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SumVonMangoldtNotCoprimeLe (7.0s)
-⚠ [12182/12194] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SiegelOf (7.2s)
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelOf.lean:39:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-⚠ [12183/12197] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.ExistsContourAvoidingRealZero (7.4s)
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/ExistsContourAvoidingRealZero.lean:25:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-✔ [12184/12197] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.AbsZeroTermSecondDifferenceLe (12s)
-✔ [12185/12197] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.ExcBoundOf (8.4s)
-✔ [12186/12198] Built Formalism.LandauZeroFreeBounds.FinalSiegel (5.0s)
-⚠ [12187/12198] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LeOfSecondDifferenceBound (15s)
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/LeOfSecondDifferenceBound.lean:11:5: Variable name `hey0` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hey0
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/LeOfSecondDifferenceBound.lean:11:21: Variable name `heY0` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _heY0
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [12188/12199] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SiegelWalfiszAPOf (8.2s)
-✔ [12189/12200] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.LogDerivRegionChiOf (18s)
-⚠ [12190/12200] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.SiegelWalfiszOf (14s)
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:24:8: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [13292/13326] Built Formalism.HermitianCurvature.HeisenbergConjugationMeasurePreserving (27s)
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:444:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:447:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:450:53: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:456:51: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:459:51: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:457:58: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:24:8: Unused tactic linter: `exact (div_le_div_iff_of_pos_right hL).mpr h` does nothing
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:457:58: Unused tactic linter: `ring` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:66:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:162:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:155:44: Variable name `hA` is not explicitly referenced.
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:510:31: this tactic is never executed
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hA
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:511:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/SiegelWalfiszOf.lean:218:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-⚠ [12191/12201] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.PBrDiv (14s)
-warning: src/Formalism/SizeWindowBrackets/ChainSlopeWindows/PBrDiv.lean:632:4: Unused tactic linter: `repeat' apply And.intro` does nothing
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:510:31: Unused tactic linter: `simp only [h]` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [12192/12208] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.PsiChiBoundOf (15s)
-✔ [12193/12208] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.PSmall (10s)
-⚠ [12194/12210] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.ExistsOrthonormalFrameComplement (22s)
-warning: src/Formalism/SizeWindowBrackets/ChainSlopeWindows/ExistsOrthonormalFrameComplement.lean:41:0: automatically included section variable(s) unused in theorem `Formalism.LFunctionChainParameters.HilbertSchmidtUnitaryInvariance.norm_phase`:
-  [Fintype ι]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Fintype ι] in theorem ...
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:534:12: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:555:12: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:576:6: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/SizeWindowBrackets/ChainSlopeWindows/ExistsOrthonormalFrameComplement.lean:49:0: automatically included section variable(s) unused in theorem `Formalism.LFunctionChainParameters.HilbertSchmidtUnitaryInvariance.phase_self`:
-  [Fintype ι]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Fintype ι] in theorem ...
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:576:6: Unused tactic linter: `simp [Complex.norm_exp_ofReal_mul_I]` does nothing
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/SizeWindowBrackets/ChainSlopeWindows/ExistsOrthonormalFrameComplement.lean:56:0: automatically included section variable(s) unused in theorem `Formalism.LFunctionChainParameters.HilbertSchmidtUnitaryInvariance.sqrt_gaTw`:
-  [Fintype ι]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Fintype ι] in theorem ...
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:581:30: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [12195/12211] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.DisplayedInequalitySharpHalf (14s)
-✔ [12196/12211] Built Formalism.SizeWindowBrackets.ChainSlopeWindows.ChiEightNoRealZeroHypothesis (9.3s)
-✔ [12197/12213] Built Formalism.LocalToGlobal.ClassSLinks (8.5s)
-✔ [12198/12218] Built Formalism.LocalToGlobal.ClassSR (7.7s)
-✔ [12199/12218] Built Formalism.LocalToGlobal.RatioJoints.IsRatioAt (6.7s)
-✔ [12200/12218] Built Formalism.LocalToGlobal.HilbertRowConditions.RowPinMin (8.1s)
-✔ [12201/12218] Built Formalism.LocalToGlobal.UnitaryNorms.DefsDatum (7.9s)
-✔ [12202/12218] Built Formalism.LocalToGlobal.BesselHermitianTheta.TiedWeilEq (7.7s)
-✔ [12203/12221] Built Formalism.LocalToGlobal.RatioJoints.CharacterProductEqOne (8.5s)
-✔ [12204/12223] Built Formalism.LocalToGlobal.UnitaryNorms.DatumS (8.0s)
-⚠ [12205/12223] Built Formalism.LandauZeroFreeBounds.ExceptionalZeroBounds.ChebyshevCharacterExplicitGeneral (64s)
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/ChebyshevCharacterExplicitGeneral.lean:90:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-warning: src/Formalism/LandauZeroFreeBounds/ExceptionalZeroBounds/ChebyshevCharacterExplicitGeneral.lean:175:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-✔ [12206/12224] Built Formalism.LocalToGlobal.SiegelLatticeTheory.SiegelMassRatios.IdCell (6.1s)
-⚠ [12207/12224] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.TermDef (8.9s)
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/TermDef.lean:64:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-✔ [12208/12225] Built Formalism.LocalToGlobal.ClassRec (6.5s)
-✔ [12209/12225] Built Formalism.LocalToGlobal.SiegelLatticeTheory.SiegelMassRatios.LemmaN (8.2s)
-✔ [12210/12226] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.GGMirabolicBase (6.1s)
-⚠ [12211/12226] Built Formalism.LocalToGlobal.SiegelLatticeTheory.ClosedLocalOrbits.FourParts (11s)
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/ClosedLocalOrbits/FourParts.lean:179:4: The namespace `FourParts` is duplicated in the declaration `Formalism.L2.SG.FourParts.FourParts`.
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:583:30: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.dupNamespace false`
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:581:30: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:583:30: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:616:15: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:629:15: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:631:72: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:617:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:618:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:631:49: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:616:15: Unused tactic linter: `first
+| exact hE
+| positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:629:15: Unused tactic linter: `first
+| exact hdiv
+| positivity` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:631:72: Unused tactic linter: `omega` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:674:19: This simp argument is unused:
+  Bool.false_eq_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [↓reduceIte] at hl ⊢
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:669:19: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:820:23: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:813:17: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/Formalism/HermitianCurvature/HeisenbergConjugationMeasurePreserving.lean:820:23: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [13293/13326] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.PjDensUpper (9.8s)
+✔ [13294/13327] Built Formalism.FlagUnipotentLattices.CuspThresholdBound (5.1s)
+✔ [13295/13328] Built Formalism.FlagUnipotentLattices.FlagUnipotentLatticeOfRel (5.3s)
+✔ [13296/13328] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.CechHodgeFiltration (6.6s)
+✔ [13297/13328] Built Formalism.HermitianCurvature.HermitianCurvatureProofs.SecondDerivativeHolds (6.1s)
+✔ [13298/13329] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.PjFdegAllPos (10s)
+✔ [13299/13330] Built Formalism.SharpRestriction.CuspSpanNormBounds.UnimodularSchurMeasures.CNDefs (6.6s)
