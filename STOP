@@ -1,1 +1,0 @@
-stop requested 2026-11-22T19:39:02Z: w2 publish failed with HTTP 403 on release create; no pool-w2 release, so w3 would redo w2; stopped by parent until the cause is fixed
