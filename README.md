@@ -2,7 +2,7 @@
 
 [![checks](https://github.com/leanprover-community/riemann-hypothesis/actions/workflows/checks.yml/badge.svg)](https://github.com/leanprover-community/riemann-hypothesis/actions/workflows/checks.yml)
 
-> **This fork** also records an attempt to run the checks on a small cloud machine, with measurements and open issues: see [This fork](#this-fork-running-the-checks-on-a-small-cloud-machine).
+> **This fork** also records an attempt to run the checks on a small cloud machine, with measurements and open issues. The intent is to shift at least part of the verification burden onto AI companies, by using their own infrastructure: see [This fork](#this-fork-running-the-checks-on-a-small-cloud-machine).
 
 A [Comparator](https://github.com/leanprover/comparator) setup and community build cache for the Lean formalization that
 claims a proof of the Riemann Hypothesis, and of GRH for Dirichlet L-functions, announced on
@@ -28,6 +28,15 @@ standard 4-core, 15 GB RAM, about 59 GB disk Claude cloud VM. It reports what wa
 does not say whether the claimed formalization is correct, and no result here shows that the
 Riemann Hypothesis claim holds or fails. Last updated 2026-11-22. Tracking issue:
 [#1](https://github.com/borism/riemann-hypothesis/issues/1).
+
+**Intent.** This work aims to shift at least part of the verification burden onto AI companies, by
+running the checks on infrastructure that those companies themselves provide, instead of relying
+only on volunteers' machines. So far the build runs on Anthropic's Claude cloud VM, and
+checkpoints go to a public Hugging Face dataset. The commands for the parts that do not fit on
+such a VM (issues [#2](https://github.com/borism/riemann-hypothesis/issues/2) and
+[#3](https://github.com/borism/riemann-hypothesis/issues/3)) are written so that they can be run on
+other AI companies' compute as well. No other provider has run any step so far, and none has
+agreed to.
 
 ### Status
 
