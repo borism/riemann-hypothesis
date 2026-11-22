@@ -1,0 +1,39 @@
+# Experiment for issue #9 (not part of the verification). Measures the hosted runner. No secrets.
+name: exp-runner-facts
+on:
+  push:
+    branches: [exp/gh-runners-restore-test]
+    paths: [.github/workflows/exp-runner-facts.yml]
+permissions:
+  contents: read
+jobs:
+  facts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Hardware and OS
+        run: |
+          set -x
+          nproc; lscpu | head -20; free -g; swapon --show || true; cat /etc/os-release | head -4; uname -a
+          df -h; lsblk || true
+          cat /proc/meminfo | head -5
+      - name: Preinstalled tools
+        run: |
+          for t in git curl zstd tar python3 pip3 docker bwrap unshare taskset jq; do printf '%-8s ' $t; command -v $t || echo MISSING; done
+          zstd --version; git --version; python3 --version
+          cat /proc/sys/kernel/apparmor_restrict_unprivileged_userns 2>/dev/null || true
+      - name: Disk freeable
+        run: |
+          for d in /usr/share/dotnet /opt/hostedtoolcache /usr/local/lib/android /opt/ghc /usr/local/.ghcup /usr/share/swift /usr/local/share/boost /opt/microsoft; do [ -e $d ] && sudo du -sh $d 2>/dev/null; done
+          echo before:; df -BG / /mnt
+          sudo rm -rf /usr/share/dotnet /opt/hostedtoolcache /usr/local/lib/android /opt/ghc /usr/local/.ghcup /usr/share/swift /usr/local/share/boost
+          docker system prune -af >/dev/null 2>&1 || true
+          echo after:; df -BG / /mnt
+      - name: bubblewrap
+        run: |
+          sudo apt-get install -y -qq bubblewrap >/dev/null 2>&1 || echo apt failed
+          bwrap --unshare-all --die-with-parent --ro-bind /usr /usr --symlink usr/bin /bin --symlink usr/lib /lib --symlink usr/lib64 /lib64 --proc /proc --dev /dev true && echo "bwrap unprivileged: OK" || echo "bwrap unprivileged: FAILED"
+          sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0 >/dev/null 2>&1 && bwrap --unshare-all --die-with-parent --ro-bind /usr /usr --symlink usr/bin /bin --symlink usr/lib /lib --symlink usr/lib64 /lib64 --proc /proc --dev /dev true && echo "bwrap after sysctl: OK" || echo "bwrap after sysctl: FAILED"
+      - name: Network reachability (HEAD only)
+        run: |
+          for u in https://huggingface.co/datasets/bmaryshev/riemann-hypothesis-build-checkpoints https://cache.mathlib.org/ https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst; do printf '%s ' "$u"; curl -sIL -o /dev/null -w '%{http_code}\n' --max-time 30 "$u" || echo fail; done
