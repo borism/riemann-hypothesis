@@ -1,7 +1,7 @@
 # Diagnostic for issue #9: the pool publish job got "HTTP 403: Resource not accessible by integration" on
 # `gh release create` (wave w2) although it worked for w1 with the same permissions block. This probe tries
 # the same calls with the same permissions and prints the HTTP status and response headers. It creates and
-# then deletes two throw-away tags/releases named probe-publish-*. It prints no secrets.
+# then deletes throw-away releases named probe-publish-* and a temporary pool-w2. It prints no secrets.
 name: exp-publish-probe
 on:
   push:
@@ -21,20 +21,20 @@ jobs:
         run: |
           echo "repo=$GITHUB_REPOSITORY sha=$GITHUB_SHA ref=$GITHUB_REF actor=$GITHUB_ACTOR event=$GITHUB_EVENT_NAME"
           gh --version | head -1
-      - name: 1. create a tag ref through the API
+      - name: A. release with the exact tag name that failed (pool-w2), target = this commit
         run: |
-          gh api -i -X POST "repos/$GITHUB_REPOSITORY/git/refs" -f ref=refs/tags/probe-publish-1 -f sha="$GITHUB_SHA" 2>&1 | grep -i -E '^HTTP|x-accepted|x-github-request|message|"ref"' | head -8 || true
-      - name: 2. create a release on that existing tag (no assets)
+          gh api -i -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name=pool-w2 -f target_commitish="$GITHUB_SHA" -f name=probe -f body=probe -F prerelease=true 2>&1 | grep -i -E '^HTTP|x-accepted|message|"id"|errors' | head -8 || true
+      - name: B. release with a new tag name, target = the commit the failing w2 run used (49036e98)
         run: |
-          gh api -i -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name=probe-publish-1 -f name=probe -f body=probe -F prerelease=true 2>&1 | grep -i -E '^HTTP|x-accepted|message|"id"' | head -8 || true
-      - name: 3. create a release with a new tag and a target (as the publish job does)
+          gh api -i -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name=probe-publish-3 -f target_commitish=49036e98dc8c7847f90be1558293bdfd096ac874 -f name=probe -f body=probe -F prerelease=true 2>&1 | grep -i -E '^HTTP|x-accepted|message|"id"|errors' | head -8 || true
+      - name: C. the gh CLI path the publish job uses (tag + target + one small asset)
         run: |
-          gh api -i -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name=probe-publish-2 -f target_commitish="$GITHUB_SHA" -f name=probe -f body=probe -F prerelease=true 2>&1 | grep -i -E '^HTTP|x-accepted|message|"id"' | head -8 || true
-      - name: 4. list releases (read access)
+          echo probe > probe.txt
+          gh release create probe-publish-4 --repo "$GITHUB_REPOSITORY" --prerelease --target 49036e98dc8c7847f90be1558293bdfd096ac874 --title probe --notes probe probe.txt 2>&1 | tail -3 || true
+      - name: D. is the commit 49036e98 visible to this token
         run: |
-          gh api -i "repos/$GITHUB_REPOSITORY/releases?per_page=3" 2>&1 | grep -i -E '^HTTP|x-accepted' | head -4 || true
+          gh api -i "repos/$GITHUB_REPOSITORY/commits/49036e98dc8c7847f90be1558293bdfd096ac874" 2>&1 | grep -i -E '^HTTP|x-accepted' | head -3 || true
       - name: Cleanup
         if: always()
         run: |
-          for t in probe-publish-1 probe-publish-2; do gh release delete "$t" --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes 2>&1 | tail -1 || true; done
-          gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/tags/probe-publish-1" 2>&1 | tail -1 || true
+          for t in pool-w2 probe-publish-3 probe-publish-4 probe-publish-1 probe-publish-2; do gh release delete "$t" --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes 2>&1 | tail -1 || true; done
