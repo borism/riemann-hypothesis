@@ -1,0 +1,43 @@
+{
+ "wave": "pilot2",
+ "run_id": "45036640516",
+ "runner_minutes_excl_publish": 21.0,
+ "job_minutes": {
+  "plan": 2.4,
+  "build (2)": 4.8,
+  "build (0)": 4.8,
+  "build (1)": 4.5,
+  "spot (0)": 4.5
+ },
+ "modules_planned": 60,
+ "modules_accepted": 60,
+ "jobs_accepted": 3,
+ "jobs_rejected_or_failed": 0,
+ "plan": {
+  "dfs_pos_index_max": 5800,
+  "index_lag_min": 19,
+  "vm_pos_est": 6189,
+  "region_start": 15789,
+  "horizon_h": 8.0,
+  "rate_per_min": 20.0,
+  "jobs": 3,
+  "cap": 20,
+  "spot_jobs": 1,
+  "seed": 20261122,
+  "picked": 60,
+  "slice_sizes": [
+   20,
+   20,
+   20
+  ],
+  "spot": 3,
+  "dfs_span": [
+   15793,
+   16679
+  ],
+  "depths": [
+   1,
+   4
+  ]
+ }
+}
