@@ -83,3 +83,17 @@ With the cgroup's OOM killer left on, small cgroup-v1 limits kill Lean at once i
 | zram / swap file / compressed swap | no: changes speed and capacity only | no; compressed swap risks a hang under extreme pressure, not a wrong verdict |
 | no cgroup cap (`RH_MEM_GB=0`) | no | the machine-wide watchdog (MemAvailable+SwapFree) is the only memory guard |
 | importing an export made elsewhere (`rh-optimise.sh import`) | the export is accepted only with the expected sha256 | the step that made it was not run under this script; labelled IMPORTED in the report |
+
+## `lake comparator` itself (Lean 4.36.0), end to end on the 12.1M-line export
+
+Run with the same export as challenge and solution, `theorem_names` = two Mathlib theorems,
+the repository's two external kernels: exit 0, "Your solution is okay!" in ~8 min.
+The `lake` process parses both exports first (peak heap 1.37 GiB for 2 x 12.1M lines, ~57 B/line)
+and **keeps ~1.1 GiB of it while the first kernel runs**; it drops to 0.06 GiB when the second
+kernel starts. Checkers run one at a time, in the order of the `external_kernels` names
+("Lean paranoid", "nanoda"), then Lean's default kernel. Renaming the nanoda entry so it sorts
+first ("Anoda") moves the retained memory to nanoda's run (checked: drops when paranoid starts).
+
+Scaled to the solution (1.15e9 lines in both exports): lake ~65 GB peak, ~57 GB retained during
+the first kernel. Peak RAM+swap for step 4 with the repository's config: ~57 + 112 = **~169 GB**;
+with nanoda first: max(57 + 74, 112, 93) = ~131 GB.
