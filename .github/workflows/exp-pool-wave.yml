@@ -243,7 +243,7 @@ jobs:
           done < <(tail -n +2 verdict.tsv)
           { echo "Experiment for issue #9 (runner pool). Wave $WAVE, run $GITHUB_RUN_ID."
             echo "Accepted batches only. Verify every file against verdicts/$WAVE.tsv on branch pool/verdicts before use."; } > notes.md
-          gh release create "pool-$WAVE" --repo "$GITHUB_REPOSITORY" --prerelease --target "$GITHUB_SHA" \
+          gh release create "pool-$WAVE" --repo "$GITHUB_REPOSITORY" --prerelease --target main \
             --title "pool $WAVE (experiment, issue #9)" --notes-file notes.md "${files[@]}"
       - name: Record verdict and stats on pool/verdicts
         env: {GH_TOKEN: '${{ github.token }}'}

@@ -1,0 +1,97 @@
+# Republish a wave whose publish job failed (issue #9). Wave w2 built and spot-checked fine (run 45055923015), but
+# `gh release create --target 49036e98...` returned HTTP 403 "Resource not accessible by integration" three times,
+# while the same call with other target commits works (probe runs 45062781742 and 45063226339). This workflow runs
+# the same publish steps against the saved artifacts of the source run, with the release target = main.
+# It runs no Lean code and starts no further wave.
+name: exp-pool-republish
+on:
+  workflow_dispatch:
+    inputs:
+      wave: {description: 'wave name, for example w2', required: true}
+      source_run: {description: 'run id that built the wave', required: true}
+      source_attempt: {description: 'attempt of that run that has the build jobs', default: '1'}
+      jobs: {description: 'build jobs J of the wave', default: '16'}
+permissions:
+  contents: read
+concurrency: {group: exp-pool-wave, cancel-in-progress: false}
+env:
+  LC_ALL: C
+  WAVE: ${{ inputs.wave }}
+  WAVE_J: ${{ inputs.jobs }}
+  SRC_RUN: ${{ inputs.source_run }}
+  SRC_ATTEMPT: ${{ inputs.source_attempt }}
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions: {contents: write, actions: read}
+    steps:
+      - uses: actions/checkout@v4
+        with: {path: verdicts, ref: pool/verdicts}
+      - uses: actions/download-artifact@v4
+        with: {name: '${{ env.WAVE }}-plan', path: plan, run-id: '${{ env.SRC_RUN }}', github-token: '${{ github.token }}'}
+      - uses: actions/download-artifact@v4
+        with: {pattern: '${{ env.WAVE }}-batch-*', path: in, merge-multiple: true, run-id: '${{ env.SRC_RUN }}', github-token: '${{ github.token }}'}
+      - uses: actions/download-artifact@v4
+        with: {pattern: '${{ env.WAVE }}-spot-*', path: spot, run-id: '${{ env.SRC_RUN }}', github-token: '${{ github.token }}'}
+      - name: Verdict per job (transport + every sampled module identical in all 7 file types)
+        run: |
+          set -euo pipefail
+          cat spot/*/compare-*.tsv > compare.tsv 2>/dev/null || : > compare.tsv
+          printf 'wave\tjob\tfiles\ttar_sha256\tmanifest_sha256\tspot_modules\tspot_same_files\tverdict\n' > verdict.tsv
+          for j in $(seq 0 $((WAVE_J-1))); do
+            name="$WAVE-job-$j"; sl="plan/slice-$j.txt"
+            if [ ! -f "in/$name.hashes" ]; then
+              if [ -s "$sl" ]; then printf '%s\t%s\t0\t-\t-\t0\t0\tFAILED\n' "$WAVE" "$j" >> verdict.tsv; fi
+              continue
+            fi
+            IFS=$'\t' read -r n files tsha msha < "in/$name.hashes"
+            ok=1
+            [ "$(sha256sum "in/$name.tar.zst" | cut -d' ' -f1)" = "$tsha" ] || ok=0
+            [ "$(sha256sum "in/$name-manifest.tsv" | cut -d' ' -f1)" = "$msha" ] || ok=0
+            [ "$(wc -l < "in/$name-manifest.tsv")" = "$files" ] || ok=0
+            read -r mods same bad < <(awk -F'\t' 'FNR==NR {sl[$1]=1; next} FILENAME ~ /spot\.txt$/ {if ($1 in sl) {sp[$1]=1; n++}; next} ($1 in sp) {if ($5=="same") s++; else b++} END {print n+0, s+0, b+0}' "$sl" plan/spot.txt compare.tsv)
+            v=accepted
+            { [ "$ok" = 1 ] && [ "$mods" -ge 1 ] && [ "$bad" = 0 ] && [ "$same" = $((mods*7)) ]; } || v=REJECTED
+            printf '%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n' "$WAVE" "$j" "$files" "$tsha" "$msha" "$mods" "$same" "$v" >> verdict.tsv
+          done
+          cat verdict.tsv
+      - name: Prerelease pool-${{ env.WAVE }} with the accepted batches only
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: |
+          set -euo pipefail
+          files=(verdict.tsv plan/plan.json)
+          while IFS=$'\t' read -r w j f t m sm ss v; do
+            if [ "$v" = accepted ]; then files+=("in/$WAVE-job-$j.tar.zst" "in/$WAVE-job-$j-manifest.tsv"); fi
+          done < <(tail -n +2 verdict.tsv)
+          { echo "Experiment for issue #9 (runner pool). Wave $WAVE, built by run $SRC_RUN, published by run $GITHUB_RUN_ID."
+            echo "Accepted batches only. Verify every file against verdicts/$WAVE.tsv on branch pool/verdicts before use."; } > notes.md
+          gh release create "pool-$WAVE" --repo "$GITHUB_REPOSITORY" --prerelease --target main \
+            --title "pool $WAVE (experiment, issue #9)" --notes-file notes.md "${files[@]}"
+      - name: Record verdict and stats on pool/verdicts
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: |
+          set -euo pipefail
+          gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SRC_RUN/attempts/$SRC_ATTEMPT/jobs?per_page=100" > jobs.json
+          python3 - > stats.json <<'PY'
+          import json, os, datetime
+          jobs = json.load(open('jobs.json'))['jobs']
+          p = lambda s: datetime.datetime.fromisoformat(s.replace('Z', '+00:00'))
+          done = [j for j in jobs if j.get('completed_at') and j.get('started_at')]
+          mins = {j['name']: round((p(j['completed_at']) - p(j['started_at'])).total_seconds() / 60, 1) for j in done}
+          plan = json.load(open('plan/plan.json'))
+          rows = [l.rstrip('\n').split('\t') for l in open('verdict.tsv')][1:]
+          acc = [r for r in rows if r[7] == 'accepted']
+          print(json.dumps({'wave': os.environ['WAVE'], 'run_id': os.environ['SRC_RUN'], 'republished_by_run': os.environ['GITHUB_RUN_ID'],
+            'runner_minutes_excl_publish': round(sum(mins.values()), 1), 'job_minutes': mins,
+            'modules_planned': plan['picked'], 'modules_accepted': sum(int(r[2]) for r in acc) // 7,
+            'jobs_accepted': len(acc), 'jobs_rejected_or_failed': len(rows) - len(acc), 'plan': plan}, indent=1))
+          PY
+          cat stats.json
+          mkdir -p verdicts/verdicts verdicts/stats
+          cp verdict.tsv "verdicts/verdicts/$WAVE.tsv"; cp stats.json "verdicts/stats/$WAVE.json"
+          cd verdicts
+          git add verdicts stats
+          git -c user.name=pool-publish -c user.email= commit -q -m "pool: verdict and stats for wave $WAVE (run $SRC_RUN, republished by run $GITHUB_RUN_ID)"
+          git push -q origin HEAD:pool/verdicts
+          if grep -q $'\tREJECTED$' ../verdict.tsv; then echo "::error::spot-check mismatch or transport failure in wave $WAVE; the chain stops"; exit 1; fi
