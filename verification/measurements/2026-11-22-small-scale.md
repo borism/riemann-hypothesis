@@ -35,3 +35,51 @@ Write time for 84 MB: zstd:1 0.6 s, zstd:9 1.9 s, zstd:15 11 s (single stream).
 
 Challenge export line mix: app 5,049,614 (avg 48 B), ie other 552,050, forallE 373,442,
 names 329,321, const 136,992, thm 40,431, def 10,238.
+
+## Checker and exporter heap, per line, and how it compresses
+
+On the 12.1M-line Mathlib export (all three checkers accept it). Ratio = per 4 KiB page, as zram
+compresses, over the non-zero heap pages near the peak (scripts/heap-compressibility.c).
+
+| program | peak heap | heap per line | lz4 | zstd-3 | estimate for the solution (1.14e9 lines) |
+|---|---:|---:|---:|---:|---:|
+| leanchecker-paranoid (4.36.0) | 1.11 GiB | 98 B | 2.33 | 3.64 | ~112 GB |
+| leanchecker (4.36.0) | 0.93 GiB | 82 B | 2.49 | 4.05 | ~93 GB |
+| nanoda_bin (4.36.0, 4 threads) | 0.73 GiB | 65 B | 1.65 | 2.30 | ~74 GB |
+| lean4export (4.33.1) | 0.84 GiB (0.47 GiB = imported Mathlib) | 33 B above the environment | 1.74* | 2.75* | ~38 GB + environment of Main |
+
+*the growth between two samples (the expression table), not the environment, which compresses
+3.3x (lz4) / 5.1x (zstd).
+
+The solution's line count: 61,570,595,788 B / 54 B per line = 1.14e9 (54.0 and 53.8 B per line
+in the two exports measured here).
+
+Export at rest: btrfs compress-force zstd:3 18%, zstd:9 14%; zstd -3 stream 16.9%.
+
+## Swap experiments (cgroup v1 memory limit, cgroup OOM killer disabled)
+
+leanchecker-paranoid on the challenge export (needs ~0.58 GB):
+
+| limit | RAM:need | swap device | result | wall |
+|---|---|---|---|---:|
+| none | | | accepts | 89-130 s (busy machine) |
+| 400 MB | 1:1.5 | zram lz4 | accepts | 133 s |
+| 200 MB | 1:2.8 | zram lz4 | accepts | 177 s |
+| 200 MB | 1:2.8 | loop over a file on btrfs zstd:1 (compressed disk swap) | accepts | 234 s; swap file stored at 41% |
+| 85 MB | 1:7 | zram lz4 | ENOMEM after 312 s | |
+
+With the cgroup's OOM killer left on, small cgroup-v1 limits kill Lean at once instead of swapping
+(seen at 150-250 MB); the 1:7 failure is the same artefact. A real run uses no cgroup cap
+(`RH_MEM_GB=0`) and global memory pressure instead, which these tests do not reproduce.
+
+## What each optimisation costs in trust
+
+| optimisation | changes what is checked? | weakens isolation? |
+|---|---|---|
+| btrfs zstd loop image for the work dir | no: files read back bit-identical; exports are sha256-hashed | no: sandboxes bind the same paths |
+| deleting the clean clone's `.lake` after step 1 | no: step 4 reads only comparator.json and challenge.export | no |
+| `.setup.json` deletion during the build (notes' loop) | no | no |
+| deleting `.ilean`/`.c` after step 2 | no: the exporter reads only `.olean` | no |
+| zram / swap file / compressed swap | no: changes speed and capacity only | no; compressed swap risks a hang under extreme pressure, not a wrong verdict |
+| no cgroup cap (`RH_MEM_GB=0`) | no | the machine-wide watchdog (MemAvailable+SwapFree) is the only memory guard |
+| importing an export made elsewhere (`rh-optimise.sh import`) | the export is accepted only with the expected sha256 | the step that made it was not run under this script; labelled IMPORTED in the report |

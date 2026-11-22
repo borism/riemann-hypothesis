@@ -74,6 +74,9 @@ Options (or the RH_* environment variables in brackets):
   --dry-run            [RH_DRY_RUN=1]       print what would run; change nothing
   -h, --help
 
+Small machine: RH_OPTIMISE=1 and scripts/rh-optimise.sh (compressed work dir, swap, import
+of an export made elsewhere); see verification/measurements/2026-11-22-small-scale.md.
+
 Exit status of `all`: 0 only if Comparator ran and exited 0. 75 means a resource
 limit stopped a step (disk, memory or timeout); 70 means a step failed.
 EOF
@@ -447,6 +450,12 @@ cmd_status() {
   echo "free disk: $(free_gb) GB"
   tail -n 5 "$LOGS/run.log" 2>/dev/null || true
 }
+
+# Small-machine optimisations (issue #1): with RH_OPTIMISE=1, scripts/rh-optimise.sh replaces
+# preflight (measured needs, counts swap/compression), start_monitor (swap-aware) and cg_enter
+# (RH_MEM_GB=0 = no cgroup cap). Storage, swap and import commands: scripts/rh-optimise.sh --help.
+# shellcheck source=scripts/rh-optimise.sh
+. "$REPO/scripts/rh-optimise.sh"
 
 # -------------------------------------------------------------------------- main
 CMD=""; ARG=""
