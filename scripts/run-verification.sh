@@ -427,9 +427,11 @@ cmd_checkpoint() {
   cp -r "$STATE" "$d/state" 2>/dev/null || true
   git -C "$REPO" add "$d"
   git -C "$REPO" commit -q -m "verification run $id: checkpoint (logs and summary only)" -m "Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>" -m "Claude-Session: https://claude.ai/code/session_012BQmPS17QUemzEFZXpRAHz" || { log "checkpoint: nothing to commit"; return 0; }
-  local br i; br="$(git -C "$REPO" rev-parse --abbrev-ref HEAD)"
+  # RH_PUSH_BRANCH: remote branch to publish to (default: the checked-out branch). Never force-pushes.
+  local br i; br="${RH_PUSH_BRANCH:-$(git -C "$REPO" rev-parse --abbrev-ref HEAD)}"
   for i in 1 2 3 4; do
-    git -C "$REPO" push -u origin "$br" && return 0
+    git -C "$REPO" fetch -q origin "$br" && git -C "$REPO" merge -q --no-edit FETCH_HEAD || { log "checkpoint: fetch/merge failed"; }
+    git -C "$REPO" push origin "HEAD:$br" && return 0
     log "checkpoint: push failed (attempt $i); retrying in $((2**i)) s"; sleep $((2**i))
   done
   log "checkpoint: push failed after 4 attempts; commit is local"; return 1
