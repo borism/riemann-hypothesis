@@ -120,7 +120,7 @@ jobs:
 
   spot:
     needs: [plan, build]
-    if: always() && needs.plan.result == 'success'
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 75
     strategy: {fail-fast: false, matrix: {s: '${{ fromJSON(needs.plan.outputs.spot) }}'}}
@@ -174,7 +174,7 @@ jobs:
 
   publish:
     needs: [plan, build, spot]
-    if: always() && needs.plan.result == 'success'
+    if: ${{ !cancelled() && needs.plan.result == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions: {contents: write, actions: read}

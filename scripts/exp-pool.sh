@@ -131,7 +131,7 @@ cmd_prev() {  # prev VERDICT_DIR
 cmd_restore_prev() {  # restore-prev TSV (from `prev`, copied into the plan artifact)
   local t0=$SECONDS n=0
   while IFS=$'\t' read -r wave job tsha m; do
-    local tar="$WORK/dl/$wave-job-$job.tar.zst" man; man="$(dirname "$1")/$(basename "$m")"
+    local tar="$WORK/dl/$wave-job-$job.tar.zst" man; man="$(realpath "$(dirname "$1")/$(basename "$m")")"
     curl -fsSL --retry 4 -o "$tar" "$REL/pool-$wave/$wave-job-$job.tar.zst"
     [ "$(sha256sum "$tar" | cut -d' ' -f1)" = "$tsha" ] || { say "restore-prev: $wave job $job tar differs from the git verdict (refusing)"; exit 1; }
     zstd -dc "$tar" | tar -C "$BUILD/.lake/build" -xf -
