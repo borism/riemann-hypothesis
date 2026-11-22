@@ -123,6 +123,8 @@ jobs:
           EXP_BUILD_TIMEOUT=72m bash exp/scripts/exp-pool.sh build "$s" slice || echo "build did not finish; packing the modules that did" | tee -a exp-out/summary.txt
           extra=$(grep -oE '\] Built [^ ]+' exp-out/build-slice.log | awk '{print $3}' | sort | comm -23 - <(sort "$s") | wc -l)
           echo "modules built outside the slice: $extra" | tee -a exp-out/summary.txt
+          # every module this job built must be in its batch; a module outside the slice means the plan missed an import
+          [ "$extra" = 0 ] || { echo "::error::Lake built $extra modules outside the slice (unresolved imports in the plan)"; exit 1; }
           # a module counts only if all 7 outputs exist; its imports finished before it, so a partial set is still usable
           b=/home/user/rh-verify/build/.lake/build
           while read -r m; do p="${m//.//}"; ok=1

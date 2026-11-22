@@ -18,6 +18,18 @@ cd "$POOL" && git pull -q --ff-only        # current scripts
 ```
 
 ## 0. Before the window (the live build keeps running)
+**Merge every accepted wave that is not yet in the tree, oldest first** (`pilot2`, `w1`, `w2`, …; `legacy/` is not a
+wave). A wave builds on the modules of all earlier waves (see `depends_on_waves` in `stats/<wave>.json`); merging a
+wave without its predecessors leaves imports that the VM must build itself (this happened with `w1` without
+`pilot2`: 3 modules). The merge is idempotent, so re-merging an already merged wave changes nothing.
+Check the closure before the window (read-only; the DAG is built from the same sources in the pool checkout):
+
+```bash
+nice -n 19 python3 -I $POOL/scripts/exp-dag.py $POOL/src /tmp/pool-dag.tsv      # about 80 s; src = live commit's src
+nice -n 19 python3 -I $POOL/scripts/rh-pool-closure-check.py /tmp/pool-dag.tsv $B $IN/*/*-manifest.tsv
+#  expect "unresolved imports: 0" (exit 0). Anything listed is a module neither in the tree nor in the batches.
+```
+
 Fetch and verify the assets first, so the build is stopped only for the merge itself.
 This uses only the network: git fetch of `pool/verdicts`, then `github.com` → `release-assets.githubusercontent.com`.
 
@@ -43,7 +55,7 @@ Do not stop while a module has been running for minutes; wait for it to finish. 
 Stop the **checkpoint loop first**. If it woke up during the merge, it would upload a half-merged tree as a VM shard. Also, as soon as it sees the driver gone, it runs one last pass and exits.
 
 ```bash
-LOOP=$(pgrep -f 'rh-checkpoint-loop.sh' | head -1); echo "loop pid $LOOP"
+LOOP=$(pgrep -f '^bash scripts/rh-checkpoint-loop.sh'); echo "loop pid $LOOP"   # not a wrapper shell
 ps -o pid,stat,etimes,args -p "$LOOP"                       # normally state S (sleeping)
 pgrep -f 'rh-checkpoint.sh push' && echo "A PUSH IS RUNNING: wait until it finishes" # do not stop the loop mid-push
 kill -TERM -- -"$(ps -o pgid= -p "$LOOP" | tr -d ' ')"      # the loop runs in its own process group (setsid)
@@ -66,6 +78,9 @@ pgrep -x lake || pgrep -x lean || echo "no lake/lean left"
 Note: the parent's watcher (`wait-step2.sh`) will report "DRIVER GONE". That is expected.
 
 ## 3. Merge
+With several waves, run this step once per wave, oldest first, each with its own `LIST`
+(`for WAVE in pilot2 w1 w2; do …; done`); fetch them all in step 0 (`rh-pool-fetch.sh $IN pilot2 w1 w2`).
+
 ```bash
 touch "$STAMP"; sleep 1
 RH_WORK=/home/user/rh-verify RH_POOL_MERGED_LIST=$LIST \
@@ -131,7 +146,8 @@ cd /home/user/riemann-hypothesis
 RH_OPTIMISE=1 RH_WORK=/home/user/rh-verify RH_CPUS=4 setsid nohup bash scripts/run-verification.sh step2 \
   >> /home/user/rh-logs/step2-driver.log 2>&1 < /dev/null &
 sleep 60; tail -2 /home/user/rh-verify/logs/run.log            # "step2: start (…)"
-cd /home/user/wt-run && setsid nohup bash scripts/rh-checkpoint-loop.sh >> /home/user/rh-logs/ckpt-loop.log 2>&1 < /dev/null &
+cd /home/user/riemann-hypothesis && setsid nohup bash scripts/rh-checkpoint-loop.sh >> /home/user/rh-logs/ckpt-loop.log 2>&1 < /dev/null &
+#  (from the main tree: it has scripts/rh-checkpoint-loop.sh; the loop commits in /home/user/wt-run by default)
 #  the loop runs with its defaults (60 min interval), as before: it had no RH_* variables set
 ```
 

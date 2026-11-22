@@ -172,6 +172,26 @@ def region(dag, avail, index_tsv, j, cap, s, seed, horizon_h, rate, out):
         plan['vm_hours_ahead'] = round(ahead / rate / 60, 1)
         # the VM reaches this wave's first module (in its DFS order) at about this time; merge before it
         plan['merge_by_utc'] = (now + datetime.timedelta(minutes=ahead / rate)).strftime('%Y-%m-%dT%H:%MZ')
+    # which earlier pool waves this wave builds on (a VM merge must include them, in order)
+    import glob, re
+    wave_of = {}
+    for f in glob.glob(os.path.join(out, 'prev-*-manifest.tsv')):
+        w = re.match(r'prev-(.+)-\d+-manifest\.tsv$', os.path.basename(f)).group(1)
+        for l in open(f, encoding='utf-8'):
+            p_ = l.split('\t', 1)[0]
+            if p_.startswith('./lib/lean/') and p_.endswith('.olean'):
+                wave_of[p_[11:-6].replace('/', '.')] = w
+    seen, st = set(), list(job)
+    while st:
+        for i in dag[st.pop()][1]:
+            if i not in seen:
+                seen.add(i); st.append(i)
+    deps = {}
+    for m in seen:
+        if m in wave_of:
+            deps[wave_of[m]] = deps.get(wave_of[m], 0) + 1
+    plan['depends_on_waves'] = deps
+    plan['closure_unavailable'] = len([m for m in seen if m not in avail and m not in job])
     json.dump(plan, open(os.path.join(out, 'plan.json'), 'w'), indent=1)
     print(json.dumps(plan))
 
