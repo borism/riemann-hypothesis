@@ -1,0 +1,2 @@
+seq	utc	files	raw_bytes	shard_sha256	manifest_sha256	build_path	dataset_path
+0001	20261122T113044Z	13517	1791171583	13275423fe72decefd156a6b2a2524a34cb4557994465fa7b0e90244fd622722	d0451834e1aaee8c19218d3f8c37d81d40605229df25994ca41a3a3d59b166d0	/home/user/rh-verify/build	step2/step2-shard-0001.tar.zst
