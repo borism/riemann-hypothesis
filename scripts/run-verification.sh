@@ -88,7 +88,7 @@ log() {
 die() { log "ERROR: $*"; exit 70; }
 run() { if [ "$DRY_RUN" = 1 ]; then { printf 'DRY-RUN:'; printf ' %q' "$@"; echo; } >&2; else "$@"; fi; }
 done_p()  { [ -f "$STATE/$1.done" ]; }
-mark_done() { local n="$1"; shift; mkdir -p "$STATE"; { echo "finished: $(ts)"; printf '%s\n' "$@"; } > "$STATE/$n.done"; }
+mark_done() { local n="$1"; shift; mkdir -p "$STATE"; { echo "finished: $(ts)"; printf '%s\n' "$@" "host: $(hostname), $(nproc) cores, $(mem_total_gb) GB RAM"; } > "$STATE/$n.done"; }
 free_gb() { local d="$WORK"; while [ ! -d "$d" ]; do d="$(dirname "$d")"; done; df -BG --output=avail "$d" | tail -1 | tr -dc 0-9; }
 mem_total_gb() { awk '/MemTotal/ {printf "%d", $2/1048576}' /proc/meminfo; }
 mem_cap_gb() { if [ -n "$MEM_GB" ]; then echo "$MEM_GB"; else echo $(( $(mem_total_gb) - 2 )); fi; }
@@ -211,8 +211,11 @@ cg_enter() {  # cg_enter NAME : move the calling shell into a capped cgroup
 
 cgroup_mem_ok() { [ -w /sys/fs/cgroup/memory ] && [ -w /sys/fs/cgroup/memory/cgroup.procs ]; }
 guard_desc() {   # what actually limits memory for a sandboxed step
+  local sw; sw="$(awk 'NR>1 {printf "%s%s (%d GB)", (n++?", ":""), $1, $3/1048576}' /proc/swaps)"
   if cgroup_mem_ok; then echo "memory: cgroup v1 cap $(mem_cap_gb) GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog"
   else echo "memory: NO cgroup cap available; ONLY a 60 s MemAvailable<512 MB watchdog guards this machine (a fast allocation can still trigger the kernel OOM killer)"; fi
+  # Swap (e.g. zram) is not a cap: MemAvailable and the preflight's MemTotal checks ignore it.
+  if [ -n "$sw" ]; then echo "swap active: $sw (not counted by the watchdog or the preflight)"; else echo "swap: none"; fi
 }
 
 # bubblewrap with no network, no capabilities, cleared environment (so the proxy
@@ -263,7 +266,7 @@ cmd_step2() {
   done_p step2 && { log "step2: already done"; return 0; }
   done_p step1 || die "step2 requires step1 (challenge must be exported before any submission code is compiled)"
   preflight_gate step2
-  log "step2: start (build clone, offline bubblewrap sandbox, $CPUS CPUs, stop below ${MIN_FREE_GB} GB free disk; $(guard_desc))"
+  log "step2: start (build clone, offline bubblewrap sandbox, $CPUS CPUs, stop below ${MIN_FREE_GB} GB free disk; $(guard_desc | tr '\n' ';'))"
   [ "$DRY_RUN" = 1 ] && { log "DRY-RUN: would clone, mathlib/cache get, then bwrap lake build Main"; return 0; }
   pin_env; export PATH="$TC_BUILD/bin:$PATH"
   if [ ! -f "$STATE/step2.cloned" ]; then
@@ -315,7 +318,7 @@ cmd_step3() {
   done_p step3 && { log "step3: already done"; return 0; }
   done_p step2 || die "step3 requires step2 (a completed build of Main)"
   preflight_gate step3
-  log "step3: start (export inside offline sandbox; build tree read-only; $(guard_desc))"
+  log "step3: start (export inside offline sandbox; build tree read-only; $(guard_desc | tr '\n' ';'))"
   [ "$DRY_RUN" = 1 ] && { log "DRY-RUN: would bwrap lake env lean4export Main"; return 0; }
   pin_env; mkdir -p "$OUTDIR"; rm -f "$OUTDIR/solution.export" "$STATE/step3.stopped"
   # lean4export is rebuilt after the build (the notes' rule): the copy from `tools` was never
@@ -348,7 +351,7 @@ cmd_step4() {
   rm -f "$STATE/step4.failed"
   done_p step1 && done_p step3 || die "step4 requires step1 and step3 (challenge.export and solution.export)"
   preflight_gate step4
-  log "step4: start (Lean $LEAN_JUDGE_VER lake comparator, from an empty directory; $(guard_desc))"
+  log "step4: start (Lean $LEAN_JUDGE_VER lake comparator, from an empty directory; $(guard_desc | tr '\n' ';'))"
   [ "$DRY_RUN" = 1 ] && { log "DRY-RUN: would run lake comparator"; return 0; }
   rm -rf "$JUDGE_DIR"; mkdir -p "$JUDGE_DIR"
   # The judge's config and the challenge come from the clean clone, not from the build clone.
@@ -401,6 +404,11 @@ cmd_report() {
     echo; echo "## Comparator"
     if [ -f "$RES/comparator.exit" ]; then echo "exit code: $(cat "$RES/comparator.exit")"; echo '```'; tail -n 40 "$RES/comparator.log"; echo '```'
     else echo "Not run. No verdict exists."; fi
+    echo; echo "## Provenance"
+    echo "Every step marked DONE above ran on the machine named in its checkpoint (host: ...) under this script's"
+    echo "control. This script does not assume a single machine, but it does not accept results from elsewhere: an"
+    echo "export, build or Comparator result produced on machines we do not control (offloaded or third-party) is"
+    echo "unverified evidence, is not a verdict of this script, and must be labelled as such wherever it is quoted."
     echo; echo "## Reading this"
     echo "Only a Comparator exit code of 0 from a complete run of steps 1 to 4 means the exports were accepted."
     echo "Even then, the build and exports used Lean $LEAN_BUILD_VER only; see verification/NOTES.md#lean-version and #checkers."
