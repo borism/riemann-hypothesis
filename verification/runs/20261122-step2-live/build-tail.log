@@ -1,3 +1,36 @@
+  [IsTopologicalGroup G]
+  [CompactSpace G]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Group G] [IsTopologicalGroup G] [CompactSpace G] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [22665/22679] Built Formalism.SharpRestriction.Divisibility.SlopeExcess.HeightBoundOfComponentBounds (7.8s)
+✔ [22666/22679] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.IntegralSpanAlgebra.Burnside (9.8s)
+✔ [22667/22679] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnitaryConjugation.ConjTransposeOf (4.9s)
+✔ [22668/22679] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnitaryConjugation.ExistsUnitReal (6.4s)
+✔ [22669/22679] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnitaryConjugation.Transfer (5.7s)
+✔ [22670/22681] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.GelfandPairConvolution.ConvComm (5.5s)
+✔ [22671/22681] Built Formalism.SharpRestriction.Divisibility.HookProducts.HhOfInputs (6.4s)
+✔ [22672/22684] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.UnitaryConjugation.SubmatrixMemUnitaryGroup (6.0s)
+✔ [22673/22684] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.GelfConv (4.8s)
+✔ [22674/22684] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.IntegralSpanAlgebra.IntegralSpan (6.2s)
+✔ [22675/22684] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.SchurStep (5.3s)
+✔ [22676/22687] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.UConjT (4.0s)
+✔ [22677/22687] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.GelfSpan (16s)
+⚠ [22678/22687] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.SchurIrreducible (17s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/SchurIrreducible.lean:4:18: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/SchurIrreducible.lean:11:18: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/SchurIrreducible.lean:24:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -5,196 +38,163 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChiIdemMulLvlIdemBaseNeZero.lean:413:6: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChiIdemMulLvlIdemBaseNeZero.lean:428:4: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChiIdemMulLvlIdemBaseNeZero.lean:436:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChiIdemMulLvlIdemBaseNeZero.lean:445:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [22176/22190] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.FormalDegree.CoefLoc (106s)
-⚠ [22177/22190] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.CayleyIndepA (97s)
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:14:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:20:65: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:27:86: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:50:45: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:56:45: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:108:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.ChartRestriction.DS.Lap.CayleyIndepA.irred_conj`:
-  hab
+✔ [22679/22687] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.CommMultOf (85s)
+✔ [22680/22687] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.InjStep (85s)
+✔ [22681/22688] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.LinkedMeasures.SlopeId (153s)
+✔ [22682/22691] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.NoColumnCase.LvlWire (153s)
+✔ [22683/22691] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.SchurStepAlt (61s)
+⚠ [22684/22691] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.CommutingMultiplicity.IntegrableEntry (61s)
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/CommutingMultiplicity/IntegrableEntry.lean:19:0: automatically included section variable(s) unused in theorem `PI.UnitaryGroupMassFormula.CommMult.integrable_entry`:
+  [Group H]
+  [IsTopologicalGroup H]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit hab in theorem ...
+  omit [Group H] [IsTopologicalGroup H] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [22178/22192] Built Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.SmallLevelRankEqClosedOfLevelProjectionSurjective (233s)
-warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/SmallLevelRankEqClosedOfLevelProjectionSurjective.lean:20:5: Variable name `hPA` is not explicitly referenced.
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/CommutingMultiplicity/IntegrableEntry.lean:40:0: automatically included section variable(s) unused in theorem `PI.UnitaryGroupMassFormula.CommMult.mInt_const`:
+  [Group H]
+  [TopologicalSpace H]
+  [IsTopologicalGroup H]
+  [CompactSpace H]
+  [BorelSpace H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Group H] [TopologicalSpace H] [IsTopologicalGroup H] [CompactSpace H] [BorelSpace H] in theorem ...
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hPA
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/CommutingMultiplicity/IntegrableEntry.lean:45:0: automatically included section variable(s) unused in theorem `PI.UnitaryGroupMassFormula.CommMult.mInt_left`:
+  [CompactSpace H]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [CompactSpace H] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/SmallLevelRankEqClosedOfLevelProjectionSurjective.lean:21:5: Variable name `hLamP` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hLamP
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/SmallLevelRankEqClosedOfLevelProjectionSurjective.lean:23:5: Variable name `hDivG` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hDivG
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/SmallLevelRankEqClosedOfLevelProjectionSurjective.lean:25:5: Variable name `zL` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _zL
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [22179/22192] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.GapNum (127s)
-✔ [22180/22193] Built Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.CayleyIndependent (33s)
-✔ [22181/22193] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.DSUniv (28s)
-✔ [22182/22193] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.HarishChandraInductionCuspidalParabolicProduct (40s)
-⚠ [22183/22195] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IsCuspidalCharacterIffIsCuspidalGLnFiniteField (40s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteField.lean:111:10: `Fin.lt_iff_val_lt_val` has been deprecated: Use `Fin.lt_def` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteField.lean:135:43: This simp argument is unused:
-  h'
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [22685/22695] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffBase (24s)
+✔ [22686/22699] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.CommMult (9.6s)
+✔ [22687/22706] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.ExcOne (25s)
+✔ [22688/22706] Built Formalism.PeriodIntegrals.ExplicitFormulaCounts.UMultOne (5.9s)
+✔ [22689/22708] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffAbel (8.2s)
+✔ [22690/22708] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffSmooth (8.6s)
+✔ [22691/22708] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.PsiAPLeCount (5.5s)
+✔ [22692/22709] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffConsts (27s)
+✔ [22693/22709] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffPsi (14s)
+✔ [22694/22714] Built Formalism.SharpRestriction.Divisibility.GoodPartEigenspaceKernelSplitting (16s)
+✔ [22695/22714] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.SharpFunctions.MidExp (6.8s)
+⚠ [22696/22714] Built Formalism.SharpRestriction.Divisibility.HookProducts.NormAtEqSqrtMajAt (18s)
+warning: src/Formalism/SharpRestriction/Divisibility/HookProducts/NormAtEqSqrtMajAt.lean:45:17: This simp argument is unused:
+  Subtype.dist_eq
 
 Hint: Omit it from the simp argument list.
-  [apply] simp [h]
+  [apply] simp only [ZeroMemClass.coe_zero, dist_zero_right] at hy' ⊢
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✔ [22184/22195] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.BesselIntegralSquareIntegrable (8.1s)
-✔ [22185/22195] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.GapBigLap (10s)
-✔ [22186/22199] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.TraceHarishChandraInducedEqProductCharacters (9.7s)
-⚠ [22187/22199] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement (5.8s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement.lean:11:76: this tactic is never executed
+warning: src/Formalism/SharpRestriction/Divisibility/HookProducts/NormAtEqSqrtMajAt.lean:45:34: This simp argument is unused:
+  ZeroMemClass.coe_zero
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement.lean:11:141: this tactic is never executed
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Subtype.dist_eq, dist_zero_right] at hy' ⊢
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement.lean:11:76: Unused tactic linter: `exact GlobalTheory.CuspCharRep.isCusp_character_iff_isCuspidal` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement.lean:11:141: Unused tactic linter: `(intros;
-  apply GlobalTheory.CuspCharRep.isCusp_character_iff_isCuspidal <;> assumption)` does nothing
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [22697/22720] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.LfunctionOneLowerBound (28s)
+✔ [22698/22725] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.RationalColumns.Descent (38s)
+✔ [22699/22725] Built Formalism.SharpRestriction.Divisibility.HookProducts.LambdaZeroLeFourB (54s)
+✔ [22700/22725] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffExc (37s)
+⚠ [22701/22725] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.AdmissibleClasses.LinkGCl (75s)
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/AdmissibleClasses/LinkGCl.lean:30:2: Unused tactic linter: `beta_reduce` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [22188/22199] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.MulVecFixOfSupp (5.1s)
-⚠ [22189/22203] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.TraceHarishChandraInducedEqProductCharactersStatement (5.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/TraceHarishChandraInducedEqProductCharactersStatement.lean:11:58: this tactic is never executed
+✔ [22702/22727] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.JacobiCharacterSums.ExceptionalCharacterBounds.EffFinal (93s)
+✔ [22703/22727] Built Formalism.SharpRestriction.Divisibility.HookProducts.SharpFunctionalBoundFamily (96s)
+✔ [22704/22727] Built Formalism.LocalToGlobal.Divisibility.SumLeEtaSumNum (98s)
+⚠ [22705/22728] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.RationalColumns.ColFacts (104s)
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/RationalColumns/ColFacts.lean:47:0: automatically included section variable(s) unused in theorem `Formalism.L2.DIV.RatFullPt.range_op_eq_span`:
+  [NumberField K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/TraceHarishChandraInducedEqProductCharactersStatement.lean:11:105: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [22706/22728] Built Formalism.GL3MeanSquares.GenusMeanAsymptotics.LogEightBound.ProgTwo (50s)
+✔ [22707/22728] Built Development.AutomorphicArithmetic.CoprimeRanks.SecondSetNoRelation (51s)
+✔ [22708/22731] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.SharpFunctions.PointB (52s)
+✔ [22709/22731] Built Formalism.LocalToGlobal.InpAtOf (47s)
+✔ [22710/22731] Built Development.AutomorphicArithmetic.CharacterBoxes.Imports (77s)
+✔ [22711/22731] Built Development.AutomorphicArithmetic.ShortNorms.ShortNorm (80s)
+✔ [22712/22731] Built Formalism.SharpRestriction.AdmissibleParameterJoins.FamilyAuxiliaryPrimeSize (136s)
+✔ [22713/22732] Built Development.AbelianVarietyTheory.Definitions.GlobalTwisting.ZerosDisc (175s)
+✔ [22714/22732] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.RationalColumns.BuRationalOf (280s)
+⚠ [22715/22732] Built Formalism.LocalToGlobal.Divisibility.DivisibilityRemainder.SharpFunctions.FunTop (336s)
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:65: Variable name `hx` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/TraceHarishChandraInducedEqProductCharactersStatement.lean:11:58: Unused tactic linter: `exact GlobalTheory.HCChar.trace_hcRep_eq_hcL` does nothing
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/TraceHarishChandraInducedEqProductCharactersStatement.lean:11:105: Unused tactic linter: `(intros; apply GlobalTheory.HCChar.trace_hcRep_eq_hcL <;> assumption)` does nothing
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:82: Variable name `h` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [22190/22203] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.MultiplicityOne.HermitianMeasures.OrbitIntegralAbsConvergent (7.0s)
-⚠ [22191/22205] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.ContinuousBlkWConj (6.0s)
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:148: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:232: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:106: Variable name `i` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:309: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:394: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:120: Variable name `C` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:130: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _C
 
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:148: Unused tactic linter: `(intros; apply UpperTheory.Reformulated.B.Qi20.mulVec_fix_of_supp <;> assumption)` does nothing
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:37:122: Variable name `CH` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:232: Unused tactic linter: `(apply @UpperTheory.Reformulated.B.Qi20.mulVec_fix_of_supp <;> assumption)` does nothing
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _CH
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:309: Unused tactic linter: `(intros; apply @UpperTheory.Reformulated.B.Qi20.mulVec_fix_of_supp <;> assumption)` does nothing
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:38:66: Variable name `hx` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:394: Unused tactic linter: `(apply @UpperTheory.Reformulated.B.Qi20.mulVec_fix_of_supp <;>
-    first
-    | assumption
-    | infer_instance)` does nothing
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [22192/22205] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.CayleyIndep (27s)
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:75:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:62:35: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:38:83: Variable name `h` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:64:35: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:66:35: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityRemainder/SharpFunctions/FunTop.lean:38:107: Variable name `i` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:69:35: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:72:35: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [22716/22732] Built Formalism.LocalToGlobal.Wire4F (277s)
+warning: src/Formalism/LocalToGlobal/Wire4F.lean:17:66: Variable name `hx` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:77:35: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:62:35: Unused tactic linter: `exact hU` does nothing
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Wire4F.lean:17:83: Variable name `h` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:64:35: Unused tactic linter: `exact hU` does nothing
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _h
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:66:35: Unused tactic linter: `exact hU` does nothing
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/Wire4F.lean:17:107: Variable name `i` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:69:35: Unused tactic linter: `exact hU` does nothing
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:72:35: Unused tactic linter: `exact hU` does nothing
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [22717/22732] Built Formalism.SharpRestriction.Divisibility.AdmissibleRank.FreeFamilyOfLeavesAndAdmissible (182s)
+⚠ [22718/22732] Built Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.PrimesAPIntervalOfPrimesRel (165s)
+warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/PrimesAPIntervalOfPrimesRel.lean:21:4: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:77:35: Unused tactic linter: `exact hU` does nothing
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [22193/22205] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.ReproducingKernels.IntegralNormSqCoef (8.5s)
-✔ [22194/22207] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.ReproducingKernels.OneLeGN (9.0s)
-✔ [22195/22208] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.ClosedSubgroupsStatement (45s)
-✔ [22196/22208] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.ReproducingKernels.MeasurableIndicatorNormSq (46s)
-✔ [22197/22210] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.FamilyGapImplicationHolds (44s)
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
