@@ -31,12 +31,24 @@ Riemann Hypothesis claim holds or fails. Last updated 2026-11-22. Tracking issue
 
 **Intent.** This work aims to shift at least part of the verification burden onto AI companies, by
 running the checks on infrastructure that those companies themselves provide, instead of relying
-only on volunteers' machines. So far the build runs on Anthropic's Claude cloud VM, and
-checkpoints go to a public Hugging Face dataset. The commands for the parts that do not fit on
-such a VM (issues [#2](https://github.com/borism/riemann-hypothesis/issues/2) and
-[#3](https://github.com/borism/riemann-hypothesis/issues/3)) are written so that they can be run on
-other AI companies' compute as well. No other provider has run any step so far, and none has
-agreed to.
+only on volunteers' machines. The commands for the parts that do not fit on a small VM (issues
+[#2](https://github.com/borism/riemann-hypothesis/issues/2) and
+[#3](https://github.com/borism/riemann-hypothesis/issues/3)) are written so that they can be run
+on other AI companies' compute as well. So far, only Anthropic's Claude cloud VM and Hugging Face
+have been used.
+
+Free or cheap services that might run the heavier steps (suggestions, none of them tried):
+
+| Service | What it offers | Could cover |
+|---|---|---|
+| [Hugging Face Jobs](https://huggingface.co/docs/hub/jobs-pricing) | Pay per minute. The live list (`hf jobs hardware`, 2026-11-22) has `cpu-performance`: 32 vCPU, 256 GB RAM, 1 TB disk at $1.90/h, and `cpu-xl`: 16 vCPU, 124 GB at $1.00/h | Steps 3 and 4 fit in 256 GB. Step 2 would take about 12 h on 32 cores (reasoned from #3) |
+| [Modal](https://modal.com/pricing) | A monthly free credit plus per-second CPU and memory billing (about $30 a month, from secondary sources) | Steps 3 and 4 for a few hours; the maximum memory per container was not checked |
+| [Kaggle notebooks](https://www.kaggle.com/docs/notebooks) and [Google Colab](https://research.google.com/colaboratory/faq.html) | Free, about 12-30 GB RAM and sessions up to about 12 h (secondary sources, unconfirmed) | Only step 2 shards (#3). Too small for steps 3 and 4 |
+| Other providers' coding-agent sandboxes | Limits unknown to us | Not assessed |
+
+None of these has run any step here. Whether the bubblewrap sandbox works inside them is untested,
+and a weaker sandbox weakens the isolation the notes require for step 2. Prices and limits change,
+so check the provider's page before relying on a figure.
 
 ### Status
 
