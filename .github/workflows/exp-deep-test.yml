@@ -1,0 +1,63 @@
+# Experiment for issue #9 (task A): restore all checkpoint shards, then measure RAM/time/determinism on the
+# deepest and heaviest modules that are reachable. No secrets.
+name: exp-deep-test
+on:
+  push:
+    branches: [exp/gh-runners-restore-test]
+    paths: [.github/workflows/exp-deep-test.yml]
+permissions:
+  contents: read
+concurrency: {group: exp-deep-test, cancel-in-progress: false}
+env:
+  LC_ALL: C
+  LIVE_COMMIT: f073285e399c5587c6a6799c0da56451b30c1836
+  EXP_SHARDS: all
+jobs:
+  deep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+    steps:
+      - uses: actions/checkout@v4
+        with: {path: exp, persist-credentials: false, sparse-checkout: scripts}
+      - uses: actions/checkout@v4
+        with: {path: index, ref: run/step2-2026-11-22, persist-credentials: false, sparse-checkout: verification/checkpoints}
+      - uses: actions/checkout@v4
+        with: {path: build, ref: '${{ env.LIVE_COMMIT }}', persist-credentials: false, fetch-depth: 1}
+      - name: Live absolute path
+        run: |
+          sudo mkdir -p /home/user/rh-verify && sudo chown "$(id -u):$(id -g)" /home/user/rh-verify
+          mv build /home/user/rh-verify/build && mkdir -p exp-out
+          cp index/verification/checkpoints/step2/INDEX.tsv exp-out/INDEX.tsv
+          echo "INDEX at $(git -C index rev-parse HEAD): $(($(wc -l < exp-out/INDEX.tsv)-1)) shards; $(df -BG --output=avail / | tail -1) free" | tee exp-out/summary.txt
+          bash exp/scripts/exp-pool.sh sampler
+      - run: bash exp/scripts/exp-gh-restore-test.sh setup
+      - run: bash exp/scripts/exp-gh-restore-test.sh restore
+      - name: DAG and selection
+        run: |
+          bash exp/scripts/exp-pool.sh dag
+          python3 -I exp/scripts/exp-pool-plan.py deep exp-out/dag.tsv exp-out/restored-modules.txt exp-out/sel | tee -a exp-out/summary.txt
+      - name: RAM probe, import everything restored in one process
+        run: bash exp/scripts/exp-pool.sh importall
+      - name: Rebuild the deepest and heaviest restored modules, compare with the VM
+        run: bash exp/scripts/exp-pool.sh redo exp-out/sel/redo.txt
+      - name: Build the closure of two depth-80 modules (not yet built by the VM)
+        run: EXP_BUILD_TIMEOUT=60m bash exp/scripts/exp-pool.sh build exp-out/sel/deep.txt deep
+      - name: Summary
+        if: always()
+        run: |
+          bash exp/scripts/exp-pool.sh resources || true
+          sort -t$'\t' -k5,5n exp-out/sampler.tsv | tail -5 || true
+          cat exp-out/summary.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exp-deep-test-logs
+          retention-days: 14
+          path: |
+            exp-out/*.txt
+            exp-out/*.log
+            exp-out/times-*.tsv
+            exp-out/sampler.tsv
+            exp-out/compare.tsv
+            exp-out/sel

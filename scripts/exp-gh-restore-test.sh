@@ -64,7 +64,9 @@ cmd_restore() {
   local idx="$OUT/INDEX.tsv"; [ -s "$idx" ] || { say "no INDEX at $idx"; exit 1; }
   mkdir -p "$BUILD/.lake/build" "$WORK/dl"
   : > "$OUT/restored-manifest.tsv"
-  for id in $SHARDS; do
+  local ids="$SHARDS" t_all=$SECONDS
+  [ "$ids" = all ] && ids="$(tail -n +2 "$idx" | cut -f1 | tr '\n' ' ')"
+  for id in $ids; do
     local line ssha msha bpath
     line="$(awk -F'\t' -v id="$id" '$1==id' "$idx")"; [ -n "$line" ] || { say "shard $id not in INDEX"; exit 1; }
     ssha="$(cut -f5 <<<"$line")"; msha="$(cut -f6 <<<"$line")"; bpath="$(cut -f7 <<<"$line")"
@@ -80,7 +82,7 @@ cmd_restore() {
     say "shard $id: $(wc -l < "$m") files unpacked, all match manifest"
     cat "$m" >> "$OUT/restored-manifest.tsv"; rm -f "$s"
   done
-  say "restored $(grep -c '\.olean	' "$OUT/restored-manifest.tsv") modules; disk: $(df -BG --output=avail / | tail -1) free on /"
+  say "restored $(grep -c '\.olean	' "$OUT/restored-manifest.tsv") modules from shards [$ids] in $((SECONDS-t_all)) s; disk: $(df -BG --output=avail / | tail -1) free on /"
   sleep 2; touch "$OUT/restore.stamp"
   grep '\.olean	' "$OUT/restored-manifest.tsv" | cut -f1 | sed 's|^\./lib/lean/||; s|\.olean$||; s|/|.|g' | LC_ALL=C sort > "$OUT/restored-modules.txt"
 }
