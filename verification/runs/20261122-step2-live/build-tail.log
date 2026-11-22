@@ -1,200 +1,200 @@
-  [apply] _inst
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralMv.lean:13:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:178:2: Try this: 
+  letI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [20076/20093] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.CapelliComplements.FirstLemmaG (5.2s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/CapelliComplements/FirstLemmaG.lean:9:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:179:2: Try this: 
+  letI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [20077/20093] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialFirst (5.0s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFirst.lean:4:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:264:2: Try this: 
+  letI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFirst.lean:8:32: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:265:2: Try this: 
+  letI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFirst.lean:13:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:286:2: Try this: 
+  letI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [20078/20093] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.JetIntegrality.TwoUnit (5.7s)
-⚠ [20079/20094] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.CapelliComplements.FirstLemmaF (4.9s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/CapelliComplements/FirstLemmaF.lean:9:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:287:2: Try this: 
+  letI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [20080/20095] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.FormalGroupSplitting.ExpCongruenceExtendsToSum (7.1s)
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/FormalGroupSplitting/ExpCongruenceExtendsToSum.lean:132:0: automatically included section variable(s) unused in theorem `PI.FglPhSplit.Wk.rho_add`:
-  hex0
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [20880/20890] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.CstSmoothAndFlat (12s)
+⚠ [20881/20893] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsSmulOfTwCoord (12s)
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulOfTwCoord.lean:22:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulOfTwCoord.lean:23:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulOfTwCoord.lean:24:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [20882/20893] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsHomLocBijectiveGrSum (14s)
+⚠ [20883/20894] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.SecOnBasicOpenLocalization (6.4s)
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/SecOnBasicOpenLocalization.lean:17:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [20884/20894] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsBaseChangeCokerMatrixMvPolynomial (6.0s)
+✔ [20885/20894] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.TwistedSectionsLocaliseToCharts (7.1s)
+✔ [20886/20894] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsBaseChangeAwayOfIntertwine (9.5s)
+✔ [20887/20896] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsHomogeneousRangeMulVecLin (6.0s)
+✔ [20888/20899] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.SecOnFinitePresentationProjective (7.8s)
+✔ [20889/20900] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsBaseChangeGradedPiece (8.9s)
+⚠ [20890/20900] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.TwistedSectionsLocaliseToChartsStatement (6.5s)
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/TwistedSectionsLocaliseToChartsStatement.lean:11:64: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/TwistedSectionsLocaliseToChartsStatement.lean:11:117: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/TwistedSectionsLocaliseToChartsStatement.lean:11:64: Unused tactic linter: `exact GlobalTheory.AbLaw.twisted_sections_localise` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/TwistedSectionsLocaliseToChartsStatement.lean:11:117: Unused tactic linter: `(intros; apply GlobalTheory.AbLaw.twisted_sections_localise <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [20891/20901] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsWitnessesOfFormallySmoothQuotient (7.2s)
+✔ [20893/20901] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.FlatQuotSMulTopCokerOfMatrixWitnesses (8.9s)
+⚠ [20894/20902] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul (10s)
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:34:38: `DFinsupp.finset_sum_apply` has been deprecated: Use `DFinsupp.finsetSum_apply` instead
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:22:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul.0.G
+  [IsScalarTower R (MvPolynomial ι R) M]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit hex0 in theorem ...
+  omit [IsScalarTower R (MvPolynomial ι R) M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/FormalGroupSplitting/ExpCongruenceExtendsToSum.lean:146:0: automatically included section variable(s) unused in theorem `PI.FglPhSplit.Wk.rho_lin`:
-  hex0
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:79:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul.0.G
+  [Module R M]
+  [IsScalarTower R (MvPolynomial ι R) M]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit hex0 in theorem ...
+  omit [Module R M] [IsScalarTower R (MvPolynomial ι R) M] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/FormalGroupSplitting/ExpCongruenceExtendsToSum.lean:203:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-⚠ [20081/20095] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialThird (6.3s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialThird.lean:4:15: Variable name `inst` is not explicitly referenced.
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:94:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul.0.G
+  [Module R M]
+  [IsScalarTower R (MvPolynomial ι R) M]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Module R M] [IsScalarTower R (MvPolynomial ι R) M] in theorem ...
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:139:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul.0.
+  [IsScalarTower R (MvPolynomial ι R) M]
+  [Decomposition ℳ]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsScalarTower R (MvPolynomial ι R) M] [Decomposition ℳ] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialThird.lean:8:32: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [20896/20902] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsTwistedSectionsCubeBijective (7.4s)
+✔ [20897/20915] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.NonemptyBaseChangeGrCubeIso (12s)
+⚠ [20898/20915] Replayed Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.FinitePieceOfPolyGradedSMul
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/FinitePieceOfPolyGradedSMul.lean:18:6: this tactic is never executed
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/FinitePieceOfPolyGradedSMul.lean:19:6: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialThird.lean:13:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/FinitePieceOfPolyGradedSMul.lean:18:6: Unused tactic linter: `exact add_comm k 1 ▸ this` does nothing
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/FinitePieceOfPolyGradedSMul.lean:19:6: Unused tactic linter: `simpa [add_comm] using this` does nothing
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [20082/20095] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.GramSubstitutionIntegral.Expand (7.3s)
-⚠ [20083/20096] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialFourth (6.4s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFourth.lean:4:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [20903/20915] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsNoetherianSubringHomogeneousMatrixFlatChar (9.8s)
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:64:10: This simp argument is unused:
+  Matrix.mulVec
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+Hint: Omit it from the simp argument list.
+  [apply] simp [dotProduct, Pi.single_apply]
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFourth.lean:8:32: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:64:25: This simp argument is unused:
+  dotProduct
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, Pi.single_apply]
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFourth.lean:13:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:64:37: This simp argument is unused:
+  Pi.single_apply
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+Hint: Omit it from the simp argument list.
+  [apply] simp [Matrix.mulVec, dotProduct]
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [20084/20096] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.JetIntegrality.GlueHoldsVar (5.3s)
-✔ [20085/20096] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.JetIntegrality.PolarizationDifferenceFormulaHolds (5.9s)
-✔ [20086/20097] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.FglPhSplit (5.7s)
-⚠ [20087/20097] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.UnitBall (6.4s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:4:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:262:4: Try this: 
+  haveI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:8:32: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:264:4: Try this: 
+  haveI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:16:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:22:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:30:15: Variable name `inst` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:266:4: Try this: 
+  haveI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [20088/20098] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IsIntegralNatCast (5.3s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IsIntegralNatCast.lean:4:15: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IsIntegralNatCast.lean:8:15: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [20089/20098] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.PhGram (5.6s)
-⚠ [20090/20099] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialFifth (5.9s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFifth.lean:182:18: Variable name `x` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _x
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [20091/20101] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.DualGramSubstitution.HasSubstRen (8.0s)
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/DualGramSubstitution/HasSubstRen.lean:18:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-⚠ [20092/20103] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialSixth (5.1s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialSixth.lean:4:15: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialSixth.lean:8:32: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialSixth.lean:13:15: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [20093/20103] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.ImportsTerAlt (5.5s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:7:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:11:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:13:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:16:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:18:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:4:15: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [20094/20106] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.JetIntegrality.HighGOf (8.9s)
-⚠ [20095/20106] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntMvPderiv (6.2s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntMvPderiv.lean:4:15: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntMvPderiv.lean:8:32: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntMvPderiv.lean:13:15: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [20904/20918] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.NonemptyHomLocSingletonEquivQuotSMulTop (5.8s)
