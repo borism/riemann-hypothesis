@@ -1,200 +1,200 @@
-  omit [NumberField E] [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:250:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_mono`:
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:262:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_add`:
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:267:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_neg`:
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:271:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_sub`:
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:276:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_mul`:
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:284:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_bd_sum`:
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:350:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_chArg_add`:
-  [NumberField E]
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/FreePointColumnFormula.lean:448:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.clS_rp_spec`:
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [19549/19612] Replayed Formalism.LocalToGlobal.Columns.ReductionColumnStandardBasis
-warning: src/Formalism/LocalToGlobal/Columns/ReductionColumnStandardBasis.lean:192:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.free_point_column_entry`:
-  [NumberField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/LocalToGlobal/Columns/ReductionColumnStandardBasis.lean:303:15: `Fin.coe_castAdd` has been deprecated: Use `Fin.val_castAdd` instead
-⚠ [19555/19612] Replayed Formalism.LocalToGlobal.Columns.KOneCharacterTrivialNearOne
-warning: src/Formalism/LocalToGlobal/Columns/KOneCharacterTrivialNearOne.lean:66:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.mem_R1_zero`:
-  [NumberField E]
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [19556/19612] Replayed Formalism.LocalToGlobal.Columns.ChainTwFrA
-warning: src/Formalism/LocalToGlobal/Columns/ChainTwFrA.lean:61:0: automatically included section variable(s) unused in theorem `Formalism.L2.Col.Sc.Fr.tfaD_apply`:
-  [NumberField E]
-  [StarRing E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] [StarRing E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [19562/19612] Replayed Formalism.LocalToGlobal.GroupLattices.JointServices.Cut
-warning: src/Formalism/LocalToGlobal/GroupLattices/JointServices/Cut.lean:13:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/LocalToGlobal/GroupLattices/JointServices/Cut.lean:28:32: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-⚠ [19568/19612] Replayed Formalism.LocalToGlobal.PtKOfReal
-warning: src/Formalism/LocalToGlobal/PtKOfReal.lean:82:101: Variable name `hpin` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hpin
+  [apply] _inst
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/PtKOfReal.lean:112:107: Variable name `hT` is not explicitly referenced.
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralMv.lean:13:15: Variable name `inst` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hT
+  [apply] _inst
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/PtKOfReal.lean:113:5: Variable name `hpin` is not explicitly referenced.
+⚠ [20076/20093] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.CapelliComplements.FirstLemmaG (5.2s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/CapelliComplements/FirstLemmaG.lean:9:15: Variable name `inst` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hpin
+  [apply] _inst
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [19569/19612] Replayed Formalism.LocalToGlobal.Divisibility.DivisibilityProofs.NumbersP
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityProofs/NumbersP.lean:84:0: automatically included section variable(s) unused in theorem `Formalism.L2.DIV.cycSum_rec`:
-  [NeZero d]
+⚠ [20077/20093] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialFirst (5.0s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFirst.lean:4:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFirst.lean:8:32: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFirst.lean:13:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [20078/20093] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.JetIntegrality.TwoUnit (5.7s)
+⚠ [20079/20094] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.CapelliComplements.FirstLemmaF (4.9s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/CapelliComplements/FirstLemmaF.lean:9:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [20080/20095] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.FormalGroupSplitting.ExpCongruenceExtendsToSum (7.1s)
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/FormalGroupSplitting/ExpCongruenceExtendsToSum.lean:132:0: automatically included section variable(s) unused in theorem `PI.FglPhSplit.Wk.rho_add`:
+  hex0
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NeZero d] in theorem ...
+  omit hex0 in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [19579/19612] Replayed Formalism.LocalToGlobal.Divisibility.EigenvalueSumLeClosedOf
-warning: src/Formalism/LocalToGlobal/Divisibility/EigenvalueSumLeClosedOf.lean:1631:77: Variable name `he` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _he
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Formalism/LocalToGlobal/Divisibility/EigenvalueSumLeClosedOf.lean:1865:0: automatically included section variable(s) unused in theorem `Formalism.L2.DIV.Arith4S.logG_rec`:
-  [Group G]
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/FormalGroupSplitting/ExpCongruenceExtendsToSum.lean:146:0: automatically included section variable(s) unused in theorem `PI.FglPhSplit.Wk.rho_lin`:
+  hex0
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Group G] in theorem ...
+  omit hex0 in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [19581/19612] Replayed Formalism.LocalToGlobal.Divisibility.DivisibilityConstruction.RBDGam
-warning: src/Formalism/LocalToGlobal/Divisibility/DivisibilityConstruction/RBDGam.lean:62:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [19584/19612] Replayed Formalism.LocalToGlobal.IndefiniteReal.PrincipalLevelFrame
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PrincipalLevelFrame.lean:126:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/FormalGroupSplitting/ExpCongruenceExtendsToSum.lean:203:8: `push_neg` has been deprecated. Prefer using `push Not` instead.
 If you'd rather continue using `push_neg` in your project, you can implement it as follows:
 ```
 open Lean.Parser.Tactic in
 macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
   `(tactic| push $cfg:optConfig Not $[$loc]?)
 ```
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PrincipalLevelFrame.lean:383:15: `MultilinearMap.add_apply` has been deprecated: Use `add_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PrincipalLevelFrame.lean:386:15: `MultilinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PrincipalLevelFrame.lean:399:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-⚠ [19586/19612] Replayed Formalism.LocalToGlobal.IndefiniteReal.PeterssonHilbertSpace
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:42:4: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:81:13: `MultilinearMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:90:8: `MultilinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:121:15: `MultilinearMap.zero_apply` has been deprecated: Use `_root_.zero_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.zero_apply` to `_root_.zero_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:125:10: `MultilinearMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:127:17: `MultilinearMap.add_apply` has been deprecated: Use `_root_.add_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `_root_.add_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:130:10: `MultilinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:132:17: `MultilinearMap.smul_apply` has been deprecated: Use `_root_.smul_apply` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `_root_.smul_apply x`).
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/PeterssonHilbertSpace.lean:179:6: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-⚠ [19588/19612] Replayed Formalism.LocalToGlobal.Columns.MtRowRep
-warning: src/Formalism/LocalToGlobal/Columns/MtRowRep.lean:16:16: Variable name `π` is not explicitly referenced.
+⚠ [20081/20095] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialThird (6.3s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialThird.lean:4:15: Variable name `inst` is not explicitly referenced.
 
 Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _π
+  [apply] _inst
 
 Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [19589/19612] Replayed Formalism.LocalToGlobal.IndefiniteReal.ConjSubConjSub
-warning: src/Formalism/LocalToGlobal/IndefiniteReal/ConjSubConjSub.lean:40:12: This simp argument is unused:
-  mul_comm
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialThird.lean:8:32: Variable name `inst` is not explicitly referenced.
 
-Hint: Omit it from the simp argument list.
-  [apply] simp
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
 
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialThird.lean:13:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [20082/20095] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.GramSubstitutionIntegral.Expand (7.3s)
+⚠ [20083/20096] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialFourth (6.4s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFourth.lean:4:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFourth.lean:8:32: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFourth.lean:13:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [20084/20096] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.JetIntegrality.GlueHoldsVar (5.3s)
+✔ [20085/20096] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.JetIntegrality.PolarizationDifferenceFormulaHolds (5.9s)
+✔ [20086/20097] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.FglPhSplit (5.7s)
+⚠ [20087/20097] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.UnitBall (6.4s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:4:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:8:32: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:16:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:22:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/UnitBall.lean:30:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [20088/20098] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IsIntegralNatCast (5.3s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IsIntegralNatCast.lean:4:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IsIntegralNatCast.lean:8:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [20089/20098] Built Formalism.PeriodIntegrals.OrbitalBoundsConclusion.PhGram (5.6s)
+⚠ [20090/20099] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialFifth (5.9s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialFifth.lean:182:18: Variable name `x` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _x
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [20091/20101] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.DualGramSubstitution.HasSubstRen (8.0s)
+warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/DualGramSubstitution/HasSubstRen.lean:18:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [20092/20103] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntegralPolynomialSixth (5.1s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialSixth.lean:4:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialSixth.lean:8:32: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntegralPolynomialSixth.lean:13:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [20093/20103] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.ImportsTerAlt (5.5s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:7:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:11:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:13:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:16:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:18:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ImportsTerAlt.lean:4:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [20094/20106] Built Formalism.PeriodIntegrals.UnitaryGroupMassFormula.JetIntegrality.HighGOf (8.9s)
+⚠ [20095/20106] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.IntMvPderiv (6.2s)
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntMvPderiv.lean:4:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntMvPderiv.lean:8:32: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/IntMvPderiv.lean:13:15: Variable name `inst` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _inst
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
