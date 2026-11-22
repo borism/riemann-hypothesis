@@ -58,7 +58,7 @@ cmd_build() {  # build LIST TAG
   say "build $tag: ${#tg[@]} targets, rc=$rc, $((SECONDS-t0)) s wall, $built modules Built; $(tail -1 "$OUT/build-$tag.log")"
   # per-module times, from Lake's "Built X (12s)" lines
   grep -oE '\] Built [^ ]+ \([0-9.]+m?s\)' "$OUT/build-$tag.log" | sed -E 's/\] Built ([^ ]+) \(([0-9.]+)(m?s)\)/\1\t\2\3/' > "$OUT/times-$tag.tsv" || true
-  awk -F'\t' '{v=$2; if (v ~ /ms$/) {sub(/ms/,"",v); v/=1000} else sub(/s/,"",v); s+=v; if (v>m) {m=v; mm=$1}} END {if (NR) printf "  per-module elaboration: n=%d, total %.0f s, mean %.1f s, max %.0f s (%s)\n", NR, s, s/NR, m, mm}' "$OUT/times-$tag.tsv" | tee -a "$OUT/summary.txt"
+  awk -F'\t' '{v=$2; if (v ~ /ms$/) {sub(/ms/,"",v); v/=1000} else sub(/s/,"",v); v+=0; s+=v; if (v>m) {m=v; mm=$1}} END {if (NR) printf "  per-module elaboration: n=%d, total %.0f s, mean %.1f s, max %.0f s (%s)\n", NR, s, s/NR, m, mm}' "$OUT/times-$tag.tsv" | tee -a "$OUT/summary.txt"
   return $rc
 }
 
