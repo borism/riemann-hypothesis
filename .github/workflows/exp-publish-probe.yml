@@ -1,0 +1,40 @@
+# Diagnostic for issue #9: the pool publish job got "HTTP 403: Resource not accessible by integration" on
+# `gh release create` (wave w2) although it worked for w1 with the same permissions block. This probe tries
+# the same calls with the same permissions and prints the HTTP status and response headers. It creates and
+# then deletes two throw-away tags/releases named probe-publish-*. It prints no secrets.
+name: exp-publish-probe
+on:
+  push:
+    branches: [exp/gh-runners-restore-test]
+    paths: [.github/workflows/exp-publish-probe.yml]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions: {contents: write, actions: read}
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Context
+        run: |
+          echo "repo=$GITHUB_REPOSITORY sha=$GITHUB_SHA ref=$GITHUB_REF actor=$GITHUB_ACTOR event=$GITHUB_EVENT_NAME"
+          gh --version | head -1
+      - name: 1. create a tag ref through the API
+        run: |
+          gh api -i -X POST "repos/$GITHUB_REPOSITORY/git/refs" -f ref=refs/tags/probe-publish-1 -f sha="$GITHUB_SHA" 2>&1 | grep -i -E '^HTTP|x-accepted|x-github-request|message|"ref"' | head -8 || true
+      - name: 2. create a release on that existing tag (no assets)
+        run: |
+          gh api -i -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name=probe-publish-1 -f name=probe -f body=probe -F prerelease=true 2>&1 | grep -i -E '^HTTP|x-accepted|message|"id"' | head -8 || true
+      - name: 3. create a release with a new tag and a target (as the publish job does)
+        run: |
+          gh api -i -X POST "repos/$GITHUB_REPOSITORY/releases" -f tag_name=probe-publish-2 -f target_commitish="$GITHUB_SHA" -f name=probe -f body=probe -F prerelease=true 2>&1 | grep -i -E '^HTTP|x-accepted|message|"id"' | head -8 || true
+      - name: 4. list releases (read access)
+        run: |
+          gh api -i "repos/$GITHUB_REPOSITORY/releases?per_page=3" 2>&1 | grep -i -E '^HTTP|x-accepted' | head -4 || true
+      - name: Cleanup
+        if: always()
+        run: |
+          for t in probe-publish-1 probe-publish-2; do gh release delete "$t" --repo "$GITHUB_REPOSITORY" --cleanup-tag --yes 2>&1 | tail -1 || true; done
+          gh api -X DELETE "repos/$GITHUB_REPOSITORY/git/refs/tags/probe-publish-1" 2>&1 | tail -1 || true
