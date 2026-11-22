@@ -80,7 +80,7 @@ jobs:
           bash exp/scripts/exp-pool.sh pack "$s" "$WAVE-job-${{ matrix.job }}"
       - name: Summary
         if: always()
-        run: { bash exp/scripts/exp-pool.sh resources || true; cat exp-out/summary.txt; }
+        run: bash exp/scripts/exp-pool.sh resources || true; cat exp-out/summary.txt
       - uses: actions/upload-artifact@v4
         with: {name: '${{ env.WAVE }}-job-${{ matrix.job }}', path: exp-out/pack, retention-days: 30}
       - uses: actions/upload-artifact@v4
