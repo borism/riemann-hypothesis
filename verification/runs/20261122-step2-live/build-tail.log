@@ -1,74 +1,3 @@
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:178:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:179:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:264:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:265:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:286:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulEqMapOfIsCompactOfIsQuasiSeparated.lean:287:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [20880/20890] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.CstSmoothAndFlat (12s)
-⚠ [20881/20893] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsSmulOfTwCoord (12s)
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulOfTwCoord.lean:22:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulOfTwCoord.lean:23:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsSmulOfTwCoord.lean:24:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -76,125 +5,196 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [20882/20893] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsHomLocBijectiveGrSum (14s)
-⚠ [20883/20894] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.SecOnBasicOpenLocalization (6.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/SecOnBasicOpenLocalization.lean:17:2: Try this: 
-  haveI̵
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChiIdemMulLvlIdemBaseNeZero.lean:413:6: Try this: 
+  letI̵
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [20884/20894] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsBaseChangeCokerMatrixMvPolynomial (6.0s)
-✔ [20885/20894] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.TwistedSectionsLocaliseToCharts (7.1s)
-✔ [20886/20894] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsBaseChangeAwayOfIntertwine (9.5s)
-✔ [20887/20896] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsHomogeneousRangeMulVecLin (6.0s)
-✔ [20888/20899] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.SecOnFinitePresentationProjective (7.8s)
-✔ [20889/20900] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.IsBaseChangeGradedPiece (8.9s)
-⚠ [20890/20900] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.TwistedSectionsLocaliseToChartsStatement (6.5s)
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/TwistedSectionsLocaliseToChartsStatement.lean:11:64: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChiIdemMulLvlIdemBaseNeZero.lean:428:4: Try this: 
+  letI̵
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/TwistedSectionsLocaliseToChartsStatement.lean:11:117: this tactic is never executed
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/TwistedSectionsLocaliseToChartsStatement.lean:11:64: Unused tactic linter: `exact GlobalTheory.AbLaw.twisted_sections_localise` does nothing
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChiIdemMulLvlIdemBaseNeZero.lean:436:2: Try this: 
+  letI̵
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/TwistedSectionsLocaliseToChartsStatement.lean:11:117: Unused tactic linter: `(intros; apply GlobalTheory.AbLaw.twisted_sections_localise <;> assumption)` does nothing
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [20891/20901] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsWitnessesOfFormallySmoothQuotient (7.2s)
-✔ [20893/20901] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.FlatQuotSMulTopCokerOfMatrixWitnesses (8.9s)
-⚠ [20894/20902] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul (10s)
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:34:38: `DFinsupp.finset_sum_apply` has been deprecated: Use `DFinsupp.finsetSum_apply` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:22:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul.0.G
-  [IsScalarTower R (MvPolynomial ι R) M]
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChiIdemMulLvlIdemBaseNeZero.lean:445:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [22176/22190] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.FormalDegree.CoefLoc (106s)
+⚠ [22177/22190] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.CayleyIndepA (97s)
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:14:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:20:65: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:27:86: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:50:45: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:56:45: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndepA.lean:108:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.ChartRestriction.DS.Lap.CayleyIndepA.irred_conj`:
+  hab
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [IsScalarTower R (MvPolynomial ι R) M] in theorem ...
+  omit hab in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:79:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul.0.G
-  [Module R M]
-  [IsScalarTower R (MvPolynomial ι R) M]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Module R M] [IsScalarTower R (MvPolynomial ι R) M] in theorem ...
+⚠ [22178/22192] Built Development.AbelianVarietyTheory.Proofs.GlobalInterpolation.SmallLevelRankEqClosedOfLevelProjectionSurjective (233s)
+warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/SmallLevelRankEqClosedOfLevelProjectionSurjective.lean:20:5: Variable name `hPA` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:94:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul.0.G
-  [Module R M]
-  [IsScalarTower R (MvPolynomial ι R) M]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Module R M] [IsScalarTower R (MvPolynomial ι R) M] in theorem ...
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hPA
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsXPowSmulEqZeroOfEqXSubOneSmul.lean:139:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsXPowSmulEqZeroOfEqXSubOneSmul.0.
-  [IsScalarTower R (MvPolynomial ι R) M]
-  [Decomposition ℳ]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [IsScalarTower R (MvPolynomial ι R) M] [Decomposition ℳ] in theorem ...
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/SmallLevelRankEqClosedOfLevelProjectionSurjective.lean:21:5: Variable name `hLamP` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [20896/20902] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsTwistedSectionsCubeBijective (7.4s)
-✔ [20897/20915] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.NonemptyBaseChangeGrCubeIso (12s)
-⚠ [20898/20915] Replayed Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.FinitePieceOfPolyGradedSMul
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/FinitePieceOfPolyGradedSMul.lean:18:6: this tactic is never executed
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hLamP
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/FinitePieceOfPolyGradedSMul.lean:19:6: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/SmallLevelRankEqClosedOfLevelProjectionSurjective.lean:23:5: Variable name `hDivG` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/FinitePieceOfPolyGradedSMul.lean:18:6: Unused tactic linter: `exact add_comm k 1 ▸ this` does nothing
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hDivG
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/FinitePieceOfPolyGradedSMul.lean:19:6: Unused tactic linter: `simpa [add_comm] using this` does nothing
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AbelianVarietyTheory/Proofs/GlobalInterpolation/SmallLevelRankEqClosedOfLevelProjectionSurjective.lean:25:5: Variable name `zL` is not explicitly referenced.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [20903/20915] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.ExistsNoetherianSubringHomogeneousMatrixFlatChar (9.8s)
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:64:10: This simp argument is unused:
-  Matrix.mulVec
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _zL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [22179/22192] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.GapNum (127s)
+✔ [22180/22193] Built Development.AbelianVarietyTheory.Proofs.InertiaEigenvalues.CayleyIndependent (33s)
+✔ [22181/22193] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.DSUniv (28s)
+✔ [22182/22193] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.HarishChandraInductionCuspidalParabolicProduct (40s)
+⚠ [22183/22195] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IsCuspidalCharacterIffIsCuspidalGLnFiniteField (40s)
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteField.lean:111:10: `Fin.lt_iff_val_lt_val` has been deprecated: Use `Fin.lt_def` instead
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteField.lean:135:43: This simp argument is unused:
+  h'
 
 Hint: Omit it from the simp argument list.
-  [apply] simp [dotProduct, Pi.single_apply]
+  [apply] simp [h]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:64:25: This simp argument is unused:
-  dotProduct
+✔ [22184/22195] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.BesselIntegralSquareIntegrable (8.1s)
+✔ [22185/22195] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.GapBigLap (10s)
+✔ [22186/22199] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.TraceHarishChandraInducedEqProductCharacters (9.7s)
+⚠ [22187/22199] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement (5.8s)
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement.lean:11:76: this tactic is never executed
 
-Hint: Omit it from the simp argument list.
-  [apply] simp [Matrix.mulVec, Pi.single_apply]
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement.lean:11:141: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:64:37: This simp argument is unused:
-  Pi.single_apply
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement.lean:11:76: Unused tactic linter: `exact GlobalTheory.CuspCharRep.isCusp_character_iff_isCuspidal` does nothing
 
-Hint: Omit it from the simp argument list.
-  [apply] simp [Matrix.mulVec, dotProduct]
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsCuspidalCharacterIffIsCuspidalGLnFiniteFieldStatement.lean:11:141: Unused tactic linter: `(intros;
+  apply GlobalTheory.CuspCharRep.isCusp_character_iff_isCuspidal <;> assumption)` does nothing
 
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:262:4: Try this: 
-  haveI̵
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [22188/22199] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.MulVecFixOfSupp (5.1s)
+⚠ [22189/22203] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.TraceHarishChandraInducedEqProductCharactersStatement (5.4s)
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/TraceHarishChandraInducedEqProductCharactersStatement.lean:11:58: this tactic is never executed
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/TraceHarishChandraInducedEqProductCharactersStatement.lean:11:105: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:264:4: Try this: 
-  haveI̵
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/TraceHarishChandraInducedEqProductCharactersStatement.lean:11:58: Unused tactic linter: `exact GlobalTheory.HCChar.trace_hcRep_eq_hcL` does nothing
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/TraceHarishChandraInducedEqProductCharactersStatement.lean:11:105: Unused tactic linter: `(intros; apply GlobalTheory.HCChar.trace_hcRep_eq_hcL <;> assumption)` does nothing
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/CoherentCohomologyProofs/ExistsNoetherianSubringHomogeneousMatrixFlatChar.lean:266:4: Try this: 
-  haveI̵
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [22190/22203] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.MultiplicityOne.HermitianMeasures.OrbitIntegralAbsConvergent (7.0s)
+⚠ [22191/22205] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.ContinuousBlkWConj (6.0s)
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:148: this tactic is never executed
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:232: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [20904/20918] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.NonemptyHomLocSingletonEquivQuotSMulTop (5.8s)
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:309: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:394: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:130: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:148: Unused tactic linter: `(intros; apply UpperTheory.Reformulated.B.Qi20.mulVec_fix_of_supp <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:232: Unused tactic linter: `(apply @UpperTheory.Reformulated.B.Qi20.mulVec_fix_of_supp <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:309: Unused tactic linter: `(intros; apply @UpperTheory.Reformulated.B.Qi20.mulVec_fix_of_supp <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/ContinuousBlkWConj.lean:48:394: Unused tactic linter: `(apply @UpperTheory.Reformulated.B.Qi20.mulVec_fix_of_supp <;>
+    first
+    | assumption
+    | infer_instance)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [22192/22205] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.CayleyIndep (27s)
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:75:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:62:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:64:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:66:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:69:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:72:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:77:35: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:62:35: Unused tactic linter: `exact hU` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:64:35: Unused tactic linter: `exact hU` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:66:35: Unused tactic linter: `exact hU` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:69:35: Unused tactic linter: `exact hU` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:72:35: Unused tactic linter: `exact hU` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/ReductiveGroups/DiscreteSeries/LaplaceOperators/SpectralGap/CayleyIndep.lean:77:35: Unused tactic linter: `exact hU` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [22193/22205] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.ReproducingKernels.IntegralNormSqCoef (8.5s)
+✔ [22194/22207] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.ReproducingKernels.OneLeGN (9.0s)
+✔ [22195/22208] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.ClosedSubgroupsStatement (45s)
+✔ [22196/22208] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.ReproducingKernels.MeasurableIndicatorNormSq (46s)
+✔ [22197/22210] Built ReciprocityTheory.ReductiveGroups.DiscreteSeries.LaplaceOperators.SpectralGap.FamilyGapImplicationHolds (44s)
