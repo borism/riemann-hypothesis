@@ -115,7 +115,7 @@ cmd_uptodate() {
 cmd_determinism() {
   SBX_MODE="$(pick_sbx)"; export SBX_MODE; say "sandbox for lake: $SBX_MODE"
   # shallow leaves of the restored set whose project imports are all restored
-  python3 -I "$HERE/exp-pick-sample.py" "$BUILD/src" "$OUT/restored-modules.txt" "$SAMPLE_N" > "$OUT/sample.txt" 2> "$OUT/sample-stats.txt"
+  python3 -I "$HERE/exp-pick-sample.py" "$BUILD/src" "$OUT/restored-modules.txt" "$SAMPLE_N" "${EXP_SAMPLE_MODE:-leaves}" > "$OUT/sample.txt" 2> "$OUT/sample-stats.txt"
   cat "$OUT/sample-stats.txt" | tee -a "$OUT/summary.txt"
   local n; n=$(wc -l < "$OUT/sample.txt"); [ "$n" -gt 0 ] || { say "empty sample"; exit 1; }
   : > "$OUT/sample-files.txt"
@@ -144,6 +144,10 @@ cmd_determinism() {
   awk -F'\t' '{n=$1; sub(/.*\//,"",n); e=n; sub(/^[^.]*/,"",e); t[e]++; if($4=="same") s[e]++; else if($3=="MISSING") m[e]++; else d[e]++}
     END {for (k in t) printf "  %-12s %d / %d / %d  (of %d)\n", k, s[k], d[k], m[k], t[k]}' "$OUT/sample-compare.tsv" | sort | tee -a "$OUT/summary.txt"
   grep -P '\tDIFF$' "$OUT/sample-compare.tsv" | head -20 | tee -a "$OUT/summary.txt" || true
+  # after the rebuilt files replaced the VM's: does Lake still accept every restored module?
+  local -a all; mapfile -t all < <(sed 's/^/+/' "$OUT/restored-modules.txt")
+  rc=0; sbx lake build --no-build "${all[@]}" > "$OUT/nobuild-after-sample.log" 2>&1 || rc=$?
+  say "lake build --no-build over all ${#all[@]} restored modules after the sample rebuild: rc=$rc; $(tail -1 "$OUT/nobuild-after-sample.log")"
 }
 
 case "${1:-}" in

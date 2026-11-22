@@ -1,6 +1,8 @@
 """Pick a determinism sample for issue #9: shallow leaves of the restored module set.
 
-usage: python3 -I exp-pick-sample.py SRC_DIR RESTORED_MODULES_TXT N > sample.txt
+usage: python3 -I exp-pick-sample.py SRC_DIR RESTORED_MODULES_TXT N [leaves|any] > sample.txt
+With "any", non-leaf modules qualify too; their restored dependents then test that Lake still accepts
+them after the rebuilt bytes replace the VM's.
 A leaf is a restored module that no other restored module imports, so deleting its outputs and
 rebuilding it touches nothing else. Only modules whose project imports are all restored qualify.
 Depth = longest chain of project imports (computed over all project sources). Lowest depth first,
@@ -10,6 +12,7 @@ import hashlib, os, re, sys
 from functools import lru_cache
 
 src, restored_txt, n = sys.argv[1], sys.argv[2], int(sys.argv[3])
+mode = sys.argv[4] if len(sys.argv) > 4 else 'leaves'   # 'any': not only leaves
 restored = set(l.strip() for l in open(restored_txt) if l.strip())
 IMP = re.compile(r'^\s*(?:public\s+|private\s+)?(?:meta\s+)?import\s+(?:all\s+)?(.+)$')
 
@@ -45,11 +48,11 @@ for m in restored:
     proj_imps[m] = [i for i in ims if is_project(i)]
     imported_by_restored.update(proj_imps[m])
 
-leaves = [m for m in proj_imps if m not in imported_by_restored and all(i in restored for i in proj_imps[m])]
+leaves = [m for m in proj_imps if (mode == 'any' or m not in imported_by_restored) and all(i in restored for i in proj_imps[m])]
 leaves.sort(key=lambda m: (depth(m), hashlib.sha256(m.encode()).hexdigest()))
 pick = leaves[:n]
 ds = [depth(m) for m in pick]
-print(f"sample: {len(pick)} of {len(leaves)} eligible leaves (restored modules: {len(restored)}, with source: {len(proj_imps)}); "
+print(f"sample ({mode}): {len(pick)} of {len(leaves)} eligible modules (restored modules: {len(restored)}, with source: {len(proj_imps)}); "
       f"depth min {min(ds) if ds else '-'} max {max(ds) if ds else '-'}; "
       f"max restored depth {max((depth(m) for m in proj_imps), default=0)}", file=sys.stderr)
 for m in pick:

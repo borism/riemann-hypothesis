@@ -15,6 +15,7 @@ env:
   LIVE_COMMIT: f073285e399c5587c6a6799c0da56451b30c1836   # /home/user/rh-verify/state/step2.cloned on the VM
   EXP_SHARDS: "0001 0002"
   EXP_SAMPLE_N: "200"
+  EXP_SAMPLE_MODE: any   # run 1 used leaves (only 23 existed); run 2 includes non-leaf modules
 jobs:
   restore:
     runs-on: ubuntu-latest
