@@ -8,6 +8,13 @@
 # Read verification/RUN-ON-CLOUD.md before trusting any result of this script.
 # In particular: a run that stops in step 2, 3 or 4 is NOT a verification, and a
 # 4.33.1-only pass is limited evidence (see verification/NOTES.md#lean-version).
+#
+# Pins: a fresh clone made for step 1 or step 2 must have lean-toolchain =
+# leanprover/lean4:v$RH_LEAN_BUILD_VER (default 4.33.1) and a lake-manifest.json Mathlib rev =
+# $RH_MATHLIB_REV (default 0df444a3...), or the script stops with exit 70 before building
+# anything. Override only for a deliberate run on other pins, together with
+# RH_LEAN_BUILD_VER and the expected checksums. A step 2 that resumes an existing build clone
+# (state/step2.cloned) does not clone again and is not checked.
 
 set -euo pipefail
 
@@ -16,6 +23,7 @@ REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 WORK="${RH_WORK:-$(dirname "$REPO")/rh-verify}"        # big, disposable state
 LEAN_BUILD_VER="${RH_LEAN_BUILD_VER:-4.33.1}"           # builds + exports
 LEAN_JUDGE_VER="${RH_LEAN_JUDGE_VER:-4.36.0}"           # lake comparator
+MATHLIB_PIN_REV="${RH_MATHLIB_REV:-0df444a360eaa60ab8c11dca51a86af692955474}"  # lake-manifest.json rev of f1f6d654
 EXPORTER_URL="https://github.com/leanprover/lean4export.git"
 EXPORTER_TAG="v4.33.0"
 EXPORTER_COMMIT="15f6055e299ad5b89345e533cc2192f4cc00f659"
@@ -77,6 +85,9 @@ Options (or the RH_* environment variables in brackets):
   --attempt-anyway     [RH_ATTEMPT_ANYWAY=1] run steps 2-4 even if preflight says they cannot fit
   --dry-run            [RH_DRY_RUN=1]       print what would run; change nothing
   -h, --help
+
+Pins: a fresh clone must have lean-toolchain leanprover/lean4:v$RH_LEAN_BUILD_VER and Mathlib rev
+$RH_MATHLIB_REV (default 0df444a3...) in lake-manifest.json, else step1/step2 stop (exit 70).
 
 Small machine: RH_OPTIMISE=1 and scripts/rh-optimise.sh (compressed work dir, swap, import
 of an export made elsewhere); see verification/measurements/2026-11-22-small-scale.md.
@@ -167,6 +178,16 @@ cmd_tools() {
 }
 
 # ------------------------------------------------------------------------ clones
+check_pins() {  # check_pins DIR : die unless the source in DIR has the pins this run is about
+  local d="$1" tc rev
+  tc="$(cat "$d/lean-toolchain" 2>/dev/null | tr -d '[:space:]' || true)"
+  [ "$tc" = "leanprover/lean4:v$LEAN_BUILD_VER" ] \
+    || die "pin guard: $d/lean-toolchain is '${tc:-missing}', not leanprover/lean4:v$LEAN_BUILD_VER; refusing to build. Was upstream merged into this branch? See verification/RUN-ON-CLOUD.md#scope-of-this-run"
+  rev="$(awk -F'"' '$2=="rev" {r=$4} $2=="name" && $4=="mathlib" {print r; exit}' "$d/lake-manifest.json" 2>/dev/null || true)"
+  [ "$rev" = "$MATHLIB_PIN_REV" ] \
+    || die "pin guard: $d/lake-manifest.json has Mathlib rev '${rev:-missing}', not $MATHLIB_PIN_REV; refusing to build. Was upstream merged into this branch? See verification/RUN-ON-CLOUD.md#scope-of-this-run"
+}
+
 fresh_clone() {  # fresh_clone DEST : a pristine copy of the commit this script runs from
   local dest="$1" commit
   commit="$(git -C "$REPO" rev-parse HEAD)"
@@ -174,6 +195,7 @@ fresh_clone() {  # fresh_clone DEST : a pristine copy of the commit this script 
   rm -rf "$dest"
   git clone -q --no-hardlinks "$REPO" "$dest"
   git -C "$dest" checkout -q "$commit"
+  check_pins "$dest"
   echo "$commit"
 }
 
@@ -277,7 +299,8 @@ cmd_step2() {
   [ "$DRY_RUN" = 1 ] && { log "DRY-RUN: would clone, mathlib/cache get, then bwrap lake build Main"; return 0; }
   pin_env; export PATH="$TC_BUILD/bin:$PATH"
   if [ ! -f "$STATE/step2.cloned" ]; then
-    fresh_clone "$BUILD" > "$STATE/step2.cloned"
+    fresh_clone "$BUILD" > "$STATE/step2.cloned.tmp"   # a failed clone or pin check must not leave step2.cloned behind
+    mv "$STATE/step2.cloned.tmp" "$STATE/step2.cloned"
     ( cd "$BUILD" && lake exe mathlib/cache get ) > "$LOGS/step2-cache-get.log" 2>&1 || die "step2: lake exe mathlib/cache get failed"
   fi
   rm -f "$STATE/step2.stopped"
