@@ -1,66 +1,20 @@
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PStabilizerLeviMatrices.lean:83:77: This simp argument is unused:
-  Matrix.one_mul
+⚠ [30303/30325] Replayed Development.AbelianVarietyTheory.Proofs.ToricGeometry.CardLePowOfLinearIndependentThetaPrincipal
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CardLePowOfLinearIndependentThetaPrincipal.lean:36:43: This simp argument is unused:
+  Pi.single_apply
 
 Hint: Omit it from the simp argument list.
-  [apply] simp only [Matrix.add_mul, Matrix.sub_mul, Matrix.mul_add, Matrix.mul_sub, Matrix.mul_one, Matrix.mul_assoc,
-    leftInv_mul_mul hG, h2]
+  [apply] simp [hj]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PStabilizerLeviMatrices.lean:177:44: Variable name `hg` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hg
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PStabilizerLeviMatrices.lean:204:51: This simp argument is unused:
-  smul_zero
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CardLePowOfLinearIndependentThetaPrincipal.lean:48:43: This simp argument is unused:
+  Pi.single_apply
 
 Hint: Omit it from the simp argument list.
-  [apply] simp only [star_sub, star_smul, mulVec_sub, mulVec_smul, sub_dotProduct, dotProduct_sub, smul_dotProduct,
-    dotProduct_smul, h1, h2, hXX, sub_zero, smul_eq_mul]
+  [apply] simp [hi]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PStabilizerLeviMatrices.lean:204:62: This simp argument is unused:
-  sub_zero
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [star_sub, star_smul, mulVec_sub, mulVec_smul, sub_dotProduct, dotProduct_sub, smul_dotProduct,
-    dotProduct_smul, h1, h2, hXX, smul_zero, smul_eq_mul]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✔ [28239/28251] Built GroundTheory.AutomorphicForms.DefiniteClassNumber.Finiteness (13s)
-✔ [28240/28251] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PSemidirectCovering (7.1s)
-✔ [28241/28254] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PLineStabHaar (7.6s)
-✔ [28242/28257] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PStabilizerLeviPlaces (8.3s)
-✔ [28244/28257] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PArchUnimodular (11s)
-✔ [28245/28259] Built GroundTheory.HeightsAndTheta.Theta.RealPlace (13s)
-⚠ [28246/28259] Replayed Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.DetSqEqOneOfPreservesBilin
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/DetSqEqOneOfPreservesBilin.lean:4:22: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/DetSqEqOneOfPreservesBilin.lean:5:5: Variable name `inst_1` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst_1
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [28247/28261] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.IsIntegralVecCoordsOfMemAdelicLatticeOne (12s)
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/IsIntegralVecCoordsOfMemAdelicLatticeOne.lean:89:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-✔ [28249/28261] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PUnipotentModulusCoords (11s)
-✔ [28250/28264] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.StUnipotentCoordProper (7.0s)
-✔ [28251/28264] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PStabilizerLevi (14s)
-✔ [28252/28265] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.StUnipotentCentral (8.2s)
-⚠ [28253/28265] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.RelIndexNeZeroAndLeOfNsmulMem (12s)
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/RelIndexNeZeroAndLeOfNsmulMem.lean:20:2: Try this: 
+⚠ [30305/30325] Replayed Development.AbelianVarietyTheory.Proofs.ToricGeometry.EqZeroOfForallAlgHomComplex
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/EqZeroOfForallAlgHomComplex.lean:13:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -68,68 +22,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/RelIndexNeZeroAndLeOfNsmulMem.lean:18:5: Variable name `hLP` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hLP
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/RelIndexNeZeroAndLeOfNsmulMem.lean:106:20: This simp argument is unused:
-  unitaryCongr_apply
-
-Hint: Omit it from the simp argument list.
-  [apply] simp [adeleSplit, hermitianDiagonal, unitaryDiagonal, finDiag, unitaryCoords_unitaryMap, adeleRingEquivProd]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/RelIndexNeZeroAndLeOfNsmulMem.lean:120:50: `DistribMulAction.toAddMonoidHom` has been deprecated: Use `DistribSMul.toAddMonoidHom` instead
-
-Note: The updated constant has a different type:
-  {M : Type u_1} → (A : Type u_7) → [inst : AddZeroClass A] → [DistribSMul M A] → M → A →+ A
-instead of
-  {M : Type u_1} → (A : Type u_7) → [inst : Monoid M] → [inst_1 : AddMonoid A] → [DistribMulAction M A] → M → A →+ A
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.toAddMonoidHom` to `DistribSMul.toAddMonoidHom x`).
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/RelIndexNeZeroAndLeOfNsmulMem.lean:132:7: `DistribMulAction.toAddMonoidHom` has been deprecated: Use `DistribSMul.toAddMonoidHom` instead
-
-Note: The updated constant has a different type:
-  {M : Type u_1} → (A : Type u_7) → [inst : AddZeroClass A] → [DistribSMul M A] → M → A →+ A
-instead of
-  {M : Type u_1} → (A : Type u_7) → [inst : Monoid M] → [inst_1 : AddMonoid A] → [DistribMulAction M A] → M → A →+ A
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.toAddMonoidHom` to `DistribSMul.toAddMonoidHom x`).
-✔ [28254/28266] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PUnipotentModulusHomeo (10s)
-✔ [28255/28266] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.StUnipotentHorizontal (6.6s)
-⚠ [28256/28266] Built Development.AutomorphicArithmetic.IntegralCasts.CapelliIdentities.ExistsNsmulMem (6.5s)
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ExistsNsmulMem.lean:5:37: Variable name `inst` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ExistsNsmulMem.lean:5:70: Variable name `inst_2` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst_2
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AutomorphicArithmetic/IntegralCasts/CapelliIdentities/ExistsNsmulMem.lean:6:5: Variable name `inst_3` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _inst_3
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [28257/28266] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PTorusEmbedding (9.0s)
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PTorusEmbedding.lean:167:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FiniteCovolume.TorusEmbedding.continuous_torusHom`:
-  [NumberField F]
-  [NumberField E]
-  [IsTotallyReal F]
-  [IsTotallyComplex E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField F] [NumberField E] [IsTotallyReal F] [IsTotallyComplex E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [28258/28268] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PArchimedeanUnitaryEquiv (40s)
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PArchimedeanUnitaryEquiv.lean:25:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/EqZeroOfForallAlgHomComplex.lean:19:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -137,36 +30,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PArchimedeanUnitaryEquiv.lean:19:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FiniteCovolume.isNonsplitAt_of_isTotallyComplex`:
-  [NumberField F]
-  [NumberField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField F] [NumberField E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PArchimedeanUnitaryEquiv.lean:165:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FiniteCovolume.map_completionTensorEquiv_gram`:
-  [Fintype ι]
-  [DecidableEq ι]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Fintype ι] [DecidableEq ι] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PArchimedeanUnitaryEquiv.lean:233:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FiniteCovolume.adeleSplit_hermitianDiagonal_fst`:
-  [NumberField E]
-  [IsTotallyReal F]
-  [IsTotallyComplex E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] [IsTotallyReal F] [IsTotallyComplex E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [28259/28269] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PAdelicLatticeDictionary (13s)
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PAdelicLatticeDictionary.lean:50:9: Variable name `r` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _r
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PAdelicLatticeDictionary.lean:79:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/EqZeroOfForallAlgHomComplex.lean:20:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -174,7 +38,15 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PAdelicLatticeDictionary.lean:161:4: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/EqZeroOfForallAlgHomComplex.lean:51:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/EqZeroOfForallAlgHomComplex.lean:52:4: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -182,19 +54,147 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [28260/28269] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PUnipotentModulus (12s)
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PUnipotentModulus.lean:102:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FiniteCovolume.heisForm_heisConjLin`:
-  [NumberField F]
-  [IsTotallyReal F]
-  [IsTotallyComplex E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField F] [IsTotallyReal F] [IsTotallyComplex E] in theorem ...
+✔ [30306/30327] Built ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.FundSetMeasStatement (8.9s)
+⚠ [30308/30329] Built Development.AbelianVarietyTheory.Proofs.ToricGeometry.FourierCoeffUnitCubeTranslateOfEntirePeriodic (9.1s)
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:18:4: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [28261/28270] Built GroundTheory.HeightsAndTheta.Heights.FiniteCovolume.PLineEigenvalue (9.2s)
-warning: src/GroundTheory/HeightsAndTheta/Heights/FiniteCovolume/PLineEigenvalue.lean:42:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.FiniteCovolume.LineEigenvalue.coordRatio_ne_zero`:
-  [NumberField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] in theorem ...
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:19:4: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:20:4: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:17:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:18:4: Unused tactic linter: `(intros; apply _root_.GlobalTheory.IntegerShiftSingle.main <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:19:4: Unused tactic linter: `(intros;
+  apply @_root_.GlobalTheory.IntegerShiftSingle.main <;>
+    first
+    | assumption
+    | infer_instance)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:20:4: Unused tactic linter: `(intros; exact _root_.GlobalTheory.IntegerShiftSingle.main ..)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:26:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:27:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/FourierCoeffUnitCubeTranslateOfEntirePeriodic.lean:29:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [30310/30329] Replayed Development.AbelianVarietyTheory.Proofs.ToricGeometry.CompactSpacePointsPolAV
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:34:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:35:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:73:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:75:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:105:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:124:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:130:31: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:145:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:189:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:212:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/CompactSpacePointsPolAV.lean:213:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [30311/30335] Built Development.AbelianVarietyTheory.Proofs.ToricGeometry.IsReducedSchemeOfSmoothOfIsIntegrallyClosed (8.3s)
+⚠ [30313/30335] Replayed Development.AbelianVarietyTheory.Proofs.HomogeneousIdeals.TendstoUniformlyOnDoublingLogOfContraction
+warning: src/Development/AbelianVarietyTheory/Proofs/HomogeneousIdeals/TendstoUniformlyOnDoublingLogOfContraction.lean:24:8: This simp argument is unused:
+  Fin.snoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [30317/30340] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.NegIndexTransposeOfHasSignature (12s)
+⚠ [30319/30340] Replayed Development.AbelianVarietyTheory.Proofs.ToricGeometry.ExistsConstOfCover
+warning: src/Development/AbelianVarietyTheory/Proofs/ToricGeometry/ExistsConstOfCover.lean:136:70: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [30322/30344] Built Development.AbelianVarietyTheory.Proofs.ToricGeometry.ExistsTestFunctionsSubsetOfMemNhds (7.9s)
+✔ [30326/30346] Built ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.ArakelovVolumes.UpperBounds.BasePsiLeviLowerBound (10s)
