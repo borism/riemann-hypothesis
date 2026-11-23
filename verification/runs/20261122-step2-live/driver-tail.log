@@ -35,3 +35,9 @@
     ✔ [46840/46851] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.ExistsNegOriginSmoothLocus (7.4s)
 [2026-11-23T15:55:47Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
 [2026-11-23T16:00:33Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-23T17:13:08Z] step2: rc=143; 93794 .olean files in the build tree; 60G in .lake; 25 GB free
+    warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/NormsTensorPowerStatement.lean:11:93: Unused tactic linter: `(intros; apply GlobalTheory.CoverNorm.norms_pow <;> assumption)` does nothing
+    
+    Note: This linter can be disabled with `set_option linter.unusedTactic false`
+[2026-11-23T17:13:08Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
+[2026-11-23T17:15:09Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
