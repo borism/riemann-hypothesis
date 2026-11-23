@@ -1,51 +1,13 @@
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsFinsumSmulEqOneOfTame.lean:26:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtMulAddStatement.lean:18:45: Unused tactic linter: `exact GlobalTheory.UU.repWt_add` does nothing
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtMulAddStatement.lean:18:79: Unused tactic linter: `(intros; apply GlobalTheory.UU.repWt_add <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [32346/32360] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.MumfordTowerRepWtUniqueStatement (6.2s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtUniqueStatement.lean:17:77: Variable name `V` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _V
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtUniqueStatement.lean:17:87: Variable name `A` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _A
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtUniqueStatement.lean:17:91: Variable name `G` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _G
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtUniqueStatement.lean:18:48: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtUniqueStatement.lean:18:85: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtUniqueStatement.lean:18:48: Unused tactic linter: `exact GlobalTheory.UU.repWt_unique` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/MumfordTowerRepWtUniqueStatement.lean:18:85: Unused tactic linter: `(intros; apply GlobalTheory.UU.repWt_unique <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [32347/32360] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.ExistsSecOfLbIso (21s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsSecOfLbIso.lean:35:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
-If you'd rather continue using `push_neg` in your project, you can implement it as follows:
-```
-open Lean.Parser.Tactic in
-macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
-  `(tactic| push $cfg:optConfig Not $[$loc]?)
-```
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsSecOfLbIso.lean:68:2: Try this: 
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [34084/34101] Replayed Development.AbelianVarietyTheory.Proofs.ModuliProofs.SubalgebraEqTopOfForallPrimeSmulMemSup
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/SubalgebraEqTopOfForallPrimeSmulMemSup.lean:23:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -53,66 +15,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsSecOfLbIso.lean:72:48: Variable name `V` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _V
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsSecOfLbIso.lean:72:58: Variable name `A` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _A
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsSecOfLbIso.lean:72:62: Variable name `G` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _G
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [32348/32360] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.ExistsWeightBundleTorusQuotientTowerAlgebraisatiStatement (10s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsWeightBundleTorusQuotientTowerAlgebraisatiStatement.lean:18:105: Variable name `V` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _V
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsWeightBundleTorusQuotientTowerAlgebraisatiStatement.lean:18:115: Variable name `A` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _A
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsWeightBundleTorusQuotientTowerAlgebraisatiStatement.lean:18:119: Variable name `G` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _G
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsWeightBundleTorusQuotientTowerAlgebraisatiStatement.lean:19:65: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsWeightBundleTorusQuotientTowerAlgebraisatiStatement.lean:19:119: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsWeightBundleTorusQuotientTowerAlgebraisatiStatement.lean:19:65: Unused tactic linter: `exact GlobalTheory.WtTower.exists_weight_bundle_alg` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsWeightBundleTorusQuotientTowerAlgebraisatiStatement.lean:19:119: Unused tactic linter: `(intros; apply GlobalTheory.WtTower.exists_weight_bundle_alg <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [32349/32362] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.TorusCoordinatesCompatOfTorusCompat (14s)
-⚠ [32350/32363] Built Development.AbelianVarietyTheory.Proofs.AbelianSchemeLawProofs.NonemptyGtCoordOfIsGt (22s)
-warning: src/Development/AbelianVarietyTheory/Proofs/AbelianSchemeLawProofs/NonemptyGtCoordOfIsGt.lean:152:56: Variable name `hL` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _hL
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-✔ [32351/32363] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.DescendedBundleAmpleSpecialFibre (14s)
-⚠ [32352/32363] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.FormallyUnramifiedOfIsFinite (7.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/FormallyUnramifiedOfIsFinite.lean:25:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/SubalgebraEqTopOfForallPrimeSmulMemSup.lean:24:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -120,7 +23,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/FormallyUnramifiedOfIsFinite.lean:74:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/SubalgebraEqTopOfForallPrimeSmulMemSup.lean:25:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -128,73 +31,170 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [32353/32365] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.ExistsPointRepresentingWeightMumfordQuotient (9.6s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsPointRepresentingWeightMumfordQuotient.lean:126:48: Variable name `V` is not explicitly referenced.
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/SubalgebraEqTopOfForallPrimeSmulMemSup.lean:46:4: Try this: 
+  haveI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _V
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsPointRepresentingWeightMumfordQuotient.lean:126:58: Variable name `A` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [34085/34101] Replayed Development.AbelianVarietyTheory.Proofs.ModuliProofs.InvariantTowerAlgebraMapInjective
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjective.lean:66:2: Try this: 
+  haveI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _A
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/ExistsPointRepresentingWeightMumfordQuotient.lean:126:62: Variable name `G` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjective.lean:67:2: Try this: 
+  haveI̵
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _G
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-⚠ [32354/32365] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.TorusCoordinatesCompatOfTorusCompatStatement (6.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/TorusCoordinatesCompatOfTorusCompatStatement.lean:17:62: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjective.lean:136:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjective.lean:138:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjective.lean:142:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjective.lean:141:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [34086/34101] Replayed Development.AbelianVarietyTheory.Proofs.ModuliProofs.InvariantTowerAlgebraMapInjectiveStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjectiveStatement.lean:12:50: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/TorusCoordinatesCompatOfTorusCompatStatement.lean:17:113: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjectiveStatement.lean:12:89: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/TorusCoordinatesCompatOfTorusCompatStatement.lean:17:62: Unused tactic linter: `exact GlobalTheory.gtCoord_compat_of_torusCompat` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjectiveStatement.lean:12:50: Unused tactic linter: `exact GlobalTheory.isPushout_of_tame` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/TorusCoordinatesCompatOfTorusCompatStatement.lean:17:113: Unused tactic linter: `(intros; apply GlobalTheory.gtCoord_compat_of_torusCompat <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/InvariantTowerAlgebraMapInjectiveStatement.lean:12:89: Unused tactic linter: `(intros; apply GlobalTheory.isPushout_of_tame <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [32355/32365] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.DimEqAbelianPartDimAddTorusRankStatement (5.0s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DimEqAbelianPartDimAddTorusRankStatement.lean:17:82: Variable name `V` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _V
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DimEqAbelianPartDimAddTorusRankStatement.lean:17:96: Variable name `G` is not explicitly referenced.
-
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _G
-
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DimEqAbelianPartDimAddTorusRankStatement.lean:18:60: this tactic is never executed
+✔ [34089/34106] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.ExistsQuotientOfFiniteGroup (13s)
+✔ [34090/34110] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.QuotientExistsUniqueCompEq (8.7s)
+⚠ [34091/34112] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.ExistsThetaFamilyPelSmoothGenericFibreStatement (8.0s)
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsThetaFamilyPelSmoothGenericFibreStatement.lean:14:64: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DimEqAbelianPartDimAddTorusRankStatement.lean:18:109: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsThetaFamilyPelSmoothGenericFibreStatement.lean:14:117: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DimEqAbelianPartDimAddTorusRankStatement.lean:18:60: Unused tactic linter: `exact GlobalTheory.UU.Tower.dim_eq_add_finrank` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsThetaFamilyPelSmoothGenericFibreStatement.lean:14:64: Unused tactic linter: `exact GlobalTheory.ZM.exists_thetaFam_isPEL_smooth` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DimEqAbelianPartDimAddTorusRankStatement.lean:18:109: Unused tactic linter: `(intros; apply GlobalTheory.UU.Tower.dim_eq_add_finrank <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsThetaFamilyPelSmoothGenericFibreStatement.lean:14:117: Unused tactic linter: `(intros; apply GlobalTheory.ZM.exists_thetaFam_isPEL_smooth <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [32356/32365] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.DescendedBundleAmpleSpecialFibreStatement (6.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DescendedBundleAmpleSpecialFibreStatement.lean:19:59: this tactic is never executed
+✔ [34092/34112] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.QuotientIsFiniteLocallyOfFiniteTypeDescend (7.1s)
+✔ [34093/34118] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.IsProjOverCompFinite (7.4s)
+✔ [34094/34118] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.ExistsGenOfQuotientOfRigid (13s)
+⚠ [34095/34118] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.ExistsFullLevelModelAmpleFrames (13s)
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsFullLevelModelAmpleFrames.lean:34:0: automatically included section variable(s) unused in theorem `GlobalTheory.Models.exists_ringGenerators`:
+  [IsCMField E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsCMField E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+✔ [34096/34118] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.QuotientIsReducedIsNormalFlat (9.4s)
+⚠ [34097/34118] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.QuotientIsFiniteLocallyOfFiniteTypeDescendStatement (7.8s)
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/QuotientIsFiniteLocallyOfFiniteTypeDescendStatement.lean:12:78: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DescendedBundleAmpleSpecialFibreStatement.lean:19:107: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/QuotientIsFiniteLocallyOfFiniteTypeDescendStatement.lean:12:145: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DescendedBundleAmpleSpecialFibreStatement.lean:19:59: Unused tactic linter: `exact GlobalTheory.UU.AmpleZero.relAmple_zero` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/QuotientIsFiniteLocallyOfFiniteTypeDescendStatement.lean:12:78: Unused tactic linter: `exact GlobalTheory.quotient_isFinite_locallyOfFiniteType_descend` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UniformizationProofs/DescendedBundleAmpleSpecialFibreStatement.lean:19:107: Unused tactic linter: `(intros; apply GlobalTheory.UU.AmpleZero.relAmple_zero <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/QuotientIsFiniteLocallyOfFiniteTypeDescendStatement.lean:12:145: Unused tactic linter: `(intros;
+  apply GlobalTheory.quotient_isFinite_locallyOfFiniteType_descend <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [34098/34118] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.IsProjOverCompFiniteStatement (7.0s)
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/IsProjOverCompFiniteStatement.lean:12:58: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/IsProjOverCompFiniteStatement.lean:12:105: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/IsProjOverCompFiniteStatement.lean:12:58: Unused tactic linter: `exact GlobalTheory.isProjOver_comp_of_finite` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/IsProjOverCompFiniteStatement.lean:12:105: Unused tactic linter: `(intros; apply GlobalTheory.isProjOver_comp_of_finite <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [34099/34118] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.ExistsSectionsOrbitSubsetNonzeroLocus (8.4s)
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsSectionsOrbitSubsetNonzeroLocus.lean:59:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsSectionsOrbitSubsetNonzeroLocus.lean:67:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [34100/34122] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.ExistsCmTripleMapDescendGroupQuotient (9.6s)
+⚠ [34101/34122] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.ExistsFullLevelModelAmpleFramesStatement (7.9s)
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsFullLevelModelAmpleFramesStatement.lean:22:52: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsFullLevelModelAmpleFramesStatement.lean:22:93: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsFullLevelModelAmpleFramesStatement.lean:22:52: Unused tactic linter: `exact GlobalTheory.Models.topAmpExists` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/ExistsFullLevelModelAmpleFramesStatement.lean:22:93: Unused tactic linter: `(intros; apply GlobalTheory.Models.topAmpExists <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [34102/34122] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.QuotientIsReducedIsNormalFlatStatement (6.7s)
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/QuotientIsReducedIsNormalFlatStatement.lean:12:65: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/QuotientIsReducedIsNormalFlatStatement.lean:12:119: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/QuotientIsReducedIsNormalFlatStatement.lean:12:65: Unused tactic linter: `exact GlobalTheory.quotient_isReduced_isNormal_flat` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/ModuliProofs/QuotientIsReducedIsNormalFlatStatement.lean:12:119: Unused tactic linter: `(intros; apply GlobalTheory.quotient_isReduced_isNormal_flat <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
