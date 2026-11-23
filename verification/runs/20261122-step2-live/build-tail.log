@@ -1,40 +1,3 @@
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TorsionTranslatesSpanTaylorCoeffsAlgebraicStatement.lean:12:125: Unused tactic linter: `(intros; apply GlobalTheory.ThetaConj.translates_coef_algebraic <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [42166/42176] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.TaylorConjugateTangentSpacePadZeroColumnsStatement (6.7s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TaylorConjugateTangentSpacePadZeroColumnsStatement.lean:10:56: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TaylorConjugateTangentSpacePadZeroColumnsStatement.lean:10:101: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TaylorConjugateTangentSpacePadZeroColumnsStatement.lean:10:56: Unused tactic linter: `exact GlobalTheory.ConjRestrict.fnConj_pad` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TaylorConjugateTangentSpacePadZeroColumnsStatement.lean:10:101: Unused tactic linter: `(intros; apply GlobalTheory.ConjRestrict.fnConj_pad <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [42167/42178] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ImaginaryQuadraticFieldStructure (10s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ImaginaryQuadraticFieldStructure.lean:79:58: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
-
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-⚠ [42168/42178] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.SignedTranslationAddSelfDualLatticeStatement (5.5s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/SignedTranslationAddSelfDualLatticeStatement.lean:10:48: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/SignedTranslationAddSelfDualLatticeStatement.lean:10:85: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/SignedTranslationAddSelfDualLatticeStatement.lean:10:48: Unused tactic linter: `exact GlobalTheory.GalTheta.al_add` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/SignedTranslationAddSelfDualLatticeStatement.lean:10:85: Unused tactic linter: `(intros; apply GlobalTheory.GalTheta.al_add <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [42169/42178] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ExistsNonzeroThetaOfFiniteLevelAverage (14s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNonzeroThetaOfFiniteLevelAverage.lean:100:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -42,7 +5,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNonzeroThetaOfFiniteLevelAverage.lean:102:2: Try this: 
+warning: src/Formalism/SharpRestriction/Divisibility/GeneratorPowers/ExistsBasisOfSaturated.lean:26:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -50,151 +13,188 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNonzeroThetaOfFiniteLevelAverage.lean:103:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [42170/42180] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.TranslateLevelFour (8.5s)
-⚠ [42171/42180] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ImaginaryQuadraticFieldStructureStatement (7.2s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ImaginaryQuadraticFieldStructureStatement.lean:10:59: this tactic is never executed
+✔ [42568/42583] Built Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.ExistsIsBIffCoreB (597s)
+✔ [42572/42587] Built Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.LocStOfLoc (696s)
+⚠ [42573/42589] Built Formalism.LocalToGlobal.IndefiniteForms.IndefiniteTree.DepthCondPf (387s)
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthCondPf.lean:98:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ImaginaryQuadraticFieldStructureStatement.lean:10:107: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthCondPf.lean:99:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ImaginaryQuadraticFieldStructureStatement.lean:10:59: Unused tactic linter: `exact GlobalTheory.FourCopies.exists_onB_four` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthCondPf.lean:98:6: Unused tactic linter: `simp [Formalism.HC.Idx]` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ImaginaryQuadraticFieldStructureStatement.lean:10:107: Unused tactic linter: `(intros; apply GlobalTheory.FourCopies.exists_onB_four <;> assumption)` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthCondPf.lean:99:6: Unused tactic linter: `exact ZMod.card _` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [42172/42180] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ExistsNonzeroThetaOfFiniteLevelAverageStatement (8.7s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNonzeroThetaOfFiniteLevelAverageStatement.lean:10:63: this tactic is never executed
+✔ [42574/42589] Built Development.AbelianVarietyTheory.Proofs.ModuliProofs.SabMapEqOfLevelEq (255s)
+✔ [42575/42589] Built Formalism.LocalToGlobal.IndefiniteForms.IndefiniteTree.ContentZeroAtSmallPrimes (230s)
+✔ [42576/42592] Built Development.AbelianVarietyTheory.Proofs.CuspFormEvaluations.ExistsLevMoveOfFrOver (177s)
+⚠ [42577/42592] Built Formalism.LocalToGlobal.IndefiniteForms.IndefiniteTree.DepthTie (201s)
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:37:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.resChar_below`:
+  [NumberField K]
+  [StarRing K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] [StarRing K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:111:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.nuStar_nonneg`:
+  [Algebra (𝓞 E) K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Algebra (𝓞 E) K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:123:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.bad_iff`:
+  [StarRing (𝓞 E)]
+  [Algebra (𝓞 E) K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing (𝓞 E)] [Algebra (𝓞 E) K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:132:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.tieT`:
+  [IsCMField E]
+  [StarRing (𝓞 E)]
+  [Algebra (𝓞 E) K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsCMField E] [StarRing (𝓞 E)] [Algebra (𝓞 E) K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:164:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.nuLevel`:
+  [Algebra (𝓞 E) K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Algebra (𝓞 E) K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:184:8: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNonzeroThetaOfFiniteLevelAverageStatement.lean:10:115: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:187:8: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNonzeroThetaOfFiniteLevelAverageStatement.lean:10:63: Unused tactic linter: `exact GlobalTheory.GalTheta.exists_theta_of_level` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:184:8: Unused tactic linter: `rw [Formalism.L2.DIV.plc_conjPl]` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNonzeroThetaOfFiniteLevelAverageStatement.lean:10:115: Unused tactic linter: `(intros; apply GlobalTheory.GalTheta.exists_theta_of_level <;> assumption)` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:187:8: Unused tactic linter: `(rw [Formalism.L2.DIV.plc_conjPl]; exact hw)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [42173/42182] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ExistsNsmulPaddedLatticeMemBasisProduct (10s)
-⚠ [42174/42182] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.TranslateLevelFourStatement (8.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TranslateLevelFourStatement.lean:10:71: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:189:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.tieScale`:
+  [Algebra (𝓞 E) K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Algebra (𝓞 E) K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:194:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.tieSigma`:
+  [Algebra (𝓞 E) K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Algebra (𝓞 E) K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:219:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TranslateLevelFourStatement.lean:10:131: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TranslateLevelFourStatement.lean:10:71: Unused tactic linter: `exact GlobalTheory.OddThetaTranslate.translate_level_four` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:219:6: Unused tactic linter: `simp` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/TranslateLevelFourStatement.lean:10:131: Unused tactic linter: `(intros; apply GlobalTheory.OddThetaTranslate.translate_level_four <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [42175/42184] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ThetaVacuaConjugatesCmPoints (17s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPoints.lean:151:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPoints.lean:152:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPoints.lean:247:73: try 'simp' instead of 'simpa'
-
-Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPoints.lean:351:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPoints.lean:383:24: This simp argument is unused:
-  vBar_invol
-
-Hint: Omit it from the simp argument list.
-  [apply] simp [cBar]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPoints.lean:476:10: `isAlgebraic_nat` has been deprecated: Use `isAlgebraic_natCast` instead
-⚠ [42176/42184] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ExistsNsmulPaddedLatticeMemBasisProductStatement (7.5s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNsmulPaddedLatticeMemBasisProductStatement.lean:10:63: this tactic is never executed
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:231:8: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNsmulPaddedLatticeMemBasisProductStatement.lean:10:115: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNsmulPaddedLatticeMemBasisProductStatement.lean:10:63: Unused tactic linter: `exact GlobalTheory.PadCommensurable.nsmul_pad_mem` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:231:8: Unused tactic linter: `simp [FractionalIdeal.count]` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsNsmulPaddedLatticeMemBasisProductStatement.lean:10:115: Unused tactic linter: `(intros; apply GlobalTheory.PadCommensurable.nsmul_pad_mem <;> assumption)` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:244:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.isIntegral_alg`:
+  [NumberField E]
+  [IsCMField E]
+  [NumberField K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField E] [IsCMField E] [NumberField K] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [42177/42188] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.AdaptedTorsionLiftDeeperLevel (8.2s)
-⚠ [42178/42188] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ThetaVacuaConjugatesCmPointsStatement (7.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPointsStatement.lean:9:54: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPointsStatement.lean:9:97: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPointsStatement.lean:9:54: Unused tactic linter: `exact GlobalTheory.ThetaConj.useConj_all` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaVacuaConjugatesCmPointsStatement.lean:9:97: Unused tactic linter: `(intros; apply GlobalTheory.ThetaConj.useConj_all <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [42179/42191] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.AdaptedPointChangeOfRationalBasis (10s)
-⚠ [42180/42191] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.AdaptedTorsionLiftDeeperLevelStatement (7.3s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/AdaptedTorsionLiftDeeperLevelStatement.lean:10:61: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:247:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/AdaptedTorsionLiftDeeperLevelStatement.lean:10:111: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/AdaptedTorsionLiftDeeperLevelStatement.lean:10:61: Unused tactic linter: `exact GlobalTheory.GalTheta.adapted_lift_deeper` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:247:6: Unused tactic linter: `exact IsIntegral.algebraMap (NumberField.RingOfIntegers.isIntegral a)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/AdaptedTorsionLiftDeeperLevelStatement.lean:10:111: Unused tactic linter: `(intros; apply GlobalTheory.GalTheta.adapted_lift_deeper <;> assumption)` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:250:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.sigAt_eq`:
+  [NumberField K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [42181/42191] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ThetaTranslationCombPeriodicTwiceLevel (8.6s)
-✔ [42182/42194] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ThetaOddPrimePhaseConjInvariant (8.2s)
-⚠ [42183/42194] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.AdaptedPointChangeOfRationalBasisStatement (6.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/AdaptedPointChangeOfRationalBasisStatement.lean:10:60: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:305:8: automatically included section variable(s) unused in theorem `_private.Formalism.LocalToGlobal.IndefiniteForms.IndefiniteTree.DepthTie.0.Formalism.L2.Indef.Tree.DepthTie.vw_mul_lemma`:
+  [StarRing K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing K] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/AdaptedPointChangeOfRationalBasisStatement.lean:10:109: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/AdaptedPointChangeOfRationalBasisStatement.lean:10:60: Unused tactic linter: `exact GlobalTheory.AdaptedBasis.adpB_of_family` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/AdaptedPointChangeOfRationalBasisStatement.lean:10:109: Unused tactic linter: `(intros; apply GlobalTheory.AdaptedBasis.adpB_of_family <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [42184/42194] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.LaMemSum (6.9s)
-⚠ [42185/42196] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ThetaTranslationCombPeriodicTwiceLevelStatement (5.8s)
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaTranslationCombPeriodicTwiceLevelStatement.lean:10:55: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:315:6: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaTranslationCombPeriodicTwiceLevelStatement.lean:10:99: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaTranslationCombPeriodicTwiceLevelStatement.lean:10:55: Unused tactic linter: `exact GlobalTheory.GalTheta.Period.period` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:315:6: Unused tactic linter: `exact FractionalIdeal.count_mul h1 h2` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ThetaTranslationCombPeriodicTwiceLevelStatement.lean:10:99: Unused tactic linter: `(intros; apply GlobalTheory.GalTheta.Period.period <;> assumption)` does nothing
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:317:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.vw_sig`:
+  [StarRing (𝓞 E)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing (𝓞 E)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:400:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.nnLevel`:
+  [StarRing (𝓞 E)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [StarRing (𝓞 E)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:429:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.crudeRam`:
+  [Algebra (𝓞 E) K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Algebra (𝓞 E) K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:474:0: automatically included section variable(s) unused in theorem `Formalism.L2.Indef.Tree.DepthTie.page_facts`:
+  [IsCMField E]
+  [StarRing (𝓞 E)]
+  [Algebra (𝓞 E) K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [IsCMField E] [StarRing (𝓞 E)] [Algebra (𝓞 E) K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:563:13: Variable name `i` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _i
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Formalism/LocalToGlobal/IndefiniteForms/IndefiniteTree/DepthTie.lean:563:15: Variable name `k` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _k
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [42578/42592] Built Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.RelabelledWeight (814s)
+⚠ [42579/42592] Replayed Development.AbelianVarietyTheory.Proofs.CuspFormEvaluations.ExistsQuotEquiv
+warning: src/Development/AbelianVarietyTheory/Proofs/CuspFormEvaluations/ExistsQuotEquiv.lean:79:43: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CuspFormEvaluations/ExistsQuotEquiv.lean:117:10: `LinearEquiv.ofLinear` has been deprecated: Use `LinearEquiv.ofLinearMap` instead
+✔ [42580/42592] Built Formalism.LocalToGlobal.IndefiniteForms.IndefiniteTree.DepthTieSat (33s)
+✔ [42581/42595] Built Development.AbelianVarietyTheory.Proofs.JetHarmonics.ExistsConjLevelMapByLevelMoves (67s)
+✔ [42583/42595] Built Development.AbelianVarietyTheory.Proofs.JetHarmonics.LiesOverFramedOfSquareLevelMoves (55s)
+✔ [42584/42595] Built Development.AbelianVarietyTheory.Definitions.AutomorphicMembership.LargeFor (498s)
+⚠ [42585/42595] Replayed Development.AbelianVarietyTheory.Proofs.JetHarmonics.LevelCoverDatumSimilitudeAdjointTransportStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/JetHarmonics/LevelCoverDatumSimilitudeAdjointTransportStatement.lean:12:64: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/JetHarmonics/LevelCoverDatumSimilitudeAdjointTransportStatement.lean:12:117: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/JetHarmonics/LevelCoverDatumSimilitudeAdjointTransportStatement.lean:12:64: Unused tactic linter: `exact GlobalTheory.DatumCoverAdjoint.datum_adjoint` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/JetHarmonics/LevelCoverDatumSimilitudeAdjointTransportStatement.lean:12:117: Unused tactic linter: `(intros; apply GlobalTheory.DatumCoverAdjoint.datum_adjoint <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
