@@ -1,200 +1,200 @@
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/DbarChernTransgressionFormEqPowerSumDiffStatement.lean:12:57: Unused tactic linter: `exact GlobalTheory.ChernCalc.dbarAt_transAt` does nothing
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/DerivativeCechCocycleInvariantVectorFieldIsCobou.lean:301:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/DbarChernTransgressionFormEqPowerSumDiffStatement.lean:12:103: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.dbarAt_transAt <;> assumption)` does nothing
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [49890/49903] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.GramConnectionPairChernFieldsLocalFrameStatement (9.1s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramConnectionPairChernFieldsLocalFrameStatement.lean:12:58: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramConnectionPairChernFieldsLocalFrameStatement.lean:12:105: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramConnectionPairChernFieldsLocalFrameStatement.lean:12:58: Unused tactic linter: `exact GlobalTheory.ChernCalc.loc_fields_near` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramConnectionPairChernFieldsLocalFrameStatement.lean:12:105: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.loc_fields_near <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [49891/49903] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.CurvaturePowerPullbackHolomorphicStatement (8.5s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerPullbackHolomorphicStatement.lean:12:67: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerPullbackHolomorphicStatement.lean:12:123: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerPullbackHolomorphicStatement.lean:12:67: Unused tactic linter: `exact GlobalTheory.ChernCalc.curv_pow_chern_comp_holo` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerPullbackHolomorphicStatement.lean:12:123: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.curv_pow_chern_comp_holo <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [49892/49905] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ChernFormNewtonIdentitiesCurvaturePowerSumsStatement (8.0s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernFormNewtonIdentitiesCurvaturePowerSumsStatement.lean:12:57: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernFormNewtonIdentitiesCurvaturePowerSumsStatement.lean:12:103: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernFormNewtonIdentitiesCurvaturePowerSumsStatement.lean:12:57: Unused tactic linter: `exact GlobalTheory.ChernCalc.chernAt_newton` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernFormNewtonIdentitiesCurvaturePowerSumsStatement.lean:12:103: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.chernAt_newton <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [49893/49905] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.AdaptedFrameEventuallyFrameNearComplexPoint (8.2s)
-✔ [49894/49909] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IsHolomorphicUnitMatrixAtRationalMatrixValues (8.9s)
-⚠ [49895/49912] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ChernTransgressionFormHolomorphicPullback (11s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernTransgressionFormHolomorphicPullback.lean:16:18: `EuclideanSpace.single_apply` has been deprecated: Use `PiLp.single_apply` instead
-
-Note: The updated constant has a different type:
-  ∀ (p : ENNReal) (𝕜 : Type u_1) {ι : Type u_2} [inst : DecidableEq ι] [inst_1 : Zero 𝕜] (i : ι) (a : 𝕜) (j : ι),
-    (PiLp.single p i a).ofLp j = if j = i then a else 0
-instead of
-  ∀ {ι : Type u_1} {𝕜 : Type u_3} [inst : RCLike 𝕜] [inst_1 : DecidableEq ι] (i : ι) (a : 𝕜) (j : ι),
-    (EuclideanSpace.single i a).ofLp j = if j = i then a else 0
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.single_apply` to `PiLp.single_apply x`).
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernTransgressionFormHolomorphicPullback.lean:16:18: This simp argument is unused:
-  EuclideanSpace.single_apply
-
-Hint: Omit it from the simp argument list.
-  [apply] simp [coordVec, Pi.single_apply]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernTransgressionFormHolomorphicPullback.lean:21:75: `AddSubmonoidClass.coe_finset_sum` has been deprecated: Use `AddSubmonoidClass.coe_finsetSum` instead
-⚠ [49896/49912] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.AdaptedFrameEventuallyFrameNearComplexPointStatement (8.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AdaptedFrameEventuallyFrameNearComplexPointStatement.lean:12:64: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AdaptedFrameEventuallyFrameNearComplexPointStatement.lean:12:117: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AdaptedFrameEventuallyFrameNearComplexPointStatement.lean:12:64: Unused tactic linter: `exact GlobalTheory.ChernCalc.frame_eventually_near` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AdaptedFrameEventuallyFrameNearComplexPointStatement.lean:12:117: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.frame_eventually_near <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [49897/49912] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IsHolomorphicUnitMatrixAtRationalMatrixValuesStatement (8.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsHolomorphicUnitMatrixAtRationalMatrixValuesStatement.lean:12:59: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsHolomorphicUnitMatrixAtRationalMatrixValuesStatement.lean:12:107: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsHolomorphicUnitMatrixAtRationalMatrixValuesStatement.lean:12:59: Unused tactic linter: `exact GlobalTheory.ChernCalc.holUnitAt_ratVal` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsHolomorphicUnitMatrixAtRationalMatrixValuesStatement.lean:12:107: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.holUnitAt_ratVal <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [49898/49912] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ChernTransgressionFormHolomorphicPullbackStatement (8.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernTransgressionFormHolomorphicPullbackStatement.lean:12:60: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernTransgressionFormHolomorphicPullbackStatement.lean:12:109: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernTransgressionFormHolomorphicPullbackStatement.lean:12:60: Unused tactic linter: `exact GlobalTheory.ChernCalc.transAt_comp_holo` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChernTransgressionFormHolomorphicPullbackStatement.lean:12:109: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.transAt_comp_holo <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [49899/49912] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.SmoothFormsCalculusHolomorphicAtlasStatement (7.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SmoothFormsCalculusHolomorphicAtlasStatement.lean:23:45: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SmoothFormsCalculusHolomorphicAtlasStatement.lean:23:79: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SmoothFormsCalculusHolomorphicAtlasStatement.lean:23:45: Unused tactic linter: `exact GlobalTheory.formCalculus` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SmoothFormsCalculusHolomorphicAtlasStatement.lean:23:79: Unused tactic linter: `(intros; apply GlobalTheory.formCalculus <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [49900/49914] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.FlaggedBundleMetricSmoothUnitEtaleChart (9.3s)
-⚠ [49901/49914] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.CurvaturePowerSumTransgressionIsForm (9.6s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerSumTransgressionIsForm.lean:54:0: automatically included section variable(s) unused in theorem `GlobalTheory.ChernCalc.PairForm.germ_change`:
-  [Fintype r]
-  [DecidableEq r]
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [53700/53718] Replayed Development.AbelianVarietyTheory.Proofs.DivisorProofs.LogChernCocycleContractionInvariantFieldTriviali
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LogChernCocycleContractionInvariantFieldTriviali.lean:73:0: automatically included section variable(s) unused in theorem `GlobalTheory.CechKS.PrismDlog.snd_l`:
+  [GrpObj A]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Fintype r] [DecidableEq r] in theorem ...
+  omit [GrpObj A] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-⚠ [49902/49914] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.FlaggedBundleMetricSmoothUnitEtaleChartStatement (8.1s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/FlaggedBundleMetricSmoothUnitEtaleChartStatement.lean:12:66: this tactic is never executed
+⚠ [53705/53782] Replayed Development.AbelianVarietyTheory.Proofs.DivisorProofs.AffineGlueSeparatedStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AffineGlueSeparatedStatement.lean:8:62: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/FlaggedBundleMetricSmoothUnitEtaleChartStatement.lean:12:121: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AffineGlueSeparatedStatement.lean:8:113: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/FlaggedBundleMetricSmoothUnitEtaleChartStatement.lean:12:66: Unused tactic linter: `exact GlobalTheory.ChernCalc.isMetricFr_smoothUnitAt` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AffineGlueSeparatedStatement.lean:8:62: Unused tactic linter: `exact GlobalTheory.AffGlue.eq_zero_of_cover_zero` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/FlaggedBundleMetricSmoothUnitEtaleChartStatement.lean:12:121: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.isMetricFr_smoothUnitAt <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AffineGlueSeparatedStatement.lean:8:113: Unused tactic linter: `(intros; apply GlobalTheory.AffGlue.eq_zero_of_cover_zero <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [49903/49914] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.VarietyComplexPointsMapIsHolomorphic (8.3s)
-⚠ [49904/49916] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.CurvaturePowerSumTransgressionIsFormStatement (8.1s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerSumTransgressionIsFormStatement.lean:12:68: this tactic is never executed
+⚠ [53707/53782] Replayed Development.AbelianVarietyTheory.Proofs.DivisorProofs.AffineCoverSectionsGlueStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AffineCoverSectionsGlueStatement.lean:8:57: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerSumTransgressionIsFormStatement.lean:12:125: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AffineCoverSectionsGlueStatement.lean:8:103: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerSumTransgressionIsFormStatement.lean:12:68: Unused tactic linter: `exact GlobalTheory.ChernCalc.PairForm.isForm_pow_trans` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AffineCoverSectionsGlueStatement.lean:8:57: Unused tactic linter: `exact GlobalTheory.AffGlue.Cech.exists_glue` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/CurvaturePowerSumTransgressionIsFormStatement.lean:12:125: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.PairForm.isForm_pow_trans <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/AffineCoverSectionsGlueStatement.lean:8:103: Unused tactic linter: `(intros; apply GlobalTheory.AffGlue.Cech.exists_glue <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [49905/49916] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IsGramConnectionPairOfTwoFlaggedMetrics (8.3s)
-⚠ [49906/49916] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.VarietyComplexPointsMapIsHolomorphicStatement (8.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/VarietyComplexPointsMapIsHolomorphicStatement.lean:12:55: this tactic is never executed
+⚠ [53709/53782] Replayed Development.AbelianVarietyTheory.Proofs.DivisorProofs.SemilinearLiftBijectiveLocalizationStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SemilinearLiftBijectiveLocalizationStatement.lean:8:74: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/VarietyComplexPointsMapIsHolomorphicStatement.lean:12:99: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SemilinearLiftBijectiveLocalizationStatement.lean:8:137: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/VarietyComplexPointsMapIsHolomorphicStatement.lean:12:55: Unused tactic linter: `exact GlobalTheory.ChernCalc.ptMap_isHolo` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SemilinearLiftBijectiveLocalizationStatement.lean:8:74: Unused tactic linter: `exact GlobalTheory.DeRham.localisation_of_liftSemi_bijective` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/VarietyComplexPointsMapIsHolomorphicStatement.lean:12:99: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.ptMap_isHolo <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SemilinearLiftBijectiveLocalizationStatement.lean:8:137: Unused tactic linter: `(intros;
+  apply GlobalTheory.DeRham.localisation_of_liftSemi_bijective <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [49907/49918] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.CurvaturePowerSumsDbarCohomologous (8.6s)
-⚠ [49908/49918] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IsGramConnectionPairOfTwoFlaggedMetricsStatement (8.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsGramConnectionPairOfTwoFlaggedMetricsStatement.lean:12:67: this tactic is never executed
+⚠ [53710/53782] Replayed Development.AbelianVarietyTheory.Proofs.DivisorProofs.LocOfBijectiveLiftSemi
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:32:26: automatically included section variable(s) unused in theorem `GlobalTheory.DeRhamSheaf.bcProj_fst`:
+  [GrpObj A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [GrpObj A] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsGramConnectionPairOfTwoFlaggedMetricsStatement.lean:12:123: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:36:26: automatically included section variable(s) unused in theorem `GlobalTheory.DeRhamSheaf.bcProj_snd`:
+  [GrpObj A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [GrpObj A] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsGramConnectionPairOfTwoFlaggedMetricsStatement.lean:12:67: Unused tactic linter: `exact GlobalTheory.ChernCalc.isGramPair_of_isMetricFr` does nothing
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:44:2: Try this: 
+  letI̵
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsGramConnectionPairOfTwoFlaggedMetricsStatement.lean:12:123: Unused tactic linter: `(intros; apply GlobalTheory.ChernCalc.isGramPair_of_isMetricFr <;> assumption)` does nothing
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [49909/49918] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.GramLowerTriangularFactorLowerTriangularConj (12s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:52:64: `Fin.lt_iff_val_lt_val` has been deprecated: Use `Fin.lt_def` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:62:36: `Fin.lt_iff_val_lt_val` has been deprecated: Use `Fin.lt_def` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:67:6: `Matrix.det_of_lowerTriangular` has been deprecated: Use `Matrix.det_of_isLowerTriangular` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:97:10: This simp argument is unused:
-  h
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:45:2: Try this: 
+  letI̵
 
-Hint: Omit it from the simp argument list.
-  [apply] simp [(eq_ldTop_iff a).2 h]
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:116:27: `Fin.lt_iff_val_lt_val` has been deprecated: Use `Fin.lt_def` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:121:38: `Fin.lt_iff_val_lt_val` has been deprecated: Use `Fin.lt_def` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:129:6: `Matrix.det_of_lowerTriangular` has been deprecated: Use `Matrix.det_of_isLowerTriangular` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:152:24: `Fin.lt_iff_val_lt_val` has been deprecated: Use `Fin.lt_def` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/GramLowerTriangularFactorLowerTriangularConj.lean:177:35: `Matrix.det_of_lowerTriangular` has been deprecated: Use `Matrix.det_of_isLowerTriangular` instead
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:46:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:104:0: automatically included section variable(s) unused in theorem `GlobalTheory.DeRhamSheaf.smooth_onAff`:
+  [GrpObj A]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [GrpObj A] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:153:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:173:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:174:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:183:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/LocOfBijectiveLiftSemi.lean:184:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [53712/53782] Replayed Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsGeneratingFrameUnitChangeToChart
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsGeneratingFrameUnitChangeToChart.lean:66:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [53713/53798] Built Development.AbelianVarietyTheory.Definitions.Divisors.HasDefect (14s)
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:78:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.lift`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:79:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.glue`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:73:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.p`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:58:10: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.mk`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:63:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.u`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:75:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.p'`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:71:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.d`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:58:10: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:76:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.cover`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:69:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.j`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:61:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.symm`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:67:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.W`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:77:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.le`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:65:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.J`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:60:2: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.Θ`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/HasDefect.lean:88:4: The namespace `Heat` is duplicated in the declaration `GlobalTheory.Heat.Heat.Acts`.
+
+Note: This linter can be disabled with `set_option linter.dupNamespace false`
