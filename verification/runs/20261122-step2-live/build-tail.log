@@ -1,4 +1,166 @@
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:51:2: Try this: 
+⚠ [40856/40871] Built CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.CartanDecompositionGLStatement (5.5s)
+warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/CartanDecompositionGLStatement.lean:7:66: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/CartanDecompositionGLStatement.lean:7:121: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/CartanDecompositionGLStatement.lean:7:66: Unused tactic linter: `exact GlobalTheory.CompanionTheory.CartGL.stCartanGL` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/CartanDecompositionGLStatement.lean:7:121: Unused tactic linter: `(intros; apply GlobalTheory.CompanionTheory.CartGL.stCartanGL <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [40858/40871] Built CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FactorizationStatement (12s)
+⚠ [40859/40872] Built Development.AbelianVarietyTheory.Proofs.SatakeParameters.ExistsNormEqFixedUnitHenselianStatement (5.7s)
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ExistsNormEqFixedUnitHenselianStatement.lean:6:61: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ExistsNormEqFixedUnitHenselianStatement.lean:6:111: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ExistsNormEqFixedUnitHenselianStatement.lean:6:61: Unused tactic linter: `exact GlobalTheory.HenselianNorm.exists_norm_eq` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ExistsNormEqFixedUnitHenselianStatement.lean:6:111: Unused tactic linter: `(intros; apply GlobalTheory.HenselianNorm.exists_norm_eq <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [40860/40874] Built Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.RadicalNoFixedVectors (6.9s)
+⚠ [40861/40876] Built CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FactorizationStatementStatement (7.9s)
+warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FactorizationStatementStatement.lean:7:62: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FactorizationStatementStatement.lean:7:113: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FactorizationStatementStatement.lean:7:62: Unused tactic linter: `exact GlobalTheory.CompanionTheory.RgFl.stFactor` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FactorizationStatementStatement.lean:7:113: Unused tactic linter: `(intros; apply GlobalTheory.CompanionTheory.RgFl.stFactor <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [40863/40876] Built Development.AbelianVarietyTheory.Proofs.SatakeParameters.ExistsNormEqXModMonicOfAdicCompleteInvolution (8.1s)
+⚠ [40864/40877] Built Development.AbelianVarietyTheory.PublishedTheorems.TwistedTraceFormula.KFiniteVectorsSmoothHypDet (10s)
+warning: src/Development/AbelianVarietyTheory/PublishedTheorems/TwistedTraceFormula/KFiniteVectorsSmoothHypDet.lean:130:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/PublishedTheorems/TwistedTraceFormula/KFiniteVectorsSmoothHypDet.lean:183:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [40865/40877] Built Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.CommutingLevelOperators (10s)
+⚠ [40866/40877] Built Development.AbelianVarietyTheory.Proofs.SatakeParameters.ExistsNormEqXModMonicOfAdicCompleteInvolutionStatement (7.3s)
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ExistsNormEqXModMonicOfAdicCompleteInvolutionStatement.lean:6:67: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ExistsNormEqXModMonicOfAdicCompleteInvolutionStatement.lean:6:123: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ExistsNormEqXModMonicOfAdicCompleteInvolutionStatement.lean:6:67: Unused tactic linter: `exact GlobalTheory.InertNorm.exists_dvd_mul_map_sub_X` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/ExistsNormEqXModMonicOfAdicCompleteInvolutionStatement.lean:6:123: Unused tactic linter: `(intros; apply GlobalTheory.InertNorm.exists_dvd_mul_map_sub_X <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [40867/40881] Built Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.LabelSettingScalars (12s)
+⚠ [40868/40881] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.MeasureToRealEqMass (16s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/MeasureToRealEqMass.lean:61:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/MeasureToRealEqMass.lean:62:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/MeasureToRealEqMass.lean:116:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/MeasureToRealEqMass.lean:120:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/MeasureToRealEqMass.lean:199:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [40869/40881] Replayed Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.CentralizerTensorForms
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/CentralizerTensorForms.lean:52:0: automatically included section variable(s) unused in theorem `GlobalTheory.IndefiniteRowSideFullHecke.CentralizerTensorForms.hform_eq`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/CentralizerTensorForms.lean:85:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/CentralizerTensorForms.lean:93:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/CentralizerTensorForms.lean:101:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/CentralizerTensorForms.lean:105:48: This simp argument is unused:
+  Matrix.one_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [cT, h, eq_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/CentralizerTensorForms.lean:125:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/CentralizerTensorForms.lean:129:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [40870/40881] Built Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.IwahoriDoubleCosets (16s)
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/IwahoriDoubleCosets.lean:63:0: automatically included section variable(s) unused in theorem `GlobalTheory.IndefiniteRowSideFullHecke.IwahoriDoubleCosets.deltaB_pos`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/IwahoriDoubleCosets.lean:66:0: automatically included section variable(s) unused in theorem `GlobalTheory.IndefiniteRowSideFullHecke.IwahoriDoubleCosets.deltaB_eq_modulus`:
+  [DecidableEq n]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq n] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/IwahoriDoubleCosets.lean:81:0: automatically included section variable(s) unused in theorem `GlobalTheory.IndefiniteRowSideFullHecke.IwahoriDoubleCosets.IsExponents.unique`:
+  [TopologicalSpace k]
+  [IsNonarchimedeanLocalField k]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [TopologicalSpace k] [IsNonarchimedeanLocalField k] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [40871/40881] Built Development.AbelianVarietyTheory.Proofs.SatakeParameters.UnitaryMemIntegralUnitaryDoubleCosetOfGLnDoubleC (19s)
+warning: src/Development/AbelianVarietyTheory/Proofs/SatakeParameters/UnitaryMemIntegralUnitaryDoubleCosetOfGLnDoubleC.lean:103:79: Variable name `hc` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [40872/40881] Built Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.EllipticPartTestData (27s)
+warning: src/Development/AbelianVarietyTheory/BlockTheory/TwistedDiscreteSeries/EllipticPartTestData.lean:47:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -6,15 +168,13 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:52:2: Try this: 
-  haveI̵
+✔ [40873/40881] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.InnerProductFormula (113s)
+✔ [40874/40885] Built Development.AbelianVarietyTheory.BlockTheory.TwistedDiscreteSeries.NonFieldTypeVanishing (121s)
+⚠ [40875/40885] Built Development.AbelianVarietyTheory.Proofs.FoundationProofs.ExistsUniqueIsConjAt (120s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsUniqueIsConjAt.lean:34:9: `Algebra.IsAlgebraic.finrank_of_isFractionRing` has been deprecated: Use `IsFractionRing.finrank_eq` instead
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:53:2: Try this: 
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.finrank_of_isFractionRing` to `IsFractionRing.finrank_eq x`).
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsUniqueIsConjAt.lean:173:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -22,7 +182,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:58:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsUniqueIsConjAt.lean:174:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -30,7 +190,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:62:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/ExistsUniqueIsConjAt.lean:175:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -38,163 +198,3 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:63:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:84:20: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:81:0: automatically included section variable(s) unused in theorem `GlobalTheory.SplitWeil.cball_eq_smul`:
-  [TopologicalSpace k]
-  [IsNonarchimedeanLocalField k]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [TopologicalSpace k] [IsNonarchimedeanLocalField k] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:124:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:125:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:145:59: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:180:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:282:0: automatically included section variable(s) unused in theorem `GlobalTheory.SplitWeil.HasConductor.eq_one`:
-  [TopologicalSpace k]
-  [IsNonarchimedeanLocalField k]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [TopologicalSpace k] [IsNonarchimedeanLocalField k] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:314:17: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:317:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:304:0: automatically included section variable(s) unused in theorem `GlobalTheory.SplitWeil.HasConductor.exists_ne_one`:
-  [TopologicalSpace k]
-  [IsNonarchimedeanLocalField k]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [TopologicalSpace k] [IsNonarchimedeanLocalField k] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:322:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:322:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:322:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:321:0: automatically included section variable(s) unused in theorem `GlobalTheory.SplitWeil.add_mem_cball`:
-  [TopologicalSpace k]
-  [IsNonarchimedeanLocalField k]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [TopologicalSpace k] [IsNonarchimedeanLocalField k] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:325:0: automatically included section variable(s) unused in theorem `GlobalTheory.SplitWeil.neg_mem_cball`:
-  [TopologicalSpace k]
-  [IsNonarchimedeanLocalField k]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [TopologicalSpace k] [IsNonarchimedeanLocalField k] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:391:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:392:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/PadicIsNonarchimedeanLocalField.lean:434:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [39613/39631] Built CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FlagFactsStatement (6.5s)
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FlagFactsStatement.lean:6:67: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FlagFactsStatement.lean:6:123: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FlagFactsStatement.lean:6:67: Unused tactic linter: `exact GlobalTheory.CompanionTheory.GradFlag.flagFacts` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FlagFactsStatement.lean:6:123: Unused tactic linter: `(intros; apply GlobalTheory.CompanionTheory.GradFlag.flagFacts <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [39614/39633] Built CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FubiniOfParabolicHaarMultipleStatement (6.5s)
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FubiniOfParabolicHaarMultipleStatement.lean:6:85: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FubiniOfParabolicHaarMultipleStatement.lean:6:159: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FubiniOfParabolicHaarMultipleStatement.lean:6:85: Unused tactic linter: `exact GlobalTheory.CompanionTheory.RgFubOf.fubini_of_parabolic_multiple` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FubiniOfParabolicHaarMultipleStatement.lean:6:159: Unused tactic linter: `(intros;
-  apply GlobalTheory.CompanionTheory.RgFubOf.fubini_of_parabolic_multiple <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [39617/39633] Built CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.FubiniParabolicMultipleStatement (5.7s)
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FubiniParabolicMultipleStatement.lean:6:59: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FubiniParabolicMultipleStatement.lean:6:107: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FubiniParabolicMultipleStatement.lean:6:59: Unused tactic linter: `exact GlobalTheory.CompanionTheory.FubNM.fub2` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/FubiniParabolicMultipleStatement.lean:6:107: Unused tactic linter: `(intros; apply GlobalTheory.CompanionTheory.FubNM.fub2 <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [39618/39634] Built CompanionTheory.SpectralGeometry.LocalGlobalProofs.StableLattices.LineFactsStatement (12s)
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/LineFactsStatement.lean:6:67: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/LineFactsStatement.lean:6:123: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/LineFactsStatement.lean:6:67: Unused tactic linter: `exact GlobalTheory.CompanionTheory.GradLine.lineFacts` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/CompanionTheory/SpectralGeometry/LocalGlobalProofs/StableLattices/LineFactsStatement.lean:6:123: Unused tactic linter: `(intros; apply GlobalTheory.CompanionTheory.GradLine.lineFacts <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [39619/39636] Built Development.AbelianVarietyTheory.Definitions.Divisors.EqOfHasValueAtInfinite (12s)
-warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/EqOfHasValueAtInfinite.lean:283:8: automatically included section variable(s) unused in theorem `_private.Development.AbelianVarietyTheory.Definitions.Divisors.EqOfHasValueAtInfinite.0.GlobalTheory.LGrp.valuation_det_le_one_of_entrie
-  [TopologicalSpace k]
-  [IsNonarchimedeanLocalField k]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [TopologicalSpace k] [IsNonarchimedeanLocalField k] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [39620/39636] Built Development.AbelianVarietyTheory.PublishedTheorems.GaloisCohomology₂.NotIsGenericDetRepTwo (71s)
