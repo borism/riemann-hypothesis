@@ -19,7 +19,11 @@ LEAN_JUDGE_VER="${RH_LEAN_JUDGE_VER:-4.36.0}"           # lake comparator
 EXPORTER_URL="https://github.com/leanprover/lean4export.git"
 EXPORTER_TAG="v4.33.0"
 EXPORTER_COMMIT="15f6055e299ad5b89345e533cc2192f4cc00f659"
-EXPECTED_CHALLENGE_SHA="bd484ac9886a96f26b1d9a7a59ebd45b7a70d102c015d4f31f9302bbdd6ab2b9"  # README
+# Challenge export checksum for the pins of f1f6d654 (Lean 4.33.1, Mathlib 0df444a3): the README's
+# value at that commit (and at 7cce738b), reproduced by our step 1. It is NOT valid for other pins:
+# upstream main documents ccaa3504... for 4.36.0 and bb37c4bb... for 4.37.0-rc1 (a CI value that
+# upstream says it has not reproduced outside CI); its README no longer quotes a checksum.
+EXPECTED_CHALLENGE_SHA="bd484ac9886a96f26b1d9a7a59ebd45b7a70d102c015d4f31f9302bbdd6ab2b9"
 # sha256 of the release tarballs, pinned in scripts/toolchain-sha256.txt (see its header
 # for how they were obtained and what that does and does not establish).
 TOOLCHAIN_PINS="$REPO/scripts/toolchain-sha256.txt"
