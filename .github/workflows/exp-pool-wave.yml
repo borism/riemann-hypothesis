@@ -56,7 +56,7 @@ jobs:
           if [ -e verdicts/STOP ]; then echo "go=false" >> "$GITHUB_OUTPUT"; echo "reason=kill switch: STOP on pool/verdicts" >> "$GITHUB_OUTPUT"; echo "KILL SWITCH SET"; exit 0; fi
           [ "$WAVE_J" -le 16 ] && [ "$WAVE_S" -le 4 ] && [ "$WAVE_J" -ge 1 ] && [ "$WAVE_S" -ge 1 ] || { echo "job caps: J<=16, S<=4"; exit 1; }
           pr=index/verification/runs/20261122-step2-live/progress.tsv
-          rate=$(tail -n 3 "$pr" 2>/dev/null | awk -F'\t' '$4 ~ /^[0-9.]+$/ {s+=$4; n++} END {if (n) printf "%.1f", s/n}')
+          rate=$(tail -n 3 "$pr" 2>/dev/null | awk -F'\t' '$4 ~ /^[0-9.]+$/ && $4 < 100 {s+=$4; n++} END {if (n) printf "%.1f", s/n}')   # rows >= 100 modules/min are merge jumps (hundreds of merged modules appear at once), not the VM's speed
           echo "VM_RATE=${rate:-$VM_RATE_DEFAULT}" >> "$GITHUB_ENV"
           echo "VM rate for planning: ${rate:-$VM_RATE_DEFAULT} modules/min (mean of the last 3 progress.tsv rows)"
           echo "go=true" >> "$GITHUB_OUTPUT"
