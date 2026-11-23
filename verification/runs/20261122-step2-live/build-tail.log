@@ -1,102 +1,33 @@
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:67:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:68:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:129:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:130:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:131:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:132:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:133:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:134:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducible.lean:135:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [47466/47473] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.HodgeTateKernelAtPointStatement (6.8s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/HodgeTateKernelAtPointStatement.lean:16:64: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/HodgeTateKernelAtPointStatement.lean:16:117: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/HodgeTateKernelAtPointStatement.lean:16:64: Unused tactic linter: `exact GlobalTheory.HTKernel.hodgeTateKernelAtPoint` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/HodgeTateKernelAtPointStatement.lean:16:117: Unused tactic linter: `(intros; apply GlobalTheory.HTKernel.hodgeTateKernelAtPoint <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [47467/47477] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ComponentSurjectsOfOpenClosed (11s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentSurjectsOfOpenClosed.lean:49:58: This simp argument is unused:
-  SetLike.mem_coe
+  MvPolynomial.aeval_C
 
 Hint: Omit it from the simp argument list.
-  [apply] simp only [Scheme.Hom.coe_preimage, Set.mem_preimage, Scheme.Hom.coe_opensRange, Scheme.Opens.range_ι, hU₀]
+  [apply] simp only [jetSubstP, jetRen, AlgHom.comp_apply, GermD.jetMap_mk, MvPolynomial.aeval_X, map_sub,
+    MvPolynomial.algebraMap_eq, psIn, MvPolynomial.constantCoeff_rename, hr, MvPolynomial.rename_C]
 
 Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [47468/47477] Replayed Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.LocalSystemBasesNonempty
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/LocalSystemBasesNonempty.lean:239:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/FrameAdjointnessSeriesOfPullback.lean:57:4: This simp argument is unused:
+  MvPolynomial.algebraMap_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [jetSubstP, jetRen, AlgHom.comp_apply, GermD.jetMap_mk, MvPolynomial.aeval_X, map_sub,
+    MvPolynomial.aeval_C, psIn, MvPolynomial.constantCoeff_rename, hr, MvPolynomial.rename_C]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [48156/48169] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.IsFrameGCoefficientRingBaseChangeStatement (15s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsFrameGCoefficientRingBaseChangeStatement.lean:17:52: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsFrameGCoefficientRingBaseChangeStatement.lean:17:93: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsFrameGCoefficientRingBaseChangeStatement.lean:17:52: Unused tactic linter: `exact GlobalTheory.isFrameG_baseChange` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsFrameGCoefficientRingBaseChangeStatement.lean:17:93: Unused tactic linter: `(intros; apply GlobalTheory.isFrameG_baseChange <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [48157/48170] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IntegralModelConjugateEmbedding (77s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelConjugateEmbedding.lean:23:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -104,84 +35,108 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [47469/47477] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ComponentGeometricallyIrreducibleStatement (7.1s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducibleStatement.lean:18:84: this tactic is never executed
+✔ [48158/48170] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.IntegralFramedPointDiagonalBiextensionIsoCompati (11s)
+⚠ [48159/48170] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.FrameAdjointnessSeriesOfPullbackStatement (6.8s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/FrameAdjointnessSeriesOfPullbackStatement.lean:17:56: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducibleStatement.lean:18:157: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/FrameAdjointnessSeriesOfPullbackStatement.lean:17:101: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducibleStatement.lean:18:84: Unused tactic linter: `exact GlobalTheory.GeomIrrComp.exists_open_irreducibleSpace_baseChange` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/FrameAdjointnessSeriesOfPullbackStatement.lean:17:56: Unused tactic linter: `exact GlobalTheory.FrameAdjUp.frame_adj_up` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentGeometricallyIrreducibleStatement.lean:18:157: Unused tactic linter: `(intros;
-  apply GlobalTheory.GeomIrrComp.exists_open_irreducibleSpace_baseChange <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/FrameAdjointnessSeriesOfPullbackStatement.lean:17:101: Unused tactic linter: `(intros; apply GlobalTheory.FrameAdjUp.frame_adj_up <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [47470/47477] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ComponentSurjectsOfOpenClosedStatement (7.6s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentSurjectsOfOpenClosedStatement.lean:35:65: this tactic is never executed
+⚠ [48160/48170] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.ExistsFramesCoefficientRingBaseChangeStatement (5.2s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/ExistsFramesCoefficientRingBaseChangeStatement.lean:17:57: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentSurjectsOfOpenClosedStatement.lean:35:119: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/ExistsFramesCoefficientRingBaseChangeStatement.lean:17:103: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentSurjectsOfOpenClosedStatement.lean:35:65: Unused tactic linter: `exact GlobalTheory.FlatModel.exists_comp_cover_lift` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/ExistsFramesCoefficientRingBaseChangeStatement.lean:17:57: Unused tactic linter: `exact GlobalTheory.FrameBCGen.exists_frames` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ComponentSurjectsOfOpenClosedStatement.lean:35:119: Unused tactic linter: `(intros; apply GlobalTheory.FlatModel.exists_comp_cover_lift <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/ExistsFramesCoefficientRingBaseChangeStatement.lean:17:103: Unused tactic linter: `(intros; apply GlobalTheory.FrameBCGen.exists_frames <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [47471/47479] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IntegralModelComponentIrreducible (9.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelComponentIrreducible.lean:86:74: This simp argument is unused:
-  pullback.lift_snd_assoc
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [φ, ψ, pullback.map, Category.assoc, pullback.lift_snd, Category.comp_id, Category.id_comp]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✔ [47472/47479] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsLevelChangeMap (8.6s)
-⚠ [47473/47479] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IntegralModelComponentIrreducibleStatement (7.2s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelComponentIrreducibleStatement.lean:21:72: this tactic is never executed
+⚠ [48161/48172] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.JetPointsUnitLawActionBaseChangeStatement (13s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/JetPointsUnitLawActionBaseChangeStatement.lean:17:67: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelComponentIrreducibleStatement.lean:21:133: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/JetPointsUnitLawActionBaseChangeStatement.lean:17:123: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelComponentIrreducibleStatement.lean:21:72: Unused tactic linter: `exact GlobalTheory.FlatModel.ModelOpen.exists_geomIrr_open` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/JetPointsUnitLawActionBaseChangeStatement.lean:17:67: Unused tactic linter: `exact GlobalTheory.JetPointBC.unit_law_act_baseChange` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelComponentIrreducibleStatement.lean:21:133: Unused tactic linter: `(intros; apply GlobalTheory.FlatModel.ModelOpen.exists_geomIrr_open <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/JetPointsUnitLawActionBaseChangeStatement.lean:17:123: Unused tactic linter: `(intros; apply GlobalTheory.JetPointBC.unit_law_act_baseChange <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [47474/47482] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ChartStatementHolds (8.2s)
-⚠ [47475/47482] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsLevelChangeMapStatement (6.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsLevelChangeMapStatement.lean:25:63: this tactic is never executed
+⚠ [48162/48173] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IntegralModelConjugateEmbeddingStatement (21s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelConjugateEmbeddingStatement.lean:20:74: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsLevelChangeMapStatement.lean:25:115: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelConjugateEmbeddingStatement.lean:20:137: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsLevelChangeMapStatement.lean:25:63: Unused tactic linter: `exact GlobalTheory.LevelMapBase.levelMap_coeff_le` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelConjugateEmbeddingStatement.lean:20:74: Unused tactic linter: `exact GlobalTheory.FlatModel.frames_changeOfBasis_det_isUnit` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsLevelChangeMapStatement.lean:25:115: Unused tactic linter: `(intros; apply GlobalTheory.LevelMapBase.levelMap_coeff_le <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelConjugateEmbeddingStatement.lean:20:137: Unused tactic linter: `(intros;
+  apply GlobalTheory.FlatModel.frames_changeOfBasis_det_isUnit <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [47476/47482] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ChartStatementHoldsStatement (7.8s)
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChartStatementHoldsStatement.lean:8:50: this tactic is never executed
+⚠ [48163/48173] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.IntegralFramedPointDiagonalBiextensionIsoCompatiStatement (8.1s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IntegralFramedPointDiagonalBiextensionIsoCompatiStatement.lean:17:50: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChartStatementHoldsStatement.lean:8:89: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IntegralFramedPointDiagonalBiextensionIsoCompatiStatement.lean:17:89: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChartStatementHoldsStatement.lean:8:50: Unused tactic linter: `exact GlobalTheory.FlatModel.chartSt` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IntegralFramedPointDiagonalBiextensionIsoCompatiStatement.lean:17:50: Unused tactic linter: `exact GlobalTheory.chartPrimTr_holds` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ChartStatementHoldsStatement.lean:8:89: Unused tactic linter: `(intros; apply GlobalTheory.FlatModel.chartSt <;> assumption)` does nothing
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IntegralFramedPointDiagonalBiextensionIsoCompatiStatement.lean:17:89: Unused tactic linter: `(intros; apply GlobalTheory.chartPrimTr_holds <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [47477/47484] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IntegralFrameValuationBound (11s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IntegralFrameValuationBound.lean:28:4: Try this: 
+✔ [48164/48173] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.RigidificationAtOriginBaseChange (6.4s)
+⚠ [48165/48175] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.CubeFramesMoveToPullbackTripleStatement (5.6s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/CubeFramesMoveToPullbackTripleStatement.lean:17:59: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/CubeFramesMoveToPullbackTripleStatement.lean:17:107: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/CubeFramesMoveToPullbackTripleStatement.lean:17:59: Unused tactic linter: `exact GlobalTheory.FrameDown.frames_pull_back` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/CubeFramesMoveToPullbackTripleStatement.lean:17:107: Unused tactic linter: `(intros; apply GlobalTheory.FrameDown.frames_pull_back <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [48166/48176] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.RigidificationAtOriginBaseChangeStatement (50s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/RigidificationAtOriginBaseChangeStatement.lean:17:66: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/RigidificationAtOriginBaseChangeStatement.lean:17:121: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/RigidificationAtOriginBaseChangeStatement.lean:17:66: Unused tactic linter: `exact GlobalTheory.rigidificationAtOrigin_baseChange` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/RigidificationAtOriginBaseChangeStatement.lean:17:121: Unused tactic linter: `(intros; apply GlobalTheory.rigidificationAtOrigin_baseChange <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [48167/48177] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IntegralModelMapFlatExtension (130s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelMapFlatExtension.lean:46:75: Variable name `hi` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hi
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelMapFlatExtension.lean:86:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -189,12 +144,57 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IntegralFrameValuationBound.lean:33:6: Try this: 
-  haveI̵
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IntegralModelMapFlatExtension.lean:116:2: Try this: 
+  letI̵
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [47478/47485] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.CoverStatementHolds (10s)
+⚠ [48168/48177] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.IsAbelianSchemePullbackUniversalTripleStatement (12s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsAbelianSchemePullbackUniversalTripleStatement.lean:16:238: Variable name `mp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _mp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsAbelianSchemePullbackUniversalTripleStatement.lean:17:65: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsAbelianSchemePullbackUniversalTripleStatement.lean:17:119: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsAbelianSchemePullbackUniversalTripleStatement.lean:17:65: Unused tactic linter: `exact GlobalTheory.isAbelianScheme_of_pullback_univ` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/IsAbelianSchemePullbackUniversalTripleStatement.lean:17:119: Unused tactic linter: `(intros; apply GlobalTheory.isAbelianScheme_of_pullback_univ <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [48169/48178] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.ExistsCubeFramesFromPullbackTriple (85s)
+⚠ [48170/48179] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.JetPointsUnitLawActionIffPullbackStatement (6.1s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/JetPointsUnitLawActionIffPullbackStatement.lean:17:60: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/JetPointsUnitLawActionIffPullbackStatement.lean:17:109: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/JetPointsUnitLawActionIffPullbackStatement.lean:17:60: Unused tactic linter: `exact GlobalTheory.jetPoints_laws_iff_pullback` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/JetPointsUnitLawActionIffPullbackStatement.lean:17:109: Unused tactic linter: `(intros; apply GlobalTheory.jetPoints_laws_iff_pullback <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [48171/48179] Built Development.AbelianVarietyTheory.Proofs.FormalGroupCharts.ExistsCubeFramesFromPullbackTripleStatement (16s)
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/ExistsCubeFramesFromPullbackTripleStatement.lean:17:63: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/ExistsCubeFramesFromPullbackTripleStatement.lean:17:115: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/ExistsCubeFramesFromPullbackTripleStatement.lean:17:63: Unused tactic linter: `exact GlobalTheory.Chart.FrameUp.exists_frames_up` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/FormalGroupCharts/ExistsCubeFramesFromPullbackTripleStatement.lean:17:115: Unused tactic linter: `(intros; apply GlobalTheory.Chart.FrameUp.exists_frames_up <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
