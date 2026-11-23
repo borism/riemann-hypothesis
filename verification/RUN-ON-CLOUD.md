@@ -3,6 +3,68 @@
 Tracked in [issue #1](https://github.com/borism/riemann-hypothesis/issues/1). The driver is
 [`scripts/run-verification.sh`](../scripts/run-verification.sh).
 
+## Scope of this run
+
+**What this run is about.** Source commit `f1f6d65420dbbf36d6cfdac1af8d79511a855a5b` (`f1f6d654`),
+built as `f073285e399c5587c6a6799c0da56451b30c1836` (`f073285e`), which adds only `scripts/` and
+`verification/` (13 files, no `src/` change) on top of it. Pins: Lean v4.33.1 for build and export,
+Lean v4.36.0 for judging, Mathlib `0df444a360eaa60ab8c11dca51a86af692955474` (`0df444a3`).
+
+**What it is not about.** Upstream `main` (`c900e67c`, checked 2026-11-23) has since moved to Lean
+v4.37.0-rc1 and Mathlib `31ce06eaadf4a200c0e1407c5f10953cf606b8f8` (`31ce06ea`), and `git diff
+--shortstat f1f6d654 upstream/main -- src` reports 164,464 files changed (7,501,118 insertions,
+3,283,560 deletions). **A result of this run says nothing about that newer source.** No result of
+steps 2 to 4 exists yet for either commit.
+
+The challenge checksum this driver expects (`bd484ac9...`) is the README's value at `f1f6d654` for
+the 4.33.1 / `0df444a3` pins. Upstream `main` documents other values for other pins (`ccaa3504...`
+for 4.36.0, `bb37c4bb...` for 4.37.0-rc1, which upstream says it computed in CI and has not
+reproduced outside CI). They are not comparable with this run's value. See
+[issue #11](https://github.com/borism/riemann-hypothesis/issues/11).
+
+## Do not merge upstream into the live branches while the run is live
+
+Do not merge `upstream/main` (or anything that contains it) into `ccr-bdb3a003-2b6l4u`,
+`run/step2-2026-11-22`, `exp/gh-runners-restore-test` or the fork's `main`, and do not edit
+`scripts/run-verification.sh` in the tree that a running `step2` was started from, until that
+`step2` process has exited and the owner has decided what the run is meant to show. Reasons:
+
+- **The pins would change under the run.** `exp/gh-runners-restore-test` pins `LIVE_COMMIT:
+  f073285e399c5587c6a6799c0da56451b30c1836` in 4 workflows (`exp-deep-test`, `exp-merge-test`,
+  `exp-pool-wave`, `exp-restore-test`). The driver clones `HEAD` of the repository it runs from,
+  so a merge that brings in upstream's `src/`, `lean-toolchain` and `lake-manifest.json` would make
+  the next fresh step 1 or 2 compile 4.37.0-rc1 source with Lean 4.33.1 (the driver now stops
+  with exit 70 in that case, see "Pin guard" below, but that is a last line of defence).
+- **Upstream workflows have risky triggers.** On `upstream/main`, `build-pr.yml`,
+  `challenge-files.yml` and `label-pr.yml` use `pull_request_target`, `batch-queue.yml` uses
+  `issue_comment`, `publish-ci-cache.yml` uses `workflow_run` and `push`, `checks.yml` uses
+  `push`, and `build-pr.yml` has jobs on a runner group (`RiemannHypothesisBuild`, label
+  `rh-build`). A merge into `main` would bring these in.
+- **Git will not warn you in most cases.** `git merge-tree --write-tree --name-only upstream/main
+  <branch>` (read-only), run 2026-11-23 against `upstream/main` = `c900e67c`:
+
+  | Branch | Result |
+  |---|---|
+  | `origin/main` | content conflict in `README.md` |
+  | `origin/run/step2-2026-11-22` | content conflict in `README.md` |
+  | `origin/exp/gh-runners-restore-test` | modify/delete conflicts on `.github/workflows/build-pr.yml`, `checks.yml`, `publish-ci-cache.yml` |
+  | `origin/ccr-bdb3a003-2b6l4u` | clean (a merge would go through silently) |
+  | `origin/rh/cloud-verification-driver`, `rh/small-machine-optimisations`, `rh/step2-checkpoints`, `rh/step2-efficiency-audit` | clean |
+
+  A clean result does not mean a safe one: it only means nobody would notice.
+
+A run on upstream's current source is a different run: a new work directory, new pins, new
+checksums and its own branch, decided by the owner. It must not be started by merging into these
+branches.
+
+### Pin guard
+
+When `step1` or the first `step2` clones the repository, `scripts/run-verification.sh` checks the
+clone's `lean-toolchain` against `leanprover/lean4:v$RH_LEAN_BUILD_VER` (default 4.33.1) and the
+Mathlib rev in its `lake-manifest.json` against `$RH_MATHLIB_REV` (default `0df444a3...`), and
+stops with exit 70 if either differs. A step 2 that resumes an existing build clone does not clone
+again (`state/step2.cloned` exists) and is not checked.
+
 ## Bottom line
 
 A standard cloud machine (4 cores, 15 GB RAM, about 59 GB of free disk) **can complete step 1 only**

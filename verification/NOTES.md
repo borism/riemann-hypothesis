@@ -3,6 +3,20 @@
 Everything in this folder was written by the people checking the submission, not by its author.
 Comparator's output will be added here when the run finishes.
 
+## Scope of this run
+
+This fork's run checks source commit `f1f6d65420dbbf36d6cfdac1af8d79511a855a5b` (`f1f6d654`),
+built as `f073285e399c5587c6a6799c0da56451b30c1836` (`f073285e`; it adds only `scripts/` and
+`verification/`), with Lean v4.33.1 for build and export, Lean v4.36.0 for judging and Mathlib
+`0df444a3`. Upstream `main` has since moved to Lean v4.37.0-rc1 and Mathlib `31ce06ea` with most of
+`src/` changed (164,464 files in `git diff --shortstat f1f6d654 upstream/main -- src`, as of
+`c900e67c`). A result of this run says nothing about that newer source, and the challenge checksum
+used here (`bd484ac9...`) is not the one upstream documents for its newer pins. Nothing has been
+verified yet. Details and the rule against merging upstream while the run is live:
+[RUN-ON-CLOUD.md](RUN-ON-CLOUD.md#scope-of-this-run).
+
+The sections below were written before upstream's later changes and are not updated for them.
+
 ## Source
 
 | Item | Value |
