@@ -238,6 +238,7 @@ sandbox_cmd() {
     --ro-bind "$tc" "$tc" "${ro[@]}" "${rw[@]}"
     --setenv HOME /tmp/home --setenv PATH "$tc/bin:/usr/bin:/bin"
     --setenv LEAN_ABORT_ON_PANIC 1 --setenv LAKE_ARTIFACT_CACHE false --setenv LANG C.UTF-8
+    ${RH_LEAN_THREADS:+--setenv LEAN_NUM_THREADS "$RH_LEAN_THREADS"}   # optional: cap Lean/Lake worker threads (concurrent module builds)
     "${ev[@]}" --chdir "${SBX_CHDIR:?}" "$@")
 }
 
