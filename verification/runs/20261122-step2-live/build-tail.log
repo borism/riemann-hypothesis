@@ -1,200 +1,200 @@
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:896: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E ‹_› ‹_› ‹_› r hM Comp X la` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:977: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E ‹_› ‹_› ‹_› r hM Comp X` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:1055: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E ‹_› ‹_› ‹_› r hM Comp` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:1131: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E ‹_› ‹_› ‹_› r hM` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:1202: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E ‹_› ‹_› ‹_› r` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:1270: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E ‹_› ‹_› ‹_›` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:1336: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E ‹_› ‹_›` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:1398: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E ‹_›` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/CuspMulOf.lean:38:1456: Unused tactic linter: `exact @UpperTheory.Reformulated.B.Qe28.holSub_mul E` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [35865/35884] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.ExistsDictionaryByMarkingRule (7.6s)
-✔ [35866/35884] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.MemberDictionaryRealEquivariantOntoTriangular (8.5s)
-⚠ [35867/35884] Replayed Development.AbelianVarietyTheory.Proofs.AdelicLatticeProofs.ExistsContinuousCircleCharExtension
-warning: src/Development/AbelianVarietyTheory/Proofs/AdelicLatticeProofs/ExistsContinuousCircleCharExtension.lean:9:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/AdelicLatticeProofs/ExistsContinuousCircleCharExtension.lean:16:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [35868/35885] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.ExistsRootNearOne (10s)
-⚠ [35869/35885] Built Formalism.LocalToGlobal.ProjectiveLattices.ReadQuot (13s)
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/ReadQuot.lean:27:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/ReadQuot.lean:36:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/ReadQuot.lean:37:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/ReadQuot.lean:41:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/ReadQuot.lean:45:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/ProjectiveLattices/ReadQuot.lean:46:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-✔ [35870/35885] Built Formalism.LocalToGlobal.ProjectiveLattices.CoreExists (13s)
-⚠ [35871/35885] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.MemberDictionaryRealEquivariantOntoTriangularStatement (9.0s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/MemberDictionaryRealEquivariantOntoTriangularStatement.lean:16:66: this tactic is never executed
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/MeasurableDomCellLogNormChartStatement.lean:38:185: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/MemberDictionaryRealEquivariantOntoTriangularStatement.lean:16:121: this tactic is never executed
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/MeasurableDomCellLogNormChartStatement.lean:38:98: Unused tactic linter: `exact
+  GlobalTheory.CompanionTheory.Ar.Pub.CxChart.integrable_chartAbsDens_cellWeight` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/MeasurableDomCellLogNormChartStatement.lean:38:185: Unused tactic linter: `(intros;
+  apply GlobalTheory.CompanionTheory.Ar.Pub.CxChart.integrable_chartAbsDens_cellWeight <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [37059/37074] Built Development.AutomorphicSpectrum.Proofs.MetricProofs.ExistsGoodProjFirstCoordinateStatement (5.0s)
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsGoodProjFirstCoordinateStatement.lean:27:88: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/MemberDictionaryRealEquivariantOntoTriangularStatement.lean:16:66: Unused tactic linter: `exact GlobalTheory.Member.dict_real_equivariant_onto` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/MemberDictionaryRealEquivariantOntoTriangularStatement.lean:16:121: Unused tactic linter: `(intros; apply GlobalTheory.Member.dict_real_equivariant_onto <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [35872/35885] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.ExistsDictionaryByMarkingRuleStatement (10s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsDictionaryByMarkingRuleStatement.lean:16:57: this tactic is never executed
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsGoodProjFirstCoordinateStatement.lean:27:165: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsDictionaryByMarkingRuleStatement.lean:16:103: this tactic is never executed
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsGoodProjFirstCoordinateStatement.lean:27:88: Unused tactic linter: `exact GlobalTheory.CompanionTheory.Ar.Pub.CxGoodProj.exists_goodProj_coord` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsGoodProjFirstCoordinateStatement.lean:27:165: Unused tactic linter: `(intros;
+  apply GlobalTheory.CompanionTheory.Ar.Pub.CxGoodProj.exists_goodProj_coord <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [37060/37075] Built Development.AutomorphicSpectrum.Proofs.MetricProofs.IntegralDensityIndependentProjection (8.8s)
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:25:77: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsDictionaryByMarkingRuleStatement.lean:16:57: Unused tactic linter: `exact GlobalTheory.Member.Ctx.exists_isDict` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsDictionaryByMarkingRuleStatement.lean:16:103: Unused tactic linter: `(intros; apply GlobalTheory.Member.Ctx.exists_isDict <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [35873/35887] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.ExistsUnitaryOfTraceEq (24s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryOfTraceEq.lean:155:4: this tactic is never executed
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:25:143: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryOfTraceEq.lean:156:4: this tactic is never executed
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:25:77: Unused tactic linter: `exact GlobalTheory.CompanionTheory.Ar.Pub.CxFib.setFibre_finite` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:25:143: Unused tactic linter: `(intros;
+  apply GlobalTheory.CompanionTheory.Ar.Pub.CxFib.setFibre_finite <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:33:88: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryOfTraceEq.lean:157:4: this tactic is never executed
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:33:165: this tactic is never executed
 
 Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryOfTraceEq.lean:154:77: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
-
-Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryOfTraceEq.lean:155:4: Unused tactic linter: `(intros;
-  apply _root_.GlobalTheory.SmulMemSpanTop.exists_smul_mem_of_span_eq_top <;> assumption)` does nothing
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:33:88: Unused tactic linter: `exact GlobalTheory.CompanionTheory.Ar.Pub.CxPosMeas.cxPosDens_aemeasurable` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryOfTraceEq.lean:156:4: Unused tactic linter: `(intros;
-  apply @_root_.GlobalTheory.SmulMemSpanTop.exists_smul_mem_of_span_eq_top <;>
-    first
-    | assumption
-    | infer_instance)` does nothing
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:33:165: Unused tactic linter: `(intros;
+  apply GlobalTheory.CompanionTheory.Ar.Pub.CxPosMeas.cxPosDens_aemeasurable <;> assumption)` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryOfTraceEq.lean:157:4: Unused tactic linter: `(intros;
-  exact _root_.GlobalTheory.SmulMemSpanTop.exists_smul_mem_of_span_eq_top ..)` does nothing
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:40:81: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:40:151: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:40:81: Unused tactic linter: `exact GlobalTheory.CompanionTheory.Ar.Pub.CxChart.cxSheetSimpleNull` does nothing
 
 Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryOfTraceEq.lean:164:2: Try this: 
-  haveI̵
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjection.lean:40:151: Unused tactic linter: `(intros;
+  apply GlobalTheory.CompanionTheory.Ar.Pub.CxChart.cxSheetSimpleNull <;> assumption)` does nothing
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [37061/37077] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StPtsPosDensIntegrable (4.9s)
+✔ [37062/37077] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StSegreChartSheetCompare (4.7s)
+⚠ [37063/37077] Built Development.AutomorphicSpectrum.Proofs.MetricProofs.IntegralDensityIndependentProjectionStatement (5.1s)
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjectionStatement.lean:25:83: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [35874/35887] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.ExistsUnitaryAdelicCharOfHeckeChar (8.7s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryAdelicCharOfHeckeChar.lean:22:2: Try this: 
-  haveI̵
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjectionStatement.lean:25:155: this tactic is never executed
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjectionStatement.lean:25:83: Unused tactic linter: `exact GlobalTheory.CompanionTheory.Ar.Pub.CxPosIndep.cx_posPart_indep` does nothing
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsUnitaryAdelicCharOfHeckeChar.lean:39:4: Try this: 
-  haveI̵
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/IntegralDensityIndependentProjectionStatement.lean:25:155: Unused tactic linter: `(intros;
+  apply GlobalTheory.CompanionTheory.Ar.Pub.CxPosIndep.cx_posPart_indep <;> assumption)` does nothing
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [37064/37080] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PPtsIntegralSegreChartProj (7.2s)
+✔ [37065/37081] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StSegreSheetFormCompare (4.7s)
+✔ [37066/37081] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PPtsIntegralProjIndep (5.5s)
+✔ [37067/37083] Built GroundTheory.HeightsAndTheta.Heights.ComplexAnalyticSets.StSliceAbsIndep (5.7s)
+✔ [37068/37083] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PtsPosDensMeasurable (8.1s)
+✔ [37069/37083] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PSegreSheetFormCompare (10s)
+✔ [37070/37083] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.PChartFracSeparable (9.7s)
+✔ [37071/37085] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.StatementsQuasiFiniteSheets (5.9s)
+✔ [37072/37085] Built GroundTheory.HeightsAndTheta.Heights.ComplexAnalyticSets.PSliceAbsIndep (9.5s)
+✔ [37073/37085] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PSegreChartAbsIntegrable (5.6s)
+✔ [37074/37086] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PPtsPosDensIntegrable (6.1s)
+✔ [37075/37086] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PSegreChartSheetCompare (6.1s)
+✔ [37076/37086] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.PQuasiFiniteSheets (5.0s)
+✔ [37077/37086] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.PChartPointSeparable (6.3s)
+✔ [37078/37089] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.PChowFormExistsRat (5.5s)
+✔ [37079/37090] Built GroundTheory.HeightsAndTheta.Heights.ComplexAnalyticSets.PSliceMassFiniteDirect (6.3s)
+✔ [37080/37091] Built Development.AutomorphicSpectrum.Proofs.MetricProofs.ExistsSmoothMetricsNonnegDensity (5.5s)
+✔ [37081/37092] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.StatementsSectionLengthSum (4.8s)
+✔ [37082/37092] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.PPrimeQuasiFiniteSheets (8.0s)
+✔ [37083/37092] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PDualStdGenDeg (6.0s)
+✔ [37084/37092] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PChartIbpCutoff (7.5s)
+⚠ [37085/37094] Built Development.AutomorphicSpectrum.Proofs.MetricProofs.ExistsSmoothMetricsNonnegDensityStatement (5.1s)
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsSmoothMetricsNonnegDensityStatement.lean:30:87: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [35875/35887] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.ExistsLevelMulSplit (13s)
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsLevelMulSplit.lean:58:35: Variable name `a` is not explicitly referenced.
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsSmoothMetricsNonnegDensityStatement.lean:30:163: this tactic is never executed
 
-Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
-  [apply] _a
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsSmoothMetricsNonnegDensityStatement.lean:30:87: Unused tactic linter: `exact GlobalTheory.CompanionTheory.Ar.Pub.CxTwist.exists_dominating_twist` does nothing
 
-Note: This linter can be disabled with `set_option linter.unusedVariables false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsLevelMulSplit.lean:148:4: Try this: 
-  haveI̵
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/ExistsSmoothMetricsNonnegDensityStatement.lean:30:163: Unused tactic linter: `(intros;
+  apply GlobalTheory.CompanionTheory.Ar.Pub.CxTwist.exists_dominating_twist <;> assumption)` does nothing
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [37086/37094] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.PSectionLengthSum (6.7s)
+✔ [37087/37095] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PChartConeComponent (5.7s)
+✔ [37088/37098] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PGrassGeomDegChart (7.6s)
+⚠ [37089/37100] Built Development.AutomorphicSpectrum.Proofs.MetricProofs.LintegralFibreLogNormFinite (8.4s)
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFinite.lean:41:0: automatically included section variable(s) unused in theorem `GlobalTheory.CompanionTheory.Ar.Pub.CxChart.setSheetDensity_eq_zero`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Development/AbelianVarietyTheory/Proofs/UnitaryExistence/ExistsLevelMulSplit.lean:207:12: This simp argument is unused:
-  host_bar_w0_of_isCMField
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFinite.lean:50:0: automatically included section variable(s) unused in theorem `GlobalTheory.CompanionTheory.Ar.Pub.CxChart.setSheetDensity_sum`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
 
-Hint: Omit it from the simp argument list.
-  [apply] simp
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFinite.lean:67:0: automatically included section variable(s) unused in theorem `GlobalTheory.CompanionTheory.Ar.Pub.CxChart.segre_ne_zero_of_mem_domCell`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-✔ [35876/35887] Built Development.AbelianVarietyTheory.Proofs.UnitaryExistence.DictIsUnifOfMarkingRuleDictionary (11s)
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFinite.lean:105:4: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFinite.lean:182:60: `MeasureTheory.lintegral_finset_sum'` has been deprecated: Use `MeasureTheory.lintegral_finsetSum'` instead
+✔ [37090/37100] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StChartSectionLength (5.1s)
+✔ [37091/37100] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StatementsProjPotDensVanish (4.0s)
+✔ [37092/37103] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StatementsProjRankDropDens (5.3s)
+⚠ [37093/37105] Built Development.AutomorphicSpectrum.Proofs.MetricProofs.LintegralFibreLogNormFiniteStatement (6.5s)
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFiniteStatement.lean:24:83: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFiniteStatement.lean:24:155: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFiniteStatement.lean:24:83: Unused tactic linter: `exact GlobalTheory.CompanionTheory.Ar.Pub.CxChart.logNorm_mass_lt_top` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AutomorphicSpectrum/Proofs/MetricProofs/LintegralFibreLogNormFiniteStatement.lean:24:155: Unused tactic linter: `(intros;
+  apply GlobalTheory.CompanionTheory.Ar.Pub.CxChart.logNorm_mass_lt_top <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [37094/37105] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PChartSectionLength (5.6s)
+✔ [37095/37107] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjPotMassEqGen (6.1s)
+✔ [37096/37107] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StatementsProjRankTransfer (5.5s)
+✔ [37097/37108] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.StatementsChartIbpSymm (6.2s)
+✔ [37098/37108] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjRankDropDens (7.7s)
+✔ [37099/37108] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjRankTransfer (6.8s)
+⚠ [37100/37108] Built Development.AutomorphicSpectrum.Proofs.BlockDecomposition.IntegrableAbsFibreSumOfIsCxVar (7.8s)
+warning: src/Development/AutomorphicSpectrum/Proofs/BlockDecomposition/IntegrableAbsFibreSumOfIsCxVar.lean:169:10: `MeasureTheory.integrable_finset_sum` has been deprecated: Use `MeasureTheory.integrable_finsetSum` instead
+✔ [37101/37108] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.StatementsDualEnergyCharts (5.0s)
+✔ [37102/37112] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjPotMassEq (7.8s)
+✔ [37103/37112] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PChartIbpSymm (6.7s)
+✔ [37104/37113] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PSectionIndexNorm (9.4s)
+✔ [37105/37113] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjPotDensVanish (6.8s)
+✔ [37106/37113] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PVertRIndex (6.6s)
+✔ [37107/37115] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PDualEnergyCharts (9.8s)
+✔ [37108/37115] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PVertPointChart (9.5s)
+✔ [37109/37117] Built GroundTheory.HeightsAndTheta.Heights.LocalFiniteness.ObjectsChowIntChowFormExists (6.0s)
+✔ [37110/37119] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PVertPointSurj (10s)
+✔ [37111/37120] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StChartDivisorLength (5.7s)
+✔ [37112/37121] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PSectionQuotFinite (7.8s)
+✔ [37113/37122] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StatementsProjFullRankMeetsRegular (5.5s)
+✔ [37114/37123] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.ImportsBis (5.4s)
+✔ [37115/37123] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StatementsProjMaxRankRegular (5.1s)
+✔ [37116/37125] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PChartDivisorLength (5.3s)
+✔ [37117/37125] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjFullRankMeetsRegular (5.7s)
+✔ [37118/37125] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.ImportsAlt (7.8s)
+✔ [37119/37128] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PSectionQuotLocal (10s)
+✔ [37120/37129] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.StatementsChartNormAlgClosed (6.4s)
+✔ [37121/37130] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.StatementsConeLocalSheets (5.0s)
+✔ [37122/37130] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjMaxRankRegular (7.5s)
+✔ [37123/37130] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.InhabitedChartFracSeparable (20s)
+✔ [37124/37130] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PVertPointInj (8.3s)
+✔ [37125/37132] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PChartEnergySymm (9.7s)
+✔ [37126/37134] Built GroundTheory.HeightsAndTheta.Heights.LocalFiniteness.TargetsProjFullRankMeetsRegular (8.9s)
+✔ [37127/37135] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.PConeLocalSheets (10s)
+✔ [37128/37137] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StatementsProjGenericRank (7.5s)
+✔ [37129/37142] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StatementsProjRegularClosureOpen (8.4s)
+✔ [37130/37142] Built GroundTheory.HeightsAndTheta.Heights.ArithmeticBezout.PChartNormAlgClosed (28s)
+✔ [37131/37142] Built GroundTheory.HeightsAndTheta.Heights.HeightKernels.PVertPointNagata (19s)
+✔ [37132/37142] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StatementsProjRegularNull (7.2s)
+✔ [37133/37145] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.StPtsPosDensMeasurable (6.3s)
+✔ [37134/37145] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjRegularClosureOpen (8.8s)
+✔ [37135/37145] Built GroundTheory.HeightsAndTheta.Heights.OrbitLimits.PProjFullRankDense (7.4s)
