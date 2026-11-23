@@ -11,3 +11,9 @@
     ✔ [20890/20939] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.FlatHomLocOfFlatHomLocSingleton (7.1s)
 [2026-11-22T20:18:38Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
 [2026-11-22T20:21:03Z] step2: start (build clone, offline bubblewrap sandbox, 4 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-23T00:38:36Z] step2: rc=143; 39864 .olean files in the build tree; 31G in .lake; 30 GB free
+    ✔ [26169/26183] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PSemilocalIntegral (14s)
+    ✔ [26170/26183] Built GroundTheory.HeightsAndTheta.Heights.LocalDensities.LeviLine (8.3s)
+    ✔ [26171/26183] Built GroundTheory.HeightsAndTheta.Heights.LocalDensities.CompactSupportStokes (7.9s)
+[2026-11-23T00:38:36Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
+[2026-11-23T00:40:43Z] step2: start (build clone, offline bubblewrap sandbox, 4 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
