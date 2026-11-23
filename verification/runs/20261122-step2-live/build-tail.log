@@ -1,81 +1,6 @@
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/StarSubdivisionCellsFiniteCoverUpToAutStatement.lean:9:111: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.isStarOf_finite_cover <;> assumption)` does nothing
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [44060/44072] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.MarkValEqZeroOrOne (7.5s)
-⚠ [44061/44072] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IsMarkedBalancedIntFormPullbackIffSplitSurjectio (9.2s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsMarkedBalancedIntFormPullbackIffSplitSurjectio.lean:58:0: automatically included section variable(s) unused in theorem `GlobalTheory.PolFan.Mark.SplitPull.InFace_eq_pull`:
-  [Module.Finite O X₁]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Module.Finite O X₁] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [44062/44072] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.ExistsNonnegCombOfMemPsdCone (15s)
-⚠ [44063/44073] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IsMarkedBalancedIntFormPullbackIffSplitSurjectioStatement (8.1s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsMarkedBalancedIntFormPullbackIffSplitSurjectioStatement.lean:9:72: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsMarkedBalancedIntFormPullbackIffSplitSurjectioStatement.lean:9:133: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsMarkedBalancedIntFormPullbackIffSplitSurjectioStatement.lean:9:72: Unused tactic linter: `exact GlobalTheory.PolFan.Mark.SplitPull.isMarked_pull_iff` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsMarkedBalancedIntFormPullbackIffSplitSurjectioStatement.lean:9:133: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.Mark.SplitPull.isMarked_pull_iff <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [44064/44073] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.MarkedFormIndicatorValueInvariantHostFixingAut (10s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/MarkedFormIndicatorValueInvariantHostFixingAut.lean:77:8: automatically included section variable(s) unused in theorem `GlobalTheory.PolFan.Mark.twPi_apply`:
-  [NumberField E]
-  [IsCMField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] [IsCMField E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/MarkedFormIndicatorValueInvariantHostFixingAut.lean:87:8: automatically included section variable(s) unused in theorem `GlobalTheory.PolFan.Mark.twForm_apply`:
-  [NumberField E]
-  [IsCMField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] [IsCMField E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/MarkedFormIndicatorValueInvariantHostFixingAut.lean:106:0: automatically included section variable(s) unused in theorem `GlobalTheory.PolFan.Mark.twForm_symm_twForm`:
-  [NumberField E]
-  [IsCMField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] [IsCMField E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-✔ [44065/44075] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.SuperadditiveOfCellsCoverCone (9.7s)
-✔ [44066/44075] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.CarrierDimLeOfAddCellGenerators (10s)
-⚠ [44067/44075] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.MarkedFormIndicatorValueInvariantHostFixingAutStatement (7.5s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/MarkedFormIndicatorValueInvariantHostFixingAutStatement.lean:9:58: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/MarkedFormIndicatorValueInvariantHostFixingAutStatement.lean:9:105: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/MarkedFormIndicatorValueInvariantHostFixingAutStatement.lean:9:58: Unused tactic linter: `exact GlobalTheory.PolFan.Mark.markVal_twist` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/MarkedFormIndicatorValueInvariantHostFixingAutStatement.lean:9:105: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.Mark.markVal_twist <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [44068/44075] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.SuperadditiveOfCellsCoverConeStatement (7.5s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SuperadditiveOfCellsCoverConeStatement.lean:10:68: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SuperadditiveOfCellsCoverConeStatement.lean:10:125: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SuperadditiveOfCellsCoverConeStatement.lean:10:68: Unused tactic linter: `exact GlobalTheory.PolFan.CoverSuper.superadd_of_cover` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SuperadditiveOfCellsCoverConeStatement.lean:10:125: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.CoverSuper.superadd_of_cover <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [44069/44077] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IsPolyFanOfStarSubdivisionCells (12s)
-⚠ [44070/44079] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.InRealConeCellOfInFaceOfCellFormCMField (17s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeCellOfInFaceOfCellFormCMField.lean:51:2: Try this: 
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasDef.lean:110:4: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -83,21 +8,8 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [44071/44079] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.IsPolyFanOfStarSubdivisionCellsStatement (8.3s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsPolyFanOfStarSubdivisionCellsStatement.lean:8:62: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsPolyFanOfStarSubdivisionCellsStatement.lean:8:113: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsPolyFanOfStarSubdivisionCellsStatement.lean:8:62: Unused tactic linter: `exact GlobalTheory.PolFan.StarFan.isPolyFan_star` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/IsPolyFanOfStarSubdivisionCellsStatement.lean:8:113: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.StarFan.isPolyFan_star <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [44072/44079] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.CellLeastDimVanishesWhereFormVanishesDiagonal (11s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/CellLeastDimVanishesWhereFormVanishesDiagonal.lean:89:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasDef.lean:116:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasDef.lean:138:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -105,65 +17,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [44073/44081] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.InRealConeCellOfInFaceOfCellFormCMFieldStatement (7.6s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeCellOfInFaceOfCellFormCMFieldStatement.lean:9:66: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeCellOfInFaceOfCellFormCMFieldStatement.lean:9:121: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeCellOfInFaceOfCellFormCMFieldStatement.lean:9:66: Unused tactic linter: `exact GlobalTheory.PolFan.Mark.FaceIn.inRCone_of_add` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeCellOfInFaceOfCellFormCMFieldStatement.lean:9:121: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.Mark.FaceIn.inRCone_of_add <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [44074/44081] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.InvFunEvalZAddOfLinearOnRealCone (7.7s)
-⚠ [44075/44081] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.CellLeastDimVanishesWhereFormVanishesDiagonalStatement (7.8s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/CellLeastDimVanishesWhereFormVanishesDiagonalStatement.lean:9:76: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/CellLeastDimVanishesWhereFormVanishesDiagonalStatement.lean:9:141: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/CellLeastDimVanishesWhereFormVanishesDiagonalStatement.lean:9:76: Unused tactic linter: `exact GlobalTheory.PolFan.Mark.vanish_of_inRCone_of_genRank_le` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/CellLeastDimVanishesWhereFormVanishesDiagonalStatement.lean:9:141: Unused tactic linter: `(intros;
-  apply GlobalTheory.PolFan.Mark.vanish_of_inRCone_of_genRank_le <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [44076/44085] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.ExistsStarSubdivisionInvariantPolyhedralFan (8.9s)
-⚠ [44077/44085] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.InvFunEvalZAddOfLinearOnRealConeStatement (7.2s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InvFunEvalZAddOfLinearOnRealConeStatement.lean:9:74: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InvFunEvalZAddOfLinearOnRealConeStatement.lean:9:137: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InvFunEvalZAddOfLinearOnRealConeStatement.lean:9:74: Unused tactic linter: `exact GlobalTheory.PolFan.Mark.evalZ_add_of_linearOn_inRCone` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InvFunEvalZAddOfLinearOnRealConeStatement.lean:9:137: Unused tactic linter: `(intros;
-  apply GlobalTheory.PolFan.Mark.evalZ_add_of_linearOn_inRCone <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [44078/44085] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.InRealConeSummandsOfEvalZAdditiveCell (9.4s)
-⚠ [44079/44086] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.ExistsStarSubdivisionInvariantPolyhedralFanStatement (7.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsStarSubdivisionInvariantPolyhedralFanStatement.lean:8:62: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsStarSubdivisionInvariantPolyhedralFanStatement.lean:8:113: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsStarSubdivisionInvariantPolyhedralFanStatement.lean:8:62: Unused tactic linter: `exact GlobalTheory.PolFan.exists_starSubdivision` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsStarSubdivisionInvariantPolyhedralFanStatement.lean:8:113: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.exists_starSubdivision <;> assumption)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [44080/44087] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.SpanRankLeOfInRealConePolyhedralCell (8.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SpanRankLeOfInRealConePolyhedralCell.lean:51:2: Try this: 
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasDef.lean:143:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -171,30 +25,176 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [44081/44087] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.InRealConeSummandsOfEvalZAdditiveCellStatement (7.4s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeSummandsOfEvalZAdditiveCellStatement.lean:9:68: this tactic is never executed
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasDef.lean:144:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeSummandsOfEvalZAdditiveCellStatement.lean:9:125: this tactic is never executed
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeSummandsOfEvalZAdditiveCellStatement.lean:9:68: Unused tactic linter: `exact GlobalTheory.PolFan.Mark.inRCone_of_evalZ_sum_le` does nothing
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+✔ [44861/44868] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.ExistsIsMinf (10s)
+⚠ [44862/44868] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.ExistsIsMeasLevW (9.6s)
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:20:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/InRealConeSummandsOfEvalZAdditiveCellStatement.lean:9:125: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.Mark.inRCone_of_evalZ_sum_le <;> assumption)` does nothing
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-✔ [44082/44087] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.FiniteBilinFormAbsLe (8.2s)
-⚠ [44083/44094] Built Development.AbelianVarietyTheory.Proofs.IwasawaDecomposition.SpanRankLeOfInRealConePolyhedralCellStatement (6.9s)
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SpanRankLeOfInRealConePolyhedralCellStatement.lean:9:66: this tactic is never executed
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:21:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SpanRankLeOfInRealConePolyhedralCellStatement.lean:9:121: this tactic is never executed
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SpanRankLeOfInRealConePolyhedralCellStatement.lean:9:66: Unused tactic linter: `exact GlobalTheory.PolFan.genRank_le_of_inRCone_cell` does nothing
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:22:2: Try this: 
+  haveI̵
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/SpanRankLeOfInRealConePolyhedralCellStatement.lean:9:121: Unused tactic linter: `(intros; apply GlobalTheory.PolFan.genRank_le_of_inRCone_cell <;> assumption)` does nothing
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
 
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:23:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:24:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:25:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:53:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:54:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:55:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:56:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:57:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:58:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:113:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsIsMeasLevW.lean:119:13: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+⚠ [44863/44876] Built Development.AbelianVarietyTheory.Definitions.Divisors.ExistsGivenStageEqOne (28s)
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/ExistsGivenStageEqOne.lean:102:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/ExistsGivenStageEqOne.lean:160:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [44864/44876] Built Development.AbelianVarietyTheory.Definitions.Divisors.NatCastSmulMemHatL (17s)
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/NatCastSmulMemHatL.lean:28:34: This simp argument is unused:
+  ← nsmul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.cast_smul_eq_nsmul, TensorProduct.smul_tmul']
+
+Note: Simp arguments with `←` have the additional effect of removing the other direction from the simp set, even if the simp argument itself is unused. If the hint above does not work, try replacing `←` with `-` to only get that effect and silence this warning.
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/NatCastSmulMemHatL.lean:28:50: This simp argument is unused:
+  TensorProduct.smul_tmul'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Nat.cast_smul_eq_nsmul, ← nsmul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/NatCastSmulMemHatL.lean:38:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/NatCastSmulMemHatL.lean:39:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Definitions/Divisors/NatCastSmulMemHatL.lean:40:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
