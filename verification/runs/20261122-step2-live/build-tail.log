@@ -1,33 +1,4 @@
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/VolUHerm.lean:104:4: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/VolUHerm.lean:105:4: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/VolUHerm.lean:144:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/VolUHerm.lean:178:40: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-⚠ [18452/18462] Replayed Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.MassDataXRecPos
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/MassDataXRecPos.lean:21:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/MassDataXRecPos.lean:22:2: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocA.lean:50:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -35,7 +6,7 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/MassDataXRecPos.lean:29:4: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocA.lean:51:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -43,7 +14,15 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/MassDataXRecPos.lean:37:4: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocA.lean:57:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocA.lean:58:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -51,28 +30,143 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [18453/18462] Replayed Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ValuationLocalVolumes.MemALImage
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/MemALImage.lean:17:0: automatically included section variable(s) unused in theorem `Formalism.L2.SG.Pf.NcVal.VolV.aL_apply`:
-  [NumberField E]
+⚠ [21143/21151] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.StalkLocB
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocB.lean:21:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocB.lean:36:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocB.lean:69:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [21144/21151] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.StalkLoc
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:62:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:63:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:77:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:62:6: Unused tactic linter: `(convert h using 1; ext z; simp)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:63:6: Unused tactic linter: `(simp only [Set.image_singleton] at h; exact h)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:77:6: Unused tactic linter: `simp [MvPolynomial.aeval_eq_eval]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:199:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:204:4: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:202:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:207:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:202:6: Unused tactic linter: `exact IsRegularLocalRing.of_ringEquiv (e := P.stalkEquiv x hx hc)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:207:6: Unused tactic linter: `exact IsRegularLocalRing.of_ringEquiv (e := (P.stalkEquiv x hx hc).symm)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:222:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:263:6: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:263:6: Unused tactic linter: `(
+  show
+    Ideal.Quotient.mk _ (IsLocalization.mk' _ a ⟨b, hb⟩) * Ideal.Quotient.mk _ (algebraMap _ _ b) =
+      Ideal.Quotient.mk _ (algebraMap _ _ a)
+  rw [← map_mul, IsLocalization.mk'_spec])` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [21147/21151] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.ProjHypC
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:12:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.AnForm.R.prod_X_chartUpd`:
+  [Nonempty K]
+  [(k : K) → Fintype (ι k)]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] in theorem ...
+  omit [Nonempty K] [(k : K) → Fintype (ι k)] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/MemALImage.lean:71:8: automatically included section variable(s) unused in theorem `_private.Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ValuationLocalVolumes.MemALImage.0.Formalism.L2.SG.Pf.NcVal.VolV.int_of_
-  [NumberField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] in theorem ...
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:109:4: this tactic is never executed
 
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/MemALImage.lean:125:15: This simp argument is unused:
-  OneMemClass.coe_one
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:110:4: this tactic is never executed
 
-Hint: Omit it from the simp argument list.
-  [apply] simp only [map_one] at this
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:109:4: Unused tactic linter: `(rw [← HomogeneousLocalization.algebraMap_apply]; rfl)` does nothing
 
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
-⚠ [18455/18462] Replayed Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ValuationLocalVolumes.AbsVDetBigL
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:23:2: Try this: 
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:110:4: Unused tactic linter: `simp [HomogeneousLocalization.val_fromZeroRingHom, Localization.mk_one_eq_algebraMap,
+  SetLike.GradeZero.coe_algebraMap, Ideal.Quotient.algebraMap_eq, MvPolynomial.algebraMap_eq]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:119:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:163:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [21148/21151] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.ProjHyp
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:30:4: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:31:4: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -80,7 +174,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:24:2: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:24:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -88,7 +182,15 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:25:2: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:66:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:195:6: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -96,105 +198,3 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:26:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:27:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:28:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:35:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:36:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:37:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/AbsVDetBigL.lean:89:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [18456/18464] Replayed Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.MassDataXCovolPos
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/MassDataXCovolPos.lean:46:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [18457/18470] Replayed Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ValuationLocalVolumes.ThetaExists
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/ThetaExists.lean:33:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/ThetaExists.lean:59:30: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/ThetaExists.lean:73:0: automatically included section variable(s) unused in theorem `Formalism.L2.SG.Pf.NcVal.VolV.diag_key`:
-  [NumberField E]
-consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [NumberField E] in theorem ...
-
-Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/ThetaExists.lean:98:29: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/ThetaExists.lean:104:40: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/ThetaExists.lean:107:58: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/ThetaExists.lean:118:40: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/ThetaExists.lean:128:58: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
-⚠ [18458/18470] Replayed Formalism.PeriodIntegrals.UnitaryGroupMassFormula.ValuationLocalVolumes.VolUHermBoxHolds
-warning: src/Formalism/PeriodIntegrals/UnitaryGroupMassFormula/ValuationLocalVolumes/VolUHermBoxHolds.lean:20:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [18461/18470] Replayed Formalism.LocalToGlobal.SiegelLatticeTheory.FlagStabilizerTensors.RootLatticeThresholds.DvPosC
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/FlagStabilizerTensors/RootLatticeThresholds/DvPosC.lean:28:20: `ContinuousLinearMap.one_apply` has been deprecated: Use `one_apply_eq_self` instead
-
-Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.one_apply` to `one_apply_eq_self x`).
-⚠ [18462/18470] Replayed Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.WeightConstA
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/WeightConstA.lean:98:88: `Fin.coe_castSucc` has been deprecated: Use `Fin.val_castSucc` instead
-⚠ [18465/18470] Replayed Formalism.LocalToGlobal.SiegelLatticeTheory.CokernelGLCounts.RankPointCounts.WeightConstB
-warning: src/Formalism/LocalToGlobal/SiegelLatticeTheory/CokernelGLCounts/RankPointCounts/WeightConstB.lean:28:39: This simp argument is unused:
-  zero_mul
-
-Hint: Omit it from the simp argument list.
-  [apply] simp only [Nat.zero_sub, mul_zero, add_zero]
-
-Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
