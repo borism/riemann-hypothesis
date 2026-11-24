@@ -202,7 +202,7 @@ Reported by the run log:
 
 | Item | Value | Label |
 |---|---|---|
-| Shards on the public Hugging Face dataset (its name is the `HF_REPO` default in `scripts/rh-checkpoint.sh` on #6) | 30, with 249,774 files and 24.3 GB raw in total; the last shard is 0030 (2026-11-23T21:51Z) | measured (`verification/checkpoints/step2/INDEX.tsv` on `run/step2-2026-11-22`) |
+| Shards on the public Hugging Face dataset [`bmaryshev/riemann-hypothesis-build-checkpoints`](https://huggingface.co/datasets/bmaryshev/riemann-hypothesis-build-checkpoints) (the `HF_REPO` default in `scripts/rh-checkpoint.sh` on #6) | 30, with 249,774 files and 24.3 GB raw in total; the last shard is 0030 (2026-11-23T21:51Z) | measured (`verification/checkpoints/step2/INDEX.tsv` on `run/step2-2026-11-22`) |
 | Frequency | about hourly | reported (`progress.tsv` has one line per hour, measured) |
 | Merged pool files | kept out of the shards; they live in the `pool-<wave>` prereleases | reported |
 | Trust anchor | the shard and manifest hashes in `INDEX.tsv` in git | reported |

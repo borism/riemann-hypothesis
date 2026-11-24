@@ -50,7 +50,7 @@ only on volunteers' machines. The commands for the parts that do not fit on a sm
 [#2](https://github.com/borism/riemann-hypothesis/issues/2) and
 [#3](https://github.com/borism/riemann-hypothesis/issues/3)) are written so that they can be run
 on other AI companies' compute as well. So far, only Anthropic's Claude cloud VM, GitHub-hosted
-runners and Hugging Face (for checkpoint storage) have been used.
+runners and Hugging Face (for checkpoint storage, [dataset](https://huggingface.co/datasets/bmaryshev/riemann-hypothesis-build-checkpoints)) have been used.
 
 Free or cheap services that might run the heavier steps (suggestions; of these, only GitHub-hosted
 runners have been tried):
@@ -109,7 +109,7 @@ Nothing below is on `main`. #5 is stacked on #4 and #6 on #5; #12's base is the 
 |---|---|
 | [#4](https://github.com/borism/riemann-hypothesis/pull/4) | `scripts/run-verification.sh`: a resumable driver with a bubblewrap offline sandbox and toolchain sha256 pins (`scripts/toolchain-sha256.txt`); `verification/RUN-ON-CLOUD.md`, which documents the weaker isolation compared with the podman sandbox in the notes |
 | [#5](https://github.com/borism/riemann-hypothesis/pull/5) | `scripts/rh-optimise.sh`: zstd btrfs work dir, optional zram and swap, pruning, `import` of an export by sha256, measured preflight, swap-aware watchdog; measurement helpers and `verification/measurements/2026-11-22-small-scale.md` |
-| [#6](https://github.com/borism/riemann-hypothesis/pull/6) | `scripts/rh-checkpoint.sh` and `rh-checkpoint-loop.sh`: checkpoint step 2 outputs to a public Hugging Face dataset (named in the script; hourly, 30 shards), with trust anchored by hashes in git |
+| [#6](https://github.com/borism/riemann-hypothesis/pull/6) | `scripts/rh-checkpoint.sh` and `rh-checkpoint-loop.sh`: checkpoint step 2 outputs to the public Hugging Face dataset [`bmaryshev/riemann-hypothesis-build-checkpoints`](https://huggingface.co/datasets/bmaryshev/riemann-hypothesis-build-checkpoints) (hourly, 30 shards), with trust anchored by hashes in git |
 | [#7](https://github.com/borism/riemann-hypothesis/pull/7) | the step 2 efficiency audit, `verification/measurements/2026-11-22-step2-efficiency-audit.md` |
 | [#10](https://github.com/borism/riemann-hypothesis/pull/10) (draft) | tracker for the run files on branch `run/step2-2026-11-22`: `progress.tsv`, the checkpoint `INDEX.tsv`, log tails |
 | [#12](https://github.com/borism/riemann-hypothesis/pull/12) | the scope statement and a pin guard for the driver (issue [#11](https://github.com/borism/riemann-hypothesis/issues/11)) |
