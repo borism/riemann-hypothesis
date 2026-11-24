@@ -36,7 +36,7 @@ jobs:
   plan:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+    env: {EXP_OUT: '${{ github.workspace }}/exp-out', EXP_LEAN_THREADS: '2'}
     outputs:
       go: ${{ steps.g.outputs.go == 'true' && steps.p.outputs.ready == 'true' }}
       reason: ${{ steps.g.outputs.reason || steps.p.outputs.reason }}
@@ -98,7 +98,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     strategy: {fail-fast: false, max-parallel: 16, matrix: {job: '${{ fromJSON(needs.plan.outputs.build) }}'}}
-    env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+    env: {EXP_OUT: '${{ github.workspace }}/exp-out', EXP_LEAN_THREADS: '2'}
     steps:
       - uses: actions/checkout@v4
         with: {path: exp, persist-credentials: false, sparse-checkout: scripts}
@@ -106,6 +106,11 @@ jobs:
         with: {path: build, ref: '${{ env.LIVE_COMMIT }}', persist-credentials: false, fetch-depth: 1}
       - uses: actions/download-artifact@v4
         with: {name: '${{ env.WAVE }}-plan', path: exp-out/plan}
+      - name: Free runner disk (diagnosis of runner losses in w20-w22)
+        run: |
+          df -h / | sed 's/^/before: /'
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL /usr/local/share/powershell /usr/local/share/chromium /usr/share/swift 2>/dev/null || true
+          df -h / | sed 's/^/after: /'
       - name: Live absolute path
         run: |
           sudo mkdir -p /home/user/rh-verify && sudo chown "$(id -u):$(id -g)" /home/user/rh-verify
@@ -117,6 +122,7 @@ jobs:
       - run: bash exp/scripts/exp-pool.sh restore-prev exp-out/plan/prev-batches.tsv
       - name: Build slice ${{ matrix.job }}
         run: |
+          mon() { while sleep 20; do echo "mon $(date -u +%T) disk_free_gb=$(df -BG --output=avail / | tail -1 | tr -dc 0-9) mem_avail_mb=$(free -m | awk '/Mem/ {print $7}') lean=$(pgrep -xc lean)"; done; }; mon & MON=$!; trap 'kill $MON 2>/dev/null' EXIT
           s=exp-out/plan/slice-${{ matrix.job }}.txt
           [ -s "$s" ] || { echo "empty slice"; exit 0; }
           ! comm -12 <(sort "$s") exp-out/restored-modules.txt | grep -q . || { echo "slice contains available modules"; exit 1; }
@@ -148,7 +154,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 75
     strategy: {fail-fast: false, matrix: {s: '${{ fromJSON(needs.plan.outputs.spot) }}'}}
-    env: {EXP_OUT: '${{ github.workspace }}/exp-out'}
+    env: {EXP_OUT: '${{ github.workspace }}/exp-out', EXP_LEAN_THREADS: '2'}
     steps:
       - uses: actions/checkout@v4
         with: {path: exp, persist-credentials: false, sparse-checkout: scripts}
@@ -158,6 +164,11 @@ jobs:
         with: {name: '${{ env.WAVE }}-plan', path: exp-out/plan}
       - uses: actions/download-artifact@v4
         with: {pattern: '${{ env.WAVE }}-batch-*', path: exp-out/in, merge-multiple: true}
+      - name: Free runner disk (diagnosis of runner losses in w20-w22)
+        run: |
+          df -h / | sed 's/^/before: /'
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /usr/local/.ghcup /opt/hostedtoolcache/CodeQL /usr/local/share/powershell /usr/local/share/chromium /usr/share/swift 2>/dev/null || true
+          df -h / | sed 's/^/after: /'
       - name: Live absolute path
         run: |
           sudo mkdir -p /home/user/rh-verify && sudo chown "$(id -u):$(id -g)" /home/user/rh-verify
@@ -169,6 +180,7 @@ jobs:
       - run: bash exp/scripts/exp-pool.sh restore-prev exp-out/plan/prev-batches.tsv
       - name: Unpack this wave's batches (transport-checked), delete the sample's outputs, rebuild, compare
         run: |
+          mon() { while sleep 20; do echo "mon $(date -u +%T) disk_free_gb=$(df -BG --output=avail / | tail -1 | tr -dc 0-9) mem_avail_mb=$(free -m | awk '/Mem/ {print $7}') lean=$(pgrep -xc lean)"; done; }; mon & MON=$!; trap 'kill $MON 2>/dev/null' EXIT
           set -euo pipefail
           for h in exp-out/in/*.hashes; do
             [ -e "$h" ] || continue

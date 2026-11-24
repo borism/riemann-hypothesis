@@ -30,6 +30,7 @@ sbx_lake() {  # same shape as sandbox_cmd in scripts/run-verification.sh
     --ro-bind /etc /etc --proc /proc --dev /dev --tmpfs /tmp --ro-bind "$TC" "$TC" --bind "$BUILD" "$BUILD" \
     --setenv HOME /tmp/home --setenv PATH "$TC/bin:/usr/bin:/bin" \
     --setenv LEAN_ABORT_ON_PANIC 1 --setenv LAKE_ARTIFACT_CACHE false --setenv LANG C.UTF-8 \
+    ${EXP_LEAN_THREADS:+--setenv LEAN_NUM_THREADS "$EXP_LEAN_THREADS"} \
     --chdir "$BUILD" bash -c 'mkdir -p "$HOME"; exec lake "$@"' _ "$@"
 }
 
