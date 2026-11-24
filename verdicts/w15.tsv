@@ -1,0 +1,17 @@
+wave	job	files	tar_sha256	manifest_sha256	spot_modules	spot_same_files	verdict
+w15	0	0	-	-	0	0	FAILED
+w15	1	0	-	-	0	0	FAILED
+w15	2	0	-	-	0	0	FAILED
+w15	3	0	-	-	0	0	FAILED
+w15	4	0	-	-	0	0	FAILED
+w15	5	0	-	-	0	0	FAILED
+w15	6	0	-	-	0	0	FAILED
+w15	7	0	-	-	0	0	FAILED
+w15	8	0	-	-	0	0	FAILED
+w15	9	0	-	-	0	0	FAILED
+w15	10	0	-	-	0	0	FAILED
+w15	11	3500	0d1e681a0dc0fda4962790a9bd964c29d23f6a5af1be83fb335343490f15ba55	17daee3e13db689df97b483555dc0c7bb9fa36bea1252bf5f01664bb5854f69c	25	175	accepted
+w15	12	0	-	-	0	0	FAILED
+w15	13	0	-	-	0	0	FAILED
+w15	14	0	-	-	0	0	FAILED
+w15	15	0	-	-	0	0	FAILED
