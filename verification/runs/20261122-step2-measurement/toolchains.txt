@@ -1,0 +1,5 @@
+lean 4.33.1 tarball sha256 890afd185370f85666025b883914ab4f4b339136f8c96167b69cfb62aecaf235  (https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-linux.tar.zst)
+Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+lean 4.36.0 tarball sha256 2b7ab1ed8b92d2e6abfaf41344823b510064dbc9c0260cac73eb496ab2dea6eb  (https://github.com/leanprover/lean4/releases/download/v4.36.0/lean-4.36.0-linux.tar.zst)
+Lean (version 4.36.0, x86_64-unknown-linux-gnu, commit 611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9, Release)
+lean4export v4.33.0 15f6055e299ad5b89345e533cc2192f4cc00f659 binary sha256 805ab4cc6a88dcef109644d201c3142261f524aecaf58b04913a9f029e21e9b5
