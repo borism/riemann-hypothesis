@@ -1,0 +1,200 @@
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/RingOfIntegersActionInjectiveOnAbelianSchemeStatement.lean:13:60: Unused tactic linter: `exact GlobalTheory.LamF.Faithful.act_injective` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/RingOfIntegersActionInjectiveOnAbelianSchemeStatement.lean:13:109: Unused tactic linter: `(intros; apply GlobalTheory.LamF.Faithful.act_injective <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [53905/53914] Replayed Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.LieLatticeOfIsLocalModelAtPrimeStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/LieLatticeOfIsLocalModelAtPrimeStatement.lean:11:58: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/LieLatticeOfIsLocalModelAtPrimeStatement.lean:11:105: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/LieLatticeOfIsLocalModelAtPrimeStatement.lean:11:58: Unused tactic linter: `exact GlobalTheory.CM.lieLat_of_isLocalModel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/LieLatticeOfIsLocalModelAtPrimeStatement.lean:11:105: Unused tactic linter: `(intros; apply GlobalTheory.CM.lieLat_of_isLocalModel <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [53906/53924] Replayed Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.IsModelAtIntegralIffMemLieLat
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/IsModelAtIntegralIffMemLieLat.lean:19:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/IsModelAtIntegralIffMemLieLat.lean:20:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/IsModelAtIntegralIffMemLieLat.lean:21:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [53907/53924] Replayed Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.ExistsDvrModelLieBasisAtPrimeStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDvrModelLieBasisAtPrimeStatement.lean:13:54: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDvrModelLieBasisAtPrimeStatement.lean:13:97: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDvrModelLieBasisAtPrimeStatement.lean:13:54: Unused tactic linter: `exact GlobalTheory.LamF.exists_isModelAt` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDvrModelLieBasisAtPrimeStatement.lean:13:97: Unused tactic linter: `(intros; apply GlobalTheory.LamF.exists_isModelAt <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [53910/53924] Replayed Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.ExistsFractionalIdealLocalGenOfValuationStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsFractionalIdealLocalGenOfValuationStatement.lean:13:82: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsFractionalIdealLocalGenOfValuationStatement.lean:13:153: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsFractionalIdealLocalGenOfValuationStatement.lean:13:82: Unused tactic linter: `exact GlobalTheory.LamF.exists_fractionalIdeal_isLocGen_of_valuation` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsFractionalIdealLocalGenOfValuationStatement.lean:13:153: Unused tactic linter: `(intros;
+  apply GlobalTheory.LamF.exists_fractionalIdeal_isLocGen_of_valuation <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [53911/53924] Replayed Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.ExistsDetIdealLocalGenFullLattice
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDetIdealLocalGenFullLattice.lean:17:0: automatically included section variable(s) unused in theorem `GlobalTheory.LamF.det_of_smul_rows`:
+  [NumberField K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [NumberField K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDetIdealLocalGenFullLattice.lean:29:2: Try this: 
+  haveI̵
+
+The goal is a proposition, so `have` is preferred over `haveI`.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [53912/53924] Replayed Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.ExistsDetIdealLocalGenFullLatticeStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDetIdealLocalGenFullLatticeStatement.lean:13:62: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDetIdealLocalGenFullLatticeStatement.lean:13:113: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDetIdealLocalGenFullLatticeStatement.lean:13:62: Unused tactic linter: `exact GlobalTheory.LamF.exists_detIdeal_isLocGen` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsDetIdealLocalGenFullLatticeStatement.lean:13:113: Unused tactic linter: `(intros; apply GlobalTheory.LamF.exists_detIdeal_isLocGen <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [53914/53924] Replayed Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.KeyLocAtOfIsLocalModelStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/KeyLocAtOfIsLocalModelStatement.lean:13:62: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/KeyLocAtOfIsLocalModelStatement.lean:13:113: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/KeyLocAtOfIsLocalModelStatement.lean:13:62: Unused tactic linter: `exact GlobalTheory.LamF.keyLocAt_of_isLocalModel` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/KeyLocAtOfIsLocalModelStatement.lean:13:113: Unused tactic linter: `(intros; apply GlobalTheory.LamF.keyLocAt_of_isLocalModel <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [53915/53924] Replayed Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.ExistsPosKeyArchAtStatement
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsPosKeyArchAtStatement.lean:13:66: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsPosKeyArchAtStatement.lean:13:121: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsPosKeyArchAtStatement.lean:13:66: Unused tactic linter: `exact GlobalTheory.LamF.KeyArch.exists_pos_keyArchAt` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/CubicalLineBundles/ExistsPosKeyArchAtStatement.lean:13:121: Unused tactic linter: `(intros; apply GlobalTheory.LamF.KeyArch.exists_pos_keyArchAt <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [53917/53929] Built Development.AbelianVarietyTheory.Proofs.CubicalLineBundles.ExistsCommonDenominatorOfValuationLeOne (55s)
+✔ [53920/53929] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.SurjectiveQuasiCompactQ (61s)
+✔ [53921/53935] Built Development.AbelianVarietyTheory.Proofs.JetHarmonics.DimEqOfFiniteSurjective (116s)
+⚠ [53922/53935] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsClearDenominatorBundleSectionGenericFibre (132s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsClearDenominatorBundleSectionGenericFibre.lean:61:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [53923/53935] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.SurjectiveQuasiCompactQStatement (215s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SurjectiveQuasiCompactQStatement.lean:12:68: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SurjectiveQuasiCompactQStatement.lean:12:125: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SurjectiveQuasiCompactQStatement.lean:12:68: Unused tactic linter: `exact GlobalTheory.RayEv.Ray.surjective_quasiCompact_q` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/SurjectiveQuasiCompactQStatement.lean:12:125: Unused tactic linter: `(intros; apply GlobalTheory.RayEv.Ray.surjective_quasiCompact_q <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [53924/53935] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsUnitValueTranslatedBundleSection (290s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsUnitValueTranslatedBundleSection.lean:45:4: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+⚠ [53925/53935] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsClearDenominatorBundleSectionGenericFibreStatement (297s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsClearDenominatorBundleSectionGenericFibreStatement.lean:17:55: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsClearDenominatorBundleSectionGenericFibreStatement.lean:17:99: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsClearDenominatorBundleSectionGenericFibreStatement.lean:17:55: Unused tactic linter: `exact GlobalTheory.ClearSecB.exists_clear` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsClearDenominatorBundleSectionGenericFibreStatement.lean:17:99: Unused tactic linter: `(intros; apply GlobalTheory.ClearSecB.exists_clear <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [53926/53935] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IsRaynaudFourierTermOfIsWeight (317s)
+⚠ [53927/53935] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.ExistsUnitValueTranslatedBundleSectionStatement (230s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsUnitValueTranslatedBundleSectionStatement.lean:17:56: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsUnitValueTranslatedBundleSectionStatement.lean:17:101: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsUnitValueTranslatedBundleSectionStatement.lean:17:56: Unused tactic linter: `exact GlobalTheory.UnitPt.exists_unit_sval` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/ExistsUnitValueTranslatedBundleSectionStatement.lean:17:101: Unused tactic linter: `(intros; apply GlobalTheory.UnitPt.exists_unit_sval <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [53928/53935] Built Development.AbelianVarietyTheory.Proofs.DivisorProofs.IsRaynaudFourierTermOfIsWeightStatement (264s)
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsRaynaudFourierTermOfIsWeightStatement.lean:17:52: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsRaynaudFourierTermOfIsWeightStatement.lean:17:93: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsRaynaudFourierTermOfIsWeightStatement.lean:17:52: Unused tactic linter: `exact GlobalTheory.Heat.isTerm_of_isWt` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: src/Development/AbelianVarietyTheory/Proofs/DivisorProofs/IsRaynaudFourierTermOfIsWeightStatement.lean:17:93: Unused tactic linter: `(intros; apply GlobalTheory.Heat.isTerm_of_isWt <;> assumption)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
