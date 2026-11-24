@@ -64,7 +64,7 @@ and the pool branches carry the scripts; a script mentioned above may exist only
   survives. Run `scripts/rh-recover.sh` (it mounts, adds swap, then starts the build and the checkpoint loop, in
   that order). Do not start the build before the image is mounted.
 - Run the watcher in the background and re-run it after each exit:
-  `RH_POOL_REPO=<checkout> scripts/rh-watch.sh`. It exits at once on a finished run, a stopped build, a restart or
+  `RH_POOL_GIT=<checkout> scripts/rh-watch.sh`. It exits at once on a finished run, a stopped build, a restart or
   low disk, and otherwise after 50 minutes with a heartbeat line. Do not start it with a trailing `&` from a
   background shell call: it then returns immediately and gives no heartbeat.
 - Merging a pool wave into the live tree stops the build for a few minutes. Follow
