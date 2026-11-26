@@ -1,0 +1,81 @@
+{
+ "wave": "w31",
+ "run_id": "45773345110",
+ "runner_minutes_excl_publish": 149.7,
+ "job_minutes": {
+  "plan": 3.4,
+  "build (2)": 25.7,
+  "build (3)": 28.6,
+  "build (1)": 21.7,
+  "build (0)": 36.6,
+  "spot (0)": 17.2,
+  "spot (1)": 16.5
+ },
+ "modules_planned": 200,
+ "modules_accepted": 200,
+ "jobs_accepted": 4,
+ "jobs_rejected_or_failed": 0,
+ "plan": {
+  "dfs_pos_index_max": 44511,
+  "index_lag_min": 3442,
+  "vm_pos_est": 45199,
+  "region_start": 45295,
+  "horizon_h": 8.0,
+  "rate_per_min": 0.2,
+  "jobs": 4,
+  "cap": 50,
+  "spot_jobs": 2,
+  "seed": 20261122,
+  "picked": 200,
+  "slice_sizes": [
+   50,
+   50,
+   50,
+   50
+  ],
+  "spot": 8,
+  "dfs_span": [
+   114633,
+   144397
+  ],
+  "depths": [
+   42,
+   139
+  ],
+  "planned_utc": "2026-11-26T07:13Z",
+  "vm_hours_ahead": 5786.2,
+  "merge_by_utc": "2027-07-25T09:23Z",
+  "depends_on_waves": {
+   "w2": 3389,
+   "w4": 507,
+   "w13": 1788,
+   "w9": 4445,
+   "w8": 3159,
+   "w10": 3305,
+   "w24": 695,
+   "w14": 449,
+   "w11": 2262,
+   "w12": 1515,
+   "w27": 1106,
+   "w1": 5326,
+   "w25": 1134,
+   "w26": 1367,
+   "w28": 216,
+   "w7": 988,
+   "w3": 528,
+   "w29": 348,
+   "w16": 7,
+   "w15": 205,
+   "w20": 48,
+   "w23": 108,
+   "w18": 94,
+   "w5": 86,
+   "w17": 52,
+   "w6": 45,
+   "pilot2": 50,
+   "w21": 16,
+   "w19": 6
+  },
+  "closure_unavailable": 0
+ }
+}
