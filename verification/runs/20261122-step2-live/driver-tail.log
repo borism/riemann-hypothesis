@@ -1,27 +1,3 @@
-    ✔ [20888/20939] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.TopClassSurjective (7.1s)
-    ✔ [20889/20939] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.FiniteCechHomologyOfFiniteCubeHomology (6.0s)
-    ✔ [20890/20939] Built Development.AbelianVarietyTheory.Proofs.CoherentCohomologyProofs.FlatHomLocOfFlatHomLocSingleton (7.1s)
-[2026-11-22T20:18:38Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
-[2026-11-22T20:21:03Z] step2: start (build clone, offline bubblewrap sandbox, 4 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
-[2026-11-23T00:38:36Z] step2: rc=143; 39864 .olean files in the build tree; 31G in .lake; 30 GB free
-    ✔ [26169/26183] Built GroundTheory.HeightsAndTheta.Heights.FieldsOfNumbers.PSemilocalIntegral (14s)
-    ✔ [26170/26183] Built GroundTheory.HeightsAndTheta.Heights.LocalDensities.LeviLine (8.3s)
-    ✔ [26171/26183] Built GroundTheory.HeightsAndTheta.Heights.LocalDensities.CompactSupportStokes (7.9s)
-[2026-11-23T00:38:36Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
-[2026-11-23T00:40:43Z] step2: start (build clone, offline bubblewrap sandbox, 4 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
-[2026-11-23T12:32:41Z] step2: rc=143; 65852 .olean files in the build tree; 45G in .lake; 31 GB free
-      apply GlobalTheory.PolFan.ConeSub.sum_smul_toReal_mem_psdCone <;> assumption)` does nothing
-    
-    Note: This linter can be disabled with `set_option linter.unusedTactic false`
-[2026-11-23T12:32:41Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
-[2026-11-23T12:32:43Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
-[2026-11-23T12:37:17Z] step2: rc=143; 65860 .olean files in the build tree; 45G in .lake; 31 GB free
-    warning: src/Development/AbelianVarietyTheory/Proofs/IwasawaDecomposition/ExistsFinsetSquaresConeOfCompactPosDefStatement.lean:7:105: Unused tactic linter: `(intros; apply GlobalTheory.ConeSq.exists_finset_cone <;> assumption)` does nothing
-    
-    Note: This linter can be disabled with `set_option linter.unusedTactic false`
-[2026-11-23T12:37:17Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
-[2026-11-23T12:37:19Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
-[2026-11-23T15:55:47Z] step2: rc=143; 68261 .olean files in the build tree; 46G in .lake; 27 GB free
     
     Note: This linter can be disabled with `set_option linter.unusedVariables false`
     ✔ [46840/46851] Built Development.AbelianVarietyTheory.Proofs.UniformizationProofs.ExistsNegOriginSmoothLocus (7.4s)
@@ -48,3 +24,27 @@
 [2026-11-24T00:25:49Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
 [2026-11-24T06:42:51Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
 [2026-11-24T07:02:43Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-24T09:08:28Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-24T10:48:57Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-24T11:04:04Z] step2: rc=143; 129999 .olean files in the build tree; 79G in .lake; 19 GB free
+    Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+    warning: src/Formalism/UnipotentAdelicQuotients/SWXSDefs.lean:111:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+    warning: src/Formalism/UnipotentAdelicQuotients/SWXSDefs.lean:115:15: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+[2026-11-24T11:04:04Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
+[2026-11-24T11:05:07Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-24T12:22:50Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-24T14:17:58Z] step2: rc=143; 133872 .olean files in the build tree; 81G in .lake; 18 GB free
+    But this is not relevant for proofs because of proof irrelevance.
+    
+    Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+[2026-11-24T14:17:58Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
+[2026-11-24T14:18:45Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-24T23:37:27Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-24T23:50:18Z] step2: rc=143; 136728 .olean files in the build tree; 82G in .lake; 16 GB free
+    But this is not relevant for proofs because of proof irrelevance.
+    
+    Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+[2026-11-24T23:50:18Z] step2: stopped by timeout/TERM (rc=143); resume by re-running
+[2026-11-24T23:52:59Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-25T01:21:07Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)
+[2026-11-28T14:29:04Z] step2: start (build clone, offline bubblewrap sandbox, 2 CPUs, stop below 3 GB free disk; memory: cgroup v1 cap 13 GB (kernel OOM-kills inside the group) plus a 60 s MemAvailable<512 MB watchdog;swap active: /dev/zram0 (7 GB) (not counted by the watchdog or the preflight);)

@@ -1,12 +1,21 @@
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocA.lean:50:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
+The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocA.lean:51:2: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ExistsSncDataW.lean:97:34: `Set.mem_setOf_eq` has been deprecated: Use `Set.mem_ofPred_eq` instead
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ExistsSncDataW.lean:83:42: Variable name `hx'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ExistsSncDataW.lean:116:8: Variable name `hx'` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hx'
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ExistsSncDataW.lean:141:4: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -14,15 +23,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocA.lean:57:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocA.lean:58:2: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ExistsSncDataW.lean:142:4: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -30,8 +31,7 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [21143/21151] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.StalkLocB
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocB.lean:21:2: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ExistsSncDataW.lean:165:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -39,7 +39,34 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocB.lean:36:2: Try this: 
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ExistsSncDataW.lean:154:73: Variable name `hfP` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hfP
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [26823/26828] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.WChartsB
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/WChartsB.lean:92:57: Variable name `hg` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hg
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [26826/26835] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.WCharts
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/WCharts.lean:101:5: Variable name `hrad` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hrad
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/WCharts.lean:104:5: Variable name `hmin` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hmin
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [26833/26846] Replayed ReciprocityTheory.ReductiveGroups.ArithmeticGeometry.BirationalGeometry.InterDivPushB
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivPushB.lean:30:2: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -47,126 +74,24 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLocB.lean:69:4: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [21144/21151] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.StalkLoc
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:62:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:63:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:77:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:62:6: Unused tactic linter: `(convert h using 1; ext z; simp)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:63:6: Unused tactic linter: `(simp only [Set.image_singleton] at h; exact h)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:77:6: Unused tactic linter: `simp [MvPolynomial.aeval_eq_eval]` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:199:4: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:204:4: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:202:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:207:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:202:6: Unused tactic linter: `exact IsRegularLocalRing.of_ringEquiv (e := P.stalkEquiv x hx hc)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:207:6: Unused tactic linter: `exact IsRegularLocalRing.of_ringEquiv (e := (P.stalkEquiv x hx hc).symm)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:222:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:263:6: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/StalkLoc.lean:263:6: Unused tactic linter: `(
-  show
-    Ideal.Quotient.mk _ (IsLocalization.mk' _ a ⟨b, hb⟩) * Ideal.Quotient.mk _ (algebraMap _ _ b) =
-      Ideal.Quotient.mk _ (algebraMap _ _ a)
-  rw [← map_mul, IsLocalization.mk'_spec])` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-⚠ [21147/21151] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.ProjHypC
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:12:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.AnForm.R.prod_X_chartUpd`:
-  [Nonempty K]
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivPushB.lean:24:0: automatically included section variable(s) unused in theorem `ReciprocityTheory.ChartRestriction.G.Geo.exists_divSupp_of_eval`:
+  [Fintype K]
   [(k : K) → Fintype (ι k)]
 consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
-  omit [Nonempty K] [(k : K) → Fintype (ι k)] in theorem ...
+  omit [Fintype K] [(k : K) → Fintype (ι k)] in theorem ...
 
 Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:109:4: this tactic is never executed
+warning: src/ReciprocityTheory/ReductiveGroups/ArithmeticGeometry/BirationalGeometry/InterDivPushB.lean:120:6: `MeasureTheory.integral_finset_sum` has been deprecated: Use `MeasureTheory.integral_finsetSum` instead
+⚠ [26883/26898] Replayed GroundTheory.HeightsAndTheta.Heights.Intersections.PResExists
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PResExists.lean:43:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.IndefiniteRowSideFullHecke.Inter.isEmpty_sigma`:
+  [Fintype K]
+  [DecidableEq K]
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K] [DecidableEq K] [(k : K) → Fintype (ι k)] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:110:4: this tactic is never executed
-
-Note: This linter can be disabled with `set_option linter.unreachableTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:109:4: Unused tactic linter: `(rw [← HomogeneousLocalization.algebraMap_apply]; rfl)` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:110:4: Unused tactic linter: `simp [HomogeneousLocalization.val_fromZeroRingHom, Localization.mk_one_eq_algebraMap,
-  SetLike.GradeZero.coe_algebraMap, Ideal.Quotient.algebraMap_eq, MvPolynomial.algebraMap_eq]` does nothing
-
-Note: This linter can be disabled with `set_option linter.unusedTactic false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:119:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHypC.lean:163:2: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-⚠ [21148/21151] Replayed ReciprocityTheory.AnalyticForms.RegularLocalRings.ProjHyp
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:30:4: Try this: 
-  letI̵
-
-The goal is a proposition, so `let` is preferred over `letI`.
-The difference between `let` and `letI` is that `letI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:31:4: Try this: 
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PResExists.lean:127:4: Try this: 
   haveI̵
 
 The goal is a proposition, so `have` is preferred over `haveI`.
@@ -174,15 +99,8 @@ The difference between `have` and `haveI` is that `haveI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:24:2: Try this: 
-  haveI̵
-
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
-
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:66:2: Try this: 
+⚠ [26889/26898] Replayed GroundTheory.HeightsAndTheta.Heights.Intersections.PSemilocIntegral
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PSemilocIntegral.lean:17:2: Try this: 
   letI̵
 
 The goal is a proposition, so `let` is preferred over `letI`.
@@ -190,11 +108,93 @@ The difference between `let` and `letI` is that `letI` inlines the value.
 But this is not relevant for proofs because of proof irrelevance.
 
 Note: This linter can be disabled with `set_option linter.style.haveILetI false`
-warning: src/ReciprocityTheory/AnalyticForms/RegularLocalRings/ProjHyp.lean:195:6: Try this: 
-  haveI̵
+⚠ [26903/26911] Replayed GroundTheory.HeightsAndTheta.Heights.Intersections.ThmIExistsFamily
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/ThmIExistsFamily.lean:16:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIExists.hermLine_ext`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
 
-The goal is a proposition, so `have` is preferred over `haveI`.
-The difference between `have` and `haveI` is that `haveI` inlines the value.
-But this is not relevant for proofs because of proof irrelevance.
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/ThmIExistsFamily.lean:92:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIExists.upDeg_cast`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
 
-Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/ThmIExistsFamily.lean:113:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIExists.lift_self`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/ThmIExistsFamily.lean:118:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIExists.recR_congr`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [26907/26919] Replayed GroundTheory.HeightsAndTheta.Heights.Intersections.PThmIUnique
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PThmIUnique.lean:17:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIUnique.recR_congr`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PThmIUnique.lean:29:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIUnique.isMultiHomog_one'`:
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PThmIUnique.lean:36:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIUnique.isMultiHomog_mul'`:
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PThmIUnique.lean:45:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIUnique.isMultiHomog_X'`:
+  [Fintype K]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype K] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PThmIUnique.lean:55:10: This simp argument is unused:
+  Finsupp.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [this, h, Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PThmIUnique.lean:55:32: This simp argument is unused:
+  this
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finsupp.single_apply, h, Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PThmIUnique.lean:55:41: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Finsupp.single_apply, this, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/Intersections/PThmIUnique.lean:82:0: automatically included section variable(s) unused in theorem `GroundTheory.Heights₂.Heights.Inter.ThmIUnique.coordMonomial_not_mem`:
+  [(k : K) → Fintype (ι k)]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [(k : K) → Fintype (ι k)] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+⚠ [26959/26964] Replayed GroundTheory.HeightsAndTheta.Heights.HodgeLowerBound.PFsPotLaplacian
+warning: src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/PFsPotLaplacian.lean:27:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/PFsPotLaplacian.lean:27:35: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/PFsPotLaplacian.lean:63:7: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: src/GroundTheory/HeightsAndTheta/Heights/HodgeLowerBound/PFsPotLaplacian.lean:63:19: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
